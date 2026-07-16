@@ -1,0 +1,67 @@
+name: data-pipeline
+
+# q-league / anclas.jp などの公開情報を取得し、アプリ配信用 JSON を更新する。
+
+on:
+  schedule:
+    # 毎時17分。更新頻度と GitHub 側の混雑を考慮し、正時を避ける。
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/data-pipeline.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-pipeline
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      # contents:write を持つため、利用する Action は commit SHA で固定する。
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install dependencies
+        working-directory: scripts
+        run: npm ci
+
+      - name: Typecheck & test
+        working-directory: scripts
+        run: |
+          npm run typecheck
+          npm test
+
+      - name: Generate JSON
+        working-directory: scripts
+        run: npm run generate
+
+      - name: Commit if changed
+        run: |
+          if [[ -z "$(git status --porcelain -- matches.json standings.json players.json partners.json)" ]]; then
+            echo "差分なし。commit をスキップします。"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- matches.json standings.json players.json partners.json
+          git commit -m "data: update public feed ($(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST'))"
+          git push
+
+      # FCM_SERVICE_ACCOUNT_JSON 未設定の場合は通知を送らず正常終了する。
+      - name: Notify match results (FCM)
+        working-directory: scripts
+        env:
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+        run: npm run notify

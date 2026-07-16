@@ -1,0 +1,27 @@
+{
+  "name": "anclas-port-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "アンクラスPort データパイプライン: q-league / anclas.jp を正規化JSON化",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "generate:matches": "tsx src/generate-matches.ts",
+    "generate:players": "tsx src/generate-players.ts",
+    "generate:partners": "tsx src/generate-partners.ts",
+    "generate": "npm run generate:matches && (npm run generate:players || echo 'players generation failed (non-fatal)') && (npm run generate:partners || echo 'partners generation failed (non-fatal)')",
+    "notify": "tsx src/notify-results.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "google-auth-library": "^9.15.1"
+  }
+}

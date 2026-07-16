@@ -1,0 +1,1761 @@
+{
+  "generatedAt": "2026-07-14T05:55:14.558Z",
+  "season": "2026",
+  "players": [
+    {
+      "id": 25405,
+      "number": 3,
+      "position": null,
+      "nameJa": "澁澤光",
+      "nameEn": "SHIBUSAWA HIKARU",
+      "nickname": "ひか",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/澁澤＿笑顔-e1774849557904-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/澁澤＿笑顔-e1774849557904-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/澁澤＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/澁澤＿笑顔-e1774849557904.jpg"
+      },
+      "profile": {
+        "birthdate": "2000年3月3日",
+        "hometown": "埼玉県",
+        "height": "168cm",
+        "bloodType": "O型",
+        "career": "常盤木学園高等学校 – 東洋大学 – 大宮アルディージャVENTUS – バニーズ群馬FCホワイトスター – Lion City Sailors FC"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "17年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "友達に誘われたから"
+        },
+        {
+          "label": "MBTI",
+          "value": "INFJ 提唱者"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "おうち映画"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "甘いもの"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "ドナルド"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "温泉に行く"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "予測を活かしたプレー"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "ラムネを食べる"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "timelesz/ワンアンドオンリー"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "なでしこリーグ昇格"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "九州のスタジアム巡り"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "昇格しましょう！応援よろしくお願いします！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25405/",
+      "blogPosts": [
+        {
+          "title": "初韓国🇰🇷 #3 澁澤光",
+          "url": "https://anclas.jp/post-27160/",
+          "date": "2026-06-23"
+        },
+        {
+          "title": "ゴーゴーライジング！！ #3澁澤光",
+          "url": "https://anclas.jp/post-26017/",
+          "date": "2026-04-21"
+        },
+        {
+          "title": "初めまして！ #3 澁澤光",
+          "url": "https://anclas.jp/post-25541/",
+          "date": "2026-02-20"
+        }
+      ],
+      "sns": {
+        "instagram": "hikaru_shibusawa"
+      }
+    },
+    {
+      "id": 25403,
+      "number": 5,
+      "position": null,
+      "nameJa": "大河内友貴",
+      "nameEn": "OKOUCHI YUKI",
+      "nickname": "ゆき、ゆきちゃん",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/大河内＿笑顔-e1774849471840-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/大河内＿笑顔-e1774849471840-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/大河内＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/大河内＿笑顔-e1774849471840.jpg"
+      },
+      "profile": {
+        "birthdate": "2000年9月15日",
+        "hometown": "北海道",
+        "height": "161cm",
+        "bloodType": "AB型",
+        "career": "常盤木学園高等学校 – 長野パルセイロレディース – リリーウルフ.F石川 – VONDS市原FCレディース – 静岡SSUボニータ"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "19年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "マラソン大会での敗北"
+        },
+        {
+          "label": "MBTI",
+          "value": "ESFP エンターテイナー☆"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "自分磨き、簡単ヘルシー料理、可愛いわんこと戯れる"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "ありすぎて迷う！！苦手なゴーヤ以外は基本なんでも好き！笑"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "ワンピース、クレヨンしんちゃん"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "美容デイにするか、スタバに行くか、ソファーに埋まってYouTubeとかサブスクを観漁るか、気が向いたらお菓子作るか"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "危機察知能力の高さ"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "特になし！いつも通りに過ごす！"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "BAD HOP/B2B"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "怪我をしない！"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "スタバアプリにある都道府県のやつ（伝われ）の九州エリアを制覇したい！！ 福岡の美味しいご飯をたくさん食べ尽くしたい！！"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "後悔させないのでぜひ会場に来て応援してください！！待ってまーす！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25403/",
+      "blogPosts": [
+        {
+          "title": "犬🐶いぬ🐶イヌ🐶　#5 大河内友貴",
+          "url": "https://anclas.jp/post-27186/",
+          "date": "2026-06-26"
+        },
+        {
+          "title": "リカバリータイム  #5 大河内友貴",
+          "url": "https://anclas.jp/post-26035/",
+          "date": "2026-04-24"
+        },
+        {
+          "title": "バレンタイン❤️ #5 大河内友貴",
+          "url": "https://anclas.jp/post-25524/",
+          "date": "2026-02-18"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25369,
+      "number": 6,
+      "position": null,
+      "nameJa": "森和奏",
+      "nameEn": "MORI WAKANA",
+      "nickname": "わかな",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/森＿笑顔-e1774848088978-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/森＿笑顔-e1774848088978-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/森＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/森＿笑顔-e1774848088978.jpg"
+      },
+      "profile": {
+        "birthdate": "2004年9月3日",
+        "hometown": "北海道",
+        "height": "153cm",
+        "bloodType": null,
+        "career": "若葉SC→プログレッソ十勝→大商学園高等学校→ASハリマアルビオン"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "15年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "遊びでやってて楽しかったから"
+        },
+        {
+          "label": "MBTI",
+          "value": "ESFP エンターテイナー"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "YouTubeみたりネトフリ見たり工作したり、基本すぐハマってすぐ飽きます。"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "オムライス、アイス、ぎょーざ"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "キングダム、ハイキュー"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "アラームかけないで寝るのもみんなでお出かけするのも、家でダラダラするのも好きでとにかくオフが大好きです！"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "球際"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "なるべく大きな声で歌ってから家を出る"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "Mrs. GREEN APPLE/ダーリン"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "けがをしない！"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "登山"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "今シーズンも熱い応援よろしくお願いします！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25369/",
+      "blogPosts": [
+        {
+          "title": "最近気に入ったあれこれ　#6森和奏",
+          "url": "https://anclas.jp/post-27393/",
+          "date": "2026-06-30"
+        },
+        {
+          "title": "春を満喫  #6森和奏",
+          "url": "https://anclas.jp/post-26078/",
+          "date": "2026-04-28"
+        },
+        {
+          "title": "初詣　#6森和奏",
+          "url": "https://anclas.jp/post-25457/",
+          "date": "2026-02-13"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25410,
+      "number": 7,
+      "position": null,
+      "nameJa": "杉浦華穂",
+      "nameEn": "SUGIURA KAHO",
+      "nickname": "かほ",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/杉浦＿笑顔-e1774849177922-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/杉浦＿笑顔-e1774849177922-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/杉浦＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/杉浦＿笑顔-e1774849177922.jpg"
+      },
+      "profile": {
+        "birthdate": "2001年3月15日",
+        "hometown": "東京都",
+        "height": "159cm",
+        "bloodType": "B型",
+        "career": "FOOT駒沢 → 塚戸フォルトゥーナ → 大和シルフィードU-15 → 帝京第三高等学校 → 山梨学院大学 → 大和シルフィード → 岡山湯郷Belle"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "15年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "兄の影響"
+        },
+        {
+          "label": "MBTI",
+          "value": "ENFP 運動家"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "ガチャガチャ"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "いちご・チョコ・オムライス"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "ヒロアカ/爆豪・クロミちゃん"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "カフェ探索☕️"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "ビルドアップ・気持ち"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "ブドウ糖タブレット・ブドウ糖ウイダー"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "SUPER BEAVER / 切望"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "楽しむ・キックの精度"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "九州旅行"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "皆さんの応援を力に変えて、最後まで戦い抜きます。共に闘いましょう！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25410/",
+      "blogPosts": [
+        {
+          "title": "手術を終えて🦵🏼❤️‍🩹 #7 杉浦華穂",
+          "url": "https://anclas.jp/post-27406/",
+          "date": "2026-07-03"
+        },
+        {
+          "title": "トモコレ始めました🌼 #7 杉浦華穂",
+          "url": "https://anclas.jp/post-26096/",
+          "date": "2026-05-04"
+        },
+        {
+          "title": "カフェ探索隊☕️ #7 杉浦華穂",
+          "url": "https://anclas.jp/post-25547/",
+          "date": "2026-02-25"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25399,
+      "number": 8,
+      "position": null,
+      "nameJa": "野沢真由",
+      "nameEn": "NOZAWA MAYU",
+      "nickname": "まゆ",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/野沢＿笑顔-e1774849346562-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/野沢＿笑顔-e1774849346562-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/野沢＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/野沢＿笑顔-e1774849346562.jpg"
+      },
+      "profile": {
+        "birthdate": "2000年12月17日",
+        "hometown": "茨城県",
+        "height": "161cm",
+        "bloodType": "A型",
+        "career": "ウィンズFC土浦 → つくばFCレディースユース → 修徳高等学校 → 神奈川大学 → つくばFCレディース → 岡山湯郷Belle"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "18年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "兄の影響"
+        },
+        {
+          "label": "MBTI",
+          "value": "INFP 仲介者"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "SUP、デジカメ、散歩"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "味噌汁、蕎麦、パン"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "スンスン"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "自然を満喫しに行くか、本読んだりのんびりする"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "スピード活かしたプレー、キックの精度"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "足の指鳴らす/身体ほぐしてしっかり寝る"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "マックルモア&ライアンルイス/can’t hold us"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "なでしこリーグ昇格、身体を使いこなす"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "行ったことない場所に行く"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "チームの勝利に貢献できるように頑張ります。2026シーズンも応援よろしくお願いいたします。"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25399/",
+      "blogPosts": [
+        {
+          "title": "蕎麦　#8野沢真由",
+          "url": "https://anclas.jp/post-27426/",
+          "date": "2026-07-07"
+        },
+        {
+          "title": "私のパワースポット　#8野沢真由",
+          "url": "https://anclas.jp/post-26229/",
+          "date": "2026-05-06"
+        },
+        {
+          "title": "ティッシュ　#8野沢真由",
+          "url": "https://anclas.jp/post-25569/",
+          "date": "2026-03-03"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25376,
+      "number": 9,
+      "position": null,
+      "nameJa": "田邉いちご",
+      "nameEn": "TANABE ICHIGO",
+      "nickname": "ごん、ぶー、ごいち",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/田邉＿笑顔-e1774848689912-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/田邉＿笑顔-e1774848689912-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/田邉＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/田邉＿笑顔-e1774848689912.jpg"
+      },
+      "profile": {
+        "birthdate": "2003年12月28日",
+        "hometown": "岡山県",
+        "height": "153cm",
+        "bloodType": "O型",
+        "career": "浦安FC→FCリベルタ→フライアFCウェネス→高梁日新高等学校→岡山湯郷Belle→ ディアヴォロッソ広島→スフィーダ備後府中FC"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "19年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "フットサル"
+        },
+        {
+          "label": "MBTI",
+          "value": "ESTP 起業家"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "サウナ"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "おばあちゃんの豚汁"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "ベイマックス、モンチッチ、しずくちゃん"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "1人で散歩、コムドット見る、寝る"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "裏への抜け出し、シュート"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "早寝早起き、前日の夜はパスタorうどん"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "罰当/夢中、EXPRESS／50/50、湘南乃風/ライバル"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "得点をたくさんとる！！"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "いろんな野菜を克服する！"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "いつも熱い応援ありがとうございます！！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25376/",
+      "blogPosts": [
+        {
+          "title": "ショッピング🛍️ #9田邉いちご",
+          "url": "https://anclas.jp/post-26237/",
+          "date": "2026-05-08"
+        },
+        {
+          "title": "in東京🗼　#9田邉いちご",
+          "url": "https://anclas.jp/post-25573/",
+          "date": "2026-03-06"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25391,
+      "number": 10,
+      "position": null,
+      "nameJa": "平坂咲希",
+      "nameEn": "HIRASAKA SAKI",
+      "nickname": "さち",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/平坂＿笑顔-e1774849117305-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/平坂＿笑顔-e1774849117305-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/平坂＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/平坂＿笑顔-e1774849117305.jpg"
+      },
+      "profile": {
+        "birthdate": "2002年1月27日",
+        "hometown": "長崎県",
+        "height": "160cm",
+        "bloodType": "AB型",
+        "career": "コーラゴ安中FC→島原第三中学校→鎮西学院高校→バニーズ京都sc"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "19年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "保育園のサッカー教室"
+        },
+        {
+          "label": "MBTI",
+          "value": "INTJ 建築家"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "シール集め"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "ハンバーグ・お寿司・チョコレート"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "名探偵コナン"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "お買い物・掃除・Netflix"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "背後へのロングパス"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "お米を食べる"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "THE RAMPAGE / THROW YA FIST"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "なでしこリーグ昇格"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "ミドルシュートを決めたい⚽️"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "今シーズンも精一杯頑張ります‼︎"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25391/",
+      "blogPosts": [
+        {
+          "title": "🤩💛🤩　#10 平坂咲希",
+          "url": "https://anclas.jp/post-26254/",
+          "date": "2026-05-12"
+        },
+        {
+          "title": "😍🤍😍　#10 平坂咲希",
+          "url": "https://anclas.jp/post-25578/",
+          "date": "2026-03-10"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25383,
+      "number": 11,
+      "position": null,
+      "nameJa": "嘉数クレア姫麗",
+      "nameEn": "KAKAZU CLAIRE KIRARA",
+      "nickname": "くーちゃん、くー、くれ",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/嘉数＿笑顔-e1774848848483-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/嘉数＿笑顔-e1774848848483-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/嘉数＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/嘉数＿笑顔-e1774848848483.jpg"
+      },
+      "profile": {
+        "birthdate": "2003年3月15日",
+        "hometown": "沖縄県",
+        "height": "155.5cm",
+        "bloodType": "A型",
+        "career": "FC北谷→北谷中学校→神村学園→札幌大学"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "15年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "父親がサッカーしているのを見て"
+        },
+        {
+          "label": "MBTI",
+          "value": "INFP 仲介者"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "油絵、洋服やアクセサリーを集める"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "パスタ、ピザまん"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "イナズマイレブン/吹雪士郎"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "一日中家でだらだらor友達とお出かけ"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "とにかく走り回るところ！"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "スパイク磨き、家の掃除"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "ONE OK ROCK /We are"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "得点力をつけること"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "パスタ料理のレパートリーを増やす"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "いつも福岡J・アンクラスの応援ありがとうございます。今年は去年よりもさらにレベルアップした姿をピッチで表現できたらと思います。引き続き熱い応援よろしくお願いします。"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25383/",
+      "blogPosts": [
+        {
+          "title": "GW🤘🏻 #11嘉数クレア姫麗",
+          "url": "https://anclas.jp/post-26258/",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "「今年に入って初めて花粉が散らかり始めた日」 #11嘉数クレア姫麗",
+          "url": "https://anclas.jp/post-25625/",
+          "date": "2026-03-13"
+        },
+        {
+          "title": "「おしゃカフェに挑戦」 #11嘉数クレア姫麗",
+          "url": "https://anclas.jp/post-23633/",
+          "date": "2025-11-27"
+        },
+        {
+          "title": "「ちょいと遠出」 #11嘉数クレア姫麗",
+          "url": "https://anclas.jp/post-21796/",
+          "date": "2025-09-18"
+        },
+        {
+          "title": "「定食屋さん」 #11嘉数クレア姫麗",
+          "url": "https://anclas.jp/post-21391/",
+          "date": "2025-07-22"
+        },
+        {
+          "title": "「大先輩とパン屋さん」 #11嘉数クレア姫麗",
+          "url": "https://anclas.jp/post-20699/",
+          "date": "2025-05-27"
+        },
+        {
+          "title": "「景色」　#11 嘉数クレア姫麗",
+          "url": "https://anclas.jp/post-19881/",
+          "date": "2025-04-10"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25401,
+      "number": 13,
+      "position": null,
+      "nameJa": "原日樺",
+      "nameEn": "HARA NICHIKA",
+      "nickname": "にちか",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/原＿笑顔-e1774849408622-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/原＿笑顔-e1774849408622-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/原＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/原＿笑顔-e1774849408622.jpg"
+      },
+      "profile": {
+        "birthdate": "2000年8月3日",
+        "hometown": "福岡県",
+        "height": "150cm",
+        "bloodType": "AB型",
+        "career": "sfida-ito→FC Lazona→広島文教大学附属高等学校→福岡大学"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "19年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "双子の弟の影響"
+        },
+        {
+          "label": "MBTI",
+          "value": "ESFP エンターテイナー"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "温泉、HANA"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "ハンバーグ、アボカド"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "COCOちゃん、カエル"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "朝活と美味しいもの巡り！"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "予測したプレー、ハードワーク！"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "バナナ、羊羹、大福、どれかを食べる"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "コブクロ/DOOR"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "なでしこリーグ昇格！8得点以上！怪我しない！"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "Jリーグアウェイ観戦に行くこと！"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "どんな時も背中を押してくれる皆さんの応援が力になっています。 今シーズンも共に戦いましょう‼︎"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25401/",
+      "blogPosts": [
+        {
+          "title": "今年挑戦したいことが叶いました🪄 #13原日樺",
+          "url": "https://anclas.jp/post-26352/",
+          "date": "2026-05-19"
+        },
+        {
+          "title": "オフシーズン🍁 #13原日樺",
+          "url": "https://anclas.jp/post-25663/",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "命の燃やし方❤️‍🔥 #13原日樺",
+          "url": "https://anclas.jp/post-22615/",
+          "date": "2025-10-16"
+        },
+        {
+          "title": "夏チャージ🌻　#13原日樺",
+          "url": "https://anclas.jp/post-21525/",
+          "date": "2025-08-19"
+        },
+        {
+          "title": "オハナ🌺　#13原日樺",
+          "url": "https://anclas.jp/post-21003/",
+          "date": "2025-06-19"
+        },
+        {
+          "title": "地元🏝️　#13原日樺",
+          "url": "https://anclas.jp/post-20192/",
+          "date": "2025-04-23"
+        },
+        {
+          "title": "初勝利🐝  #13 原日樺",
+          "url": "https://anclas.jp/post-19520/",
+          "date": "2025-03-11"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25363,
+      "number": 14,
+      "position": null,
+      "nameJa": "宮脇ゆりあ",
+      "nameEn": "MIYAWAKI YURIA",
+      "nickname": "ゆり",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/宮脇＿笑顔-e1774847946357-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/宮脇＿笑顔-e1774847946357-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/宮脇＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/宮脇＿笑顔-e1774847946357.jpg"
+      },
+      "profile": {
+        "birthdate": "2008年2月27日",
+        "hometown": "福岡県",
+        "height": "154.3cm",
+        "bloodType": "A型",
+        "career": "PSTC FUKUOKAU-15 – 藤枝順心高等学校"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "10年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "ボール遊びが好きだったから"
+        },
+        {
+          "label": "MBTI",
+          "value": "ESFJ 主人公"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "音楽、温泉"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "焼肉、寿司"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "クレヨンしんちゃん、リトルグリーンメン"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "友達とごはん！"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "裏への抜け出しや正確なパス、弾丸シュートを見てほしい！"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "ケアをしながら音楽を聴く"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "Dream/平井大"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "まず怪我を完治させ、多くの得点に絡み勝利に貢献する"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "美味しいご飯を沢山作る！"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "今シーズンから入団することが決まりました、宮脇ゆりあです！皆さんの声援を力に、勝利に貢献できるように頑張ります。応援よろしくお願いします！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25363/",
+      "blogPosts": [
+        {
+          "title": "OFF😆🔌🔋 #14 宮脇ゆりあ",
+          "url": "https://anclas.jp/post-26367/",
+          "date": "2026-05-21"
+        },
+        {
+          "title": "最年少ゆりあの初ブログ✨️　#14宮脇ゆりあ",
+          "url": "https://anclas.jp/post-25700/",
+          "date": "2026-03-20"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25380,
+      "number": 15,
+      "position": null,
+      "nameJa": "田中花奈",
+      "nameEn": "TANAKA HANA",
+      "nickname": "はな",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/田中＿笑顔-e1774848775626-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/田中＿笑顔-e1774848775626-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/田中＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/田中＿笑顔-e1774848775626.jpg"
+      },
+      "profile": {
+        "birthdate": "2003年4月1日",
+        "hometown": "長崎県",
+        "height": "156cm",
+        "bloodType": "O型",
+        "career": "NJSS – 海星高等学校 – 活水女子大学"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "17年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "父がサッカーをしていたから"
+        },
+        {
+          "label": "MBTI",
+          "value": "ISFP 冒険家"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "HANA"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "麺類"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "呪術廻戦、メダリスト、ハイキュー"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "気分で動く"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "パス"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "特にない"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "HANA"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "自分のプレーでチームに貢献する"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "読書"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "応援よろしくお願いします。"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25380/",
+      "blogPosts": [
+        {
+          "title": "類は友を呼ぶオフ　#15田中花奈",
+          "url": "https://anclas.jp/post-26522/",
+          "date": "2026-05-27"
+        },
+        {
+          "title": "田中 花奈（HANA）　#15田中花奈",
+          "url": "https://anclas.jp/post-25751/",
+          "date": "2026-03-24"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25387,
+      "number": 16,
+      "position": null,
+      "nameJa": "端山新",
+      "nameEn": "HAYAMA ARATA",
+      "nickname": "あらた",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/端山＿笑顔-e1774849001765-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/端山＿笑顔-e1774849001765-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/端山＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/端山＿笑顔-e1774849001765.jpg"
+      },
+      "profile": {
+        "birthdate": "2002年1月17日",
+        "hometown": "大阪府",
+        "height": "153cm",
+        "bloodType": "AB型",
+        "career": "楠JSC→ヴィスポ狭山→追手門学院高等学校→明治国際医療大学→beillevaire西宮"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "18年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "兄のサッカーをよく見に行ってたから"
+        },
+        {
+          "label": "MBTI",
+          "value": "INTP 論理学者、ENTP 討論者"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "海外サッカー"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "まぜそば"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "呪術廻戦の五条悟と狗巻棘"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "アニメとか映画を見たり、美味しいものを食べに行ったり"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "前からの守備と攻撃の関わり"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "カフェイン摂取☕️"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "Superfly／タマシイレボリューション"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "なでしこリーグ昇格！10得点に関わる！"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "旅に出ること"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "チームの為に全力を尽くすので、今シーズンも応援の程宜しくお願いします！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25387/",
+      "blogPosts": [
+        {
+          "title": "クルクルパーマ #16端山新",
+          "url": "https://anclas.jp/post-26566/",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "ハッピーデイ④ #16端山新",
+          "url": "https://anclas.jp/post-25774/",
+          "date": "2026-03-27"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25385,
+      "number": 17,
+      "position": null,
+      "nameJa": "釜坂慧",
+      "nameEn": "KAMASAKA KEI",
+      "nickname": "けい",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/釜坂＿笑顔-e1774848935867-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/釜坂＿笑顔-e1774848935867-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/釜坂＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/釜坂＿笑顔-e1774848935867.jpg"
+      },
+      "profile": {
+        "birthdate": "2002年3月7日",
+        "hometown": "兵庫県",
+        "height": "164cm",
+        "bloodType": "O型",
+        "career": "高砂レッドスター→FCVICTORIES→兵庫県播磨高校→仙台大学→岡山湯郷Belle"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "18年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "友達について行った！！"
+        },
+        {
+          "label": "MBTI",
+          "value": "ISTJ 管理者、INTJ 建築家"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "推し活勺"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "ブラックチョコレート"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "ぷーさん、あひるのペックル"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "帰省、睡眠"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "相手との駆け引き（GKです笑）"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "アンパンマンチョコを食べる"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "FRUITS ZIPPER/君の明るい未来を追いかけて"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "負けない"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "九州旅行"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "今年も熱い応援よろしくお願いします！！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25385/",
+      "blogPosts": [
+        {
+          "title": "私の家族　#17釜坂慧",
+          "url": "https://anclas.jp/post-26736/",
+          "date": "2026-06-02"
+        },
+        {
+          "title": "「私の推し②」#17釜坂慧",
+          "url": "https://anclas.jp/post-25836/",
+          "date": "2026-03-31"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25389,
+      "number": 18,
+      "position": null,
+      "nameJa": "玉城薪瀬",
+      "nameEn": "TAMASHIRO MAKISE",
+      "nickname": "まきせ",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/玉城＿笑顔-e1774849060594-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/玉城＿笑顔-e1774849060594-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/玉城＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/玉城＿笑顔-e1774849060594.jpg"
+      },
+      "profile": {
+        "birthdate": "2002年2月6日",
+        "hometown": "沖縄県",
+        "height": "151cm",
+        "bloodType": "A型",
+        "career": "佐敷jsc→ヴィクサーレ沖縄FCナビィータ→国際武道大学"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "14年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "お父さんとお兄ちゃんがサッカーやってる姿を見て楽しそうだったので始めました。"
+        },
+        {
+          "label": "MBTI",
+          "value": "ISFJ 擁護者"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "アニメをみること、ゲーム（タウンシップ）"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "えび、いちご"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "ワールドトリガー・空閑遊真"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "お昼寝。美味しいものを探して行く。"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "裏への抜け出し。"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "食事を考えて摂る。"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "GENERATIONS from EXILE TRIBE/My Turn"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "入替戦で勝つ。怪我しない身体づくり。"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "うどん巡りをする！"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "皆さんと共に頑張るので引き続き熱い応援よろしくお願いします！！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25389/",
+      "blogPosts": [
+        {
+          "title": "最近の出来事⚾️　#18玉城薪瀬",
+          "url": "https://anclas.jp/post-26746/",
+          "date": "2026-06-05"
+        },
+        {
+          "title": "🐒紹介✨ #18玉城薪瀬",
+          "url": "https://anclas.jp/post-25875/",
+          "date": "2026-04-03"
+        },
+        {
+          "title": "最近のいろいろ #18玉城薪瀬",
+          "url": "https://anclas.jp/post-23031/",
+          "date": "2025-10-28"
+        },
+        {
+          "title": "BBQ🥩　#18玉城薪瀬",
+          "url": "https://anclas.jp/post-21552/",
+          "date": "2025-08-21"
+        },
+        {
+          "title": "地元チームと試合🐣　#18玉城薪瀬",
+          "url": "https://anclas.jp/post-21024/",
+          "date": "2025-06-24"
+        },
+        {
+          "title": "リーグ戦開幕🐣　#18 玉城薪瀬",
+          "url": "https://anclas.jp/post-20365/",
+          "date": "2025-04-29"
+        },
+        {
+          "title": "野口選手の旅立ち✈️🐣　　#18 玉城薪瀬",
+          "url": "https://anclas.jp/post-19624/",
+          "date": "2025-03-13"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25374,
+      "number": 20,
+      "position": null,
+      "nameJa": "田川葵",
+      "nameEn": "TAGAWA AOI",
+      "nickname": "あおい",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/田川＿笑顔-e1774848612433-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/田川＿笑顔-e1774848612433-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/田川＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/田川＿笑顔-e1774848612433.jpg"
+      },
+      "profile": {
+        "birthdate": "2003年5月8日",
+        "hometown": "福岡県",
+        "height": "157cm",
+        "bloodType": "A型",
+        "career": "FCバロンピエ – ブリステル – 筑陽学園高等学校 – 吉備国際大学Charme岡山高梁"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "13年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "サッカーをしてた1歳下の弟が羨ましかったから。"
+        },
+        {
+          "label": "MBTI",
+          "value": "ISFJ 擁護者"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "Jリーグを見ること。"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "チーズ"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "おさるのジョージ"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "お出かけをする。"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "左足のクロスやシュート"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "いつも通り過ごすこと"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "Little Glee Monster/いつかこの涙が"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "とにかく楽しんで自分らしさを出す。"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "自炊"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "チームの勝利のために一生懸命、そしてがむしゃらに頑張ります。応援よろしくお願いします。"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25374/",
+      "blogPosts": [
+        {
+          "title": "ハマっていること　#20 田川葵",
+          "url": "https://anclas.jp/post-26978/",
+          "date": "2026-06-09"
+        },
+        {
+          "title": "私とは💭　#20 田川葵",
+          "url": "https://anclas.jp/post-25886/",
+          "date": "2026-04-07"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25366,
+      "number": 21,
+      "position": null,
+      "nameJa": "進藤真奈花",
+      "nameEn": "SHINDO MANAKA",
+      "nickname": "まな、まなきち",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/進藤＿笑顔-e1774848023384-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/進藤＿笑顔-e1774848023384-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/進藤＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/進藤＿笑顔-e1774848023384.jpg"
+      },
+      "profile": {
+        "birthdate": "2007年8月28日",
+        "hometown": "福岡県",
+        "height": "168cm",
+        "bloodType": "O型",
+        "career": "ALECIO FOOTBALL CLUB"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "8年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "兄の影響"
+        },
+        {
+          "label": "MBTI",
+          "value": "ESFP エンターテイナー"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "シール集め、音楽聴くこと"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "ままの作るしゅうまい"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "クレヨンしんちゃん"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "沢山寝る！！"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "ダイビング"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "音楽を聴きながらストレッチをする"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "Mr.Children ／GIFT"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "全試合clean sheet！！理"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "自分の夢に向かって突っ走る！！‍♀️"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "アンクラスのゴール全力で守ります！！今シーズンもたくさんの応援よろしくお願いします！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25366/",
+      "blogPosts": [
+        {
+          "title": "実は、、、一緒にサッカーしてました🙂‍↕️  #21進藤真奈花",
+          "url": "https://anclas.jp/post-26990/",
+          "date": "2026-06-12"
+        },
+        {
+          "title": "卒業！　#21進藤真奈花",
+          "url": "https://anclas.jp/post-25900/",
+          "date": "2026-04-10"
+        },
+        {
+          "title": "まなかとけいさんとかみさん🧤 #21進藤真奈花",
+          "url": "https://anclas.jp/post-22304/",
+          "date": "2025-10-02"
+        },
+        {
+          "title": "夜景🏙　#21進藤真奈花",
+          "url": "https://anclas.jp/post-21436/",
+          "date": "2025-08-05"
+        },
+        {
+          "title": "自然巡り🌱　#21進藤真奈花",
+          "url": "https://anclas.jp/post-20844/",
+          "date": "2025-06-05"
+        },
+        {
+          "title": "最近の趣味　#21 進藤真奈花",
+          "url": "https://anclas.jp/post-18170/",
+          "date": "2024-12-03"
+        },
+        {
+          "title": "沢山のかわいい後輩ちゃん🤭　#21 進藤真奈花",
+          "url": "https://anclas.jp/post-16632/",
+          "date": "2024-07-22"
+        },
+        {
+          "title": "九州大会⚽️　#21 進藤真奈花",
+          "url": "https://anclas.jp/post-13067/",
+          "date": "2023-10-28"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25408,
+      "number": 22,
+      "position": null,
+      "nameJa": "野田夏未",
+      "nameEn": "NODA NATSUMI",
+      "nickname": "なつ",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/野田＿笑顔-e1774849625191-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/野田＿笑顔-e1774849625191-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/野田＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/野田＿笑顔-e1774849625191.jpg"
+      },
+      "profile": {
+        "birthdate": "1999年7月6日",
+        "hometown": "福岡県",
+        "height": "153cm",
+        "bloodType": "AB型",
+        "career": "FC上西郷WESTKIDS→ウエストキッズDUEL→ニューウェーブ北九州レディース→東海大学付属福岡高等学校→追手門学院大学→ASハリマアルビオン"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "20年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "兄の影響"
+        },
+        {
+          "label": "MBTI",
+          "value": "ISFJ 擁護者"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "アビスパ"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "オムライス"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "おさるのジョージ"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "美味しいものを食べる"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "パス"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "音楽を聴く、ストレッチ"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "強/クソッタレが原動力"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "毎試合得点に絡む"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "実家まで走って帰る"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "いつも応援ありがとうございます！これからもよろしくお願いします！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25408/",
+      "blogPosts": [
+        {
+          "title": "おすすめのご飯屋さん🍚 #22 野田夏未",
+          "url": "https://anclas.jp/post-27101/",
+          "date": "2026-06-16"
+        },
+        {
+          "title": "開幕🔥🏟️ #22野田夏未",
+          "url": "https://anclas.jp/post-25987/",
+          "date": "2026-04-14"
+        },
+        {
+          "title": "最近嬉しかったこと🐵 #22野田夏未",
+          "url": "https://anclas.jp/post-22496/",
+          "date": "2025-10-09"
+        },
+        {
+          "title": "念願の！🍜 　#22野田夏未",
+          "url": "https://anclas.jp/post-21496/",
+          "date": "2025-08-12"
+        },
+        {
+          "title": "最近のごはん🍚　#22野田夏未",
+          "url": "https://anclas.jp/post-20968/",
+          "date": "2025-06-12"
+        },
+        {
+          "title": "サッカー観戦🐝　#22野田夏未",
+          "url": "https://anclas.jp/post-20210/",
+          "date": "2025-04-25"
+        },
+        {
+          "title": "とある日…🌅✈️ 📸　#22 野田夏未",
+          "url": "https://anclas.jp/post-19494/",
+          "date": "2025-03-04"
+        }
+      ],
+      "sns": {}
+    },
+    {
+      "id": 25494,
+      "number": 23,
+      "position": null,
+      "nameJa": "北条あゆみ",
+      "nameEn": "HOJO AYUMI",
+      "nickname": "あゆみ、ぽち",
+      "photo": {
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/北条＿笑顔-e1774849705979-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/03/北条＿笑顔-e1774849705979-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/03/北条＿笑顔-683x1024.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/03/北条＿笑顔-e1774849705979.jpg"
+      },
+      "profile": {
+        "birthdate": "1998年3月30日",
+        "hometown": "奈良県",
+        "height": "157cm",
+        "bloodType": "O型",
+        "career": "富雄FC – 奈良元気sc卑弥呼 – ルネス学園甲賀レディース – 熊本ルネサンスFC – FCふじざくら – FC BASARA甲賀レディース – リリーウルフ.F石川"
+      },
+      "personal": [
+        {
+          "label": "サッカー歴",
+          "value": "21年"
+        },
+        {
+          "label": "サッカーを始めたきっかけ",
+          "value": "兄の影響"
+        },
+        {
+          "label": "趣味、ハマってること",
+          "value": "散歩、音楽、温泉巡り"
+        },
+        {
+          "label": "好きな食べ物",
+          "value": "果物、からあげ"
+        },
+        {
+          "label": "好きなアニメ・キャラクター",
+          "value": "アオのハコ"
+        },
+        {
+          "label": "オフの日の過ごし方",
+          "value": "寝る、ドライブ"
+        },
+        {
+          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+          "value": "運動量"
+        },
+        {
+          "label": "試合前／試合前日のルーティン",
+          "value": "前日の夜にスパイクを磨く"
+        },
+        {
+          "label": "パワーソング(歌手名／曲名)",
+          "value": "sumika/10時の方角"
+        },
+        {
+          "label": "今シーズンの目標",
+          "value": "なでしこリーグ昇格。個人的には、今と過去を比べず、少しずつ積み上げ直す。"
+        },
+        {
+          "label": "今年、挑戦してみたいこと",
+          "value": "新しい趣味やオフの日の過ごし方を見つけたい"
+        },
+        {
+          "label": "ファン・サポーターへ一言",
+          "value": "皆さんとたくさんの「嬉しい」や「楽しい」を共有出来るよう、ピッチ内外問わず頑張っていきます！ぜひ、気軽に試合を観に来てください！"
+        }
+      ],
+      "sourceUrl": "https://anclas.jp/post-25494/",
+      "blogPosts": [
+        {
+          "title": "能登は優しや、土までも。　#23北条あゆみ",
+          "url": "https://anclas.jp/post-27146/",
+          "date": "2026-06-19"
+        },
+        {
+          "title": "猫の島　#23北条あゆみ",
+          "url": "https://anclas.jp/post-25999/",
+          "date": "2026-04-17"
+        }
+      ],
+      "sns": {}
+    }
+  ]
+}

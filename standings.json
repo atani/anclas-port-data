@@ -1,0 +1,208 @@
+{
+  "generatedAt": "2026-07-16T03:36:27.191Z",
+  "season": "2026",
+  "competition": "Qリーグ",
+  "table": [
+    {
+      "rank": 1,
+      "team": "福岡J・アンクラス",
+      "played": 9,
+      "win": 8,
+      "draw": 1,
+      "loss": 0,
+      "gf": 20,
+      "ga": 4,
+      "points": 25,
+      "gd": 16,
+      "isAnclas": true
+    },
+    {
+      "rank": 2,
+      "team": "FC琉球さくら",
+      "played": 9,
+      "win": 8,
+      "draw": 0,
+      "loss": 1,
+      "gf": 23,
+      "ga": 1,
+      "points": 24,
+      "gd": 22,
+      "isAnclas": false
+    },
+    {
+      "rank": 3,
+      "team": "ヴィアマテラス宮崎Alegrita",
+      "played": 9,
+      "win": 5,
+      "draw": 1,
+      "loss": 3,
+      "gf": 20,
+      "ga": 9,
+      "points": 16,
+      "gd": 11,
+      "isAnclas": false
+    },
+    {
+      "rank": 4,
+      "team": "水俣ユニオンフットボールクラブウィメン",
+      "played": 9,
+      "win": 3,
+      "draw": 2,
+      "loss": 4,
+      "gf": 9,
+      "ga": 11,
+      "points": 11,
+      "gd": -2,
+      "isAnclas": false
+    },
+    {
+      "rank": 5,
+      "team": "柳ヶ浦高等学校　女子サッカー部",
+      "played": 9,
+      "win": 3,
+      "draw": 1,
+      "loss": 5,
+      "gf": 9,
+      "ga": 11,
+      "points": 10,
+      "gd": -2,
+      "isAnclas": false
+    },
+    {
+      "rank": 6,
+      "team": "東海大学付属福岡高等学校",
+      "played": 8,
+      "win": 2,
+      "draw": 0,
+      "loss": 6,
+      "gf": 5,
+      "ga": 17,
+      "points": 6,
+      "gd": -12,
+      "isAnclas": false
+    },
+    {
+      "rank": 7,
+      "team": "神村学園高等部女子サッカー部",
+      "played": 8,
+      "win": 1,
+      "draw": 2,
+      "loss": 5,
+      "gf": 5,
+      "ga": 18,
+      "points": 5,
+      "gd": -13,
+      "isAnclas": false
+    },
+    {
+      "rank": 8,
+      "team": "国見FCレディース",
+      "played": 7,
+      "win": 0,
+      "draw": 1,
+      "loss": 6,
+      "gf": 2,
+      "ga": 22,
+      "points": 1,
+      "gd": -20,
+      "isAnclas": false
+    }
+  ],
+  "scorers": [
+    {
+      "rank": 1,
+      "leagueRank": 3,
+      "name": "嘉数 クレア姫麗",
+      "number": 11,
+      "goals": 4
+    },
+    {
+      "rank": 1,
+      "leagueRank": 3,
+      "name": "原 日樺",
+      "number": 13,
+      "goals": 4
+    },
+    {
+      "rank": 3,
+      "leagueRank": 10,
+      "name": "澁澤 光",
+      "number": 3,
+      "goals": 2
+    },
+    {
+      "rank": 3,
+      "leagueRank": 10,
+      "name": "端山 新",
+      "number": 16,
+      "goals": 2
+    },
+    {
+      "rank": 3,
+      "leagueRank": 10,
+      "name": "玉城 薪瀬",
+      "number": 18,
+      "goals": 2
+    },
+    {
+      "rank": 6,
+      "leagueRank": 20,
+      "name": "大河内 友貴",
+      "number": 5,
+      "goals": 1
+    },
+    {
+      "rank": 6,
+      "leagueRank": 20,
+      "name": "野沢 真由",
+      "number": 8,
+      "goals": 1
+    },
+    {
+      "rank": 6,
+      "leagueRank": 20,
+      "name": "平坂 咲希",
+      "number": 10,
+      "goals": 1
+    },
+    {
+      "rank": 6,
+      "leagueRank": 20,
+      "name": "田中 花奈",
+      "number": 15,
+      "goals": 1
+    }
+  ],
+  "assists": [
+    {
+      "rank": 1,
+      "name": "原日樺",
+      "number": 13,
+      "assists": 2
+    },
+    {
+      "rank": 1,
+      "name": "田中花奈",
+      "number": 15,
+      "assists": 2
+    },
+    {
+      "rank": 1,
+      "name": "野田夏未",
+      "number": 22,
+      "assists": 2
+    },
+    {
+      "rank": 4,
+      "name": "大河内友貴",
+      "number": 5,
+      "assists": 1
+    },
+    {
+      "rank": 4,
+      "name": "端山新",
+      "number": 16,
+      "assists": 1
+    }
+  ]
+}

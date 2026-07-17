@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T22:08:57.419Z",
+  "generatedAt": "2026-07-17T23:01:30.334Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -26,7 +26,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     "latestResult": {
       "id": "su-post-9892",
@@ -412,7 +413,8 @@
         "https://anclas.jp/wp-content/uploads/2026/07/S__63029394_0-1.jpg",
         "https://anclas.jp/wp-content/uploads/2026/07/S__63029393_0-1.jpg",
         "https://anclas.jp/wp-content/uploads/2026/07/S__63029395_0-1.jpg"
-      ]
+      ],
+      "forecast": null
     },
     "latestPodcast": {
       "title": "#15【インタビュー：平坂咲希】シル活だけじゃない！！ハマり始めて危険な趣味",
@@ -634,7 +636,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9354",
@@ -1009,7 +1012,8 @@
         "https://anclas.jp/wp-content/uploads/2026/04/S__55091213_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/04/S__55091215_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/04/S__55091232_0.jpg"
-      ]
+      ],
+      "forecast": null
     },
     {
       "id": "su-post-9459",
@@ -1038,7 +1042,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9359",
@@ -1067,7 +1072,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9441",
@@ -1096,7 +1102,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9540",
@@ -1125,7 +1132,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9434",
@@ -1154,7 +1162,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9417",
@@ -1183,7 +1192,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9362",
@@ -1212,7 +1222,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9448",
@@ -1614,7 +1625,8 @@
         "https://anclas.jp/wp-content/uploads/2026/05/S__56893549_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/05/S__56893534_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/05/S__56893537_0.jpg"
-      ]
+      ],
+      "forecast": null
     },
     {
       "id": "su-post-9390",
@@ -1643,7 +1655,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9470",
@@ -1672,7 +1685,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9552",
@@ -1701,7 +1715,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9404",
@@ -1730,7 +1745,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9420",
@@ -2094,7 +2110,8 @@
         "https://anclas.jp/wp-content/uploads/2026/05/S__57745527_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/05/S__57745528_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/05/S__57745529.jpg"
-      ]
+      ],
+      "forecast": null
     },
     {
       "id": "su-post-9496",
@@ -2123,7 +2140,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9410",
@@ -2152,7 +2170,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9422",
@@ -2181,7 +2200,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9416",
@@ -2618,7 +2638,8 @@
         "https://anclas.jp/wp-content/uploads/2026/05/S__58286178_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/05/S__58286148_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/05/S__58286183_0.jpg"
-      ]
+      ],
+      "forecast": null
     },
     {
       "id": "su-post-9357",
@@ -3074,7 +3095,8 @@
         "https://anclas.jp/wp-content/uploads/2026/06/S__58720406_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/06/S__58720403_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/06/S__58720404_0.jpg"
-      ]
+      ],
+      "forecast": null
     },
     {
       "id": "su-post-9396",
@@ -3103,7 +3125,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9409",
@@ -3132,7 +3155,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9408",
@@ -3659,7 +3683,8 @@
         "https://anclas.jp/wp-content/uploads/2026/06/S__59384010_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/06/S__59384008_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/06/S__59384011_0.jpg"
-      ]
+      ],
+      "forecast": null
     },
     {
       "id": "su-post-9555",
@@ -3688,7 +3713,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9452",
@@ -3717,7 +3743,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9400",
@@ -3746,7 +3773,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9519",
@@ -4130,7 +4158,8 @@
         "https://anclas.jp/wp-content/uploads/2026/06/S__60055656_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/06/S__60055654_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/06/S__60055655_0.jpg"
-      ]
+      ],
+      "forecast": null
     },
     {
       "id": "su-post-9389",
@@ -4647,7 +4676,8 @@
         "https://anclas.jp/wp-content/uploads/2026/06/S__61456613_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/06/S__61456614_0.jpg",
         "https://anclas.jp/wp-content/uploads/2026/06/S__61456615_0.jpg"
-      ]
+      ],
+      "forecast": null
     },
     {
       "id": "su-post-9426",
@@ -4673,7 +4703,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9432",
@@ -4699,7 +4730,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9457",
@@ -4728,7 +4760,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9514",
@@ -4757,7 +4790,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9548",
@@ -4786,7 +4820,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9411",
@@ -4812,7 +4847,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9405",
@@ -4841,7 +4877,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9414",
@@ -4870,7 +4907,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9892",
@@ -5256,7 +5294,8 @@
         "https://anclas.jp/wp-content/uploads/2026/07/S__63029394_0-1.jpg",
         "https://anclas.jp/wp-content/uploads/2026/07/S__63029393_0-1.jpg",
         "https://anclas.jp/wp-content/uploads/2026/07/S__63029395_0-1.jpg"
-      ]
+      ],
+      "forecast": null
     },
     {
       "id": "su-post-9380",
@@ -5282,7 +5321,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9536",
@@ -5308,7 +5348,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9412",
@@ -5334,7 +5375,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9451",
@@ -5360,7 +5402,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9442",
@@ -5386,7 +5429,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9437",
@@ -5412,7 +5456,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9415",
@@ -5438,7 +5483,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9549",
@@ -5464,7 +5510,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9532",
@@ -5490,7 +5537,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9428",
@@ -5516,7 +5564,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9447",
@@ -5542,7 +5591,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9449",
@@ -5568,7 +5618,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9438",
@@ -5594,7 +5645,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9462",
@@ -5620,7 +5672,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9512",
@@ -5646,7 +5699,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9421",
@@ -5672,7 +5726,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9454",
@@ -5698,7 +5753,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9371",
@@ -5724,7 +5780,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     },
     {
       "id": "su-post-9439",
@@ -5750,7 +5807,8 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
-      "photoGallery": []
+      "photoGallery": [],
+      "forecast": null
     }
   ]
 }

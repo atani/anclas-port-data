@@ -72,6 +72,20 @@ export interface Match {
   matchReport: MatchReport | null;
   /** フォトギャラリー画像URL（anclas.jp マッチレポート由来）。未取得なら空配列 */
   photoGallery: string[];
+  /** 会場の天気予報（Open-Meteo 由来、キックオフ14日前から）。対象外・未取得なら null */
+  forecast: MatchForecast | null;
+}
+
+/** 試合会場の天気予報（キックオフ時刻の予報値） */
+export interface MatchForecast {
+  /** 気温 ℃ */
+  temperatureC: number;
+  /** 降水確率 %（0-100）。取得できない場合 null */
+  precipitationProbability: number | null;
+  /** WMO weather code（表示側でアイコン・ラベルに変換） */
+  weatherCode: number;
+  /** 予報取得時刻 ISO8601 */
+  fetchedAt: string;
 }
 
 /** 試合のフォトギャラリー画像URL（anclas.jp マッチレポート由来） */

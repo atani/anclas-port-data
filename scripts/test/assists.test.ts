@@ -52,6 +52,7 @@ function makeMatch(goals: GoalEvent[], overrides: Partial<Match> = {}): Match {
     cards: [],
     matchReport: null,
     photoGallery: [],
+    forecast: null,
     ...overrides,
   };
 }

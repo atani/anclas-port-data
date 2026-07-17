@@ -13,6 +13,7 @@ import { buildResultNotification, detectNewlyFinishedAnclasMatches } from "./lib
 import { writeNotifyQueue } from "./lib/notify-queue.js";
 import { parseQLeagueMatches } from "./lib/qleague-parser.js";
 import { fetchShopItems } from "./lib/shop.js";
+import { fetchForecast } from "./lib/weather-client.js";
 import { fetchLatestPodcast } from "./lib/spotify.js";
 import { fetchLatestYouTubeVideos } from "./lib/youtube.js";
 import { calculateStandings } from "./lib/standings.js";
@@ -33,7 +34,7 @@ const DATA_DIR = new URL("../../", import.meta.url);
 async function fetchHtml(url: string): Promise<string> {
   const res = await fetch(url, {
     signal: AbortSignal.timeout(20_000),
-    headers: { "User-Agent": "anclas-port-pipeline (+https://github.com/atani/anclas-port-data)" },
+    headers: { "User-Agent": "anclas-port-pipeline (+https://github.com/atani/anclas-port)" },
   });
   if (!res.ok) throw new Error(`fetch failed: ${res.status} ${res.statusText} ${url}`);
   return res.text();
@@ -235,6 +236,33 @@ async function main(): Promise<void> {
       } catch { /* not found */ }
     }
     if (found > 0) logger.info(`マッチデープログラム: ${found}試合分`);
+  }
+
+  // 5.7. 会場の天気予報（キックオフ 14 日前から、Open-Meteo）
+  try {
+    const venuesPath = new URL("./data/venues.json", import.meta.url);
+    const venues = JSON.parse(readFileSync(venuesPath, "utf-8")) as Record<
+      string,
+      { latitude: number; longitude: number; place: string }
+    >;
+    const now = Date.now();
+    let forecastCount = 0;
+    for (const m of matches) {
+      if (!m.isAnclas || m.status !== "scheduled" || !m.venue) continue;
+      const venue = venues[m.venue];
+      if (!venue) continue;
+      const daysAhead = (new Date(m.datetime).getTime() - now) / 86_400_000;
+      if (daysAhead < 0 || daysAhead > 14) continue;
+      try {
+        m.forecast = await fetchForecast(venue.latitude, venue.longitude, m.datetime);
+        if (m.forecast) forecastCount++;
+      } catch (e) {
+        logger.warn(`天気予報取得失敗 ${m.date} ${m.venue}: ${e}`);
+      }
+    }
+    if (forecastCount > 0) logger.info(`天気予報: ${forecastCount}試合分取得`);
+  } catch {
+    // venues.json が無くても致命ではない
   }
 
   // 前回値引き継ぎ: matchdayProgramUrl

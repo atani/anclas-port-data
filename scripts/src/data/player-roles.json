@@ -1,0 +1,6 @@
+{
+  "_comment": "キャプテン・副キャプテン（手動管理）。背番号をキーにする。値は captain / vice_captain。2026 シーズン: C=#5 大河内友貴, VC=#13 原日樺・#16 端山新",
+  "5": "captain",
+  "13": "vice_captain",
+  "16": "vice_captain"
+}

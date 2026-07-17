@@ -229,7 +229,12 @@ export interface Player {
   blogPosts: BlogPost[];
   /** 公開SNSアカウント（手動管理、publicアカウントのみ） */
   sns: PlayerSns;
+  /** キャプテン・副キャプテン（手動管理 player-roles.json 由来）。該当なしは null */
+  role: PlayerRole | null;
 }
+
+/** 選手の役職 */
+export type PlayerRole = "captain" | "vice_captain";
 
 /** 選手の公開SNSアカウント */
 export interface PlayerSns {

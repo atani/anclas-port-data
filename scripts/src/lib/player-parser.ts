@@ -147,6 +147,7 @@ export function parsePlayer(post: WPPost): Player {
     sourceUrl: post.link,
     blogPosts: [],
     sns: {},
+    role: null,
   };
 }
 

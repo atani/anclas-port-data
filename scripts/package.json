@@ -13,8 +13,9 @@
     "generate:matches": "tsx src/generate-matches.ts",
     "generate:players": "tsx src/generate-players.ts",
     "generate:partners": "tsx src/generate-partners.ts",
-    "generate": "npm run generate:matches && (npm run generate:players || echo 'players generation failed (non-fatal)') && (npm run generate:partners || echo 'partners generation failed (non-fatal)')",
-    "notify": "tsx src/notify-results.ts"
+    "generate": "npm run generate:matches && (npm run generate:players || echo 'players generation failed (non-fatal)') && (npm run generate:partners || echo 'partners generation failed (non-fatal)') && (npm run generate:news || echo 'news generation failed (non-fatal)')",
+    "notify": "tsx src/notify-results.ts",
+    "generate:news": "tsx src/generate-news.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

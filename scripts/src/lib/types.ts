@@ -301,6 +301,26 @@ export interface PlayersData {
   players: Player[];
 }
 
+/** news.json のルート */
+export interface NewsData {
+  generatedAt: string;
+  /** 新しい順 */
+  items: NewsItem[];
+}
+
+/** クラブお知らせ1件（anclas.jp「お知らせ」カテゴリ由来） */
+export interface NewsItem {
+  /** WP 投稿ID */
+  id: number;
+  title: string;
+  /** 投稿日時（WP ローカル時刻 ISO8601） */
+  date: string;
+  /** 記事URL */
+  url: string;
+  /** アイキャッチ画像URL。無ければ null */
+  thumbnailUrl: string | null;
+}
+
 /** オフィシャルパートナー1社（anclas.jp トップページ由来） */
 export interface Partner {
   /** 表示名（img alt かロゴファイル名から補完。UI では使わず best-effort） */

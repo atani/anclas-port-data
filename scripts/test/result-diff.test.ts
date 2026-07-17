@@ -38,6 +38,7 @@ function match(
     cards: [],
     matchReport: null,
     photoGallery: [],
+    forecast: null,
   };
 }
 

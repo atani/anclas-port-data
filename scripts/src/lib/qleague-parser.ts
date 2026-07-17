@@ -194,6 +194,7 @@ function collectAllMatches(html: string, competition: string): SectionedMatch[] 
         cards: [],
         matchReport: null,
         photoGallery: [],
+        forecast: null,
         section: currentSection,
       });
     }

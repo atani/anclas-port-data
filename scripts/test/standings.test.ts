@@ -32,6 +32,7 @@ function m(home: string, away: string, hs: number, as: number): Match {
     cards: [],
     matchReport: null,
     photoGallery: [],
+    forecast: null,
   };
 }
 

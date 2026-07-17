@@ -60,6 +60,23 @@ async function main(): Promise<void> {
     // SNS ファイルが無くても問題ない
   }
 
+  // キャプテン・副キャプテン（手動管理の JSON、背番号キー）
+  try {
+    const rolesPath = new URL("./data/player-roles.json", import.meta.url);
+    const rolesData = JSON.parse(readFileSync(rolesPath, "utf-8")) as Record<string, string>;
+    let roleCount = 0;
+    for (const p of players) {
+      const role = rolesData[String(p.number)];
+      if (role === "captain" || role === "vice_captain") {
+        p.role = role;
+        roleCount++;
+      }
+    }
+    if (roleCount > 0) logger.info(`役職: ${roleCount}選手に紐付け`);
+  } catch {
+    // 役職ファイルが無くても問題ない
+  }
+
   const data: PlayersData = {
     generatedAt: new Date().toISOString(),
     season: category.season,

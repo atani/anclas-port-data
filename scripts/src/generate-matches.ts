@@ -30,13 +30,26 @@ const Q_LEAGUE_URL = "https://q-league.net/match/";
 const COMPETITION = "Qリーグ";
 const DATA_DIR = new URL("../../", import.meta.url);
 
+/// 一過性のネットワークエラーで毎時 run が落ちないよう、指数バックオフ付きで最大3回試行する
 async function fetchHtml(url: string): Promise<string> {
-  const res = await fetch(url, {
-    signal: AbortSignal.timeout(20_000),
-    headers: { "User-Agent": "anclas-port-pipeline (+https://github.com/atani/anclas-port-data)" },
-  });
-  if (!res.ok) throw new Error(`fetch failed: ${res.status} ${res.statusText} ${url}`);
-  return res.text();
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await fetch(url, {
+        signal: AbortSignal.timeout(20_000),
+        headers: { "User-Agent": "anclas-port-pipeline (+https://github.com/atani/anclas-port)" },
+      });
+      if (!res.ok) throw new Error(`fetch failed: ${res.status} ${res.statusText} ${url}`);
+      return await res.text();
+    } catch (e) {
+      lastError = e;
+      if (attempt < 3) {
+        logger.warn(`fetch retry ${attempt}/2 (${url}): ${e}`);
+        await new Promise((resolve) => setTimeout(resolve, 3_000 * attempt));
+      }
+    }
+  }
+  throw lastError;
 }
 
 /** players.json から「名前(空白除去) → 背番号」マップを作る（得点ランキングの番号補完用） */

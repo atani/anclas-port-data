@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T06:43:30.606Z",
+  "generatedAt": "2026-07-21T09:42:47.876Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -418,13 +418,25 @@
     },
     "latestPodcast": {
       "title": "＃16【インタビュー：森和奏】人として成長できた高校時代。人に媚びない愛されキャラ",
-      "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+      "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
       "showUrl": "https://open.spotify.com/show/3RnkWRyIMYe9IdtMmK7KFK",
       "embedUrl": "https://open.spotify.com/embed/show/3RnkWRyIMYe9IdtMmK7KFK?utm_source=oembed",
       "publishedAt": "2026-07-19"
     },
-    "latestYouTube": null,
-    "latestYouTubeShort": null,
+    "latestYouTube": {
+      "videoId": "1Je5QQTGuDE",
+      "title": "【ANCLASテーマソング】2026シーズン開幕！テーマソング初披露に密着｜制作裏側ドキュメンタリー",
+      "thumbnailUrl": "https://i2.ytimg.com/vi/1Je5QQTGuDE/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=1Je5QQTGuDE",
+      "publishedAt": "2026-04-30T11:00:06+00:00"
+    },
+    "latestYouTubeShort": {
+      "videoId": "lbfzRHU1Djs",
+      "title": "想いをのせたラップを選手のアイデアで制作！！！",
+      "thumbnailUrl": "https://i1.ytimg.com/vi/lbfzRHU1Djs/hqdefault.jpg",
+      "url": "https://www.youtube.com/shorts/lbfzRHU1Djs",
+      "publishedAt": "2026-03-27T09:01:00+00:00"
+    },
     "shopItems": [
       {
         "id": "146226679",

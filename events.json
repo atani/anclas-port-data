@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-07-22T12:00:00Z",
+  "items": [
+    {
+      "id": "escort-kids-photos-2026",
+      "title": "エスコートキッズ写真販売",
+      "summary": "エスコートキッズの思い出の写真を、期間限定で閲覧・購入できます。",
+      "imageUrl": "https://anclas.jp/wp-content/uploads/2026/05/S__58286174_0-1024x683.jpg",
+      "startsAt": "2026-07-22T18:00:00+09:00",
+      "endsAt": "2026-08-12T18:00:00+09:00",
+      "periodLabel": "販売期間",
+      "details": [
+        {
+          "label": "展示室コード",
+          "value": "57528M95P"
+        }
+      ],
+      "actionTitle": "写真販売のお知らせを見る",
+      "actionUrl": "https://anclas.jp/post-27828/",
+      "priority": 100
+    }
+  ]
+}

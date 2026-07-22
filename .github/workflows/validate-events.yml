@@ -1,0 +1,39 @@
+name: validate-events
+
+on:
+  pull_request:
+    paths:
+      - "events.json"
+      - "scripts/test/events.test.ts"
+      - ".github/workflows/validate-events.yml"
+  push:
+    branches: [main]
+    paths:
+      - "events.json"
+      - "scripts/test/events.test.ts"
+      - ".github/workflows/validate-events.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install dependencies
+        working-directory: scripts
+        run: npm ci
+
+      - name: Validate events
+        working-directory: scripts
+        run: |
+          npm run typecheck
+          npm test

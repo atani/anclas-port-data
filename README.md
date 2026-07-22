@@ -34,6 +34,7 @@ Home screen. The app displays the item from `startsAt` until immediately before
   "imageUrl": "https://example.com/image.jpg",
   "startsAt": "2026-07-22T18:00:00+09:00",
   "endsAt": "2026-08-12T18:00:00+09:00",
+  "periodLabel": "開催期間",
   "actionTitle": "詳しく見る",
   "actionUrl": "https://example.com/details",
   "priority": 100

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T00:15:04.474Z",
+  "generatedAt": "2026-07-24T03:49:35.446Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -423,20 +423,8 @@
       "embedUrl": "https://open.spotify.com/embed/show/3RnkWRyIMYe9IdtMmK7KFK?utm_source=oembed",
       "publishedAt": "2026-07-22"
     },
-    "latestYouTube": {
-      "videoId": "1Je5QQTGuDE",
-      "title": "【ANCLASテーマソング】2026シーズン開幕！テーマソング初披露に密着｜制作裏側ドキュメンタリー",
-      "thumbnailUrl": "https://i2.ytimg.com/vi/1Je5QQTGuDE/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=1Je5QQTGuDE",
-      "publishedAt": "2026-04-30T11:00:06+00:00"
-    },
-    "latestYouTubeShort": {
-      "videoId": "lbfzRHU1Djs",
-      "title": "想いをのせたラップを選手のアイデアで制作！！！",
-      "thumbnailUrl": "https://i1.ytimg.com/vi/lbfzRHU1Djs/hqdefault.jpg",
-      "url": "https://www.youtube.com/shorts/lbfzRHU1Djs",
-      "publishedAt": "2026-03-27T09:01:00+00:00"
-    },
+    "latestYouTube": null,
+    "latestYouTubeShort": null,
     "shopItems": [
       {
         "id": "146226679",

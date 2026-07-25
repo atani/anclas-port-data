@@ -1,0 +1,11 @@
+{
+  "nadeshiko": [
+    { "year": 2021, "teamId": "08" },
+    { "year": 2022, "teamId": "04" },
+    { "year": 2023, "teamId": "03" },
+    { "year": 2024, "teamId": "04" }
+  ],
+  "goalnote": [
+    { "year": 2025, "tournamentId": "17194" }
+  ]
+}

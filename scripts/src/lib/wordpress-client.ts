@@ -173,6 +173,66 @@ function htmlToPlainText(html: string): string {
     .trim();
 }
 
+export interface ReportedGoal {
+  minute: string;
+  playerNumber: number | null;
+  playerName: string;
+}
+
+/**
+ * 公式マッチレポートの「得点 / 交代」にある得点行を抽出する。
+ * GoalNote の得点経過が空の場合に限り、無失点試合の補完へ使用する。
+ */
+export function parseReportedGoals(html: string): ReportedGoal[] {
+  const text = htmlToPlainText(html);
+  const lines = [...text.matchAll(/得点[：:]\s*([^\n]+)/g)]
+    .map((match) => match[1]?.trim() ?? "");
+  const line = [...lines].reverse().find(
+    (entry: string) => /(?:前半|後半)\d+(?:\+\d+)?分/.test(entry),
+  )
+    ?? lines.at(-1);
+  if (!line) return [];
+  const entries = /(?:前半|後半)\d+(?:\+\d+)?分/.test(line)
+    ? line.split(/[、,]/)
+    : line.split(/[、,]|(?=[#＃])/);
+
+  return entries.flatMap((entry): ReportedGoal[] => {
+    const normalized = entry.trim().replace(/\s+/g, " ");
+    const timing = normalized.match(/^(前半|後半)(\d+)(?:\+(\d+))?分\s*(.*)$/);
+    const period = timing?.[1];
+    const baseMinute = Number(timing?.[2] ?? 0);
+    const addedMinute = Number(timing?.[3] ?? 0);
+    const totalMinute = (period === "後半" ? 40 : 0) + baseMinute;
+    const minute = timing
+      ? (addedMinute > 0 ? `${totalMinute}+${addedMinute}分` : `${totalMinute}分`)
+      : "時間不明";
+    const scorer = (timing?.[4] ?? normalized).trim();
+    const countMatch = scorer.match(/[×xX]\s*(\d+)\s*$/);
+    const count = Number(countMatch?.[1] ?? 1);
+    const scorerWithoutCount = scorer.replace(/[×xX]\s*\d+\s*$/, "").trim();
+
+    if (/オウンゴール/.test(scorerWithoutCount)) {
+      return Array.from(
+        { length: count },
+        () => ({ minute, playerNumber: null, playerName: "オウンゴール" }),
+      );
+    }
+
+    const numberedPlayer = scorerWithoutCount.match(/^[#＃](\d+)\s*(.+)$/);
+    const unnumberedPlayer = scorerWithoutCount.match(/^[#＃]?\s*(.+)$/);
+    const playerName = numberedPlayer?.[2]?.trim() ?? unnumberedPlayer?.[1]?.trim();
+    if (!playerName) return [];
+    return Array.from(
+      { length: count },
+      () => ({
+        minute,
+        playerNumber: numberedPlayer ? Number(numberedPlayer[1]) : null,
+        playerName,
+      }),
+    );
+  });
+}
+
 /** マッチレポート本文からコメントを抽出 */
 function parseMatchReportContent(html: string, postUrl: string): MatchReport {
   const text = htmlToPlainText(html);
@@ -261,6 +321,7 @@ function parseGalleryImages(html: string): string[] {
 export interface MatchReportResult {
   report: MatchReport;
   photoGallery: string[];
+  reportedGoals: ReportedGoal[];
 }
 
 /**
@@ -272,18 +333,57 @@ export async function findMatchReport(
   matchDate: string,
 ): Promise<MatchReportResult | null> {
   try {
-    const posts = await getPosts({ search: "マッチレポート " + opponentName.slice(0, 6), perPage: 5, order: "desc" });
+    const opponentKey = opponentName
+      .replace(/女子サッカー部|高等学校|高等部|高校|大学|レディース|FC/g, "")
+      .replace(/[\s・　]/g, "");
+    const searchKeys = [...new Set([
+      opponentKey.slice(0, 4),
+      opponentKey.slice(0, 3),
+      opponentName.slice(0, 4),
+    ].filter((key) => key.length >= 2))];
+    const postMap = new Map<number, WPPost>();
+    for (const key of searchKeys) {
+      const posts = await getPosts({
+        search: `マッチレポート ${key}`,
+        perPage: 10,
+        order: "desc",
+      });
+      for (const post of posts) postMap.set(post.id, post);
+    }
     const matchMs = new Date(matchDate).getTime();
     const sevenDaysMs = 7 * 24 * 60 * 60 * 1000;
+    // 学校名は記事タイトル側で「東海大学」→「東海大」のように省略される。
+    // 投稿日の近さと後段の得点数も照合するため、タイトルは先頭2文字で候補を絞る。
+    const titleMatchLength = (post: WPPost): number => {
+      const title = decodeEntities(post.title.rendered).replace(/[\s・　]/g, "");
+      let length = 0;
+      while (
+        length < opponentKey.length &&
+        title.includes(opponentKey.slice(0, length + 1))
+      ) {
+        length++;
+      }
+      return length;
+    };
+    const posts = [...postMap.values()].sort((a, b) => {
+      const matchLengthDifference = titleMatchLength(b) - titleMatchLength(a);
+      if (matchLengthDifference !== 0) return matchLengthDifference;
+      return (
+        Math.abs(new Date(a.date).getTime() - matchMs) -
+        Math.abs(new Date(b.date).getTime() - matchMs)
+      );
+    });
 
     for (const p of posts) {
-      const title = p.title.rendered;
+      const title = decodeEntities(p.title.rendered).replace(/[\s・　]/g, "");
       if (!/マッチレポート/.test(title)) continue;
+      if (titleMatchLength(p) < 2) continue;
       const postMs = new Date(p.date).getTime();
       if (Math.abs(postMs - matchMs) > sevenDaysMs) continue;
       return {
         report: parseMatchReportContent(p.content.rendered, p.link),
         photoGallery: parseGalleryImages(p.content.rendered),
+        reportedGoals: parseReportedGoals(p.content.rendered),
       };
     }
   } catch (e) {

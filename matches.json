@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T09:14:22.928Z",
+  "generatedAt": "2026-07-25T09:46:11.064Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -46,7 +46,29 @@
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-7-2/",
       "venue": "エコパーク水俣 陸上競技場",
-      "goals": [],
+      "goals": [
+        {
+          "minute": "後半",
+          "team": "水俣ユニオンフットボールクラブウィメン",
+          "playerNumber": 17,
+          "playerName": "本村 海里",
+          "assist": null
+        },
+        {
+          "minute": "前半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 8,
+          "playerName": "野沢 真由",
+          "assist": null
+        },
+        {
+          "minute": "後半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 13,
+          "playerName": "原 日樺",
+          "assist": null
+        }
+      ],
       "starters": [
         {
           "number": 1,
@@ -252,7 +274,7 @@
       "substitutions": [
         {
           "minute": "ＨＴ",
-          "team": "home",
+          "team": "away",
           "outNumber": 23,
           "outName": "北条 あゆみ",
           "inNumber": 25,
@@ -418,7 +440,7 @@
     },
     "latestPodcast": {
       "title": "#17【インタビュー：嘉数クレア姫麗（前編）】自信喪失...紆余曲折を経て自分のサッカーに辿り着くまでのストーリー",
-      "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+      "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
       "showUrl": "https://open.spotify.com/show/3RnkWRyIMYe9IdtMmK7KFK",
       "embedUrl": "https://open.spotify.com/embed/show/3RnkWRyIMYe9IdtMmK7KFK?utm_source=oembed",
       "publishedAt": "2026-07-22"
@@ -430,13 +452,7 @@
       "url": "https://www.youtube.com/watch?v=Tun-vMtcLBk",
       "publishedAt": "2026-07-25T01:17:29+00:00"
     },
-    "latestYouTubeShort": {
-      "videoId": "lbfzRHU1Djs",
-      "title": "想いをのせたラップを選手のアイデアで制作！！！",
-      "thumbnailUrl": "https://i1.ytimg.com/vi/lbfzRHU1Djs/hqdefault.jpg",
-      "url": "https://www.youtube.com/shorts/lbfzRHU1Djs",
-      "publishedAt": "2026-03-27T09:01:00+00:00"
-    },
+    "latestYouTubeShort": null,
     "shopItems": [
       {
         "id": "146226679",
@@ -1464,7 +1480,7 @@
       "substitutions": [
         {
           "minute": "50分(後半10分)",
-          "team": "home",
+          "team": "away",
           "outNumber": 7,
           "outName": "鴨川 雛乃",
           "inNumber": 9,
@@ -1472,7 +1488,7 @@
         },
         {
           "minute": "61分(後半21分)",
-          "team": "home",
+          "team": "away",
           "outNumber": 3,
           "outName": "平 望優",
           "inNumber": 10,
@@ -1480,7 +1496,7 @@
         },
         {
           "minute": "71分(後半31分)",
-          "team": "home",
+          "team": "away",
           "outNumber": 6,
           "outName": "岡﨑 亜美伽",
           "inNumber": 19,
@@ -1488,7 +1504,7 @@
         },
         {
           "minute": "71分(後半31分)",
-          "team": "home",
+          "team": "away",
           "outNumber": 18,
           "outName": "桜井 みゆき",
           "inNumber": 5,
@@ -1765,7 +1781,29 @@
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-34/",
       "venue": "東海大学付属福岡高校人工芝グランド",
-      "goals": [],
+      "goals": [
+        {
+          "minute": "3分(前半3分)",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 3,
+          "playerName": "澁澤 光",
+          "assist": null
+        },
+        {
+          "minute": "6分(前半6分)",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 16,
+          "playerName": "端山 新",
+          "assist": null
+        },
+        {
+          "minute": "63分(後半23分)",
+          "team": "福岡J・アンクラス",
+          "playerNumber": null,
+          "playerName": "オウンゴール",
+          "assist": null
+        }
+      ],
       "starters": [
         {
           "number": 1,
@@ -2658,7 +2696,29 @@
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-16-2/",
       "venue": "桷志田サッカー場人工芝A",
-      "goals": [],
+      "goals": [
+        {
+          "minute": "32分(前半32分)",
+          "team": "神村学園高等部女子サッカー部",
+          "playerNumber": 38,
+          "playerName": "山野 蒼空",
+          "assist": null
+        },
+        {
+          "minute": "59分(後半19分)",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 3,
+          "playerName": "澁澤 光",
+          "assist": null
+        },
+        {
+          "minute": "69分(後半29分)",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 18,
+          "playerName": "玉城 薪瀬",
+          "assist": null
+        }
+      ],
       "starters": [
         {
           "number": 35,
@@ -4927,7 +4987,29 @@
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-7-2/",
       "venue": "エコパーク水俣 陸上競技場",
-      "goals": [],
+      "goals": [
+        {
+          "minute": "後半",
+          "team": "水俣ユニオンフットボールクラブウィメン",
+          "playerNumber": 17,
+          "playerName": "本村 海里",
+          "assist": null
+        },
+        {
+          "minute": "前半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 8,
+          "playerName": "野沢 真由",
+          "assist": null
+        },
+        {
+          "minute": "後半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 13,
+          "playerName": "原 日樺",
+          "assist": null
+        }
+      ],
       "starters": [
         {
           "number": 1,
@@ -5133,7 +5215,7 @@
       "substitutions": [
         {
           "minute": "ＨＴ",
-          "team": "home",
+          "team": "away",
           "outNumber": 23,
           "outName": "北条 あゆみ",
           "inNumber": 25,

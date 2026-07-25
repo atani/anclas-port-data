@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T03:41:51.336Z",
+  "generatedAt": "2026-07-25T06:32:19.984Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -423,20 +423,8 @@
       "embedUrl": "https://open.spotify.com/embed/show/3RnkWRyIMYe9IdtMmK7KFK?utm_source=oembed",
       "publishedAt": "2026-07-22"
     },
-    "latestYouTube": {
-      "videoId": "Tun-vMtcLBk",
-      "title": "◤🐝アビスパ福岡 × 福岡J・アンクラス⚓️◢",
-      "thumbnailUrl": "https://i1.ytimg.com/vi/Tun-vMtcLBk/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=Tun-vMtcLBk",
-      "publishedAt": "2026-07-25T01:17:29+00:00"
-    },
-    "latestYouTubeShort": {
-      "videoId": "lbfzRHU1Djs",
-      "title": "想いをのせたラップを選手のアイデアで制作！！！",
-      "thumbnailUrl": "https://i1.ytimg.com/vi/lbfzRHU1Djs/hqdefault.jpg",
-      "url": "https://www.youtube.com/shorts/lbfzRHU1Djs",
-      "publishedAt": "2026-03-27T09:01:00+00:00"
-    },
+    "latestYouTube": null,
+    "latestYouTubeShort": null,
     "shopItems": [
       {
         "id": "146226679",

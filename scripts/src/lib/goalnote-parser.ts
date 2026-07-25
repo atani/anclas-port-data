@@ -1,3 +1,4 @@
+import { normalizeTeamName } from "./qleague-parser.js";
 import {
   ANCLAS_TEAM_NAME,
   type CardEvent,
@@ -89,9 +90,13 @@ export function parseGoalNoteSchedule(html: string): GoalNoteScheduleRow[] {
   return rows;
 }
 
-/** チーム名を正規化して照合キーにする（全半角・スペース・ウィ/ウイ揺れを吸収） */
+/**
+ * チーム名を照合キーにする。
+ * 「高校」と「高等学校」のような言い換えはスペースや全半角の正規化では吸収できないため、
+ * 別名表（qleague-parser の TEAM_ALIASES）で代表名へ寄せてからキー化する。
+ */
 function normTeam(s: string): string {
-  return s
+  return normalizeTeamName(s)
     .replace(/[\s　]/g, "")
     .replace(/[！-～]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0))
     .replace(/ウイ/g, "ウィ");
@@ -193,11 +198,79 @@ function parseGoals(html: string): GoalEvent[] {
   return goals;
 }
 
+/** 「得点経過」がない旧形式ページの左右得点表を抽出する */
+function parseGoalSummaryTable(tableHtml: string, team: string): GoalEvent[] {
+  const goals: GoalEvent[] = [];
+  const trRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+  const tdRe = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+  let period = "時間不明";
+  let tr: RegExpExecArray | null;
+
+  while ((tr = trRe.exec(tableHtml)) !== null) {
+    const cells: string[] = [];
+    tdRe.lastIndex = 0;
+    let td: RegExpExecArray | null;
+    while ((td = tdRe.exec(tr[1] ?? "")) !== null) {
+      cells.push(strip(td[1] ?? ""));
+    }
+    if (
+      cells.length === 1
+      && /^(?:前半|後半|\d+(?:\+\d+)?分(?:\([^)]*\))?)$/.test(cells[0] ?? "")
+    ) {
+      period = cells[0]!;
+      continue;
+    }
+    if (cells.length !== 2) continue;
+
+    const number = cells[0] ?? "";
+    const playerName = (cells[1] ?? "").replace(/\s*\(\d+\s*-\s*\d+\)\s*$/, "").trim();
+    if (!playerName) continue;
+    if (!/^\d+$/.test(number) && !/オウンゴール/.test(playerName)) continue;
+    goals.push({
+      minute: period,
+      team,
+      playerNumber: /^\d+$/.test(number) ? Number(number) : null,
+      playerName,
+      assist: null,
+    });
+  }
+  return goals;
+}
+
+/**
+ * 得点経過が空の場合に、スコア直下の左右得点表を使う。
+ * この表には正確な分がないため、前半・後半のみ保持する。
+ */
+function parseGoalSummary(html: string): GoalEvent[] {
+  const tables = html.match(
+    /<td[^>]*class="scorer"[^>]*>\s*<table[^>]*>([\s\S]*?)<\/table>\s*<\/td>\s*<td[^>]*class="scorer score-label"[^>]*>\s*得点\s*<\/td>\s*<td[^>]*class="scorer"[^>]*>\s*<table[^>]*>([\s\S]*?)<\/table>/i,
+  );
+  if (!tables) return [];
+
+  const team1 = strip(
+    html.match(/class="score-team1"[^>]*>\s*([\s\S]*?)<(?:div|\/th)/i)?.[1] ?? "",
+  );
+  const team2 = strip(
+    html.match(/class="score-team2"[^>]*>\s*([\s\S]*?)<(?:div|\/th)/i)?.[1] ?? "",
+  );
+  if (!team1 || !team2) return [];
+  return [
+    ...parseGoalSummaryTable(tables[1] ?? "", team1),
+    ...parseGoalSummaryTable(tables[2] ?? "", team2),
+  ];
+}
+
 const VALID_POSITIONS = new Set<string>(["GK", "DF", "MF", "FW", "FP"]);
 
-/** 1つの <table> から選手行（背番号+ポジション+名前）を抽出する */
-function parsePlayerTable(tableHtml: string, team: "home" | "away"): GoalNotePlayer[] {
-  const players: GoalNotePlayer[] = [];
+interface ParsedGoalNotePlayer {
+  player: GoalNotePlayer;
+  /** 旧形式の出場区分。○=先発、△=途中出場、空欄=控え */
+  marker: string | null;
+}
+
+/** 1つの <table> から選手行（背番号+ポジション+出場区分+名前）を抽出する */
+function parsePlayerTable(tableHtml: string, team: "home" | "away"): ParsedGoalNotePlayer[] {
+  const players: ParsedGoalNotePlayer[] = [];
   const trRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
   const tdRe = /<td[^>]*>([\s\S]*?)<\/td>/gi;
   let tr: RegExpExecArray | null;
@@ -211,15 +284,21 @@ function parsePlayerTable(tableHtml: string, team: "home" | "away"): GoalNotePla
     if (cells.length < 3) continue;
     const numStr = cells[0] ?? "";
     const posStr = (cells[1] ?? "").toUpperCase();
-    const name = cells[2] ?? "";
+    const hasMarkerColumn =
+      cells.length >= 4 && (cells[2] === "" || cells[2] === "○" || cells[2] === "△");
+    const marker = hasMarkerColumn ? (cells[2] ?? "") : null;
+    const name = cells[hasMarkerColumn ? 3 : 2] ?? "";
     if (!/^\d+$/.test(numStr)) continue;
     if (!VALID_POSITIONS.has(posStr)) continue;
     if (!name) continue;
     players.push({
-      number: Number(numStr),
-      position: posStr as Position,
-      name: name.replace(/\s*\(Cap\.\)/i, ""),
-      team,
+      marker,
+      player: {
+        number: Number(numStr),
+        position: posStr as Position,
+        name: name.replace(/\s*\(Cap\.\)/i, ""),
+        team,
+      },
     });
   }
   return players;
@@ -253,12 +332,25 @@ function parseLineups(html: string, homeTeam: string): { starters: GoalNotePlaye
   const team1Side: "home" | "away" = team1IsHome ? "home" : "away";
   const team2Side: "home" | "away" = team1IsHome ? "away" : "home";
 
+  const parsed = playerTables.map((table, index) =>
+    parsePlayerTable(table, index % 2 === 0 ? team1Side : team2Side),
+  );
+  const combinedRosterFormat =
+    parsed.length === 2 && parsed.some((table) => table.some((entry) => entry.marker !== null));
+
   const starters: GoalNotePlayer[] = [];
   const subs: GoalNotePlayer[] = [];
-  if (playerTables[0]) starters.push(...parsePlayerTable(playerTables[0], team1Side));
-  if (playerTables[1]) starters.push(...parsePlayerTable(playerTables[1], team2Side));
-  if (playerTables[2]) subs.push(...parsePlayerTable(playerTables[2], team1Side));
-  if (playerTables[3]) subs.push(...parsePlayerTable(playerTables[3], team2Side));
+  if (combinedRosterFormat) {
+    for (const table of parsed) {
+      starters.push(...table.filter((entry) => entry.marker === "○").map((entry) => entry.player));
+      subs.push(...table.filter((entry) => entry.marker !== "○").map((entry) => entry.player));
+    }
+  } else {
+    if (parsed[0]) starters.push(...parsed[0].map((entry) => entry.player));
+    if (parsed[1]) starters.push(...parsed[1].map((entry) => entry.player));
+    if (parsed[2]) subs.push(...parsed[2].map((entry) => entry.player));
+    if (parsed[3]) subs.push(...parsed[3].map((entry) => entry.player));
+  }
 
   return { starters, subs };
 }
@@ -300,7 +392,11 @@ function parseSubTable(tableHtml: string, team: "home" | "away"): Substitution[]
  * 交代行 [OUT番号, OUT名, IN番号, IN名] を含む table を文書順に集め、
  * [0]=team1, [1]=team2 として home/away を割り当てる。
  */
-function parseSubstitutions(html: string, homeTeam: string): Substitution[] {
+function parseSubstitutions(
+  html: string,
+  homeTeam: string,
+  lineup: GoalNotePlayer[],
+): Substitution[] {
   const team1Match = html.match(/class="score-team1"[^>]*>\s*([\s\S]*?)<(?:div|\/th)/i);
   const team1Name = team1Match ? strip(team1Match[1] ?? "") : "";
   const team1IsHome = team1Name.includes(homeTeam.slice(0, 4));
@@ -317,9 +413,44 @@ function parseSubstitutions(html: string, homeTeam: string): Substitution[] {
   const team1Side: "home" | "away" = team1IsHome ? "home" : "away";
   const team2Side: "home" | "away" = team1IsHome ? "away" : "home";
 
+  const normalizeName = (name: string) => name.replace(/[\s　]/g, "");
+  const resolveTeam = (
+    substitution: Substitution,
+    fallback: "home" | "away",
+  ): "home" | "away" => {
+    const outPlayer = lineup.find(
+      (player) =>
+        player.number === substitution.outNumber
+        && normalizeName(player.name) === normalizeName(substitution.outName),
+    );
+    const inPlayer = lineup.find(
+      (player) =>
+        player.number === substitution.inNumber
+        && normalizeName(player.name) === normalizeName(substitution.inName),
+    );
+    if (outPlayer?.team === inPlayer?.team) return outPlayer?.team ?? fallback;
+    return outPlayer?.team ?? inPlayer?.team ?? fallback;
+  };
+
   const subs: Substitution[] = [];
-  if (subTables[0]) subs.push(...parseSubTable(subTables[0], team1Side));
-  if (subTables[1]) subs.push(...parseSubTable(subTables[1], team2Side));
+  if (subTables[0]) {
+    subs.push(
+      ...parseSubTable(subTables[0], team1Side)
+        .map((substitution) => ({
+          ...substitution,
+          team: resolveTeam(substitution, team1Side),
+        })),
+    );
+  }
+  if (subTables[1]) {
+    subs.push(
+      ...parseSubTable(subTables[1], team2Side)
+        .map((substitution) => ({
+          ...substitution,
+          team: resolveTeam(substitution, team2Side),
+        })),
+    );
+  }
   return subs;
 }
 
@@ -399,10 +530,11 @@ function parseCards(html: string, lineup: GoalNotePlayer[]): CardEvent[] {
 export function parseGoalNoteGame(html: string, homeTeam: string): GoalNoteGameData {
   const lineups = parseLineups(html, homeTeam);
   const allPlayers = [...lineups.starters, ...lineups.subs];
+  const detailedGoals = parseGoals(html);
   return {
-    goals: parseGoals(html),
+    goals: detailedGoals.length > 0 ? detailedGoals : parseGoalSummary(html),
     ...lineups,
-    substitutions: parseSubstitutions(html, homeTeam),
+    substitutions: parseSubstitutions(html, homeTeam, allPlayers),
     cards: parseCards(html, allPlayers),
     stats: parseStats(html),
   };

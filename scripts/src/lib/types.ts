@@ -20,12 +20,16 @@ export interface GoalEvent {
   playerName: string;
   /** "22→11S" などのアシスト/経過情報。無ければ null */
   assist: string | null;
+  /** 年度をまたいで選手を照合する安定ID。照合できない場合は null */
+  playerId?: string | null;
 }
 
 /** 1試合 */
 export interface Match {
   /** q-league の su-post id 由来の安定ID（例: "su-post-9354"） */
   id: string;
+  /** 履歴データでは対象シーズン。現行 matches.json では省略可能 */
+  season?: string;
   /** 大会名（現状 "Qリーグ"） */
   competition: string;
   /** 節番号。HTMLから取れない場合 null */
@@ -91,12 +95,12 @@ export interface MatchForecast {
 /** 試合のフォトギャラリー画像URL（anclas.jp マッチレポート由来） */
 // Match.photoGallery: string[] として保持する
 
-/** 得点ランキングの1行（GoalNote 由来。アンクラス選手のみ） */
+/** 得点ランキングの1行（試合別得点を正とし、GoalNote順位を補助情報として利用） */
 export interface ScorerRank {
   /** チーム内（アンクラス内）での順位（1から振り直し） */
   rank: number;
-  /** リーグ全体での順位（GoalNote 原典） */
-  leagueRank: number;
+  /** リーグ全体での順位（GoalNoteと得点数が一致する場合のみ） */
+  leagueRank: number | null;
   name: string;
   /** 背番号（選手名鑑と突き合わせ。取れなければ null） */
   number: number | null;
@@ -119,6 +123,62 @@ export interface MatchPlayer {
   name: string;
   /** "home" = ホームチーム / "away" = アウェイチーム */
   team: "home" | "away";
+  /** 年度をまたいで選手を照合する安定ID。照合できない場合は null */
+  playerId?: string | null;
+}
+
+/** 過去シーズンの取得元 */
+export type HistorySourceType = "nadeshiko-json" | "goalnote" | "current";
+
+/** 年度別のリーグ戦スナップショット */
+export interface SeasonHistory {
+  year: number;
+  competition: string;
+  sourceType: HistorySourceType;
+  sourceUrl: string;
+  matches: Match[];
+}
+
+/** 初出場・初先発・初ゴールの根拠となる試合 */
+export interface PlayerMilestone {
+  matchId: string;
+  season: number;
+  date: string;
+  opponent: string;
+  round: number | null;
+}
+
+/** 選手の年度別リーグ戦記録 */
+export interface PlayerSeasonRecord {
+  season: number;
+  appearances: number;
+  starts: number;
+  goals: number;
+}
+
+/** アンクラス所属期間のリーグ戦記録 */
+export interface PlayerLeagueHistory {
+  playerId: string;
+  displayName: string;
+  birthDate: string | null;
+  aliases: string[];
+  identityStatus: "verified" | "name-only";
+  seasons: PlayerSeasonRecord[];
+  clubLeagueAppearances: number;
+  clubLeagueStarts: number;
+  clubLeagueGoals: number;
+  firstAppearance: PlayerMilestone | null;
+  firstStart: PlayerMilestone | null;
+  firstGoal: PlayerMilestone | null;
+}
+
+/** アプリが参照する過去シーズン集約データ */
+export interface HistoryData {
+  generatedAt: string;
+  competitionScope: "league";
+  clubScope: "anclas";
+  seasons: SeasonHistory[];
+  players: PlayerLeagueHistory[];
 }
 
 /** 選手交代（GoalNote game page 由来） */

@@ -67,6 +67,21 @@ test("normalizeTeamName: 東海大の表記揺れを吸収", () => {
   assert.equal(normalizeTeamName("東海大学付属福岡高等学校"), "東海大学付属福岡高等学校");
 });
 
+test("normalizeTeamName: 水俣のウイメン表記を統一", () => {
+  assert.equal(
+    normalizeTeamName("水俣ユニオンフットボールクラブウイメン"),
+    "水俣ユニオンフットボールクラブウィメン",
+  );
+});
+
+test("normalizeTeamName: 柳ヶ浦の高校/高等学校表記を統一", () => {
+  // GoalNote 由来の過去シーズンと q-league 由来の今季で対戦成績が分断されないようにする
+  assert.equal(
+    normalizeTeamName("柳ヶ浦高校女子サッカー部"),
+    "柳ヶ浦高等学校　女子サッカー部",
+  );
+});
+
 test("parseQLeagueMatches: アンクラスのセクションのみ抽出（8チーム）", () => {
   const matches = parseQLeagueMatches(fixture);
   const teams = new Set<string>();

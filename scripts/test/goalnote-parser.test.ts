@@ -47,6 +47,37 @@ test("enrichMatchesWithSchedule: 日付+チーム名で会場を補完", () => {
   assert.ok(matches[0]!.goalnoteUrl, "game URL が補完された");
 });
 
+test("enrichMatchesWithSchedule: 別表記のホームチームでも突き合わせる", () => {
+  // GoalNote と q-league でホームチームの書き方が違っても、別名表で代表名へ寄せて照合する
+  const rows = [
+    {
+      date: "2026-05-24",
+      kickoff: "12:00",
+      homeTeam: "柳ヶ浦高校女子サッカー部",
+      awayTeam: "福岡J・アンクラス",
+      venue: "柳ヶ浦高校グラウンド",
+      gameUrl: "https://www.goalnote.net/detail-schedule-game.php?tid=1&sid=2",
+      score: null as { home: number; away: number } | null,
+    },
+  ];
+  const matches = [
+    {
+      date: "2026-05-24",
+      homeTeam: "柳ヶ浦高等学校　女子サッカー部",
+      awayTeam: "福岡J・アンクラス",
+      venue: null as string | null,
+      goalnoteUrl: null as string | null,
+      status: "scheduled" as "scheduled" | "finished",
+      score: null as { home: number; away: number } | null,
+    },
+  ];
+
+  enrichMatchesWithSchedule(matches, rows);
+
+  assert.equal(matches[0]!.venue, "柳ヶ浦高校グラウンド");
+  assert.ok(matches[0]!.goalnoteUrl, "game URL が補完された");
+});
+
 test("parseGoalNoteGame: 得点経過を抽出", () => {
   const data = parseGoalNoteGame(gameFix, "福岡J・アンクラス");
   assert.ok(data.goals.length >= 3, `ゴール数 ${data.goals.length}`);
@@ -56,6 +87,52 @@ test("parseGoalNoteGame: 得点経過を抽出", () => {
   const kakazu = data.goals.find((g) => g.playerName.includes("嘉数"));
   assert.ok(kakazu, "嘉数 クレア姫麗のゴールが含まれる");
   assert.equal(kakazu?.playerNumber, 11);
+});
+
+test("parseGoalNoteGame: 得点経過がない旧形式では左右の得点表を抽出する", () => {
+  const html = `
+    <th class="score-team1">神村学園高等部<div>KICK OFF</div></th>
+    <th class="score-team2">福岡J・アンクラス<div>&nbsp;</div></th>
+    <td class="scorer">
+      <table class="list-table">
+        <tr><td colspan="2">前半</td></tr>
+        <tr><td>45</td><td>坂元 めい (1-0)</td></tr>
+      </table>
+    </td>
+    <td class="scorer score-label">得点</td>
+    <td class="scorer">
+      <table class="list-table">
+        <tr><td colspan="2">59分(後半19分)</td></tr>
+        <tr><td>3</td><td>澁澤 光 (1-1)</td></tr>
+        <tr><td colspan="2">後半</td></tr>
+        <tr><td>23</td><td>北条 あゆみ (1-2)</td></tr>
+      </table>
+    </td>
+  `;
+
+  assert.deepEqual(parseGoalNoteGame(html, "神村学園高等部").goals, [
+    {
+      minute: "前半",
+      team: "神村学園高等部",
+      playerNumber: 45,
+      playerName: "坂元 めい",
+      assist: null,
+    },
+    {
+      minute: "59分(後半19分)",
+      team: "福岡J・アンクラス",
+      playerNumber: 3,
+      playerName: "澁澤 光",
+      assist: null,
+    },
+    {
+      minute: "後半",
+      team: "福岡J・アンクラス",
+      playerNumber: 23,
+      playerName: "北条 あゆみ",
+      assist: null,
+    },
+  ]);
 });
 
 test("parseGoalNoteGame: スタメン（ポジション付き）を抽出", () => {
@@ -68,6 +145,66 @@ test("parseGoalNoteGame: スタメン（ポジション付き）を抽出", () =
   assert.equal(gk?.name, "釜坂 慧");
   const fw = homeStarters.filter((p) => p.position === "FW");
   assert.ok(fw.length >= 2, "FW が2人以上");
+});
+
+test("parseGoalNoteGame: 旧形式の出場区分列から先発と控えを分ける", () => {
+  const html = `
+    <div class="score-team1">福岡大学サッカー部女子</div>
+    <table>
+      <tr><td>1</td><td>GK</td><td>○</td><td>三宅 未紗</td></tr>
+      <tr><td>16</td><td>FW</td><td>△</td><td>古村 誉</td></tr>
+      <tr><td>18</td><td>MF</td><td></td><td>吉武 春歌</td></tr>
+    </table>
+    <table>
+      <tr><td>1</td><td>GK</td><td>○</td><td>釜坂 慧</td></tr>
+      <tr><td>19</td><td>DF</td><td>○</td><td>平坂 咲希 (Cap.)</td></tr>
+      <tr><td>21</td><td>GK</td><td>△</td><td>進藤 真奈花</td></tr>
+    </table>
+  `;
+  const parsed = parseGoalNoteGame(html, "福岡大学サッカー部女子");
+  assert.deepEqual(parsed.starters.map((player) => player.name), [
+    "三宅 未紗",
+    "釜坂 慧",
+    "平坂 咲希",
+  ]);
+  assert.deepEqual(parsed.subs.map((player) => player.name), [
+    "古村 誉",
+    "吉武 春歌",
+    "進藤 真奈花",
+  ]);
+});
+
+test("parseGoalNoteGame: 交代表が片側だけでも選手名から所属チームを判定する", () => {
+  const html = `
+    <div class="score-team1">ホームFC</div>
+    <table>
+      <tr><td>1</td><td>GK</td><td>○</td><td>ホーム 選手</td></tr>
+      <tr><td>12</td><td>GK</td><td>△</td><td>ホーム 控え</td></tr>
+    </table>
+    <table>
+      <tr><td>23</td><td>DF</td><td>○</td><td>北条 あゆみ</td></tr>
+      <tr><td>25</td><td>MF</td><td>△</td><td>伊藤 なずな</td></tr>
+    </table>
+    <table>
+      <tr><td>ＨＴ</td></tr>
+      <tr>
+        <td>23</td><td>北条 あゆみ</td>
+        <th class="change"></th>
+        <td>25</td><td>伊藤 なずな</td>
+      </tr>
+    </table>
+  `;
+
+  assert.deepEqual(parseGoalNoteGame(html, "ホームFC").substitutions, [
+    {
+      minute: "ＨＴ",
+      team: "away",
+      outNumber: 23,
+      outName: "北条 あゆみ",
+      inNumber: 25,
+      inName: "伊藤 なずな",
+    },
+  ]);
 });
 
 test("parseGoalNoteGame: 警告（イエローカード）を抽出", () => {

@@ -9,9 +9,10 @@ import {
   parseScorerRanking,
 } from "./lib/goalnote-parser.js";
 import { computeAssists } from "./lib/assists.js";
+import { computeScorers } from "./lib/scorers.js";
 import { buildResultNotification, detectNewlyFinishedAnclasMatches } from "./lib/result-diff.js";
 import { writeNotifyQueue } from "./lib/notify-queue.js";
-import { parseQLeagueMatches } from "./lib/qleague-parser.js";
+import { normalizeTeamName, parseQLeagueMatches } from "./lib/qleague-parser.js";
 import { fetchShopItems } from "./lib/shop.js";
 import { fetchForecast } from "./lib/weather-client.js";
 import { fetchLatestPodcast } from "./lib/spotify.js";
@@ -99,8 +100,17 @@ function pickLatestResult(matches: Match[]): Match | null {
 
 function writeJson(name: string, data: unknown): void {
   mkdirSync(DATA_DIR, { recursive: true });
-  writeFileSync(new URL(name, DATA_DIR), `${JSON.stringify(data, null, 2)}\n`, "utf-8");
-  logger.info(`wrote ${name}`);
+  const json = `${JSON.stringify(data, null, 2)}\n`;
+  writeFileSync(new URL(name, DATA_DIR), json, "utf-8");
+  // iOS 同梱データはこのリポジトリにしか無い。実運用の anclas-port-data 側で
+  // 空のディレクトリを作らないよう、既に存在する場合だけ書き出す。
+  const iosResourcesDir = new URL("../../ios/AnclasPort/Resources/", import.meta.url);
+  const wroteIos = existsSync(iosResourcesDir);
+  if (wroteIos) {
+    writeFileSync(new URL(name, iosResourcesDir), json, "utf-8");
+  }
+  // 宛先を残す。ios が抜けたまま通っていないかを実行ログで確かめられるようにする。
+  logger.info(`wrote ${name} (${wroteIos ? "data, ios" : "data"})`);
 }
 
 /** 上書き前の matches.json と比較し、新規確定アンクラス試合の通知をキューに書き出す */
@@ -146,7 +156,10 @@ async function main(): Promise<void> {
     try {
       const gameHtml = await fetchGoalNoteGame(m.goalnoteUrl!);
       const gameData = parseGoalNoteGame(gameHtml, m.homeTeam);
-      m.goals = gameData.goals;
+      m.goals = gameData.goals.map((goal) => ({
+        ...goal,
+        team: normalizeTeamName(goal.team),
+      }));
       m.starters = gameData.starters;
       m.subs = gameData.subs;
       m.substitutions = gameData.substitutions;
@@ -169,6 +182,28 @@ async function main(): Promise<void> {
       if (result) {
         m.matchReport = result.report;
         if (result.photoGallery.length > 0) m.photoGallery = result.photoGallery;
+        const anclasScore = m.homeTeam === ANCLAS_TEAM_NAME ? m.score?.home : m.score?.away;
+        const currentAnclasGoals = m.goals.filter(
+          (goal) => goal.team === ANCLAS_TEAM_NAME,
+        );
+        const scorerNames = (goals: Array<{ playerName: string }>) =>
+          goals.map((goal) => goal.playerName.replace(/[\s　]/g, "")).sort().join("|");
+        const scorerMismatch =
+          result.reportedGoals.length === anclasScore
+          && scorerNames(currentAnclasGoals) !== scorerNames(result.reportedGoals);
+        if (
+          (currentAnclasGoals.length !== anclasScore || scorerMismatch)
+          && result.reportedGoals.length === anclasScore
+        ) {
+          m.goals = [
+            ...m.goals.filter((goal) => goal.team !== ANCLAS_TEAM_NAME),
+            ...result.reportedGoals.map((goal) => ({
+              ...goal,
+              team: ANCLAS_TEAM_NAME,
+              assist: null,
+            })),
+          ];
+        }
         reportCount++;
       }
     } catch {
@@ -364,9 +399,10 @@ async function main(): Promise<void> {
       }
     }
   }
+  const numberByName = loadPlayerNumberByName();
+  scorers = computeScorers(matches, scorers, numberByName);
 
   // アシストランキング（試合データから自前集計）
-  const numberByName = loadPlayerNumberByName();
   const anclasNumbers = new Set<number>(numberByName.values());
   const assists = computeAssists(matches, anclasNumbers, numberByName);
   if (assists.length > 0) logger.info(`アシストランキング: ${assists.length}人`);

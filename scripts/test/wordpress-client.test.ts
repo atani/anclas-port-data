@@ -7,7 +7,9 @@ import {
   parsePlayerArchiveUrl,
   parsePublishedPlayerUrls,
   parseReportedGoals,
+  selectRescheduleInfo,
 } from "../src/lib/wordpress-client.js";
+import { readFileSync } from "node:fs";
 
 test("parsePlayerArchiveUrl: グローバルメニューから選手一覧URLを取得する", () => {
   const html = '<a href="/category/top-players2025/">TOP選手紹介</a>';
@@ -133,4 +135,41 @@ test("applyRescheduleInfo: 日付は同じでキックオフだけ変わった�
   const updated = applyRescheduleInfo(m, info);
   assert.equal(updated, true);
   assert.equal(m.kickoff, "18:00");
+});
+
+test("確認済み代替日程: 公式告知に基づく第13節のフォールバックを保持する", () => {
+  const path = new URL("../data/verified-reschedules.json", import.meta.url);
+  const data = JSON.parse(readFileSync(path, "utf-8")) as Record<string, {
+    date: string;
+    kickoff: string;
+    venue: string | null;
+    sourceUrl: string;
+  }>;
+
+  assert.deepEqual(data["su-post-9411"], {
+    date: "2026-09-05",
+    kickoff: "18:00",
+    venue: "南島原多目的運動広場",
+    sourceUrl: "https://anclas.jp/post-27898/",
+  });
+  assert.deepEqual(selectRescheduleInfo("su-post-9411", null, data), data["su-post-9411"]);
+});
+
+test("確認済み代替日程: APIで取得できた値をキャッシュより優先する", () => {
+  const discovered = {
+    date: "2026-09-06",
+    kickoff: "19:00",
+    venue: "新会場",
+    sourceUrl: "https://anclas.jp/new-announcement/",
+  };
+  const cached = {
+    "su-post-9411": {
+      date: "2026-09-05",
+      kickoff: "18:00",
+      venue: "南島原多目的運動広場",
+      sourceUrl: "https://anclas.jp/post-27898/",
+    },
+  };
+
+  assert.equal(selectRescheduleInfo("su-post-9411", discovered, cached), discovered);
 });

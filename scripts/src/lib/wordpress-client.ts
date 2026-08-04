@@ -212,6 +212,15 @@ export interface RescheduleInfo {
   sourceUrl: string;
 }
 
+/** API取得を優先し、取得できない場合だけ確認済みキャッシュへフォールバックする。 */
+export function selectRescheduleInfo(
+  matchId: string,
+  discovered: RescheduleInfo | null,
+  verified: Record<string, RescheduleInfo>,
+): RescheduleInfo | null {
+  return discovered ?? verified[matchId] ?? null;
+}
+
 /**
  * 告知本文から日付・キックオフ時刻を抽出する。
  * anclas.jp の告知は「日　　時：2026年9月5日(日)18：00 キックオフ」のようにラベルと値が

@@ -128,7 +128,7 @@ export function parseMatchLine(text: string): ParsedLine | null {
 }
 
 /** date(YYYY-MM-DD) + kickoff(HH:MM|null) → JST固定のISO8601 */
-function toIsoJst(date: string, kickoff: string | null): string {
+export function toIsoJst(date: string, kickoff: string | null): string {
   return `${date}T${kickoff ?? "00:00"}:00+09:00`;
 }
 

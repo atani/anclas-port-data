@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import {
+  applyRescheduleInfo,
+  parseAnnouncementDateTime,
+  parseAnnouncementVenue,
   parsePlayerArchiveUrl,
   parsePublishedPlayerUrls,
   parseReportedGoals,
@@ -67,4 +70,67 @@ test("parseReportedGoals: 区切りなしで連結された背番号から得点
       { minute: "時間不明", playerNumber: 13, playerName: "原日樺" },
     ],
   );
+});
+
+test("parseAnnouncementDateTime: 代替試合情報の告知本文から日付とキックオフ時刻を抽出する", () => {
+  const text = "相　　手：国見FCレディース\n日　　時：2026年9月5日(日)18：00 キックオフ\n会　　場：Arrivo!南島原";
+  assert.deepEqual(parseAnnouncementDateTime(text), { date: "2026-09-05", kickoff: "18:00" });
+});
+
+test("parseAnnouncementDateTime: 半角コロン・一桁の日付にも対応する", () => {
+  const text = "日時：2026年9月5日(日)9:05 キックオフ";
+  assert.deepEqual(parseAnnouncementDateTime(text), { date: "2026-09-05", kickoff: "09:05" });
+});
+
+test("parseAnnouncementDateTime: 日時の記載が無ければ null を返す", () => {
+  assert.equal(parseAnnouncementDateTime("相　　手：国見FCレディース"), null);
+});
+
+test("parseAnnouncementVenue: 住所（〈〉以降）を含めず会場名だけを抽出する", () => {
+  const text = "会　　場：Arrivo!南島原(南島原多目的運動広場)〈長崎県南島原市南有馬町丁５０８〉";
+  assert.equal(parseAnnouncementVenue(text), "Arrivo!南島原(南島原多目的運動広場)");
+});
+
+test("parseAnnouncementVenue: 会場の記載が無ければ null を返す", () => {
+  assert.equal(parseAnnouncementVenue("相　　手：国見FCレディース"), null);
+});
+
+// 実在する旧書式（【代替試合について】投稿）: ラベルと値が別行で、数字の前後にスペースが入る
+test("parseAnnouncementDateTime: ラベルと値が別行・数字前後にスペースがある旧書式にも対応する", () => {
+  const text = "日時\n2026 年 7 月 12 日 (日)　16：00キックオフ";
+  assert.deepEqual(parseAnnouncementDateTime(text), { date: "2026-07-12", kickoff: "16:00" });
+});
+
+test("parseAnnouncementVenue: 「試合会場」ラベル・別行書式にも対応する", () => {
+  const text = "試合会場\nエコパーク水俣 陸上競技場（熊本県水俣市汐見町1丁目231-12）\n≪アクセス≫";
+  assert.equal(parseAnnouncementVenue(text), "エコパーク水俣 陸上競技場（熊本県水俣市汐見町1丁目231-12）");
+});
+
+test("applyRescheduleInfo: 日付またはキックオフが変われば試合データへ反映しtrueを返す", () => {
+  const m = { date: "2026-07-05", kickoff: "13:00", datetime: "2026-07-05T13:00:00+09:00", venue: null };
+  const info = { date: "2026-09-05", kickoff: "18:00", venue: "Arrivo!南島原", sourceUrl: "https://anclas.jp/post-27898/" };
+  const updated = applyRescheduleInfo(m, info);
+  assert.equal(updated, true);
+  assert.deepEqual(m, {
+    date: "2026-09-05",
+    kickoff: "18:00",
+    datetime: "2026-09-05T18:00:00+09:00",
+    venue: "Arrivo!南島原",
+  });
+});
+
+test("applyRescheduleInfo: 日付・キックオフとも変化が無ければ何もせずfalseを返す", () => {
+  const m = { date: "2026-09-05", kickoff: "18:00", datetime: "2026-09-05T18:00:00+09:00", venue: "旧会場" };
+  const info = { date: "2026-09-05", kickoff: "18:00", venue: "新会場", sourceUrl: "https://anclas.jp/post-27898/" };
+  const updated = applyRescheduleInfo(m, info);
+  assert.equal(updated, false);
+  assert.equal(m.venue, "旧会場");
+});
+
+test("applyRescheduleInfo: 日付は同じでキックオフだけ変わった場合も反映する", () => {
+  const m = { date: "2026-09-05", kickoff: "13:00", datetime: "2026-09-05T13:00:00+09:00", venue: null };
+  const info = { date: "2026-09-05", kickoff: "18:00", venue: null, sourceUrl: "https://anclas.jp/post-27898/" };
+  const updated = applyRescheduleInfo(m, info);
+  assert.equal(updated, true);
+  assert.equal(m.kickoff, "18:00");
 });

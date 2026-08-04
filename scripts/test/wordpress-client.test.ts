@@ -9,7 +9,7 @@ import {
   parseReportedGoals,
   selectRescheduleInfo,
 } from "../src/lib/wordpress-client.js";
-import { readFileSync } from "node:fs";
+import { loadVerifiedReschedules } from "../src/lib/reschedule-cache.js";
 
 test("parsePlayerArchiveUrl: グローバルメニューから選手一覧URLを取得する", () => {
   const html = '<a href="/category/top-players2025/">TOP選手紹介</a>';
@@ -138,13 +138,7 @@ test("applyRescheduleInfo: 日付は同じでキックオフだけ変わった�
 });
 
 test("確認済み代替日程: 公式告知に基づく第13節のフォールバックを保持する", () => {
-  const path = new URL("../data/verified-reschedules.json", import.meta.url);
-  const data = JSON.parse(readFileSync(path, "utf-8")) as Record<string, {
-    date: string;
-    kickoff: string;
-    venue: string | null;
-    sourceUrl: string;
-  }>;
+  const data = loadVerifiedReschedules();
 
   assert.deepEqual(data["su-post-9411"], {
     date: "2026-09-05",

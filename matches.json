@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T15:43:43.704Z",
+  "generatedAt": "2026-08-04T15:45:22.796Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -2641,17 +2641,17 @@
           "assist": null
         },
         {
-          "minute": "59分",
-          "playerNumber": 3,
-          "playerName": "澁澤光",
+          "minute": "59分(後半19分)",
           "team": "福岡J・アンクラス",
+          "playerNumber": 3,
+          "playerName": "澁澤 光",
           "assist": null
         },
         {
-          "minute": "69分",
-          "playerNumber": 23,
-          "playerName": "北条あゆみ",
+          "minute": "69分(後半29分)",
           "team": "福岡J・アンクラス",
+          "playerNumber": 18,
+          "playerName": "玉城 薪瀬",
           "assist": null
         }
       ],

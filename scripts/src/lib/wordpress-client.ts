@@ -5,6 +5,7 @@
  */
 
 import { logger } from "./logger.js";
+import { toIsoJst } from "./qleague-parser.js";
 import type { BlogPost, MatchReport } from "./types.js";
 
 const SITE_URL = "https://anclas.jp";
@@ -202,6 +203,112 @@ export async function findMatchPoster(opponentName: string, matchDate: string): 
     logger.warn(`ポスター検索失敗（WP API）: ${e instanceof Error ? e.message.slice(0, 120) : e}`);
   }
   return null;
+}
+
+export interface RescheduleInfo {
+  date: string;
+  kickoff: string;
+  venue: string | null;
+  sourceUrl: string;
+}
+
+/**
+ * 告知本文から日付・キックオフ時刻を抽出する。
+ * anclas.jp の告知は「日　　時：2026年9月5日(日)18：00 キックオフ」のようにラベルと値が
+ * コロンで同じ行に並ぶ書式と、「日時」ラベルの後に別段落で「2026 年 7 月 12 日 (日)　16：00キックオフ」
+ * と数字の間にスペースが入る書式の2種類が実在するため、コロン・改行・数字周りの空白をすべて任意とする。
+ */
+export function parseAnnouncementDateTime(text: string): { date: string; kickoff: string } | null {
+  const m = text.match(
+    /日\s*時\s*[:：]?\s*(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日[^0-9]*?(\d{1,2})\s*[:：]\s*(\d{1,2})/,
+  );
+  if (!m) return null;
+  const [, y, mo, d, h, mi] = m;
+  return {
+    date: `${y}-${mo!.padStart(2, "0")}-${d!.padStart(2, "0")}`,
+    kickoff: `${h!.padStart(2, "0")}:${mi!.padStart(2, "0")}`,
+  };
+}
+
+/**
+ * 告知本文から会場名を抽出する（住所は含めない）。
+ * 「会　　場：Arrivo!南島原(南島原多目的運動広場)〈住所〉」のような同じ行にラベル・値・住所（〈〉）
+ * が並ぶ書式と、「試合会場」ラベルの後に別段落で値が続く書式の両方に対応する。
+ */
+export function parseAnnouncementVenue(text: string): string | null {
+  const m = text.match(/(?:試合)?会\s*場\s*[:：]?\s*([^\n〈≪]+)/);
+  return m?.[1]?.trim() ?? null;
+}
+
+/** 代替試合情報の検索に使う、対戦相手名の表記ゆれを吸収したキー候補（学校種別等の接尾辞を除去） */
+function opponentSearchKeys(opponentName: string): string[] {
+  const key = opponentName
+    .replace(/女子サッカー部|高等学校|高等部|高校|大学|レディース|FC/g, "")
+    .replace(/[\s・　]/g, "");
+  return [...new Set([
+    key.slice(0, 4),
+    key.slice(0, 3),
+    opponentName.slice(0, 4),
+  ].filter((k) => k.length >= 2))];
+}
+
+/**
+ * 延期・振替待ちの試合について、代替日程の告知投稿から確定日程を探す。
+ * 「代替試合情報」の見出しを持つ投稿のみを対象にし、通常の開催告知（延期前の日程）
+ * を誤って再取得しないよう、投稿日（日付のみ比較。時刻情報は書式間で不統一なため使わない）が
+ * 延期前の元日程以降のものに限定する。延期が数ヶ月に渡り長期化するケースを見込み、
+ * 元日程から半年以内の投稿までを対象にする。
+ */
+export async function findRescheduleInfo(
+  opponentName: string,
+  originalMatchDate: string,
+): Promise<RescheduleInfo | null> {
+  try {
+    const postMap = new Map<number, WPPost>();
+    for (const key of opponentSearchKeys(opponentName)) {
+      const posts = await getPosts({ search: key, perPage: 10, order: "desc" });
+      for (const post of posts) postMap.set(post.id, post);
+    }
+    const posts = [...postMap.values()].sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    );
+    const latestAllowedDate = new Date(originalMatchDate);
+    latestAllowedDate.setDate(latestAllowedDate.getDate() + 180);
+    const latestAllowed = latestAllowedDate.toISOString().slice(0, 10);
+
+    for (const p of posts) {
+      const postDate = p.date.slice(0, 10);
+      if (postDate < originalMatchDate || postDate > latestAllowed) continue;
+      const text = htmlToPlainText(p.content.rendered);
+      if (!/代替試合情報/.test(text)) continue;
+      const dt = parseAnnouncementDateTime(text);
+      if (!dt) continue;
+      return { ...dt, venue: parseAnnouncementVenue(text), sourceUrl: p.link };
+    }
+  } catch (e) {
+    logger.warn(`延期試合の代替日程告知検索失敗（WP API）: ${e instanceof Error ? e.message.slice(0, 120) : e}`);
+  }
+  return null;
+}
+
+export interface ReschedulableMatch {
+  date: string;
+  kickoff: string | null;
+  datetime: string;
+  venue: string | null;
+}
+
+/**
+ * 延期試合の代替日程告知を試合データへ反映する。
+ * 日付・キックオフのいずれも変わっていなければ何もしない（再取得のたびに更新扱いにしない）。
+ */
+export function applyRescheduleInfo(m: ReschedulableMatch, info: RescheduleInfo): boolean {
+  if (info.date === m.date && info.kickoff === m.kickoff) return false;
+  m.date = info.date;
+  m.kickoff = info.kickoff;
+  m.datetime = toIsoJst(info.date, info.kickoff);
+  if (info.venue) m.venue = info.venue;
+  return true;
 }
 
 /** HTMLをプレーンテキストに変換 */

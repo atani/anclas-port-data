@@ -18,7 +18,12 @@ import { fetchForecast } from "./lib/weather-client.js";
 import { fetchLatestPodcast } from "./lib/spotify.js";
 import { fetchLatestYouTubeVideos } from "./lib/youtube.js";
 import { calculateStandings } from "./lib/standings.js";
-import { findMatchPoster, findMatchReport } from "./lib/wordpress-client.js";
+import {
+  applyRescheduleInfo,
+  findMatchPoster,
+  findMatchReport,
+  findRescheduleInfo,
+} from "./lib/wordpress-client.js";
 import { logger } from "./lib/logger.js";
 import {
   ANCLAS_TEAM_NAME,
@@ -138,6 +143,37 @@ async function main(): Promise<void> {
   const matches = parseQLeagueMatches(qHtml, { competition: COMPETITION });
   if (matches.length === 0) throw new Error("試合を1件も抽出できませんでした");
   if (!matches.some((m) => m.isAnclas)) throw new Error(`${ANCLAS_TEAM_NAME} の試合が見つかりませんでした`);
+
+  // 1.5. 延期・振替待ちのアンクラス試合 → anclas.jp の代替日程告知から確定日程を取得
+  {
+    const now = Date.now();
+    const postponed = matches.filter(
+      (m) => m.isAnclas && m.status === "scheduled" && Date.parse(m.datetime) < now,
+    );
+    let rescheduledCount = 0;
+    let unresolvedCount = 0;
+    for (const m of postponed) {
+      try {
+        const opponent = m.homeTeam === ANCLAS_TEAM_NAME ? m.awayTeam : m.homeTeam;
+        const originalDate = m.date;
+        const info = await findRescheduleInfo(opponent, m.date);
+        if (info && applyRescheduleInfo(m, info)) {
+          logger.info(
+            `延期試合の代替日程を検出: round${m.round} ${originalDate}→${info.date} (${opponent}) ${info.sourceUrl}`,
+          );
+          rescheduledCount++;
+        } else if (!info) {
+          unresolvedCount++;
+        }
+      } catch {
+        // 非致命
+      }
+    }
+    if (rescheduledCount > 0) logger.info(`延期試合の代替日程: ${rescheduledCount}件更新`);
+    if (unresolvedCount > 0) {
+      logger.info(`延期試合の代替日程: ${unresolvedCount}件は告知未確認のため延期のまま`);
+    }
+  }
 
   // 2. GoalNote schedule → 会場・game URL を補完
   try {

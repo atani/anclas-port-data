@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T01:13:11.217Z",
+  "generatedAt": "2026-08-04T04:34:09.785Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -440,25 +440,13 @@
     },
     "latestPodcast": {
       "title": "#18【インタビュー：嘉数クレア姫麗（後編）】繊細な自分を助けてくれる2人の存在",
-      "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+      "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
       "showUrl": "https://open.spotify.com/show/3RnkWRyIMYe9IdtMmK7KFK",
       "embedUrl": "https://open.spotify.com/embed/show/3RnkWRyIMYe9IdtMmK7KFK?utm_source=oembed",
       "publishedAt": "2026-07-31"
     },
-    "latestYouTube": {
-      "videoId": "ilw2s0oaaI4",
-      "title": "◤🐝アビスパ福岡 × 福岡J・アンクラス⚓️◢",
-      "thumbnailUrl": "https://i2.ytimg.com/vi/ilw2s0oaaI4/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=ilw2s0oaaI4",
-      "publishedAt": "2026-07-26T01:28:09+00:00"
-    },
-    "latestYouTubeShort": {
-      "videoId": "lbfzRHU1Djs",
-      "title": "想いをのせたラップを選手のアイデアで制作！！！",
-      "thumbnailUrl": "https://i1.ytimg.com/vi/lbfzRHU1Djs/hqdefault.jpg",
-      "url": "https://www.youtube.com/shorts/lbfzRHU1Djs",
-      "publishedAt": "2026-03-27T09:01:00+00:00"
-    },
+    "latestYouTube": null,
+    "latestYouTubeShort": null,
     "shopItems": [
       {
         "id": "146226679",

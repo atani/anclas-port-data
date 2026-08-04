@@ -23,6 +23,8 @@ import {
   findMatchPoster,
   findMatchReport,
   findRescheduleInfo,
+  selectRescheduleInfo,
+  type RescheduleInfo,
 } from "./lib/wordpress-client.js";
 import { logger } from "./lib/logger.js";
 import {
@@ -36,6 +38,16 @@ import {
 const Q_LEAGUE_URL = "https://q-league.net/match/";
 const COMPETITION = "Qリーグ";
 const DATA_DIR = new URL("../../", import.meta.url);
+const VERIFIED_RESCHEDULES_PATH = new URL("./data/verified-reschedules.json", import.meta.url);
+
+function loadVerifiedReschedules(): Record<string, RescheduleInfo> {
+  if (!existsSync(VERIFIED_RESCHEDULES_PATH)) return {};
+  try {
+    return JSON.parse(readFileSync(VERIFIED_RESCHEDULES_PATH, "utf-8")) as Record<string, RescheduleInfo>;
+  } catch (e) {
+    throw new Error(`確認済み代替日程の読み込みに失敗しました: ${e}`);
+  }
+}
 
 /// 一過性のネットワークエラーで毎時 run が落ちないよう、指数バックオフ付きで最大3回試行する
 async function fetchHtml(url: string): Promise<string> {
@@ -147,6 +159,7 @@ async function main(): Promise<void> {
   // 1.5. 延期・振替待ちのアンクラス試合 → anclas.jp の代替日程告知から確定日程を取得
   {
     const now = Date.now();
+    const verifiedReschedules = loadVerifiedReschedules();
     const postponed = matches.filter(
       (m) => m.isAnclas && m.status === "scheduled" && Date.parse(m.datetime) < now,
     );
@@ -156,10 +169,11 @@ async function main(): Promise<void> {
       try {
         const opponent = m.homeTeam === ANCLAS_TEAM_NAME ? m.awayTeam : m.homeTeam;
         const originalDate = m.date;
-        const info = await findRescheduleInfo(opponent, m.date);
+        const discovered = await findRescheduleInfo(opponent, m.date);
+        const info = selectRescheduleInfo(m.id, discovered, verifiedReschedules);
         if (info && applyRescheduleInfo(m, info)) {
           logger.info(
-            `延期試合の代替日程を検出: round${m.round} ${originalDate}→${info.date} (${opponent}) ${info.sourceUrl}`,
+            `延期試合の代替日程を${discovered ? "検出" : "確認済みキャッシュから復元"}: round${m.round} ${originalDate}→${info.date} (${opponent}) ${info.sourceUrl}`,
           );
           rescheduledCount++;
         } else if (!info) {

@@ -4,8 +4,10 @@ name: data-pipeline
 
 on:
   schedule:
-    # 毎時17分。更新頻度と GitHub 側の混雑を考慮し、正時を避ける。
-    - cron: "17 * * * *"
+    # 試合・順位などは毎時17分。選手一覧を更新する0時台は日次実行へ分ける。
+    - cron: "17 1-23 * * *"
+    # 選手一覧は1日1回、毎日09:17 JST（00:17 UTC）に公式サイトと照合する。
+    - cron: "17 0 * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -43,9 +45,18 @@ jobs:
           npm run typecheck
           npm test
 
-      - name: Generate JSON
+      - name: Generate frequently updated JSON
         working-directory: scripts
-        run: npm run generate
+        run: |
+          npm run generate:matches
+          npm run generate:partners || echo 'partners generation failed (non-fatal)'
+          npm run generate:news || echo 'news generation failed (non-fatal)'
+          npm run generate:history || echo 'history generation failed (non-fatal)'
+
+      - name: Reconcile player roster (daily)
+        if: github.event_name != 'schedule' || github.event.schedule == '17 0 * * *'
+        working-directory: scripts
+        run: npm run generate:players || echo 'players generation failed (non-fatal)'
 
       - name: Commit if changed
         run: |

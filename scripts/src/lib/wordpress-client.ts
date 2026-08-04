@@ -7,9 +7,10 @@
 import { logger } from "./logger.js";
 import type { BlogPost, MatchReport } from "./types.js";
 
-const BASE_URL = "https://anclas.jp/wp-json/wp/v2";
+const SITE_URL = "https://anclas.jp";
+const BASE_URL = `${SITE_URL}/wp-json/wp/v2`;
 const WP_HEADERS: Record<string, string> = {
-  "User-Agent": "Mozilla/5.0 (compatible; anclas-port-pipeline/1.0; +https://github.com/atani/anclas-port-data)",
+  "User-Agent": "Mozilla/5.0 (compatible; anclas-port-pipeline/1.0; +https://github.com/atani/anclas-port)",
 };
 
 export interface WPMediaSize {
@@ -66,6 +67,53 @@ async function wpFetch<T>(path: string, params: Record<string, string> = {}): Pr
     throw new Error(`WordPress API error: ${res.status} ${res.statusText} - ${body}`);
   }
   return res.json() as Promise<T>;
+}
+
+async function siteFetchText(url: string): Promise<string> {
+  const res = await fetch(url, {
+    signal: AbortSignal.timeout(15_000),
+    headers: WP_HEADERS,
+  });
+  if (!res.ok) {
+    throw new Error(`Official site error: ${res.status} ${res.statusText}`);
+  }
+  return res.text();
+}
+
+/** TOP選手紹介のカテゴリURLをサイトのグローバルメニューから取得する。 */
+export function parsePlayerArchiveUrl(html: string): string | null {
+  const match = html.match(/href=["']([^"']*\/category\/top-?players[^"']*)["']/i);
+  if (!match?.[1]) return null;
+  return new URL(match[1].replace(/&amp;/g, "&"), SITE_URL).toString();
+}
+
+/** TOP選手紹介一覧に現在公開されている選手投稿URLを取得する。 */
+export function parsePublishedPlayerUrls(html: string): string[] {
+  const urls = new Set<string>();
+  for (const match of html.matchAll(/<article\b[\s\S]*?<\/article>/gi)) {
+    const block = match[0];
+    const anchor = block.match(/<a\b(?=[^>]*\bclass=["'][^"']*\bwrap-anchor\b)[^>]*\bhref=["']([^"']+)["']/i);
+    if (!anchor?.[1]) continue;
+    const url = new URL(anchor[1].replace(/&amp;/g, "&"), SITE_URL);
+    url.hash = "";
+    url.search = "";
+    urls.add(url.toString());
+  }
+  return [...urls];
+}
+
+/** WordPress REST API が拒否されても取得できる、公式一覧HTML由来の現役選手URL。 */
+export async function getPublishedPlayerUrls(): Promise<string[]> {
+  const homeHtml = await siteFetchText(`${SITE_URL}/`);
+  const archiveUrl = parsePlayerArchiveUrl(homeHtml);
+  if (!archiveUrl) {
+    throw new Error("TOP選手紹介の一覧URLが公式サイトから見つかりませんでした");
+  }
+  const urls = parsePublishedPlayerUrls(await siteFetchText(archiveUrl));
+  if (urls.length === 0) {
+    throw new Error("TOP選手紹介の公開選手が0件でした");
+  }
+  return urls;
 }
 
 export async function getPosts(params: {

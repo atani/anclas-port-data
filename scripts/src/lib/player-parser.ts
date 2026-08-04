@@ -160,3 +160,36 @@ export function sortPlayers(players: Player[]): Player[] {
     return a.number - b.number;
   });
 }
+
+function normalizedSourceUrl(value: string): string {
+  const url = new URL(value);
+  url.hash = "";
+  url.search = "";
+  return url.toString();
+}
+
+export interface PlayerRosterReconciliation {
+  players: Player[];
+  removed: Player[];
+  missingUrls: string[];
+}
+
+/** 公式一覧の公開URLを正として、前回データから退団選手を除外する。 */
+export function reconcilePublishedPlayers(
+  players: Player[],
+  publishedUrls: string[],
+): PlayerRosterReconciliation {
+  const minimumSafeCount = Math.max(10, Math.ceil(players.length / 2));
+  if (publishedUrls.length < minimumSafeCount) {
+    throw new Error(
+      `公式選手一覧が少なすぎます（${publishedUrls.length}件、最低${minimumSafeCount}件）。前回データを維持します`,
+    );
+  }
+
+  const published = new Set(publishedUrls.map(normalizedSourceUrl));
+  const kept = players.filter((player) => published.has(normalizedSourceUrl(player.sourceUrl)));
+  const removed = players.filter((player) => !published.has(normalizedSourceUrl(player.sourceUrl)));
+  const known = new Set(players.map((player) => normalizedSourceUrl(player.sourceUrl)));
+  const missingUrls = [...published].filter((url) => !known.has(url));
+  return { players: sortPlayers(kept), removed, missingUrls };
+}

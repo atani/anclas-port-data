@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T06:20:30.015Z",
+  "generatedAt": "2026-08-04T01:06:59.635Z",
   "season": "2026",
   "players": [
     {
@@ -646,6 +646,11 @@
       "sourceUrl": "https://anclas.jp/post-25391/",
       "blogPosts": [
         {
+          "title": "🐙🇰🇷🐙　#10 平坂咲希",
+          "url": "https://anclas.jp/post-27824/",
+          "date": "2026-07-14"
+        },
+        {
           "title": "🤩💛🤩　#10 平坂咲希",
           "url": "https://anclas.jp/post-26254/",
           "date": "2026-05-12"
@@ -735,6 +740,11 @@
       ],
       "sourceUrl": "https://anclas.jp/post-25383/",
       "blogPosts": [
+        {
+          "title": "おもちゃ好きによるおもちゃ紹介 #11嘉数クレア姫麗",
+          "url": "https://anclas.jp/post-27817/",
+          "date": "2026-07-21"
+        },
         {
           "title": "GW🤘🏻 #11嘉数クレア姫麗",
           "url": "https://anclas.jp/post-26258/",
@@ -851,6 +861,11 @@
       "sourceUrl": "https://anclas.jp/post-25401/",
       "blogPosts": [
         {
+          "title": "前半戦を終えて✊🏻 #13原日樺",
+          "url": "https://anclas.jp/post-27844/",
+          "date": "2026-07-23"
+        },
+        {
           "title": "今年挑戦したいことが叶いました🪄 #13原日樺",
           "url": "https://anclas.jp/post-26352/",
           "date": "2026-05-19"
@@ -966,6 +981,11 @@
       "sourceUrl": "https://anclas.jp/post-25363/",
       "blogPosts": [
         {
+          "title": "免許を取りました🔰🚗 #14 宮脇ゆりあ",
+          "url": "https://anclas.jp/post-27859/",
+          "date": "2026-07-24"
+        },
+        {
           "title": "OFF😆🔌🔋 #14 宮脇ゆりあ",
           "url": "https://anclas.jp/post-26367/",
           "date": "2026-05-21"
@@ -1056,6 +1076,11 @@
       "sourceUrl": "https://anclas.jp/post-25380/",
       "blogPosts": [
         {
+          "title": "Blue Jeans 古いスニーカー  #15田中花奈",
+          "url": "https://anclas.jp/post-27866/",
+          "date": "2026-07-28"
+        },
+        {
           "title": "類は友を呼ぶオフ　#15田中花奈",
           "url": "https://anclas.jp/post-26522/",
           "date": "2026-05-27"
@@ -1145,6 +1170,11 @@
       ],
       "sourceUrl": "https://anclas.jp/post-25387/",
       "blogPosts": [
+        {
+          "title": "ハッピーデイ⑤  #16端山新",
+          "url": "https://anclas.jp/post-27875/",
+          "date": "2026-07-31"
+        },
         {
           "title": "クルクルパーマ #16端山新",
           "url": "https://anclas.jp/post-26566/",
@@ -1449,126 +1479,6 @@
           "title": "私とは💭　#20 田川葵",
           "url": "https://anclas.jp/post-25886/",
           "date": "2026-04-07"
-        }
-      ],
-      "sns": {},
-      "role": null
-    },
-    {
-      "id": 25366,
-      "number": 21,
-      "position": null,
-      "nameJa": "進藤真奈花",
-      "nameEn": "SHINDO MANAKA",
-      "nickname": "まな、まなきち",
-      "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/進藤＿笑顔-e1774848023384-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/進藤＿笑顔-e1774848023384-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/進藤＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/進藤＿笑顔-e1774848023384.jpg"
-      },
-      "profile": {
-        "birthdate": "2007年8月28日",
-        "hometown": "福岡県",
-        "height": "168cm",
-        "bloodType": "O型",
-        "career": "ALECIO FOOTBALL CLUB"
-      },
-      "personal": [
-        {
-          "label": "サッカー歴",
-          "value": "8年"
-        },
-        {
-          "label": "サッカーを始めたきっかけ",
-          "value": "兄の影響"
-        },
-        {
-          "label": "MBTI",
-          "value": "ESFP エンターテイナー"
-        },
-        {
-          "label": "趣味、ハマってること",
-          "value": "シール集め、音楽聴くこと"
-        },
-        {
-          "label": "好きな食べ物",
-          "value": "ままの作るしゅうまい"
-        },
-        {
-          "label": "好きなアニメ・キャラクター",
-          "value": "クレヨンしんちゃん"
-        },
-        {
-          "label": "オフの日の過ごし方",
-          "value": "沢山寝る！！"
-        },
-        {
-          "label": "自分のプレーの特長・長所(ここを見てほしい！)",
-          "value": "ダイビング"
-        },
-        {
-          "label": "試合前／試合前日のルーティン",
-          "value": "音楽を聴きながらストレッチをする"
-        },
-        {
-          "label": "パワーソング(歌手名／曲名)",
-          "value": "Mr.Children ／GIFT"
-        },
-        {
-          "label": "今シーズンの目標",
-          "value": "全試合clean sheet！！理"
-        },
-        {
-          "label": "今年、挑戦してみたいこと",
-          "value": "自分の夢に向かって突っ走る！！‍♀️"
-        },
-        {
-          "label": "ファン・サポーターへ一言",
-          "value": "アンクラスのゴール全力で守ります！！今シーズンもたくさんの応援よろしくお願いします！"
-        }
-      ],
-      "sourceUrl": "https://anclas.jp/post-25366/",
-      "blogPosts": [
-        {
-          "title": "実は、、、一緒にサッカーしてました🙂‍↕️  #21進藤真奈花",
-          "url": "https://anclas.jp/post-26990/",
-          "date": "2026-06-12"
-        },
-        {
-          "title": "卒業！　#21進藤真奈花",
-          "url": "https://anclas.jp/post-25900/",
-          "date": "2026-04-10"
-        },
-        {
-          "title": "まなかとけいさんとかみさん🧤 #21進藤真奈花",
-          "url": "https://anclas.jp/post-22304/",
-          "date": "2025-10-02"
-        },
-        {
-          "title": "夜景🏙　#21進藤真奈花",
-          "url": "https://anclas.jp/post-21436/",
-          "date": "2025-08-05"
-        },
-        {
-          "title": "自然巡り🌱　#21進藤真奈花",
-          "url": "https://anclas.jp/post-20844/",
-          "date": "2025-06-05"
-        },
-        {
-          "title": "最近の趣味　#21 進藤真奈花",
-          "url": "https://anclas.jp/post-18170/",
-          "date": "2024-12-03"
-        },
-        {
-          "title": "沢山のかわいい後輩ちゃん🤭　#21 進藤真奈花",
-          "url": "https://anclas.jp/post-16632/",
-          "date": "2024-07-22"
-        },
-        {
-          "title": "九州大会⚽️　#21 進藤真奈花",
-          "url": "https://anclas.jp/post-13067/",
-          "date": "2023-10-28"
         }
       ],
       "sns": {},

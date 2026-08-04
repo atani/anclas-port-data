@@ -1,6 +1,27 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { parseReportedGoals } from "../src/lib/wordpress-client.js";
+import {
+  parsePlayerArchiveUrl,
+  parsePublishedPlayerUrls,
+  parseReportedGoals,
+} from "../src/lib/wordpress-client.js";
+
+test("parsePlayerArchiveUrl: グローバルメニューから選手一覧URLを取得する", () => {
+  const html = '<a href="/category/top-players2025/">TOP選手紹介</a>';
+  assert.equal(parsePlayerArchiveUrl(html), "https://anclas.jp/category/top-players2025/");
+});
+
+test("parsePublishedPlayerUrls: 一覧カードの公開選手URLを重複なく取得する", () => {
+  const html = `
+    <article><a class="wrap-anchor" href="https://anclas.jp/post-1/?ref=list">選手1</a></article>
+    <article><a href="/post-2/" class="wrap-anchor other">選手2</a></article>
+    <article><a class="wrap-anchor" href="https://anclas.jp/post-1/">選手1</a></article>
+  `;
+  assert.deepEqual(parsePublishedPlayerUrls(html), [
+    "https://anclas.jp/post-1/",
+    "https://anclas.jp/post-2/",
+  ]);
+});
 
 test("parseReportedGoals: 前後半の得点とオウンゴールを通算分へ変換する", () => {
   const html = `

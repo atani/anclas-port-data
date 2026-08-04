@@ -2,7 +2,12 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
-import { parsePlayer, parsePlayerTitle, sortPlayers } from "../src/lib/player-parser.js";
+import {
+  parsePlayer,
+  parsePlayerTitle,
+  reconcilePublishedPlayers,
+  sortPlayers,
+} from "../src/lib/player-parser.js";
 import type { Player } from "../src/lib/types.js";
 import type { WPPost } from "../src/lib/wordpress-client.js";
 
@@ -68,5 +73,38 @@ test("sortPlayers: 背番号昇順、null は末尾", () => {
   assert.deepEqual(
     sorted.map((p) => p.number),
     [3, 10, null],
+  );
+});
+
+test("reconcilePublishedPlayers: 公式一覧から消えた選手だけを除外する", () => {
+  const mk = (id: number): Player => ({
+    id,
+    number: id,
+    position: null,
+    nameJa: `選手${id}`,
+    nameEn: null,
+    nickname: null,
+    photo: { thumbnail: null, medium: null, large: null, full: null },
+    profile: { birthdate: null, hometown: null, height: null, bloodType: null, career: null },
+    personal: [],
+    sourceUrl: `https://anclas.jp/post-${id}/`,
+    blogPosts: [],
+    sns: {},
+    role: null,
+  });
+  const players = Array.from({ length: 11 }, (_, index) => mk(index + 1));
+  const published = players.slice(0, 10).map((player) => player.sourceUrl);
+
+  const result = reconcilePublishedPlayers(players, published);
+  assert.equal(result.players.length, 10);
+  assert.deepEqual(result.removed.map((player) => player.id), [11]);
+  assert.deepEqual(result.missingUrls, []);
+});
+
+test("reconcilePublishedPlayers: 不完全な公式一覧では削除しない", () => {
+  const player = parsePlayer(posts[0]!);
+  assert.throws(
+    () => reconcilePublishedPlayers(Array.from({ length: 18 }, () => player), [player.sourceUrl]),
+    /少なすぎます/,
   );
 });

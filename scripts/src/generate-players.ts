@@ -1,8 +1,13 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { logger } from "./lib/logger.js";
-import { parsePlayer, sortPlayers } from "./lib/player-parser.js";
-import type { PlayerSns, PlayersData } from "./lib/types.js";
-import { fetchPlayerBlogPosts, getPlayerCategory, getPlayerPosts } from "./lib/wordpress-client.js";
+import { parsePlayer, reconcilePublishedPlayers, sortPlayers } from "./lib/player-parser.js";
+import type { Player, PlayerSns, PlayersData } from "./lib/types.js";
+import {
+  fetchPlayerBlogPosts,
+  getPlayerCategory,
+  getPlayerPosts,
+  getPublishedPlayerUrls,
+} from "./lib/wordpress-client.js";
 
 const DATA_DIR = new URL("../../", import.meta.url);
 
@@ -13,35 +18,55 @@ function writeJson(name: string, data: unknown): void {
 }
 
 async function main(): Promise<void> {
-  const category = await getPlayerCategory();
-  logger.info(`選手カテゴリ: id=${category.id} name=${category.name} season=${category.season}`);
+  let season: string;
+  let players: Player[];
+  let loadedFreshProfiles = false;
 
-  const posts = await getPlayerPosts(category.id);
-  if (posts.length === 0) {
-    throw new Error("選手投稿が0件でした（カテゴリ変更の可能性）");
-  }
-
-  const players = sortPlayers(posts.map(parsePlayer));
-
-  const blogEntries = await fetchPlayerBlogPosts();
-  const norm = (s: string) => s.replace(/[\s　]/g, "");
-  let blogCount = 0;
-  for (const p of players) {
-    // 背番号一致 + 名前照合（背番号変更対策: 名前が含まれない場合は番号のみ）
-    const matched = blogEntries.filter((e) => {
-      if (e.number !== p.number) return false;
-      if (e.name && p.nameJa) {
-        return norm(e.name) === norm(p.nameJa) || norm(p.nameJa).includes(norm(e.name)) || norm(e.name).includes(norm(p.nameJa));
-      }
-      return true;
-    });
-    if (matched.length > 0) {
-      p.blogPosts = matched.map((e) => e.post);
-      blogCount += p.blogPosts.length;
+  try {
+    const category = await getPlayerCategory();
+    logger.info(`選手カテゴリ: id=${category.id} name=${category.name} season=${category.season}`);
+    const posts = await getPlayerPosts(category.id);
+    if (posts.length === 0) {
+      throw new Error("選手投稿が0件でした（カテゴリ変更の可能性）");
+    }
+    season = category.season;
+    players = sortPlayers(posts.map(parsePlayer));
+    loadedFreshProfiles = true;
+  } catch (error) {
+    logger.warn(`WordPress APIからの選手生成に失敗。公式一覧HTMLで整合します: ${error}`);
+    const previous = JSON.parse(readFileSync(new URL("players.json", DATA_DIR), "utf-8")) as PlayersData;
+    const reconciliation = reconcilePublishedPlayers(previous.players, await getPublishedPlayerUrls());
+    season = previous.season;
+    players = reconciliation.players;
+    for (const player of reconciliation.removed) {
+      logger.info(`公式一覧から削除: #${player.number ?? "-"} ${player.nameJa}`);
+    }
+    if (reconciliation.missingUrls.length > 0) {
+      logger.warn(`公式一覧に新規選手${reconciliation.missingUrls.length}件あり（API復旧後にプロフィールを追加）`);
     }
   }
-  const playersWithBlog = players.filter((p) => p.blogPosts.length > 0).length;
-  logger.info(`ブログ: ${blogCount}記事を${playersWithBlog}選手に紐付け`);
+
+  if (loadedFreshProfiles) {
+    const blogEntries = await fetchPlayerBlogPosts();
+    const norm = (s: string) => s.replace(/[\s　]/g, "");
+    let blogCount = 0;
+    for (const p of players) {
+      // 背番号一致 + 名前照合（背番号変更対策: 名前が含まれない場合は番号のみ）
+      const matched = blogEntries.filter((e) => {
+        if (e.number !== p.number) return false;
+        if (e.name && p.nameJa) {
+          return norm(e.name) === norm(p.nameJa) || norm(p.nameJa).includes(norm(e.name)) || norm(e.name).includes(norm(p.nameJa));
+        }
+        return true;
+      });
+      if (matched.length > 0) {
+        p.blogPosts = matched.map((e) => e.post);
+        blogCount += p.blogPosts.length;
+      }
+    }
+    const playersWithBlog = players.filter((p) => p.blogPosts.length > 0).length;
+    logger.info(`ブログ: ${blogCount}記事を${playersWithBlog}選手に紐付け`);
+  }
 
   // SNS アカウント（手動管理の JSON）
   try {
@@ -79,13 +104,13 @@ async function main(): Promise<void> {
 
   const data: PlayersData = {
     generatedAt: new Date().toISOString(),
-    season: category.season,
+    season,
     players,
   };
   writeJson("players.json", data);
 
   const missingNumber = players.filter((p) => p.number === null).length;
-  logger.info(`done: ${players.length}選手 / season=${category.season} / 背番号欠損${missingNumber}`);
+  logger.info(`done: ${players.length}選手 / season=${season} / 背番号欠損${missingNumber}`);
 }
 
 main().catch((err) => {

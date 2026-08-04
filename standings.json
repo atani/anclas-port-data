@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T15:24:53.304Z",
+  "generatedAt": "2026-08-04T15:26:48.851Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
@@ -138,45 +138,38 @@
       "goals": 2
     },
     {
-      "rank": 5,
+      "rank": 3,
+      "leagueRank": 10,
+      "name": "玉城 薪瀬",
+      "number": 18,
+      "goals": 2
+    },
+    {
+      "rank": 6,
       "leagueRank": 21,
       "name": "大河内 友貴",
       "number": 5,
       "goals": 1
     },
     {
-      "rank": 5,
+      "rank": 6,
       "leagueRank": 21,
       "name": "野沢 真由",
       "number": 8,
       "goals": 1
     },
     {
-      "rank": 5,
+      "rank": 6,
       "leagueRank": 21,
       "name": "平坂 咲希",
       "number": 10,
       "goals": 1
     },
     {
-      "rank": 5,
+      "rank": 6,
       "leagueRank": 21,
       "name": "田中 花奈",
       "number": 15,
-      "goals": 1
-    },
-    {
-      "rank": 5,
-      "leagueRank": null,
-      "name": "玉城 薪瀬",
-      "number": 18,
-      "goals": 1
-    },
-    {
-      "rank": 5,
-      "leagueRank": null,
-      "name": "北条あゆみ",
-      "number": 23,
       "goals": 1
     }
   ],

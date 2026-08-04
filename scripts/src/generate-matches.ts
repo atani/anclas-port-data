@@ -18,13 +18,13 @@ import { fetchForecast } from "./lib/weather-client.js";
 import { fetchLatestPodcast } from "./lib/spotify.js";
 import { fetchLatestYouTubeVideos } from "./lib/youtube.js";
 import { calculateStandings } from "./lib/standings.js";
+import { loadVerifiedReschedules } from "./lib/reschedule-cache.js";
 import {
   applyRescheduleInfo,
   findMatchPoster,
   findMatchReport,
   findRescheduleInfo,
   selectRescheduleInfo,
-  type RescheduleInfo,
 } from "./lib/wordpress-client.js";
 import { logger } from "./lib/logger.js";
 import {
@@ -38,16 +38,6 @@ import {
 const Q_LEAGUE_URL = "https://q-league.net/match/";
 const COMPETITION = "Qリーグ";
 const DATA_DIR = new URL("../../", import.meta.url);
-const VERIFIED_RESCHEDULES_PATH = new URL("./data/verified-reschedules.json", import.meta.url);
-
-function loadVerifiedReschedules(): Record<string, RescheduleInfo> {
-  if (!existsSync(VERIFIED_RESCHEDULES_PATH)) return {};
-  try {
-    return JSON.parse(readFileSync(VERIFIED_RESCHEDULES_PATH, "utf-8")) as Record<string, RescheduleInfo>;
-  } catch (e) {
-    throw new Error(`確認済み代替日程の読み込みに失敗しました: ${e}`);
-  }
-}
 
 /// 一過性のネットワークエラーで毎時 run が落ちないよう、指数バックオフ付きで最大3回試行する
 async function fetchHtml(url: string): Promise<string> {

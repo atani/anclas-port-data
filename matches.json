@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T23:48:59.087Z",
+  "generatedAt": "2026-08-09T02:30:20.236Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -438,7 +438,13 @@
       ],
       "forecast": null
     },
-    "latestPodcast": null,
+    "latestPodcast": {
+      "title": "#18【インタビュー：嘉数クレア姫麗（後編）】繊細な自分を助けてくれる2人の存在",
+      "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+      "showUrl": "https://open.spotify.com/show/3RnkWRyIMYe9IdtMmK7KFK",
+      "embedUrl": "https://open.spotify.com/embed/show/3RnkWRyIMYe9IdtMmK7KFK?utm_source=oembed",
+      "publishedAt": "2026-07-31"
+    },
     "latestYouTube": {
       "videoId": "ilw2s0oaaI4",
       "title": "◤🐝アビスパ福岡 × 福岡J・アンクラス⚓️◢",

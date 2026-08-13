@@ -213,6 +213,8 @@ export interface MatchesData {
     latestResult: Match | null;
     /** ポッドキャスト最新エピソード。取得失敗時 null */
     latestPodcast: PodcastEpisode | null;
+    /** ポッドキャストの新着エピソード（新しい順、最大5件） */
+    podcastEpisodes: PodcastEpisode[];
     /** YouTube 最新動画（通常動画）。取得失敗時 null */
     latestYouTube: YouTubeVideo | null;
     /** YouTube 最新ショート動画。取得失敗時 null */
@@ -345,6 +347,8 @@ export interface YouTubeVideo {
 
 /** ポッドキャスト最新エピソード */
 export interface PodcastEpisode {
+  /** Spotify episode ID。show card fallbackでは null */
+  id: string | null;
   title: string;
   thumbnailUrl: string;
   showUrl: string;

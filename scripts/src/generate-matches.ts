@@ -12,10 +12,17 @@ import { computeAssists } from "./lib/assists.js";
 import { computeScorers } from "./lib/scorers.js";
 import { buildResultNotification, detectNewlyFinishedAnclasMatches } from "./lib/result-diff.js";
 import { writeNotifyQueue } from "./lib/notify-queue.js";
+import {
+  buildPodcastNotification,
+  detectNewPodcastEpisodes,
+  MATCH_RESULTS_TOPIC,
+  podcastEpisodeId,
+  type RemoteNotification,
+} from "./lib/remote-notification.js";
 import { normalizeTeamName, parseQLeagueMatches } from "./lib/qleague-parser.js";
 import { fetchShopItems } from "./lib/shop.js";
 import { fetchForecast } from "./lib/weather-client.js";
-import { fetchLatestPodcast } from "./lib/spotify.js";
+import { fetchLatestPodcasts } from "./lib/spotify.js";
 import { fetchLatestYouTubeVideos } from "./lib/youtube.js";
 import { calculateStandings } from "./lib/standings.js";
 import { loadVerifiedReschedules } from "./lib/reschedule-cache.js";
@@ -31,6 +38,7 @@ import {
   ANCLAS_TEAM_NAME,
   type Match,
   type MatchesData,
+  type PodcastEpisode,
   type ScorerRank,
   type StandingsData,
 } from "./lib/types.js";
@@ -120,26 +128,48 @@ function writeJson(name: string, data: unknown): void {
   logger.info(`wrote ${name} (${wroteIos ? "data, ios" : "data"})`);
 }
 
-/** 上書き前の matches.json と比較し、新規確定アンクラス試合の通知をキューに書き出す */
-function queueResultNotifications(matches: Match[]): void {
-  let prev: MatchesData | null = null;
+function readPreviousMatchesData(): MatchesData | null {
   const prevPath = new URL("matches.json", DATA_DIR);
-  if (existsSync(prevPath)) {
-    try {
-      prev = JSON.parse(readFileSync(prevPath, "utf-8")) as MatchesData;
-    } catch {
-      prev = null;
-    }
-  }
-  const newlyFinished = detectNewlyFinishedAnclasMatches(prev, matches);
-  const notifications = newlyFinished.map(buildResultNotification);
-  writeNotifyQueue(notifications);
-  if (notifications.length > 0) {
-    logger.info(`結果通知キュー: 新規確定${notifications.length}試合を書き出し`);
+  if (!existsSync(prevPath)) return null;
+  try {
+    return JSON.parse(readFileSync(prevPath, "utf-8")) as MatchesData;
+  } catch {
+    return null;
   }
 }
 
+function queueRemoteNotifications(
+  previous: MatchesData | null,
+  matches: Match[],
+  podcastEpisodes: PodcastEpisode[],
+): void {
+  const resultNotifications: RemoteNotification[] =
+    detectNewlyFinishedAnclasMatches(previous, matches).map((match) => {
+      const notification = buildResultNotification(match);
+      return {
+        topic: MATCH_RESULTS_TOPIC,
+        title: notification.title,
+        body: notification.body,
+        data: { type: "match-result", matchId: notification.matchId },
+      };
+    });
+  const previousPodcasts = previous?.anclas.podcastEpisodes?.length
+    ? previous.anclas.podcastEpisodes
+    : previous?.anclas.latestPodcast
+      ? [previous.anclas.latestPodcast]
+      : [];
+  const podcastNotifications = detectNewPodcastEpisodes(previousPodcasts, podcastEpisodes)
+    .slice(0, 1)
+    .map(buildPodcastNotification)
+    .filter((item): item is RemoteNotification => item !== null);
+  const notifications = [...resultNotifications, ...podcastNotifications];
+  writeNotifyQueue(notifications);
+  if (resultNotifications.length > 0) logger.info(`結果通知キュー: ${resultNotifications.length}件`);
+  if (podcastNotifications.length > 0) logger.info(`Podcast通知キュー: ${podcastNotifications.length}件`);
+}
+
 async function main(): Promise<void> {
+  const previousMatchesData = readPreviousMatchesData();
   // 1. q-league → 試合一覧
   const qHtml = await fetchHtml(Q_LEAGUE_URL);
   const matches = parseQLeagueMatches(qHtml, { competition: COMPETITION });
@@ -369,8 +399,19 @@ async function main(): Promise<void> {
     } catch { /* ignore */ }
   }
 
-  // 6. ポッドキャスト最新エピソード（oembed, 認証不要）
-  let latestPodcast = await fetchLatestPodcast();
+  // 6. ポッドキャスト新着エピソード（公開ページ, 認証不要）
+  const fetchedPodcastEpisodes = await fetchLatestPodcasts();
+  const previousPodcastEpisodes = previousMatchesData?.anclas.podcastEpisodes?.length
+    ? previousMatchesData.anclas.podcastEpisodes
+    : previousMatchesData?.anclas.latestPodcast
+      ? [previousMatchesData.anclas.latestPodcast]
+      : [];
+  const podcastEpisodes = fetchedPodcastEpisodes.some(podcastEpisodeId)
+    ? fetchedPodcastEpisodes
+    : previousPodcastEpisodes.length > 0
+      ? previousPodcastEpisodes
+      : fetchedPodcastEpisodes;
+  const latestPodcast = podcastEpisodes[0] ?? null;
   if (latestPodcast) {
     logger.info(`ポッドキャスト: ${latestPodcast.title.slice(0, 40)}`);
   } else {
@@ -407,6 +448,7 @@ async function main(): Promise<void> {
       nextMatch,
       latestResult: pickLatestResult(matches),
       latestPodcast,
+      podcastEpisodes,
       latestYouTube,
       latestYouTubeShort,
       shopItems,
@@ -459,7 +501,7 @@ async function main(): Promise<void> {
   // 結果 push 通知キュー: 上書き前の matches.json（＝前回値）と比較し、
   // 新たに finished になったアンクラス試合を検出してキューに書き出す。
   // 実際の FCM 送信は notify ステップ（FCM_SERVICE_ACCOUNT_JSON 必要）が行う。
-  queueResultNotifications(matches);
+  queueRemoteNotifications(previousMatchesData, matches, podcastEpisodes);
 
   writeJson("matches.json", matchesData);
   writeJson("standings.json", standingsData);

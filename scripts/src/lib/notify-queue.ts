@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import type { ResultNotification } from "./result-diff.js";
+import type { RemoteNotification } from "./remote-notification.js";
 
 /**
  * 結果通知キューの場所（scripts/notify-queue.json）。
@@ -8,15 +8,15 @@ import type { ResultNotification } from "./result-diff.js";
  */
 export const NOTIFY_QUEUE_URL = new URL("../../notify-queue.json", import.meta.url);
 
-export function writeNotifyQueue(notifications: ResultNotification[]): void {
+export function writeNotifyQueue(notifications: RemoteNotification[]): void {
   writeFileSync(NOTIFY_QUEUE_URL, `${JSON.stringify(notifications, null, 2)}\n`, "utf-8");
 }
 
-export function readNotifyQueue(): ResultNotification[] {
+export function readNotifyQueue(): RemoteNotification[] {
   if (!existsSync(NOTIFY_QUEUE_URL)) return [];
   try {
     const parsed = JSON.parse(readFileSync(NOTIFY_QUEUE_URL, "utf-8"));
-    return Array.isArray(parsed) ? (parsed as ResultNotification[]) : [];
+    return Array.isArray(parsed) ? (parsed as RemoteNotification[]) : [];
   } catch {
     return [];
   }

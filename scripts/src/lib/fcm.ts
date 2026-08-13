@@ -1,9 +1,7 @@
 import { GoogleAuth } from "google-auth-library";
 import { logger } from "./logger.js";
-import type { ResultNotification } from "./result-diff.js";
-
-/** FCM トピック名（iOS 側もこのトピックを購読する） */
-export const MATCH_RESULTS_TOPIC = "match-results";
+import type { RemoteNotification } from "./remote-notification.js";
+export { MATCH_RESULTS_TOPIC, NEW_PODCAST_TOPIC } from "./remote-notification.js";
 
 const FCM_SCOPE = "https://www.googleapis.com/auth/firebase.messaging";
 
@@ -38,18 +36,18 @@ async function defaultGetAccessToken(
 }
 
 /**
- * FCM HTTP v1 API でトピック match-results へ結果通知を送る。
+ * FCM HTTP v1 API で通知ごとに指定されたトピックへ送る。
  *
  * FCM_SERVICE_ACCOUNT_JSON（またはオプション）が未設定なら送信せず
  * 正常終了する（skipped: true）。CI で secret 未設定でも fail させないため。
  */
-export async function sendResultNotifications(
-  notifications: ResultNotification[],
+export async function sendNotifications(
+  notifications: RemoteNotification[],
   options: SendOptions = {},
 ): Promise<SendResult> {
   const raw = options.serviceAccountJson ?? process.env.FCM_SERVICE_ACCOUNT_JSON;
   if (!raw || raw.trim() === "") {
-    logger.info("FCM_SERVICE_ACCOUNT_JSON 未設定のため結果通知の送信をスキップします");
+    logger.info("FCM_SERVICE_ACCOUNT_JSON 未設定のため通知の送信をスキップします");
     return { skipped: true, sent: 0, failed: 0 };
   }
   if (notifications.length === 0) {
@@ -79,9 +77,9 @@ export async function sendResultNotifications(
   for (const n of notifications) {
     const payload = {
       message: {
-        topic: MATCH_RESULTS_TOPIC,
+        topic: n.topic,
         notification: { title: n.title, body: n.body },
-        data: { type: "match-result", matchId: n.matchId },
+        data: n.data,
       },
     };
     const res = await doFetch(endpoint, {
@@ -94,11 +92,11 @@ export async function sendResultNotifications(
     });
     if (res.ok) {
       sent++;
-      logger.info(`結果通知を送信: ${n.body}`);
+      logger.info(`通知を送信 topic=${n.topic}: ${n.body}`);
     } else {
       failed++;
       const text = await res.text().catch(() => "");
-      logger.warn(`結果通知の送信に失敗 (${res.status}): ${text.slice(0, 200)}`);
+      logger.warn(`通知の送信に失敗 (${res.status}): ${text.slice(0, 200)}`);
     }
   }
   return { skipped: false, sent, failed };

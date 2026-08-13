@@ -10,6 +10,37 @@ interface OEmbedResponse {
   iframe_url: string;
 }
 
+/** Spotify 埋め込みページの Next.js データから、公開日を JST で取り出す。 */
+export function parsePublishedDate(html: string): string | null {
+  const serializedState = html.match(
+    /<script\b[^>]*\bid=["']__NEXT_DATA__["'][^>]*>([\s\S]*?)<\/script>/i,
+  )?.[1];
+  if (!serializedState) return null;
+
+  try {
+    const data = JSON.parse(serializedState) as {
+      props?: { pageProps?: { state?: { data?: { entity?: { releaseDate?: { isoString?: string } } } } } };
+    };
+    const isoString = data.props?.pageProps?.state?.data?.entity?.releaseDate?.isoString;
+    if (!isoString || Number.isNaN(Date.parse(isoString))) return null;
+
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Tokyo",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).formatToParts(new Date(isoString));
+    const values = Object.fromEntries(
+      parts
+        .filter((part) => part.type !== "literal")
+        .map((part) => [part.type, part.value]),
+    );
+    return `${values.year}-${values.month}-${values.day}`;
+  } catch {
+    return null;
+  }
+}
+
 async function fetchPublishedDate(): Promise<string | null> {
   try {
     const res = await fetch(EMBED_URL, {
@@ -17,9 +48,7 @@ async function fetchPublishedDate(): Promise<string | null> {
       headers: { "User-Agent": "Mozilla/5.0 (compatible; anclas-port-pipeline)" },
     });
     if (!res.ok) return null;
-    const html = await res.text();
-    const match = html.match(/(202\d-\d{2}-\d{2})/);
-    return match?.[1] ?? null;
+    return parsePublishedDate(await res.text());
   } catch {
     return null;
   }

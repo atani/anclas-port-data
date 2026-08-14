@@ -1,10 +1,15 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { MATCH_RESULTS_TOPIC, sendResultNotifications } from "../src/lib/fcm.js";
-import type { ResultNotification } from "../src/lib/result-diff.js";
+import { MATCH_RESULTS_TOPIC, sendNotifications } from "../src/lib/fcm.js";
+import type { RemoteNotification } from "../src/lib/remote-notification.js";
 
-const sample: ResultNotification[] = [
-  { matchId: "su-post-1", title: "試合終了", body: "アンクラス 2 - 1 水俣ユニオン" },
+const sample: RemoteNotification[] = [
+  {
+    topic: MATCH_RESULTS_TOPIC,
+    title: "試合終了",
+    body: "アンクラス 2 - 1 水俣ユニオン",
+    data: { type: "match-result", matchId: "su-post-1" },
+  },
 ];
 
 const serviceAccount = JSON.stringify({
@@ -14,13 +19,13 @@ const serviceAccount = JSON.stringify({
 });
 
 test("sendResultNotifications: 秘密未設定なら送信をスキップ", async () => {
-  const r = await sendResultNotifications(sample, { serviceAccountJson: "" });
+  const r = await sendNotifications(sample, { serviceAccountJson: "" });
   assert.equal(r.skipped, true);
   assert.equal(r.sent, 0);
 });
 
 test("sendResultNotifications: 通知が空なら送信しない", async () => {
-  const r = await sendResultNotifications([], {
+  const r = await sendNotifications([], {
     serviceAccountJson: serviceAccount,
     getAccessToken: async () => "tok",
     fetchImpl: (async () => {
@@ -38,7 +43,7 @@ test("sendResultNotifications: fetch をモックしてトピックへ送信", a
     return new Response("{}", { status: 200 });
   }) as unknown as typeof fetch;
 
-  const r = await sendResultNotifications(sample, {
+  const r = await sendNotifications(sample, {
     serviceAccountJson: serviceAccount,
     getAccessToken: async () => "access-token-xyz",
     fetchImpl,
@@ -61,7 +66,7 @@ test("sendResultNotifications: fetch をモックしてトピックへ送信", a
 test("sendResultNotifications: 送信失敗は failed に計上（例外にしない）", async () => {
   const fetchImpl = (async () =>
     new Response("boom", { status: 400 })) as unknown as typeof fetch;
-  const r = await sendResultNotifications(sample, {
+  const r = await sendNotifications(sample, {
     serviceAccountJson: serviceAccount,
     getAccessToken: async () => "tok",
     fetchImpl,

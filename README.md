@@ -6,6 +6,12 @@ The files in this repository come from public league and club information.
 The pipeline runs hourly on GitHub Actions.
 The application source code is maintained in a separate repository.
 
+This repository is the authoritative owner of the production data pipeline,
+its JSON schema, and generated feeds. Pipeline changes must be implemented and
+released here before or together with client changes. Copies under `scripts/`
+or `data/` in the application repository are historical references and are not
+production inputs.
+
 ## Files
 
 - `matches.json` — match schedule and results

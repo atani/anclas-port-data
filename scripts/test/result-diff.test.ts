@@ -50,6 +50,7 @@ function matchesData(matches: Match[]): MatchesData {
       nextMatch: null,
       latestResult: null,
       latestPodcast: null,
+      podcastEpisodes: [],
       latestYouTube: null,
       latestYouTubeShort: null,
       shopItems: [],

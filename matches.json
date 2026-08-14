@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T00:02:32.008Z",
+  "generatedAt": "2026-08-14T01:11:25.749Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -439,12 +439,55 @@
       "forecast": null
     },
     "latestPodcast": {
+      "id": "55pB3l8IPMpCRWBpO9BDHM",
       "title": "＃19【インタビュー：宮脇ゆりあ】鳥かごで泣いたあの頃...デュアルキャリアで大忙しの弱冠18歳の日常と道のり",
       "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
-      "showUrl": "https://open.spotify.com/show/3RnkWRyIMYe9IdtMmK7KFK",
-      "embedUrl": "https://open.spotify.com/embed/show/3RnkWRyIMYe9IdtMmK7KFK?utm_source=oembed",
-      "publishedAt": "2026-08-13"
+      "showUrl": "https://open.spotify.com/episode/55pB3l8IPMpCRWBpO9BDHM",
+      "embedUrl": "https://open.spotify.com/embed/episode/55pB3l8IPMpCRWBpO9BDHM",
+      "publishedAt": "2026-08-12"
     },
+    "podcastEpisodes": [
+      {
+        "id": "55pB3l8IPMpCRWBpO9BDHM",
+        "title": "＃19【インタビュー：宮脇ゆりあ】鳥かごで泣いたあの頃...デュアルキャリアで大忙しの弱冠18歳の日常と道のり",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "showUrl": "https://open.spotify.com/episode/55pB3l8IPMpCRWBpO9BDHM",
+        "embedUrl": "https://open.spotify.com/embed/episode/55pB3l8IPMpCRWBpO9BDHM",
+        "publishedAt": "2026-08-12"
+      },
+      {
+        "id": "50yfLJXCpgd2mwSIouT1Zy",
+        "title": "#18【インタビュー：嘉数クレア姫麗（後編）】繊細な自分を助けてくれる2人の存在",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "showUrl": "https://open.spotify.com/episode/50yfLJXCpgd2mwSIouT1Zy",
+        "embedUrl": "https://open.spotify.com/embed/episode/50yfLJXCpgd2mwSIouT1Zy",
+        "publishedAt": "2026-07-31"
+      },
+      {
+        "id": "0duyLaCFcArcFEvrxsfDVj",
+        "title": "#17【インタビュー：嘉数クレア姫麗（前編）】自信喪失...紆余曲折を経て自分のサッカーに辿り着くまでのストーリー",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "showUrl": "https://open.spotify.com/episode/0duyLaCFcArcFEvrxsfDVj",
+        "embedUrl": "https://open.spotify.com/embed/episode/0duyLaCFcArcFEvrxsfDVj",
+        "publishedAt": "2026-07-22"
+      },
+      {
+        "id": "3WEbo76NBbGAsdreyING1T",
+        "title": "＃16【インタビュー：森和奏】人として成長できた高校時代。人に媚びない愛されキャラ",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "showUrl": "https://open.spotify.com/episode/3WEbo76NBbGAsdreyING1T",
+        "embedUrl": "https://open.spotify.com/embed/episode/3WEbo76NBbGAsdreyING1T",
+        "publishedAt": "2026-07-19"
+      },
+      {
+        "id": "6JEiz0hLlWwyxfvOsx1FNP",
+        "title": "#15【インタビュー：平坂咲希】シル活だけじゃない！！ハマり始めて危険な趣味",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "showUrl": "https://open.spotify.com/episode/6JEiz0hLlWwyxfvOsx1FNP",
+        "embedUrl": "https://open.spotify.com/embed/episode/6JEiz0hLlWwyxfvOsx1FNP",
+        "publishedAt": "2026-07-09"
+      }
+    ],
     "latestYouTube": {
       "videoId": "ilw2s0oaaI4",
       "title": "◤🐝アビスパ福岡 × 福岡J・アンクラス⚓️◢",
@@ -452,6 +495,43 @@
       "url": "https://www.youtube.com/watch?v=ilw2s0oaaI4",
       "publishedAt": "2026-07-26T01:28:09+00:00"
     },
+    "youtubeVideos": [
+      {
+        "videoId": "ilw2s0oaaI4",
+        "title": "◤🐝アビスパ福岡 × 福岡J・アンクラス⚓️◢",
+        "thumbnailUrl": "https://i2.ytimg.com/vi/ilw2s0oaaI4/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=ilw2s0oaaI4",
+        "publishedAt": "2026-07-26T01:28:09+00:00"
+      },
+      {
+        "videoId": "Tun-vMtcLBk",
+        "title": "◤🐝アビスパ福岡 × 福岡J・アンクラス⚓️◢",
+        "thumbnailUrl": "https://i1.ytimg.com/vi/Tun-vMtcLBk/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=Tun-vMtcLBk",
+        "publishedAt": "2026-07-25T01:17:29+00:00"
+      },
+      {
+        "videoId": "I7T8Bsn-jtQ",
+        "title": "◤🐝アビスパ福岡 × 福岡J・アンクラス⚓️◢",
+        "thumbnailUrl": "https://i2.ytimg.com/vi/I7T8Bsn-jtQ/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=I7T8Bsn-jtQ",
+        "publishedAt": "2026-07-24T06:58:32+00:00"
+      },
+      {
+        "videoId": "1Je5QQTGuDE",
+        "title": "【ANCLASテーマソング】2026シーズン開幕！テーマソング初披露に密着｜制作裏側ドキュメンタリー",
+        "thumbnailUrl": "https://i2.ytimg.com/vi/1Je5QQTGuDE/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=1Je5QQTGuDE",
+        "publishedAt": "2026-04-30T11:00:06+00:00"
+      },
+      {
+        "videoId": "KgAdjt_tQRo",
+        "title": "【ANCLASテーマソング】女子サッカーチームがレコーディングに挑戦｜制作裏側ドキュメンタリー",
+        "thumbnailUrl": "https://i4.ytimg.com/vi/KgAdjt_tQRo/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=KgAdjt_tQRo",
+        "publishedAt": "2026-03-19T12:00:39+00:00"
+      }
+    ],
     "latestYouTubeShort": {
       "videoId": "lbfzRHU1Djs",
       "title": "想いをのせたラップを選手のアイデアで制作！！！",
@@ -459,6 +539,43 @@
       "url": "https://www.youtube.com/shorts/lbfzRHU1Djs",
       "publishedAt": "2026-03-27T09:01:00+00:00"
     },
+    "youtubeShorts": [
+      {
+        "videoId": "lbfzRHU1Djs",
+        "title": "想いをのせたラップを選手のアイデアで制作！！！",
+        "thumbnailUrl": "https://i1.ytimg.com/vi/lbfzRHU1Djs/hqdefault.jpg",
+        "url": "https://www.youtube.com/shorts/lbfzRHU1Djs",
+        "publishedAt": "2026-03-27T09:01:00+00:00"
+      },
+      {
+        "videoId": "8fE4lsYHzhU",
+        "title": "驚きの才能！キャプテン「大河内友貴」選手",
+        "thumbnailUrl": "https://i1.ytimg.com/vi/8fE4lsYHzhU/hqdefault.jpg",
+        "url": "https://www.youtube.com/shorts/8fE4lsYHzhU",
+        "publishedAt": "2026-03-25T09:00:08+00:00"
+      },
+      {
+        "videoId": "H4Rxi-j31VM",
+        "title": "福岡J・アンクラス目標は〇〇！！",
+        "thumbnailUrl": "https://i1.ytimg.com/vi/H4Rxi-j31VM/hqdefault.jpg",
+        "url": "https://www.youtube.com/shorts/H4Rxi-j31VM",
+        "publishedAt": "2026-03-23T09:00:19+00:00"
+      },
+      {
+        "videoId": "t8AZeFy0CV4",
+        "title": "テーマソング制作〜上田監督の想い〜",
+        "thumbnailUrl": "https://i1.ytimg.com/vi/t8AZeFy0CV4/hqdefault.jpg",
+        "url": "https://www.youtube.com/shorts/t8AZeFy0CV4",
+        "publishedAt": "2026-03-22T09:01:09+00:00"
+      },
+      {
+        "videoId": "ycQZElJ5lHQ",
+        "title": "女子アスリートの朝食は？　#アンクラス #アスリート #朝食",
+        "thumbnailUrl": "https://i2.ytimg.com/vi/ycQZElJ5lHQ/hqdefault.jpg",
+        "url": "https://www.youtube.com/shorts/ycQZElJ5lHQ",
+        "publishedAt": "2025-10-16T11:01:56+00:00"
+      }
+    ],
     "shopItems": [
       {
         "id": "146226679",
@@ -2641,17 +2758,17 @@
           "assist": null
         },
         {
-          "minute": "59分(後半19分)",
-          "team": "福岡J・アンクラス",
+          "minute": "59分",
           "playerNumber": 3,
-          "playerName": "澁澤 光",
+          "playerName": "澁澤光",
+          "team": "福岡J・アンクラス",
           "assist": null
         },
         {
-          "minute": "69分(後半29分)",
+          "minute": "69分",
+          "playerNumber": 23,
+          "playerName": "北条あゆみ",
           "team": "福岡J・アンクラス",
-          "playerNumber": 18,
-          "playerName": "玉城 薪瀬",
           "assist": null
         }
       ],

@@ -12,11 +12,19 @@ import { computeAssists } from "./lib/assists.js";
 import { computeScorers } from "./lib/scorers.js";
 import { buildResultNotification, detectNewlyFinishedAnclasMatches } from "./lib/result-diff.js";
 import { writeNotifyQueue } from "./lib/notify-queue.js";
+import {
+  buildPodcastNotification,
+  detectNewPodcastEpisodes,
+  MATCH_RESULTS_TOPIC,
+  podcastEpisodeId,
+  type RemoteNotification,
+} from "./lib/remote-notification.js";
 import { normalizeTeamName, parseQLeagueMatches } from "./lib/qleague-parser.js";
 import { fetchShopItems } from "./lib/shop.js";
 import { fetchForecast } from "./lib/weather-client.js";
-import { fetchLatestPodcast } from "./lib/spotify.js";
+import { fetchLatestPodcasts } from "./lib/spotify.js";
 import { fetchLatestYouTubeVideos } from "./lib/youtube.js";
+import { mergeMedia } from "./lib/media-merge.js";
 import { calculateStandings } from "./lib/standings.js";
 import { loadVerifiedReschedules } from "./lib/reschedule-cache.js";
 import {
@@ -31,8 +39,10 @@ import {
   ANCLAS_TEAM_NAME,
   type Match,
   type MatchesData,
+  type PodcastEpisode,
   type ScorerRank,
   type StandingsData,
+  type YouTubeVideo,
 } from "./lib/types.js";
 
 const Q_LEAGUE_URL = "https://q-league.net/match/";
@@ -120,26 +130,50 @@ function writeJson(name: string, data: unknown): void {
   logger.info(`wrote ${name} (${wroteIos ? "data, ios" : "data"})`);
 }
 
-/** 上書き前の matches.json と比較し、新規確定アンクラス試合の通知をキューに書き出す */
-function queueResultNotifications(matches: Match[]): void {
-  let prev: MatchesData | null = null;
+function readPreviousMatchesData(): MatchesData | null {
   const prevPath = new URL("matches.json", DATA_DIR);
-  if (existsSync(prevPath)) {
-    try {
-      prev = JSON.parse(readFileSync(prevPath, "utf-8")) as MatchesData;
-    } catch {
-      prev = null;
-    }
-  }
-  const newlyFinished = detectNewlyFinishedAnclasMatches(prev, matches);
-  const notifications = newlyFinished.map(buildResultNotification);
-  writeNotifyQueue(notifications);
-  if (notifications.length > 0) {
-    logger.info(`結果通知キュー: 新規確定${notifications.length}試合を書き出し`);
+  if (!existsSync(prevPath)) return null;
+  try {
+    return JSON.parse(readFileSync(prevPath, "utf-8")) as MatchesData;
+  } catch (error) {
+    const detail = error instanceof Error ? error.message.slice(0, 160) : "unknown error";
+    logger.warn(`前回matches.jsonの読み込み失敗（前回値の復元・通知差分をスキップ）: ${detail}`);
+    return null;
   }
 }
 
+function queueRemoteNotifications(
+  previous: MatchesData | null,
+  matches: Match[],
+  podcastEpisodes: PodcastEpisode[],
+): void {
+  const resultNotifications: RemoteNotification[] =
+    detectNewlyFinishedAnclasMatches(previous, matches).map((match) => {
+      const notification = buildResultNotification(match);
+      return {
+        topic: MATCH_RESULTS_TOPIC,
+        title: notification.title,
+        body: notification.body,
+        data: { type: "match-result", matchId: notification.matchId },
+      };
+    });
+  const previousPodcasts = previous?.anclas.podcastEpisodes?.length
+    ? previous.anclas.podcastEpisodes
+    : previous?.anclas.latestPodcast
+      ? [previous.anclas.latestPodcast]
+      : [];
+  const podcastNotifications = detectNewPodcastEpisodes(previousPodcasts, podcastEpisodes)
+    .slice(0, 1)
+    .map(buildPodcastNotification)
+    .filter((item): item is RemoteNotification => item !== null);
+  const notifications = [...resultNotifications, ...podcastNotifications];
+  writeNotifyQueue(notifications);
+  if (resultNotifications.length > 0) logger.info(`結果通知キュー: ${resultNotifications.length}件`);
+  if (podcastNotifications.length > 0) logger.info(`Podcast通知キュー: ${podcastNotifications.length}件`);
+}
+
 async function main(): Promise<void> {
+  const previousMatchesData = readPreviousMatchesData();
   // 1. q-league → 試合一覧
   const qHtml = await fetchHtml(Q_LEAGUE_URL);
   const matches = parseQLeagueMatches(qHtml, { competition: COMPETITION });
@@ -255,34 +289,28 @@ async function main(): Promise<void> {
   // 4.5 確定試合の不変データを前回 matches.json から引き継ぐ
   // CI 環境では anclas.jp が 403 を返しマッチレポート等を取得できないため、
   // 一度取得済みの確定試合データ（得点・メンバー・レポート）を前回値で補完する
-  const prevPath = new URL("matches.json", DATA_DIR);
-  if (existsSync(prevPath)) {
-    try {
-      const prev = JSON.parse(readFileSync(prevPath, "utf-8")) as MatchesData;
-      const prevById = new Map(prev.matches.map((p) => [p.id, p]));
-      let restoredReports = 0;
-      for (const m of matches) {
-        if (m.status !== "finished") continue;
-        const p = prevById.get(m.id);
-        if (!p) continue;
-        if (m.goals.length === 0 && p.goals.length > 0) m.goals = p.goals;
-        if (m.starters.length === 0 && p.starters.length > 0) m.starters = p.starters;
-        if (m.subs.length === 0 && p.subs.length > 0) m.subs = p.subs;
-        if (m.substitutions.length === 0 && p.substitutions.length > 0) m.substitutions = p.substitutions;
-        if (m.cards.length === 0 && p.cards.length > 0) m.cards = p.cards;
-        if (!m.stats && p.stats) m.stats = p.stats;
-        if (!m.matchReport && p.matchReport) {
-          m.matchReport = p.matchReport;
-          restoredReports++;
-        }
-        if (m.photoGallery.length === 0 && p.photoGallery && p.photoGallery.length > 0) {
-          m.photoGallery = p.photoGallery;
-        }
+  if (previousMatchesData) {
+    const prevById = new Map(previousMatchesData.matches.map((p) => [p.id, p]));
+    let restoredReports = 0;
+    for (const m of matches) {
+      if (m.status !== "finished") continue;
+      const p = prevById.get(m.id);
+      if (!p) continue;
+      if (m.goals.length === 0 && p.goals.length > 0) m.goals = p.goals;
+      if (m.starters.length === 0 && p.starters.length > 0) m.starters = p.starters;
+      if (m.subs.length === 0 && p.subs.length > 0) m.subs = p.subs;
+      if (m.substitutions.length === 0 && p.substitutions.length > 0) m.substitutions = p.substitutions;
+      if (m.cards.length === 0 && p.cards.length > 0) m.cards = p.cards;
+      if (!m.stats && p.stats) m.stats = p.stats;
+      if (!m.matchReport && p.matchReport) {
+        m.matchReport = p.matchReport;
+        restoredReports++;
       }
-      if (restoredReports > 0) logger.info(`前回値から${restoredReports}件のマッチレポートを引き継ぎ`);
-    } catch {
-      // 非致命
+      if (m.photoGallery.length === 0 && p.photoGallery && p.photoGallery.length > 0) {
+        m.photoGallery = p.photoGallery;
+      }
     }
+    if (restoredReports > 0) logger.info(`前回値から${restoredReports}件のマッチレポートを引き継ぎ`);
   }
 
   // 5. 次の試合のポスター画像を anclas.jp から取得
@@ -354,23 +382,35 @@ async function main(): Promise<void> {
   }
 
   // 前回値引き継ぎ: matchdayProgramUrl
-  if (existsSync(prevPath)) {
-    try {
-      const prev = JSON.parse(readFileSync(prevPath, "utf-8")) as MatchesData;
-      const prevById = new Map(prev.matches.map((p) => [p.id, p]));
-      for (const m of matches) {
-        if (!m.matchdayProgramUrl) {
-          const p = prevById.get(m.id);
-          if (p?.matchdayProgramUrl) {
-            m.matchdayProgramUrl = p.matchdayProgramUrl;
-          }
+  if (previousMatchesData) {
+    const prevById = new Map(previousMatchesData.matches.map((p) => [p.id, p]));
+    for (const m of matches) {
+      if (!m.matchdayProgramUrl) {
+        const p = prevById.get(m.id);
+        if (p?.matchdayProgramUrl) {
+          m.matchdayProgramUrl = p.matchdayProgramUrl;
         }
       }
-    } catch { /* ignore */ }
+    }
   }
 
-  // 6. ポッドキャスト最新エピソード（oembed, 認証不要）
-  let latestPodcast = await fetchLatestPodcast();
+  // 6. ポッドキャスト新着エピソード（公開ページ, 認証不要）
+  const fetchedPodcastEpisodes = await fetchLatestPodcasts();
+  const previousPodcastEpisodes = previousMatchesData?.anclas.podcastEpisodes?.length
+    ? previousMatchesData.anclas.podcastEpisodes
+    : previousMatchesData?.anclas.latestPodcast
+      ? [previousMatchesData.anclas.latestPodcast]
+      : [];
+  const podcastEpisodes = mergeMedia(
+    fetchedPodcastEpisodes,
+    previousPodcastEpisodes,
+    podcastEpisodeId,
+  );
+  const podcastFallbackCount = Math.max(0, podcastEpisodes.length - fetchedPodcastEpisodes.length);
+  if (podcastFallbackCount > 0) {
+    logger.warn(`Podcast: 前回値${podcastFallbackCount}件で不足分を補完`);
+  }
+  const latestPodcast = podcastEpisodes[0] ?? null;
   if (latestPodcast) {
     logger.info(`ポッドキャスト: ${latestPodcast.title.slice(0, 40)}`);
   } else {
@@ -378,21 +418,46 @@ async function main(): Promise<void> {
   }
 
   // 6. YouTube 最新（通常動画＋ショート別々に）
-  const { latest: latestYouTube, latestShort: latestYouTubeShort } = await fetchLatestYouTubeVideos();
+  const fetchedYouTube = await fetchLatestYouTubeVideos();
+  const previousYoutubeVideos = previousMatchesData?.anclas.youtubeVideos?.length
+    ? previousMatchesData.anclas.youtubeVideos
+    : previousMatchesData?.anclas.latestYouTube
+      ? [previousMatchesData.anclas.latestYouTube]
+      : [];
+  const previousYoutubeShorts = previousMatchesData?.anclas.youtubeShorts?.length
+    ? previousMatchesData.anclas.youtubeShorts
+    : previousMatchesData?.anclas.latestYouTubeShort
+      ? [previousMatchesData.anclas.latestYouTubeShort]
+      : [];
+  const youtubeVideos = mergeMedia(
+    fetchedYouTube.videos,
+    previousYoutubeVideos,
+    (video) => video.videoId,
+  );
+  const youtubeShorts = mergeMedia(
+    fetchedYouTube.shorts,
+    previousYoutubeShorts,
+    (video) => video.videoId,
+  );
+  const latestYouTube: YouTubeVideo | null = youtubeVideos[0] ?? null;
+  const latestYouTubeShort: YouTubeVideo | null = youtubeShorts[0] ?? null;
+  const videoFallbackCount = Math.max(0, youtubeVideos.length - fetchedYouTube.videos.length);
+  const shortFallbackCount = Math.max(0, youtubeShorts.length - fetchedYouTube.shorts.length);
+  if (videoFallbackCount > 0) {
+    logger.warn(`YouTube通常動画: 前回値${videoFallbackCount}件で不足分を補完`);
+  }
+  if (shortFallbackCount > 0) {
+    logger.warn(`YouTube Shorts: 前回値${shortFallbackCount}件で不足分を補完`);
+  }
   if (latestYouTube) logger.info(`YouTube: ${latestYouTube.title.slice(0, 40)}`);
   if (latestYouTubeShort) logger.info(`YouTubeショート: ${latestYouTubeShort.title.slice(0, 40)}`);
   if (!latestYouTube && !latestYouTubeShort) logger.warn("YouTube 取得失敗");
 
   // 7. オンラインショップ商品（取得失敗時は前回値を引き継ぐ）
   let shopItems = await fetchShopItems();
-  if (shopItems.length === 0 && existsSync(prevPath)) {
-    try {
-      const prev = JSON.parse(readFileSync(prevPath, "utf-8")) as MatchesData;
-      if (prev.anclas.shopItems?.length) {
-        shopItems = prev.anclas.shopItems;
-        logger.info(`ショップ: 前回値${shopItems.length}件を引き継ぎ`);
-      }
-    } catch { /* ignore */ }
+  if (shopItems.length === 0 && previousMatchesData?.anclas.shopItems?.length) {
+    shopItems = previousMatchesData.anclas.shopItems;
+    logger.info(`ショップ: 前回値${shopItems.length}件を引き継ぎ`);
   } else if (shopItems.length > 0) {
     logger.info(`ショップ: ${shopItems.length}商品取得`);
   }
@@ -407,8 +472,11 @@ async function main(): Promise<void> {
       nextMatch,
       latestResult: pickLatestResult(matches),
       latestPodcast,
+      podcastEpisodes,
       latestYouTube,
+      youtubeVideos,
       latestYouTubeShort,
+      youtubeShorts,
       shopItems,
     },
     matches,
@@ -459,7 +527,7 @@ async function main(): Promise<void> {
   // 結果 push 通知キュー: 上書き前の matches.json（＝前回値）と比較し、
   // 新たに finished になったアンクラス試合を検出してキューに書き出す。
   // 実際の FCM 送信は notify ステップ（FCM_SERVICE_ACCOUNT_JSON 必要）が行う。
-  queueResultNotifications(matches);
+  queueRemoteNotifications(previousMatchesData, matches, podcastEpisodes);
 
   writeJson("matches.json", matchesData);
   writeJson("standings.json", standingsData);

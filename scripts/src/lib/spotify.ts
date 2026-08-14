@@ -14,6 +14,8 @@ interface OEmbedResponse {
   iframe_url: string;
 }
 
+type Fetch = typeof fetch;
+
 /** Spotify 埋め込みページの Next.js データから、公開日を JST で取り出す。 */
 export function parsePublishedDate(html: string): string | null {
   const serializedState = html.match(
@@ -45,9 +47,9 @@ export function parsePublishedDate(html: string): string | null {
   }
 }
 
-async function fetchPublishedDate(): Promise<string | null> {
+async function fetchPublishedDate(fetchImpl: Fetch): Promise<string | null> {
   try {
-    const res = await fetch(EMBED_URL, {
+    const res = await fetchImpl(EMBED_URL, {
       signal: AbortSignal.timeout(10_000),
       headers: { "User-Agent": "Mozilla/5.0 (compatible; anclas-port-pipeline)" },
     });
@@ -58,23 +60,27 @@ async function fetchPublishedDate(): Promise<string | null> {
   }
 }
 
-async function fetchShowCard(): Promise<PodcastEpisode | null> {
-  const res = await fetch(OEMBED_URL, {
-    signal: AbortSignal.timeout(10_000),
-    headers: REQUEST_HEADERS,
-  });
-  if (!res.ok) return null;
-  const data = (await res.json()) as OEmbedResponse;
-  if (!data.title) return null;
-  const publishedAt = await fetchPublishedDate();
-  return {
-    id: null,
-    title: data.title,
-    thumbnailUrl: data.thumbnail_url,
-    showUrl: SHOW_URL,
-    embedUrl: data.iframe_url,
-    publishedAt,
-  };
+async function fetchShowCard(fetchImpl: Fetch): Promise<PodcastEpisode | null> {
+  try {
+    const res = await fetchImpl(OEMBED_URL, {
+      signal: AbortSignal.timeout(10_000),
+      headers: REQUEST_HEADERS,
+    });
+    if (!res.ok) return null;
+    const data = (await res.json()) as OEmbedResponse;
+    if (!data.title) return null;
+    const publishedAt = await fetchPublishedDate(fetchImpl);
+    return {
+      id: null,
+      title: data.title,
+      thumbnailUrl: data.thumbnail_url,
+      showUrl: SHOW_URL,
+      embedUrl: data.iframe_url,
+      publishedAt,
+    };
+  } catch {
+    return null;
+  }
 }
 
 function decodeHtml(value: string): string {
@@ -91,14 +97,32 @@ function decodeHtml(value: string): string {
 }
 
 function episodeDate(segment: string, now: Date): string | null {
+  const isoDate = segment.match(/20\d{2}-\d{2}-\d{2}/)?.[0];
+  if (isoDate) return isoDate;
   const japanese = segment.match(/(\d{1,2})月(\d{1,2})日/);
-  if (!japanese) return null;
-  const month = Number(japanese[1]);
-  const day = Number(japanese[2]);
-  if (month < 1 || month > 12 || day < 1 || day > 31) return null;
-  const currentMonth = now.getUTCMonth() + 1;
-  const year = month > currentMonth + 1 ? now.getUTCFullYear() - 1 : now.getUTCFullYear();
-  return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  if (japanese) {
+    const month = Number(japanese[1]);
+    const day = Number(japanese[2]);
+    if (month < 1 || month > 12 || day < 1 || day > 31) return null;
+    const currentMonth = now.getUTCMonth() + 1;
+    const year = month > currentMonth + 1 ? now.getUTCFullYear() - 1 : now.getUTCFullYear();
+    return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  }
+  const englishWeekday = segment.match(
+    /\b(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)\b/i,
+  )?.[1];
+  const japaneseWeekday = segment.match(
+    /(日曜日|月曜日|火曜日|水曜日|木曜日|金曜日|土曜日)/,
+  )?.[1];
+  if (!englishWeekday && !japaneseWeekday) return null;
+  const targetDay = englishWeekday
+    ? ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
+        .indexOf(englishWeekday.toLowerCase())
+    : ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"]
+        .indexOf(japaneseWeekday!);
+  const date = new Date(now);
+  date.setUTCDate(date.getUTCDate() - ((date.getUTCDay() - targetDay + 7) % 7));
+  return date.toISOString().slice(0, 10);
 }
 
 export function parseSpotifyEpisodes(
@@ -106,58 +130,90 @@ export function parseSpotifyEpisodes(
   thumbnailUrl: string,
   now = new Date(),
 ): PodcastEpisode[] {
-  const matches = [...html.matchAll(/href="\/episode\/([^"?]+)[^"]*"[^>]*>([\s\S]*?)<\/a>/g)];
+  const linkPattern = /href="\/episode\/([^"?]+)[^"]*"[^>]*>([\s\S]*?)<\/a>/g;
+  const matches = [...html.matchAll(linkPattern)];
   const seen = new Set<string>();
   const episodes: PodcastEpisode[] = [];
   for (let index = 0; index < matches.length && episodes.length < 5; index++) {
     const match = matches[index];
-    const id = match?.[1];
-    const titleHtml = match?.[2];
-    if (!id || !titleHtml || seen.has(id)) continue;
-    seen.add(id);
+    if (!match) break;
+    const id = match[1];
+    const titleHtml = match[2];
+    if (!id || !titleHtml) continue;
     const title = decodeHtml(titleHtml);
     if (!title) continue;
+    if (seen.has(id)) continue;
+    seen.add(id);
     const start = match.index ?? 0;
-    const end = matches[index + 1]?.index ?? html.length;
+    const nextEpisode = matches
+      .slice(index + 1)
+      .find((candidate) => candidate[1] !== id);
+    const end = nextEpisode?.index ?? html.length;
+    const publishedAt = episodeDate(html.slice(start, end), now);
     episodes.push({
       id,
       title,
       thumbnailUrl,
       showUrl: `https://open.spotify.com/episode/${id}`,
       embedUrl: `https://open.spotify.com/embed/episode/${id}`,
-      publishedAt: episodeDate(html.slice(start, end), now),
+      publishedAt,
     });
   }
   return episodes;
 }
 
-export async function fetchLatestPodcasts(): Promise<PodcastEpisode[]> {
+async function fetchEpisodeDate(
+  episode: PodcastEpisode,
+  fetchImpl: Fetch,
+  now: Date,
+): Promise<string | null> {
   try {
-    const [showCard, pageResponse] = await Promise.all([
-      fetchShowCard(),
-      fetch(SHOW_URL, {
-        signal: AbortSignal.timeout(10_000),
-        headers: REQUEST_HEADERS,
-      }),
-    ]);
+    const response = await fetchImpl(episode.showUrl, {
+      signal: AbortSignal.timeout(10_000),
+      headers: REQUEST_HEADERS,
+    });
+    if (!response.ok) return null;
+    return episodeDate(await response.text(), now);
+  } catch {
+    return null;
+  }
+}
+
+export async function fetchLatestPodcasts(fetchImpl: Fetch = fetch): Promise<PodcastEpisode[]> {
+  const showCardPromise = fetchShowCard(fetchImpl);
+  try {
+    const pageResponse = await fetchImpl(SHOW_URL, {
+      signal: AbortSignal.timeout(10_000),
+      headers: REQUEST_HEADERS,
+    });
     if (pageResponse.ok) {
+      const showCard = await showCardPromise;
       const episodes = parseSpotifyEpisodes(
         await pageResponse.text(),
         showCard?.thumbnailUrl ?? "",
       );
-      if (episodes.length > 0) return episodes;
+      if (episodes.length > 0) {
+        const now = new Date();
+        return Promise.all(
+          episodes.map(async (episode) => {
+            if (episode.publishedAt != null) return episode;
+            return {
+              ...episode,
+              publishedAt: await fetchEpisodeDate(episode, fetchImpl, now),
+            };
+          }),
+        );
+      }
     }
+    const showCard = await showCardPromise;
     return showCard == null ? [] : [showCard];
   } catch {
-    try {
-      const fallback = await fetchShowCard();
-      return fallback == null ? [] : [fallback];
-    } catch {
-      return [];
-    }
+    const showCard = await showCardPromise;
+    return showCard == null ? [] : [showCard];
   }
 }
 
+/** 後方互換: 最新エピソード1件のみ。 */
 export async function fetchLatestPodcast(): Promise<PodcastEpisode | null> {
   return (await fetchLatestPodcasts())[0] ?? null;
 }

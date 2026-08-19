@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T07:09:58.601Z",
+  "generatedAt": "2026-08-19T07:57:21.558Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -639,41 +639,6 @@
         "price": "¥2,310",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/ba32eebcd7fbc1dd878a4a8974b06e5c.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/75388658"
-      },
-      {
-        "id": "107175531",
-        "name": "シマシマ柄クリアファイル",
-        "price": "¥188",
-        "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/384bf9836016d69108d4300a401dbf6a.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
-        "url": "https://anclas.base.shop/items/107175531"
-      },
-      {
-        "id": "68273158",
-        "name": "アンクラッキー メモ帳",
-        "price": "¥413",
-        "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/8afb5079a58c7d508895b6f989ca80f6.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
-        "url": "https://anclas.base.shop/items/68273158"
-      },
-      {
-        "id": "68273240",
-        "name": "ボールペン",
-        "price": "¥413",
-        "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/6a056c00af20da809e9677c8d8e45f15.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
-        "url": "https://anclas.base.shop/items/68273240"
-      },
-      {
-        "id": "68276436",
-        "name": "スマホリング",
-        "price": "¥770",
-        "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/aa373d014b9f02194a3a34d82d9d1a0b.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
-        "url": "https://anclas.base.shop/items/68276436"
-      },
-      {
-        "id": "68276697",
-        "name": "クリアファイル　各種",
-        "price": "¥110",
-        "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/855c4f282e8674df45b949f09fee0c23.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
-        "url": "https://anclas.base.shop/items/68276697"
       }
     ]
   },

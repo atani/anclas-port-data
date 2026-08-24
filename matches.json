@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T10:07:32.675Z",
+  "generatedAt": "2026-08-24T10:51:18.382Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -27,12 +27,7 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": {
-        "temperatureC": 27.7,
-        "precipitationProbability": 41,
-        "weatherCode": 80,
-        "fetchedAt": "2026-08-24T10:07:27.093Z"
-      }
+      "forecast": null
     },
     "latestResult": {
       "id": "su-post-9892",
@@ -4877,12 +4872,7 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": {
-        "temperatureC": 27.7,
-        "precipitationProbability": 41,
-        "weatherCode": 80,
-        "fetchedAt": "2026-08-24T10:07:27.093Z"
-      }
+      "forecast": null
     },
     {
       "id": "su-post-9405",
@@ -5910,6 +5900,33 @@
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-40/",
       "venue": "吉の浦ござまる陸上競技場",
+      "goals": [],
+      "starters": [],
+      "subs": [],
+      "substitutions": [],
+      "stats": null,
+      "goalnoteUrl": null,
+      "posterUrl": null,
+      "matchdayProgramUrl": null,
+      "cards": [],
+      "matchReport": null,
+      "photoGallery": [],
+      "forecast": null
+    },
+    {
+      "id": "empress-cup-2026-round1",
+      "competition": "皇后杯",
+      "round": null,
+      "date": "2026-09-12",
+      "kickoff": null,
+      "datetime": "2026-09-12T00:00:00+09:00",
+      "homeTeam": "福岡J・アンクラス",
+      "awayTeam": "活水女子大学サッカー部",
+      "status": "scheduled",
+      "score": null,
+      "isAnclas": true,
+      "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945",
+      "venue": "長崎県 島原市営 平成町多目的広場",
       "goals": [],
       "starters": [],
       "subs": [],

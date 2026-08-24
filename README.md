@@ -20,9 +20,12 @@ production inputs.
 - `partners.json` — official partner information
 - `news.json` — club news
 - `events.json` — manually managed limited-time announcements
+- `manual-matches.json` — manually managed cup-competition fixtures
 
-The pipeline overwrites all JSON files except `events.json`. Edit `events.json`
-when adding or changing a limited-time announcement.
+The pipeline overwrites all JSON files except `events.json` and
+`manual-matches.json`. Edit `events.json` when adding or changing a
+limited-time announcement. Edit `manual-matches.json` for cup fixtures (see
+below).
 
 ## Limited-time events
 
@@ -53,6 +56,38 @@ A larger `priority` places an item before other active events.
 The validation rejects duplicate IDs and invalid dates.
 
 It also rejects non-HTTPS URLs and an end time before the start time.
+
+## Cup fixtures
+
+`matches.json` normally comes from scraping the Q-League official site, which
+only lists league matches. Knockout cup competitions (such as the Empress's
+Cup regional qualifiers) are not on that site because opponents come from
+other prefectures and leagues. Add or update fixtures in `manual-matches.json`
+instead; `generate-matches.ts` merges them into `matches.json` on every run,
+so they appear in the schedule and become the Home screen's next match once
+they are the closest upcoming date.
+
+```json
+{
+  "matches": [
+    {
+      "id": "unique-match-id",
+      "competition": "皇后杯",
+      "date": "2026-09-12",
+      "kickoff": null,
+      "homeTeam": "福岡J・アンクラス",
+      "awayTeam": "Opponent name",
+      "status": "scheduled",
+      "score": null,
+      "venue": "Venue name",
+      "sourceUrl": "https://example.com/bracket"
+    }
+  ]
+}
+```
+
+Use `scripts/src/advance-cup-match.ts` to add the next round once a result is
+known (see its file header for usage).
 
 ## Pipeline
 

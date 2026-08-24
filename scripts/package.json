@@ -16,7 +16,8 @@
     "generate": "npm run generate:matches && (npm run generate:players || echo 'players generation failed (non-fatal)') && (npm run generate:partners || echo 'partners generation failed (non-fatal)') && (npm run generate:news || echo 'news generation failed (non-fatal)') && (npm run generate:history || echo 'history generation failed (non-fatal)')",
     "notify": "tsx src/notify-results.ts",
     "generate:news": "tsx src/generate-news.ts",
-    "generate:history": "tsx src/generate-history.ts"
+    "generate:history": "tsx src/generate-history.ts",
+    "cup:advance": "tsx src/advance-cup-match.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

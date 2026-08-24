@@ -1,29 +1,4 @@
 {
   "generatedAt": "2026-07-22T12:00:00Z",
-  "items": [
-    {
-      "id": "escort-kids-photos-2026",
-      "title": "エスコートキッズ写真販売",
-      "summary": "エスコートキッズの思い出の写真を、期間限定で閲覧・購入できます。",
-      "imageUrl": "https://anclas.jp/wp-content/uploads/2026/05/S__58286174_0-1024x683.jpg",
-      "startsAt": "2026-07-22T18:00:00+09:00",
-      "endsAt": "2026-08-12T18:00:00+09:00",
-      "periodLabel": "販売期間",
-      "actionTitle": "写真販売のお知らせを見る",
-      "actionUrl": "https://anclas.jp/post-27828/",
-      "priority": 100
-    },
-    {
-      "id": "empress-cup-2026-round1",
-      "title": "皇后杯九州予選 1回戦の組合せ発表",
-      "summary": "9月12日、活水女子大学サッカー部と1回戦で対戦します。会場は長崎県島原市営平成町多目的広場です。",
-      "imageUrl": "https://anclas.jp/wp-content/uploads/2022/03/anclaslogo-1.png",
-      "startsAt": "2026-08-24T09:00:00+09:00",
-      "endsAt": "2026-09-13T00:00:00+09:00",
-      "periodLabel": "開催期間",
-      "actionTitle": "組合せの詳細を見る",
-      "actionUrl": "https://www.juniorsoccer-news.com/post-1937945",
-      "priority": 100
-    }
-  ]
+  "items": []
 }

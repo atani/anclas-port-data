@@ -375,6 +375,7 @@ async function main(): Promise<void> {
   const manualMatches = loadManualMatches();
   if (manualMatches.length > 0) {
     matches.push(...manualMatches);
+    matches.sort((a, b) => Date.parse(a.datetime) - Date.parse(b.datetime));
     logger.info(`手動管理のカップ戦データ: ${manualMatches.length}件を合成`);
   }
 

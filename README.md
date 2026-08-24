@@ -72,7 +72,7 @@ they are the closest upcoming date.
   "matches": [
     {
       "id": "unique-match-id",
-      "competition": "皇后杯",
+      "competition": "皇后杯 1回戦",
       "date": "2026-09-12",
       "kickoff": null,
       "homeTeam": "福岡J・アンクラス",
@@ -85,6 +85,11 @@ they are the closest upcoming date.
   ]
 }
 ```
+
+`competition` carries the round together with the tournament name (there is
+no separate round field for cup matches), so the app can show it as-is —
+`"皇后杯 1回戦"`, then `"皇后杯 2回戦"`, and from the semifinal onward
+`"皇后杯 準決勝"` / `"皇后杯 決勝"`.
 
 Use `scripts/src/advance-cup-match.ts` to add the next round once a result is
 known (see its file header for usage).

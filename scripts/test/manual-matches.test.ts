@@ -39,7 +39,7 @@ test("loadManualMatches: 皇后杯1回戦が正しい対戦カードで登録さ
   const matches = loadManualMatches();
   const round1 = matches.find((m) => m.id === "empress-cup-2026-round1");
   assert.ok(round1, "empress-cup-2026-round1 が存在する");
-  assert.equal(round1?.competition, "皇后杯");
+  assert.equal(round1?.competition, "皇后杯 1回戦");
   assert.equal(round1?.isAnclas, true);
   assert.equal(round1?.date, "2026-09-12");
   assert.equal(round1?.homeTeam, ANCLAS_TEAM_NAME);

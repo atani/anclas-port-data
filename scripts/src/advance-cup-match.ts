@@ -18,6 +18,9 @@
  *     [--time="14:00"] \
  *     [--source="https://..."]
  *
+ * --round は自由記述。準決勝以降は "準決勝" / "決勝" を渡す
+ * （--competition="皇后杯 準決勝" のように出来上がる。回戦番号を数える必要はない）。
+ *
  * 使い方（前回の試合結果を確定させる場合）:
  *   npx tsx src/advance-cup-match.ts \
  *     --id="empress-cup-2026-round1" \

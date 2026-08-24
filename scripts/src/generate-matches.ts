@@ -377,6 +377,9 @@ async function main(): Promise<void> {
     matches.push(...manualMatches);
     logger.info(`手動管理のカップ戦データ: ${manualMatches.length}件を合成`);
   }
+  // 延期・振替（1.5）で日付が入れ替わったQリーグ試合と、手動追加分の両方をdatetime順に揃える。
+  // manualMatchesが空でも実行することで、振替のみで発生する日付逆転も一貫して防ぐ。
+  matches.sort((a, b) => Date.parse(a.datetime) - Date.parse(b.datetime));
 
   // 5. 次の試合のポスター画像を anclas.jp から取得
   // 該当する告知投稿が無ければ null のまま（古いポスターは出さない）

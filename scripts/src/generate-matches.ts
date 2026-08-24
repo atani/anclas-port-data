@@ -130,6 +130,62 @@ function writeJson(name: string, data: unknown): void {
   logger.info(`wrote ${name} (${wroteIos ? "data, ios" : "data"})`);
 }
 
+/**
+ * 手動管理のカップ戦データ（manual-matches.json）を読み込み、Match型に補完する。
+ * events.jsonと同様、このパイプラインの上書き対象から除外し、人手で更新する
+ * （皇后杯のようなノックアウト方式の大会は、対戦相手が他都道府県の代表チームで
+ * Qリーグに所属しないため、Qリーグ公式サイトのスクレイピング対象にできない）。
+ * 更新は scripts/src/advance-cup-match.ts で行う。
+ */
+interface ManualMatchInput {
+  id: string;
+  competition: string;
+  date: string;
+  kickoff: string | null;
+  homeTeam: string;
+  awayTeam: string;
+  status: "scheduled" | "finished";
+  score: { home: number; away: number } | null;
+  venue: string | null;
+  sourceUrl: string;
+}
+
+export function loadManualMatches(): Match[] {
+  const path = new URL("manual-matches.json", DATA_DIR);
+  if (!existsSync(path)) return [];
+  const raw = JSON.parse(readFileSync(path, "utf-8")) as { matches: ManualMatchInput[] };
+  return raw.matches.map((m) => {
+    const datetime = m.kickoff ? `${m.date}T${m.kickoff}:00+09:00` : `${m.date}T00:00:00+09:00`;
+    return {
+      id: m.id,
+      competition: m.competition,
+      round: null,
+      date: m.date,
+      kickoff: m.kickoff,
+      datetime,
+      homeTeam: m.homeTeam,
+      awayTeam: m.awayTeam,
+      status: m.status,
+      score: m.score,
+      isAnclas: m.homeTeam === ANCLAS_TEAM_NAME || m.awayTeam === ANCLAS_TEAM_NAME,
+      sourceUrl: m.sourceUrl,
+      venue: m.venue,
+      goals: [],
+      starters: [],
+      subs: [],
+      substitutions: [],
+      stats: null,
+      goalnoteUrl: null,
+      posterUrl: null,
+      matchdayProgramUrl: null,
+      cards: [],
+      matchReport: null,
+      photoGallery: [],
+      forecast: null,
+    } satisfies Match;
+  });
+}
+
 function readPreviousMatchesData(): MatchesData | null {
   const prevPath = new URL("matches.json", DATA_DIR);
   if (!existsSync(prevPath)) return null;
@@ -311,6 +367,15 @@ async function main(): Promise<void> {
       }
     }
     if (restoredReports > 0) logger.info(`前回値から${restoredReports}件のマッチレポートを引き継ぎ`);
+  }
+
+  // 4.5. 手動管理のカップ戦データ（manual-matches.json）を合成する
+  // Qリーグ側のQ&A enrichment（延期確認・GoalNote補完）が完了した後に加えることで、
+  // 対戦相手名の突き合わせによる誤補完を避ける。
+  const manualMatches = loadManualMatches();
+  if (manualMatches.length > 0) {
+    matches.push(...manualMatches);
+    logger.info(`手動管理のカップ戦データ: ${manualMatches.length}件を合成`);
   }
 
   // 5. 次の試合のポスター画像を anclas.jp から取得

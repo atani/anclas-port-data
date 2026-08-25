@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T17:00:13.224Z",
+  "generatedAt": "2026-08-25T17:49:25.607Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -27,12 +27,7 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": {
-        "temperatureC": 29.2,
-        "precipitationProbability": 64,
-        "weatherCode": 51,
-        "fetchedAt": "2026-08-25T17:00:07.036Z"
-      }
+      "forecast": null
     },
     "latestResult": {
       "id": "su-post-9892",
@@ -5403,12 +5398,7 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": {
-        "temperatureC": 29.2,
-        "precipitationProbability": 64,
-        "weatherCode": 51,
-        "fetchedAt": "2026-08-25T17:00:07.036Z"
-      }
+      "forecast": null
     },
     {
       "id": "su-post-9536",

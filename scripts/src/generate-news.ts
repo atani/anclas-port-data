@@ -1,5 +1,6 @@
 import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { logger } from "./lib/logger.js";
+import { selectNewsThumbnail } from "./lib/news-thumbnail.js";
 import type { NewsData, NewsItem } from "./lib/types.js";
 import { getCategories, getPosts, selectNewsCategory } from "./lib/wordpress-client.js";
 
@@ -52,15 +53,12 @@ async function main(): Promise<void> {
 
   const items: NewsItem[] = filtered.map((p) => {
     const media = p._embedded?.["wp:featuredmedia"]?.[0];
-    const sizes = media?.media_details?.sizes ?? {};
-    const thumbnail =
-      sizes["medium"]?.source_url ?? sizes["thumbnail"]?.source_url ?? media?.source_url ?? null;
     return {
       id: p.id,
       title: decodeEntities(p.title.rendered).trim(),
       date: p.date,
       url: p.link,
-      thumbnailUrl: thumbnail,
+      thumbnailUrl: selectNewsThumbnail(media, p.content.rendered),
     };
   });
 

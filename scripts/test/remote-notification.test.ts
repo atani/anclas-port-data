@@ -2,7 +2,10 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { parseSpotifyEpisodes } from "../src/lib/spotify.js";
 import {
+  buildEventNotification,
   buildPodcastNotification,
+  detectNewActiveEvents,
+  EVENT_ANNOUNCEMENTS_TOPIC,
   detectNewPodcastEpisodes,
   NEW_PODCAST_TOPIC,
 } from "../src/lib/remote-notification.js";
@@ -46,4 +49,38 @@ test("Podcast通知にtopic、ID、遷移URLを含める", () => {
   assert.equal(notification?.topic, NEW_PODCAST_TOPIC);
   assert.equal(notification?.data.contentId, "new");
   assert.equal(notification?.data.url, "https://open.spotify.com/episode/new");
+});
+
+const activeEvent = {
+  id: "event-new",
+  title: "アンクラスナイト",
+  summary: "選手が来店します",
+  actionUrl: "https://example.com/event",
+  startsAt: "2026-08-30T14:00:00+09:00",
+  endsAt: "2026-09-06T19:00:00+09:00",
+};
+
+test("新規かつ公開中のイベントだけを通知対象にする", () => {
+  const detected = detectNewActiveEvents(
+    [{ ...activeEvent, id: "event-old" }],
+    [{ ...activeEvent, id: "event-old" }, activeEvent],
+    new Date("2026-08-31T00:00:00+09:00"),
+  );
+  assert.deepEqual(detected.map((event) => event.id), ["event-new"]);
+});
+
+test("前回データを取得できない場合は一斉通知しない", () => {
+  assert.deepEqual(
+    detectNewActiveEvents(undefined, [activeEvent], new Date("2026-08-31T00:00:00+09:00")),
+    [],
+  );
+});
+
+test("イベント通知に専用topic、ID、遷移URLを含める", () => {
+  const notification = buildEventNotification(activeEvent);
+  assert.equal(notification.topic, EVENT_ANNOUNCEMENTS_TOPIC);
+  assert.equal(notification.title, "アンクラスナイト");
+  assert.equal(notification.body, "選手が来店します");
+  assert.equal(notification.data.contentId, "event-new");
+  assert.equal(notification.data.url, "https://example.com/event");
 });

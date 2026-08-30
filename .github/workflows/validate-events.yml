@@ -21,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
@@ -37,3 +39,11 @@ jobs:
         run: |
           npm run typecheck
           npm test
+
+      - name: Notify newly added active events
+        if: github.event_name == 'push'
+        working-directory: scripts
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+        run: npm run notify:events

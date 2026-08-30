@@ -1,4 +1,17 @@
 {
-  "generatedAt": "2026-07-22T12:00:00Z",
-  "items": []
+  "generatedAt": "2026-08-30T05:20:00Z",
+  "items": [
+    {
+      "id": "anclas-night-hatch-2026-09-06",
+      "title": "9/6(日) アンクラスナイト！",
+      "summary": "スポーツバーハッチに嘉数クレア姫麗選手・原日樺選手が来店します。",
+      "imageUrl": "https://pbs.twimg.com/media/HQ8bHtjaYAAQWh3?format=jpg&name=medium",
+      "startsAt": "2026-08-30T14:00:00+09:00",
+      "endsAt": "2026-09-06T19:00:00+09:00",
+      "periodLabel": "9/6(日) 17:00開店｜選手来店 18:00〜20:00",
+      "actionTitle": "Xの投稿を見る",
+      "actionUrl": "https://x.com/368WT4tGN316696/status/2093922175686492527",
+      "priority": 200
+    }
+  ]
 }

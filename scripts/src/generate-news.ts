@@ -1,7 +1,7 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { logger } from "./lib/logger.js";
 import type { NewsData, NewsItem } from "./lib/types.js";
-import { getCategories, getPosts } from "./lib/wordpress-client.js";
+import { getCategories, getPosts, selectNewsCategory } from "./lib/wordpress-client.js";
 
 const DATA_DIR = new URL("../../", import.meta.url);
 const NEWS_LIMIT = 20;
@@ -27,7 +27,7 @@ function decodeEntities(s: string): string {
 async function main(): Promise<void> {
   // 「お知らせ」カテゴリを名前で動的検出（id 固定にしない）
   const categories = await getCategories();
-  const newsCategory = categories.find((c) => c.name === "お知らせ" && c.count > 0);
+  const newsCategory = selectNewsCategory(categories);
   if (!newsCategory) {
     throw new Error("お知らせカテゴリが見つかりませんでした");
   }
@@ -63,6 +63,16 @@ async function main(): Promise<void> {
       thumbnailUrl: thumbnail,
     };
   });
+
+  const previous = JSON.parse(
+    readFileSync(new URL("news.json", DATA_DIR), "utf-8"),
+  ) as NewsData;
+  const minimumSafeCount = Math.ceil(previous.items.length * 0.5);
+  if (previous.items.length >= 10 && items.length < minimumSafeCount) {
+    throw new Error(
+      `お知らせ件数が急減したため更新を停止します（${previous.items.length}件→${items.length}件）`,
+    );
+  }
 
   const data: NewsData = {
     generatedAt: new Date().toISOString(),

@@ -144,6 +144,24 @@ export async function getCategories(): Promise<WPCategory[]> {
   return wpFetch<WPCategory[]>("/categories", { per_page: "100" });
 }
 
+/** 同名カテゴリが複数ある場合は、実際の投稿数が最も多い現役カテゴリを選ぶ。 */
+export function selectNewsCategory(categories: WPCategory[]): WPCategory | null {
+  return categories
+    .filter((category) => category.name === "お知らせ" && category.count > 0)
+    .sort((a, b) => b.count - a.count)[0] ?? null;
+}
+
+/** 選手ブログはリニューアルでカテゴリIDが変わるため、名前・slugから動的に選ぶ。 */
+export function selectPlayerBlogCategory(categories: WPCategory[]): WPCategory | null {
+  return categories
+    .filter(
+      (category) =>
+        category.count > 0
+        && (category.name === "選手ブログ" || category.slug === "blog"),
+    )
+    .sort((a, b) => b.count - a.count)[0] ?? null;
+}
+
 /** カテゴリ名から年を抽出: "TOP選手紹介2026" → 2026 */
 function extractYear(name: string): number | null {
   const m = name.match(/(\d{4})/);
@@ -556,8 +574,6 @@ export async function findMatchReport(
   return null;
 }
 
-const BLOG_CATEGORY_ID = 5;
-
 interface WpBlogPost {
   title: { rendered: string };
   link: string;
@@ -580,8 +596,13 @@ export async function fetchPlayerBlogPosts(): Promise<RawBlogEntry[]> {
   let page = 1;
   const perPage = 100;
   try {
+    const category = selectPlayerBlogCategory(await getCategories());
+    if (!category) {
+      throw new Error("選手ブログカテゴリが見つかりませんでした");
+    }
+    logger.info(`選手ブログカテゴリ: id=${category.id} count=${category.count}`);
     while (true) {
-      const url = `${BASE_URL}/posts?categories=${BLOG_CATEGORY_ID}&per_page=${perPage}&page=${page}&_fields=title,link,date`;
+      const url = `${BASE_URL}/posts?categories=${category.id}&per_page=${perPage}&page=${page}&_fields=title,link,date`;
       const res = await fetch(url, { signal: AbortSignal.timeout(15_000), headers: WP_HEADERS });
       if (!res.ok) break;
       const posts = (await res.json()) as WpBlogPost[];

@@ -12,7 +12,7 @@ import type { Partner } from "./types.js";
  *   </div>
  *   </section> … <footer>
  *
- * ロゴ実体は lazyload のため <img src> は base64 プレースホルダで、実URLは data-src にある。
+ * 旧サイトは lazyload のため実URLが data-src、新サイトは通常の src にある。
  * セクション終端の目印は見出しの後ろに現れる最初の <footer>（この見出しはページ末尾付近）。
  * なお「パートナー企業様募集」CTA は見出しより前に置かれているため終端には使わない。
  */
@@ -47,7 +47,10 @@ function nameFromLogo(logoUrl: string): string {
 
 /**
  * オフィシャルパートナー各社を抽出する。
- * 除外: href が anclas.jp 自身へのリンク（ロゴ・地図 embed 等のノイズ）／ロゴ画像が無いもの。
+ * 旧サイトでは href が anclas.jp 自身のリンクをノイズとして除外する。
+ * 新サイトの c-sponsor__item 内では、リンク先未設定の正式なパートナーが
+ * /partner/ を使うため、自サイトリンクでもロゴを残す。
+ * 共通してロゴ画像が無いものは除外する。
  * href が空のパートナー（サイト側でリンク未設定）はロゴを表示するため残し、url は空文字にする。
  */
 export function parsePartners(html: string): Partner[] {
@@ -55,6 +58,7 @@ export function parsePartners(html: string): Partner[] {
   if (start < 0) return [];
   const footIdx = html.indexOf("<footer", start);
   const region = html.slice(start, footIdx >= 0 ? footIdx : undefined);
+  const usesSponsorCards = /c-sponsor__item/.test(region);
 
   const partners: Partner[] = [];
   const seen = new Set<string>();
@@ -62,10 +66,11 @@ export function parsePartners(html: string): Partner[] {
   let m: RegExpExecArray | null;
   while ((m = pairRe.exec(region)) !== null) {
     const href = decodeEntities((m[1] ?? "").trim());
-    if (/anclas\.jp/i.test(href)) continue; // 自サイトへのリンクはノイズ
+    if (!usesSponsorCards && /anclas\.jp/i.test(href)) continue;
+    const partnerUrl = /^https?:\/\/anclas\.jp\/partner\/?$/i.test(href) ? "" : href;
 
     const imgTag = m[2] ?? "";
-    const logoUrl = attr(imgTag, "data-src");
+    const logoUrl = attr(imgTag, "data-src") ?? attr(imgTag, "src");
     if (!logoUrl || !/wp-content\/uploads\//.test(logoUrl)) continue;
     if (seen.has(logoUrl)) continue;
     seen.add(logoUrl);
@@ -73,7 +78,7 @@ export function parsePartners(html: string): Partner[] {
     const alt = decodeEntities((attr(imgTag, "alt") ?? "").trim());
     partners.push({
       name: alt || nameFromLogo(logoUrl),
-      url: href,
+      url: partnerUrl,
       logoUrl,
     });
   }

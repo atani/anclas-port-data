@@ -18,6 +18,9 @@ function writeJson(name: string, data: unknown): void {
 }
 
 async function main(): Promise<void> {
+  const previous = JSON.parse(
+    readFileSync(new URL("players.json", DATA_DIR), "utf-8"),
+  ) as PlayersData;
   let season: string;
   let players: Player[];
   let loadedFreshProfiles = false;
@@ -31,10 +34,22 @@ async function main(): Promise<void> {
     }
     season = category.season;
     players = sortPlayers(posts.map(parsePlayer));
+    const minimumSafeCount = Math.ceil(previous.players.length * 0.75);
+    if (previous.players.length >= 10 && players.length < minimumSafeCount) {
+      throw new Error(
+        `選手数が急減しました（${previous.players.length}人→${players.length}人）`,
+      );
+    }
+    const previousById = new Map(previous.players.map((player) => [player.id, player]));
+    for (const player of players) {
+      const old = previousById.get(player.id);
+      if (old?.photo.large && !player.photo.large) {
+        player.photo.large = old.photo.large;
+      }
+    }
     loadedFreshProfiles = true;
   } catch (error) {
     logger.warn(`WordPress APIからの選手生成に失敗。公式一覧HTMLで整合します: ${error}`);
-    const previous = JSON.parse(readFileSync(new URL("players.json", DATA_DIR), "utf-8")) as PlayersData;
     const reconciliation = reconcilePublishedPlayers(previous.players, await getPublishedPlayerUrls());
     season = previous.season;
     players = reconciliation.players;
@@ -66,6 +81,15 @@ async function main(): Promise<void> {
     }
     const playersWithBlog = players.filter((p) => p.blogPosts.length > 0).length;
     logger.info(`ブログ: ${blogCount}記事を${playersWithBlog}選手に紐付け`);
+    const previousBlogCount = previous.players.reduce(
+      (total, player) => total + player.blogPosts.length,
+      0,
+    );
+    if (previousBlogCount >= 10 && blogCount < Math.ceil(previousBlogCount * 0.5)) {
+      throw new Error(
+        `選手ブログ件数が急減したため更新を停止します（${previousBlogCount}件→${blogCount}件）`,
+      );
+    }
   }
 
   // SNS アカウント（手動管理の JSON）

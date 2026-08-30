@@ -25,6 +25,7 @@ import { fetchForecast } from "./lib/weather-client.js";
 import { fetchLatestPodcasts } from "./lib/spotify.js";
 import { fetchLatestYouTubeVideos } from "./lib/youtube.js";
 import { mergeMedia } from "./lib/media-merge.js";
+import { loadManualMatches } from "./lib/manual-matches.js";
 import { calculateStandings } from "./lib/standings.js";
 import { loadVerifiedReschedules } from "./lib/reschedule-cache.js";
 import {
@@ -128,62 +129,6 @@ function writeJson(name: string, data: unknown): void {
   }
   // 宛先を残す。ios が抜けたまま通っていないかを実行ログで確かめられるようにする。
   logger.info(`wrote ${name} (${wroteIos ? "data, ios" : "data"})`);
-}
-
-/**
- * 手動管理のカップ戦データ（manual-matches.json）を読み込み、Match型に補完する。
- * events.jsonと同様、このパイプラインの上書き対象から除外し、人手で更新する
- * （皇后杯のようなノックアウト方式の大会は、対戦相手が他都道府県の代表チームで
- * Qリーグに所属しないため、Qリーグ公式サイトのスクレイピング対象にできない）。
- * 更新は scripts/src/advance-cup-match.ts で行う。
- */
-interface ManualMatchInput {
-  id: string;
-  competition: string;
-  date: string;
-  kickoff: string | null;
-  homeTeam: string;
-  awayTeam: string;
-  status: "scheduled" | "finished";
-  score: { home: number; away: number } | null;
-  venue: string | null;
-  sourceUrl: string;
-}
-
-export function loadManualMatches(): Match[] {
-  const path = new URL("manual-matches.json", DATA_DIR);
-  if (!existsSync(path)) return [];
-  const raw = JSON.parse(readFileSync(path, "utf-8")) as { matches: ManualMatchInput[] };
-  return raw.matches.map((m) => {
-    const datetime = m.kickoff ? `${m.date}T${m.kickoff}:00+09:00` : `${m.date}T00:00:00+09:00`;
-    return {
-      id: m.id,
-      competition: m.competition,
-      round: null,
-      date: m.date,
-      kickoff: m.kickoff,
-      datetime,
-      homeTeam: m.homeTeam,
-      awayTeam: m.awayTeam,
-      status: m.status,
-      score: m.score,
-      isAnclas: m.homeTeam === ANCLAS_TEAM_NAME || m.awayTeam === ANCLAS_TEAM_NAME,
-      sourceUrl: m.sourceUrl,
-      venue: m.venue,
-      goals: [],
-      starters: [],
-      subs: [],
-      substitutions: [],
-      stats: null,
-      goalnoteUrl: null,
-      posterUrl: null,
-      matchdayProgramUrl: null,
-      cards: [],
-      matchReport: null,
-      photoGallery: [],
-      forecast: null,
-    } satisfies Match;
-  });
 }
 
 function readPreviousMatchesData(): MatchesData | null {

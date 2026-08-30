@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { loadManualMatches } from "../src/generate-matches.js";
+import { loadManualMatches } from "../src/lib/manual-matches.js";
 import { ANCLAS_TEAM_NAME } from "../src/lib/types.js";
 
 test("loadManualMatches: manual-matches.jsonをMatch型として正しく読み込む", () => {

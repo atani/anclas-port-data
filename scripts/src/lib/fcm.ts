@@ -1,7 +1,11 @@
 import { GoogleAuth } from "google-auth-library";
 import { logger } from "./logger.js";
 import type { RemoteNotification } from "./remote-notification.js";
-export { MATCH_RESULTS_TOPIC, NEW_PODCAST_TOPIC } from "./remote-notification.js";
+export {
+  EVENT_ANNOUNCEMENTS_TOPIC,
+  MATCH_RESULTS_TOPIC,
+  NEW_PODCAST_TOPIC,
+} from "./remote-notification.js";
 
 const FCM_SCOPE = "https://www.googleapis.com/auth/firebase.messaging";
 

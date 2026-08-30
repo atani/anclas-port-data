@@ -7,6 +7,8 @@ import {
   parsePlayerArchiveUrl,
   parsePublishedPlayerUrls,
   parseReportedGoals,
+  selectNewsCategory,
+  selectPlayerBlogCategory,
   selectRescheduleInfo,
 } from "../src/lib/wordpress-client.js";
 import { loadVerifiedReschedules } from "../src/lib/reschedule-cache.js";
@@ -26,6 +28,24 @@ test("parsePublishedPlayerUrls: 一覧カードの公開選手URLを重複なく
     "https://anclas.jp/post-1/",
     "https://anclas.jp/post-2/",
   ]);
+});
+
+test("selectNewsCategory: 同名カテゴリでは投稿数の多い現役カテゴリを選ぶ", () => {
+  const categories = [
+    { id: 1, name: "お知らせ", slug: "notice", count: 1 },
+    { id: 21, name: "お知らせ", slug: "news1", count: 271 },
+  ];
+
+  assert.equal(selectNewsCategory(categories)?.id, 21);
+});
+
+test("selectPlayerBlogCategory: IDではなく名前・slugから選手ブログを選ぶ", () => {
+  const categories = [
+    { id: 5, name: "旧ブログ", slug: "old-blog", count: 0 },
+    { id: 34, name: "選手ブログ", slug: "blog", count: 400 },
+  ];
+
+  assert.equal(selectPlayerBlogCategory(categories)?.id, 34);
 });
 
 test("parseReportedGoals: 前後半の得点とオウンゴールを通算分へ変換する", () => {

@@ -53,6 +53,30 @@ test("parsePartners: anclas.jp 自身へのリンクとロゴ無しを除外", (
   assert.equal(partners[1]!.name, "リンク無し社");
 });
 
+test("parsePartners: 新サイトのスポンサーカードからsrc画像と内部リンクを取得", () => {
+  const html = `
+    <h3 class="c-sponsor__group-label"><span>オフィシャルパートナー</span></h3>
+    <ul class="c-sponsor__list">
+      <li class="c-sponsor__item"><a class="c-sponsor-card" href="https://example.com/"><img src="https://anclas.jp/wp-content/uploads/2026/08/example.png" alt="株式会社example"></a></li>
+      <li class="c-sponsor__item"><a class="c-sponsor-card" href="https://anclas.jp/partner/"><img src="https://anclas.jp/wp-content/uploads/2026/08/internal.png" alt="リンク未設定社"></a></li>
+    </ul>
+    <footer></footer>
+  `;
+
+  assert.deepEqual(parsePartners(html), [
+    {
+      name: "株式会社example",
+      url: "https://example.com/",
+      logoUrl: "https://anclas.jp/wp-content/uploads/2026/08/example.png",
+    },
+    {
+      name: "リンク未設定社",
+      url: "",
+      logoUrl: "https://anclas.jp/wp-content/uploads/2026/08/internal.png",
+    },
+  ]);
+});
+
 test("parsePartners: 見出しが無ければ空配列", () => {
   assert.deepEqual(parsePartners("<h3>NO SECTION</h3><footer></footer>"), []);
 });

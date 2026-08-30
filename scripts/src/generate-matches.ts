@@ -36,6 +36,7 @@ import {
   selectRescheduleInfo,
 } from "./lib/wordpress-client.js";
 import { logger } from "./lib/logger.js";
+import { shouldUseReportedGoals } from "./lib/goal-source.js";
 import {
   ANCLAS_TEAM_NAME,
   type Match,
@@ -261,15 +262,11 @@ async function main(): Promise<void> {
         const currentAnclasGoals = m.goals.filter(
           (goal) => goal.team === ANCLAS_TEAM_NAME,
         );
-        const scorerNames = (goals: Array<{ playerName: string }>) =>
-          goals.map((goal) => goal.playerName.replace(/[\s　]/g, "")).sort().join("|");
-        const scorerMismatch =
-          result.reportedGoals.length === anclasScore
-          && scorerNames(currentAnclasGoals) !== scorerNames(result.reportedGoals);
-        if (
-          (currentAnclasGoals.length !== anclasScore || scorerMismatch)
-          && result.reportedGoals.length === anclasScore
-        ) {
+        if (shouldUseReportedGoals(
+          currentAnclasGoals.length,
+          anclasScore,
+          result.reportedGoals.length,
+        )) {
           m.goals = [
             ...m.goals.filter((goal) => goal.team !== ANCLAS_TEAM_NAME),
             ...result.reportedGoals.map((goal) => ({

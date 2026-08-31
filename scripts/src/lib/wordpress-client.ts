@@ -144,11 +144,22 @@ export async function getCategories(): Promise<WPCategory[]> {
   return wpFetch<WPCategory[]>("/categories", { per_page: "100" });
 }
 
-/** 同名カテゴリが複数ある場合は、実際の投稿数が最も多い現役カテゴリを選ぶ。 */
-export function selectNewsCategory(categories: WPCategory[]): WPCategory | null {
+/** リニューアル前後で重複した「お知らせ」カテゴリをすべて選ぶ。 */
+export function selectNewsCategories(categories: WPCategory[]): WPCategory[] {
   return categories
     .filter((category) => category.name === "お知らせ" && category.count > 0)
-    .sort((a, b) => b.count - a.count)[0] ?? null;
+    .sort((a, b) => b.count - a.count || a.id - b.id);
+}
+
+/** 通常ニュースに共通して付与される ALL NEWS カテゴリを選ぶ。 */
+export function selectAllNewsCategory(categories: WPCategory[]): WPCategory | null {
+  return categories
+    .filter(
+      (category) =>
+        category.count > 0
+        && (category.name === "ALL NEWS" || category.slug === "all"),
+    )
+    .sort((a, b) => b.count - a.count || a.id - b.id)[0] ?? null;
 }
 
 /** 選手ブログはリニューアルでカテゴリIDが変わるため、名前・slugから動的に選ぶ。 */

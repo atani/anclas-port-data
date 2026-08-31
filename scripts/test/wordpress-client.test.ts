@@ -7,7 +7,8 @@ import {
   parsePlayerArchiveUrl,
   parsePublishedPlayerUrls,
   parseReportedGoals,
-  selectNewsCategory,
+  selectAllNewsCategory,
+  selectNewsCategories,
   selectPlayerBlogCategory,
   selectRescheduleInfo,
 } from "../src/lib/wordpress-client.js";
@@ -30,13 +31,23 @@ test("parsePublishedPlayerUrls: 一覧カードの公開選手URLを重複なく
   ]);
 });
 
-test("selectNewsCategory: 同名カテゴリでは投稿数の多い現役カテゴリを選ぶ", () => {
+test("selectNewsCategories: リニューアル前後の同名カテゴリを両方選ぶ", () => {
   const categories = [
     { id: 1, name: "お知らせ", slug: "notice", count: 1 },
     { id: 21, name: "お知らせ", slug: "news1", count: 271 },
+    { id: 22, name: "お知らせ", slug: "empty", count: 0 },
   ];
 
-  assert.equal(selectNewsCategory(categories)?.id, 21);
+  assert.deepEqual(selectNewsCategories(categories).map((category) => category.id), [21, 1]);
+});
+
+test("selectAllNewsCategory: 名前またはslugから共通カテゴリを選ぶ", () => {
+  const categories = [
+    { id: 6, name: "ALL NEWS", slug: "all", count: 300 },
+    { id: 7, name: "旧ALL", slug: "all", count: 0 },
+  ];
+
+  assert.equal(selectAllNewsCategory(categories)?.id, 6);
 });
 
 test("selectPlayerBlogCategory: IDではなく名前・slugから選手ブログを選ぶ", () => {

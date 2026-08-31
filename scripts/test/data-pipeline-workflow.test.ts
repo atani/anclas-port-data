@@ -16,3 +16,8 @@ test("data pipeline commits generated news", () => {
   assert.ok(statusLine?.includes("news.json"), "news.json must be checked for changes");
   assert.ok(addLine?.includes("news.json"), "news.json must be staged for publishing");
 });
+
+test("data pipeline stops before commit when news consistency check fails", () => {
+  assert.match(workflow, /^\s+npm run generate:news\s*$/m);
+  assert.doesNotMatch(workflow, /generate:news\s*\|\|/);
+});

@@ -50,7 +50,8 @@ jobs:
         run: |
           npm run generate:matches
           npm run generate:partners || echo 'partners generation failed (non-fatal)'
-          npm run generate:news || echo 'news generation failed (non-fatal)'
+          # RSSとREST APIが不整合なら、他データも含めてcommitせず停止する。
+          npm run generate:news
           npm run generate:history || echo 'history generation failed (non-fatal)'
 
       - name: Reconcile player roster (daily)

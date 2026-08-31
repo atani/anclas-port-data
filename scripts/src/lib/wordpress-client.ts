@@ -117,6 +117,11 @@ export async function getPublishedPlayerUrls(): Promise<string[]> {
   return urls;
 }
 
+/** 公式スタッフ紹介ページ。個別詳細ページを持たないカード一覧を取得する。 */
+export async function getStaffPageHtml(): Promise<string> {
+  return siteFetchText(`${SITE_URL}/staff`);
+}
+
 export async function getPosts(params: {
   categories?: number[];
   tags?: number[];

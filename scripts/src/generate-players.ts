@@ -1,12 +1,14 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { logger } from "./lib/logger.js";
 import { parsePlayer, reconcilePublishedPlayers, sortPlayers } from "./lib/player-parser.js";
-import type { Player, PlayerSns, PlayersData } from "./lib/types.js";
+import { parseStaff } from "./lib/staff-parser.js";
+import type { Player, PlayerSns, PlayersData, Staff } from "./lib/types.js";
 import {
   fetchPlayerBlogPosts,
   getPlayerCategory,
   getPlayerPosts,
   getPublishedPlayerUrls,
+  getStaffPageHtml,
 } from "./lib/wordpress-client.js";
 
 const DATA_DIR = new URL("../../", import.meta.url);
@@ -59,6 +61,21 @@ async function main(): Promise<void> {
     if (reconciliation.missingUrls.length > 0) {
       logger.warn(`公式一覧に新規選手${reconciliation.missingUrls.length}件あり（API復旧後にプロフィールを追加）`);
     }
+  }
+
+  let staff: Staff[] = previous.staff ?? [];
+  try {
+    const freshStaff = parseStaff(await getStaffPageHtml());
+    if (freshStaff.length === 0) {
+      throw new Error("公式スタッフ紹介が0件でした");
+    }
+    if (staff.length >= 2 && freshStaff.length < Math.ceil(staff.length * 0.5)) {
+      throw new Error(`スタッフ数が急減しました（${staff.length}人→${freshStaff.length}人）`);
+    }
+    staff = freshStaff;
+    logger.info(`スタッフ: ${staff.length}人`);
+  } catch (error) {
+    logger.warn(`スタッフ取得に失敗。前回値${staff.length}人を維持します: ${error}`);
   }
 
   if (loadedFreshProfiles) {
@@ -130,6 +147,7 @@ async function main(): Promise<void> {
     generatedAt: new Date().toISOString(),
     season,
     players,
+    staff,
   };
   writeJson("players.json", data);
 

@@ -367,6 +367,15 @@ export interface PlayersData {
   /** カテゴリ名から抽出したシーズン年（例: "2026"） */
   season: string;
   players: Player[];
+  /** 公式スタッフ紹介ページに掲載されているトップチームスタッフ */
+  staff: Staff[];
+}
+
+/** トップチームスタッフ。詳細画面は持たず一覧表示に使用する。 */
+export interface Staff {
+  name: string;
+  role: string;
+  photoUrl: string | null;
 }
 
 /** news.json のルート */

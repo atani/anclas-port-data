@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T10:21:21.372Z",
+  "generatedAt": "2026-08-31T11:03:08.354Z",
   "season": "2026",
   "players": [
     {
@@ -1724,6 +1724,18 @@
       ],
       "sns": {},
       "role": null
+    }
+  ],
+  "staff": [
+    {
+      "name": "上田涼斗",
+      "role": "トップチーム監督",
+      "photoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Image_20260826_081321_018.jpeg"
+    },
+    {
+      "name": "黒澤怜",
+      "role": "ヘッドコーチ兼アカデミーダイレクター",
+      "photoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Image_20260826_081342_107.jpeg"
     }
   ]
 }

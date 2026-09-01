@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T14:10:27Z",
+  "generatedAt": "2026-09-01T14:21:00Z",
   "items": [
     {
       "id": "anclas-night-hatch-2026-09-06",
@@ -8,6 +8,8 @@
       "startsAt": "2026-08-30T14:00:00+09:00",
       "endsAt": "2026-09-06T19:00:00+09:00",
       "periodLabel": "開催中止",
+      "actionTitle": "中止のお知らせをXで確認",
+      "actionUrl": "https://x.com/ANCLAS_OFFICIAL/status/2094760729547329853",
       "priority": 200
     }
   ]

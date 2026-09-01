@@ -40,9 +40,18 @@ test("events.json contains valid limited-time events", async () => {
     ids.add(id);
 
     requiredString(item, "title", context);
-    requiredString(item, "actionTitle", context);
-    const actionURL = requiredString(item, "actionUrl", context);
-    assert.ok(validHttpsURL(actionURL), `${context}.actionUrl must be an HTTPS URL`);
+    const hasActionTitle = item.actionTitle !== undefined;
+    const hasActionURL = item.actionUrl !== undefined;
+    assert.equal(
+      hasActionTitle,
+      hasActionURL,
+      `${context}.actionTitle and actionUrl must be provided together`,
+    );
+    if (hasActionTitle && hasActionURL) {
+      requiredString(item, "actionTitle", context);
+      const actionURL = requiredString(item, "actionUrl", context);
+      assert.ok(validHttpsURL(actionURL), `${context}.actionUrl must be an HTTPS URL`);
+    }
     if (item.imageUrl !== undefined) {
       assert.equal(typeof item.imageUrl, "string", `${context}.imageUrl must be a string`);
       assert.ok(validHttpsURL(item.imageUrl as string), `${context}.imageUrl must be an HTTPS URL`);

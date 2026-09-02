@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T16:38:44.301Z",
+  "generatedAt": "2026-09-02T19:49:53.402Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -28,10 +28,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 27,
+        "temperatureC": 26.9,
         "precipitationProbability": 75,
         "weatherCode": 53,
-        "fetchedAt": "2026-09-02T16:38:36.748Z"
+        "fetchedAt": "2026-09-02T19:49:46.226Z"
       }
     },
     "latestResult": {
@@ -444,14 +444,22 @@
       "forecast": null
     },
     "latestPodcast": {
-      "id": "5s76C6q7hi8K3aGmtBRQsd",
-      "title": "＃21【番外編】セールストーーク！誰でも上手くいく営業のおはなし",
+      "id": "0EnfHrhxHixbG33XiUt7PC",
+      "title": "#22【インタビュー：リゾスポ学生の小田さん、福田さん、野口さん】元Jリーガーvs100人の小学生の仕掛け人たち",
       "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
-      "showUrl": "https://open.spotify.com/episode/5s76C6q7hi8K3aGmtBRQsd",
-      "embedUrl": "https://open.spotify.com/embed/episode/5s76C6q7hi8K3aGmtBRQsd",
-      "publishedAt": "2026-08-27"
+      "showUrl": "https://open.spotify.com/episode/0EnfHrhxHixbG33XiUt7PC",
+      "embedUrl": "https://open.spotify.com/embed/episode/0EnfHrhxHixbG33XiUt7PC",
+      "publishedAt": "2026-09-02"
     },
     "podcastEpisodes": [
+      {
+        "id": "0EnfHrhxHixbG33XiUt7PC",
+        "title": "#22【インタビュー：リゾスポ学生の小田さん、福田さん、野口さん】元Jリーガーvs100人の小学生の仕掛け人たち",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "showUrl": "https://open.spotify.com/episode/0EnfHrhxHixbG33XiUt7PC",
+        "embedUrl": "https://open.spotify.com/embed/episode/0EnfHrhxHixbG33XiUt7PC",
+        "publishedAt": "2026-09-02"
+      },
       {
         "id": "5s76C6q7hi8K3aGmtBRQsd",
         "title": "＃21【番外編】セールストーーク！誰でも上手くいく営業のおはなし",
@@ -483,14 +491,6 @@
         "showUrl": "https://open.spotify.com/episode/50yfLJXCpgd2mwSIouT1Zy",
         "embedUrl": "https://open.spotify.com/embed/episode/50yfLJXCpgd2mwSIouT1Zy",
         "publishedAt": "2026-07-31"
-      },
-      {
-        "id": "0duyLaCFcArcFEvrxsfDVj",
-        "title": "#17【インタビュー：嘉数クレア姫麗（前編）】自信喪失...紆余曲折を経て自分のサッカーに辿り着くまでのストーリー",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
-        "showUrl": "https://open.spotify.com/episode/0duyLaCFcArcFEvrxsfDVj",
-        "embedUrl": "https://open.spotify.com/embed/episode/0duyLaCFcArcFEvrxsfDVj",
-        "publishedAt": "2026-07-22"
       }
     ],
     "latestYouTube": {
@@ -5404,10 +5404,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 27,
+        "temperatureC": 26.9,
         "precipitationProbability": 75,
         "weatherCode": 53,
-        "fetchedAt": "2026-09-02T16:38:36.748Z"
+        "fetchedAt": "2026-09-02T19:49:46.226Z"
       }
     },
     {

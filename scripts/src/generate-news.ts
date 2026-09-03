@@ -11,7 +11,6 @@ import type { NewsData, NewsItem } from "./lib/types.js";
 import {
   getCategories,
   getPosts,
-  selectAllNewsCategory,
   selectNewsCategories,
 } from "./lib/wordpress-client.js";
 
@@ -54,17 +53,13 @@ function feedItemToNewsItem(item: NewsFeedItem): NewsItem {
 
 async function fetchFreshNewsItems(): Promise<NewsItem[]> {
   try {
-    // リニューアル前後の同名カテゴリを統合し、ALL NEWS との積集合を採用する。
+    // リニューアル前後の同名「お知らせ」カテゴリを統合する。
     const categories = await getCategories();
     const newsCategories = selectNewsCategories(categories);
     if (newsCategories.length === 0) throw new Error("お知らせカテゴリが見つかりませんでした");
-    const allNewsCategory = selectAllNewsCategory(categories);
-    if (!allNewsCategory) throw new Error("ALL NEWSカテゴリが見つかりませんでした");
     logger.info(
       `お知らせカテゴリ: ${newsCategories.map((c) => `id=${c.id} count=${c.count}`).join(", ")}`,
     );
-    logger.info(`ALL NEWSカテゴリ: id=${allNewsCategory.id} count=${allNewsCategory.count}`);
-
     const matchCategoryId = categories.find((c) => c.name === "試合")?.id;
     const posts = await getPosts({
       categories: newsCategories.map((category) => category.id),
@@ -75,7 +70,6 @@ async function fetchFreshNewsItems(): Promise<NewsItem[]> {
     return selectNewsPosts(
       posts,
       newsCategories.map((category) => category.id),
-      allNewsCategory.id,
       matchCategoryId ?? null,
       NEWS_LIMIT,
     ).map((post) => {

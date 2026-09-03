@@ -1,12 +1,33 @@
 {
-  "generatedAt": "2026-09-03T13:16:14.551Z",
+  "generatedAt": "2026-09-03T13:21:57.163Z",
   "items": [
+    {
+      "id": 28787,
+      "title": "トップチーム体制変更のお知らせ",
+      "date": "2026-09-02T18:00:00",
+      "url": "https://anclas.jp/news/2026/09/02/%e3%83%88%e3%83%83%e3%83%97%e3%83%81%e3%83%bc%e3%83%a0%e4%bd%93%e5%88%b6%e5%a4%89%e6%9b%b4%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/名称未設定のデザイン-4.png"
+    },
     {
       "id": 28681,
       "title": "【開催情報】2026年度KYFA第29回九州女子サッカーリーグ 1部 vs.東海大福岡高校 2026.9.20",
       "date": "2026-09-02T16:10:00",
       "url": "https://anclas.jp/news/2026/09/02/%e3%80%90%e9%96%8b%e5%82%ac%e6%83%85%e5%a0%b1%e3%80%912026%e5%b9%b4%e5%ba%a6kyfa%e7%ac%ac29%e5%9b%9e%e4%b9%9d%e5%b7%9e%e5%a5%b3%e5%ad%90%e3%82%b5%e3%83%83%e3%82%ab%e3%83%bc%e3%83%aa%e3%83%bc%e3%82%b0/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/0920_home_fukuoka_pc-1024x576.jpg"
+    },
+    {
+      "id": 28741,
+      "title": "【背番号決定のお知らせ】#21熊澤果歩 選手",
+      "date": "2026-09-02T14:40:19",
+      "url": "https://anclas.jp/news/2026/09/02/%e3%80%90%e8%83%8c%e7%95%aa%e5%8f%b7%e6%b1%ba%e5%ae%9a%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b%e3%80%9121%e7%86%8a%e6%be%a4%e6%9e%9c%e6%ad%a9-%e9%81%b8%e6%89%8b/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/DSC_0025-200x300.jpg"
+    },
+    {
+      "id": 28679,
+      "title": "淵 郁子氏 事業推進ディレクター就任のお知らせ",
+      "date": "2026-09-01T18:01:21",
+      "url": "https://anclas.jp/news/2026/09/01/%e6%b7%b5-%e9%83%81%e5%ad%90%e6%b0%8f-%e4%ba%8b%e6%a5%ad%e6%8e%a8%e9%80%b2%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%82%bf%e3%83%bc%e5%b0%b1%e4%bb%bb%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/名称未設定のデザイン-4-300x169.png"
     },
     {
       "id": 28671,
@@ -20,7 +41,7 @@
       "title": "なでしこリーグ加盟審査を受けて",
       "date": "2026-08-31T18:07:08",
       "url": "https://anclas.jp/news/2026/08/31/%e3%81%aa%e3%81%a7%e3%81%97%e3%81%93%e3%83%aa%e3%83%bc%e3%82%b0%e5%8a%a0%e7%9b%9f%e5%af%a9%e6%9f%bb%e3%82%92%e5%8f%97%e3%81%91%e3%81%a6/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/themes/anclas/assets/images/logo.png"
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/名称未設定のデザイン-4-300x169.png"
     },
     {
       "id": 27984,
@@ -41,7 +62,7 @@
       "title": "ボランティアスタッフ募集のお知らせ",
       "date": "2026-08-19T12:00:20",
       "url": "https://anclas.jp/news/2026/08/19/post-27955/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/themes/anclas/assets/images/logo.png"
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/S__66355209-1-300x300.jpg"
     },
     {
       "id": 27863,
@@ -119,27 +140,6 @@
       "date": "2026-07-10T12:00:21",
       "url": "https://anclas.jp/post-27430/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/07/S__62709800-240x300.jpg"
-    },
-    {
-      "id": 27419,
-      "title": "2027年度なでしこリーグ2部加盟希望申請について",
-      "date": "2026-07-06T18:00:10",
-      "url": "https://anclas.jp/post-27419/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/07/S__62406661-300x300.jpg"
-    },
-    {
-      "id": 27410,
-      "title": "【試合中止のお知らせ】第13節vs.国見FCレディース",
-      "date": "2026-07-05T10:47:53",
-      "url": "https://anclas.jp/post-27410/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/themes/anclas/assets/images/logo.png"
-    },
-    {
-      "id": 27386,
-      "title": "九州女子サッカーリーグ 1部第13節 (アウェイ戦) 7.5(日) 試合情報のお知らせ",
-      "date": "2026-06-29T16:06:44",
-      "url": "https://anclas.jp/post-27386/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/06/0705_away_kunimi_ig_ver.02-240x300.jpg"
     }
   ]
 }

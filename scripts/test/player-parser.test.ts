@@ -156,6 +156,10 @@ test("players.json: 熊澤果歩を公式プロフィール情報付きで1件�
   assert.equal(players[0]?.position, "GK");
   assert.equal(players[0]?.nickname, "くま");
   assert.equal(players[0]?.profile.bloodType, "A型");
+  assert.deepEqual(
+    new Set(Object.values(players[0]!.photo)),
+    new Set(["https://anclas.jp/wp-content/uploads/2026/09/名称未設定のデザイン-5.png"]),
+  );
   assert.equal(
     players[0]?.sourceUrl,
     "https://anclas.jp/player/%e7%86%8a%e6%be%a4%e6%9e%9c%e6%ad%a9/",

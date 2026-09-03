@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-09-01T14:21:00Z",
+  "generatedAt": "2026-09-03T00:00:00+09:00",
   "items": [
+    {
+      "id": "kyfa-2026-09-20-j-league-vs-100-kids",
+      "title": "元Jリーガー vs 小学生100人",
+      "summary": "9月20日(日) 宇美町総合スポーツ公園で開催します。8:30集合、9:00開始で参加費無料。中村北斗・山下芳輝・石津大介が参加し、イベント後12:00からアンクラス対東海大福岡高校を開催します。",
+      "imageUrl": "https://raw.githubusercontent.com/atani/anclas-port-data/main/assets/events/kyfa-2026-09-20-momojo-j-league-vs-100-kids.png",
+      "startsAt": "2026-09-02T00:00:00+09:00",
+      "endsAt": "2026-09-20T09:00:00+09:00",
+      "periodLabel": "9/20(日) 8:30集合｜9:00開始",
+      "actionTitle": "参加を申し込む",
+      "actionUrl": "https://docs.google.com/forms/d/1HYlJHyAoDQfxWm7qTN4Oy2hC5iousdpLkBTzyfteSJ0/viewform?edit_requested=true",
+      "priority": 200
+    },
     {
       "id": "anclas-night-hatch-2026-09-06",
       "title": "【開催中止】9/6(日) アンクラスナイト",

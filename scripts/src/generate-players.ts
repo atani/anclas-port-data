@@ -1,6 +1,11 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { logger } from "./lib/logger.js";
-import { parsePlayer, reconcilePublishedPlayers, sortPlayers } from "./lib/player-parser.js";
+import {
+  mergeSupplementalPlayers,
+  parsePlayer,
+  reconcilePublishedPlayers,
+  sortPlayers,
+} from "./lib/player-parser.js";
 import { parseStaff } from "./lib/staff-parser.js";
 import type { Player, PlayerSns, PlayersData, Staff } from "./lib/types.js";
 import {
@@ -61,6 +66,18 @@ async function main(): Promise<void> {
     if (reconciliation.missingUrls.length > 0) {
       logger.warn(`公式一覧に新規選手${reconciliation.missingUrls.length}件あり（API復旧後にプロフィールを追加）`);
     }
+  }
+
+  // 公式プロフィールが通常の WordPress API に現れない途中加入選手を補完する。
+  try {
+    const supplementalPath = new URL("./data/player-additions.json", import.meta.url);
+    const supplemental = JSON.parse(readFileSync(supplementalPath, "utf-8")) as Player[];
+    const previousCount = players.length;
+    players = mergeSupplementalPlayers(players, supplemental);
+    const addedCount = players.length - previousCount;
+    if (addedCount > 0) logger.info(`途中加入: ${addedCount}選手を補完`);
+  } catch (error) {
+    logger.warn(`途中加入選手の補完に失敗: ${error}`);
   }
 
   let staff: Staff[] = previous.staff ?? [];

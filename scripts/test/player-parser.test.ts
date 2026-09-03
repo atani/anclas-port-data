@@ -3,12 +3,13 @@ import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import {
+  mergeSupplementalPlayers,
   parsePlayer,
   parsePlayerTitle,
   reconcilePublishedPlayers,
   sortPlayers,
 } from "../src/lib/player-parser.js";
-import type { Player } from "../src/lib/types.js";
+import type { Player, PlayersData } from "../src/lib/types.js";
 import type { WPPost } from "../src/lib/wordpress-client.js";
 
 const posts = JSON.parse(
@@ -74,6 +75,92 @@ test("sortPlayers: 背番号昇順、null は末尾", () => {
     sorted.map((p) => p.number),
     [3, 10, null],
   );
+});
+
+test("mergeSupplementalPlayers: APIにいない途中加入選手を背番号順で補完する", () => {
+  const official = parsePlayer(posts[0]!);
+  const supplemental: Player = {
+    ...official,
+    id: 27930,
+    number: 21,
+    nameJa: "熊澤果歩",
+    nameEn: "KUMAZAWA KAHO",
+    sourceUrl: "https://anclas.jp/player/熊澤果歩/",
+  };
+
+  const result = mergeSupplementalPlayers([official], [supplemental]);
+
+  assert.deepEqual(result.map((player) => player.number), [3, 21]);
+  assert.equal(result.filter((player) => player.nameJa === "熊澤果歩").length, 1);
+});
+
+test("mergeSupplementalPlayers: 同名の公式プロフィールが取得できたら重複させない", () => {
+  const official = { ...parsePlayer(posts[0]!), nameJa: "熊澤果歩", number: 21 };
+  const supplemental = { ...official, id: 27930, nickname: "補完値" };
+
+  const result = mergeSupplementalPlayers([official], [supplemental]);
+
+  assert.equal(result.length, 1);
+  assert.equal(result[0]?.id, official.id);
+  assert.notEqual(result[0]?.nickname, "補完値");
+});
+
+test("mergeSupplementalPlayers: 同名の公式プロフィールで欠けた項目だけ補完する", () => {
+  const official = {
+    ...parsePlayer(posts[0]!),
+    number: null,
+    position: null,
+    nameJa: "熊澤果歩",
+    nickname: null,
+    photo: { thumbnail: null, medium: null, large: null, full: null },
+    personal: [],
+  };
+  const supplemental: Player = {
+    ...official,
+    id: 27930,
+    number: 21,
+    position: "GK",
+    nickname: "くま",
+    photo: { thumbnail: "thumb", medium: "medium", large: "large", full: "full" },
+    personal: [{ label: "MBTI", value: "ESTP-A 起業家" }],
+  };
+
+  const result = mergeSupplementalPlayers([official], [supplemental]);
+
+  assert.equal(result.length, 1);
+  assert.equal(result[0]?.id, official.id);
+  assert.equal(result[0]?.number, 21);
+  assert.equal(result[0]?.position, "GK");
+  assert.equal(result[0]?.nickname, "くま");
+  assert.equal(result[0]?.photo.large, "large");
+  assert.deepEqual(result[0]?.personal, supplemental.personal);
+});
+
+test("mergeSupplementalPlayers: 補完選手と同じ背番号の旧選手を置き換える", () => {
+  const oldPlayer = { ...parsePlayer(posts[0]!), number: 21, nameJa: "旧選手" };
+  const supplemental = { ...oldPlayer, id: 27930, nameJa: "熊澤果歩" };
+
+  const result = mergeSupplementalPlayers([oldPlayer], [supplemental]);
+
+  assert.deepEqual(result.map((player) => player.nameJa), ["熊澤果歩"]);
+});
+
+test("players.json: 熊澤果歩を公式プロフィール情報付きで1件掲載する", () => {
+  const data = JSON.parse(
+    readFileSync(fileURLToPath(new URL("../../players.json", import.meta.url)), "utf-8"),
+  ) as PlayersData;
+  const players = data.players.filter((player) => player.nameJa === "熊澤果歩");
+
+  assert.equal(players.length, 1);
+  assert.equal(players[0]?.number, 21);
+  assert.equal(players[0]?.position, "GK");
+  assert.equal(players[0]?.nickname, "くま");
+  assert.equal(players[0]?.profile.bloodType, "A型");
+  assert.equal(
+    players[0]?.sourceUrl,
+    "https://anclas.jp/player/%e7%86%8a%e6%be%a4%e6%9e%9c%e6%ad%a9/",
+  );
+  assert.equal(players[0]?.personal.length, 13);
 });
 
 test("reconcilePublishedPlayers: 公式一覧から消えた選手だけを除外する", () => {

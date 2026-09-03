@@ -1,3 +1,5 @@
+import { isWordPressSampleNews } from "./news-selection.js";
+
 const FEED_URL = "https://anclas.jp/feed/";
 const NEWS_CATEGORY_ARCHIVE_URLS = [
   "https://anclas.jp/news/category/notice/",
@@ -49,7 +51,7 @@ function postId(guid: string, url: string): number | null {
   return null;
 }
 
-/** RSSから、ALL NEWS・お知らせに属し試合ではない投稿を抽出する。 */
+/** RSSから、お知らせに属し試合ではない正規投稿を抽出する。 */
 export function parseNewsFeedItems(xml: string): NewsFeedItem[] {
   const blocks = xml.match(/<item\b[\s\S]*?<\/item>/gi) ?? [];
   const items: NewsFeedItem[] = [];
@@ -58,7 +60,6 @@ export function parseNewsFeedItems(xml: string): NewsFeedItem[] {
       .map((match) => decodeXml(match[1] ?? ""));
     if (
       !categories.includes("お知らせ")
-      || !categories.includes("ALL NEWS")
       || categories.includes("試合")
     ) {
       continue;
@@ -71,6 +72,7 @@ export function parseNewsFeedItems(xml: string): NewsFeedItem[] {
     if (!title || !url || !guid || !publishedAt) continue;
     const id = postId(guid, url);
     if (id == null) continue;
+    if (isWordPressSampleNews(id, url)) continue;
     items.push({
       id,
       title,
@@ -102,7 +104,7 @@ async function fetchFeedXml(url: string): Promise<string> {
 export async function fetchLatestNewsFeedItem(): Promise<NewsFeedItem> {
   const item = parseLatestNewsFeedItem(await fetchFeedXml(FEED_URL));
   if (!item) {
-    throw new Error("標準RSSに ALL NEWS・お知らせ 両方のカテゴリを持つ記事がありません");
+    throw new Error("標準RSSに配信対象のお知らせ記事がありません");
   }
   return item;
 }

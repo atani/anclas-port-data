@@ -2,10 +2,18 @@ import type { WPPost } from "./wordpress-client.js";
 import { ANCLAS_MARK_URL } from "./news-thumbnail.js";
 import type { NewsItem } from "./types.js";
 
+/** WordPress が初期生成するサンプル投稿はクラブのお知らせとして配信しない。 */
+export function isWordPressSampleNews(id: number, url: string): boolean {
+  try {
+    return id === 1 && new URL(url).pathname.endsWith("/hello-world/");
+  } catch {
+    return false;
+  }
+}
+
 export function selectNewsPosts(
   posts: WPPost[],
   noticeCategoryIds: number[],
-  allNewsCategoryId: number,
   matchCategoryId: number | null,
   limit: number,
 ): WPPost[] {
@@ -13,8 +21,8 @@ export function selectNewsPosts(
   const unique = new Map<number, WPPost>();
   for (const post of posts) {
     if (!post.categories.some((id) => noticeIds.has(id))) continue;
-    if (!post.categories.includes(allNewsCategoryId)) continue;
     if (matchCategoryId != null && post.categories.includes(matchCategoryId)) continue;
+    if (isWordPressSampleNews(post.id, post.link)) continue;
     unique.set(post.id, post);
   }
   return [...unique.values()]

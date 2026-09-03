@@ -1,7 +1,11 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { ANCLAS_MARK_URL } from "../src/lib/news-thumbnail.js";
-import { preserveStableNewsMedia, selectNewsPosts } from "../src/lib/news-selection.js";
+import {
+  isWordPressSampleNews,
+  preserveStableNewsMedia,
+  selectNewsPosts,
+} from "../src/lib/news-selection.js";
 import type { NewsItem } from "../src/lib/types.js";
 import type { WPPost } from "../src/lib/wordpress-client.js";
 
@@ -19,18 +23,27 @@ function post(id: number, date: string, categories: number[]): WPPost {
   };
 }
 
-test("selectNewsPosts: 新旧お知らせを統合し、ALL NEWS必須・試合除外で新しい順にする", () => {
+test("selectNewsPosts: 新旧お知らせを統合し、試合と初期投稿を除外して新しい順にする", () => {
   const posts = [
-    post(1, "2026-08-31T10:00:00", [1]),
+    {
+      ...post(1, "2026-08-31T12:00:00", [1]),
+      link: "https://anclas.jp/news/2026/07/23/hello-world/",
+    },
     post(2, "2026-08-30T10:00:00", [21, 6, 3]),
     post(3, "2026-08-29T10:00:00", [21, 6]),
     post(4, "2026-08-31T11:00:00", [1, 6]),
+    post(5, "2026-09-02T18:00:00", [1]),
   ];
 
   assert.deepEqual(
-    selectNewsPosts(posts, [21, 1], 6, 3, 20).map((selected) => selected.id),
-    [4, 3],
+    selectNewsPosts(posts, [21, 1], 3, 20).map((selected) => selected.id),
+    [5, 4, 3],
   );
+});
+
+test("isWordPressSampleNews: id=1のHello worldだけを除外する", () => {
+  assert.equal(isWordPressSampleNews(1, "https://anclas.jp/news/2026/07/23/hello-world/"), true);
+  assert.equal(isWordPressSampleNews(28787, "https://anclas.jp/news/2026/09/02/hello-world/"), false);
 });
 
 test("preserveStableNewsMedia: 既存記事の移行URLと画像URLの一斉変更を抑える", () => {

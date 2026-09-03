@@ -161,6 +161,58 @@ export function sortPlayers(players: Player[]): Player[] {
   });
 }
 
+/**
+ * 通常の WordPress API に現れない途中加入選手を補完する。
+ * 同名の公式データが取得できた場合は公式データを優先し、
+ * 背番号が再利用された場合は補完対象を現在の選手として扱う。
+ */
+export function mergeSupplementalPlayers(players: Player[], supplemental: Player[]): Player[] {
+  const normalizeName = (name: string): string => name.replace(/[\s　]/g, "");
+  const supplementalByName = new Map(
+    supplemental.map((player) => [normalizeName(player.nameJa), player]),
+  );
+  const supplementalNames = new Set(supplemental.map((player) => normalizeName(player.nameJa)));
+  const officialNames = new Set(players.map((player) => normalizeName(player.nameJa)));
+  const enriched = players.map((player) => {
+    const fallback = supplementalByName.get(normalizeName(player.nameJa));
+    if (!fallback) return player;
+    return {
+      ...player,
+      number: player.number ?? fallback.number,
+      position: player.position ?? fallback.position,
+      nameEn: player.nameEn ?? fallback.nameEn,
+      nickname: player.nickname ?? fallback.nickname,
+      photo: {
+        thumbnail: player.photo.thumbnail ?? fallback.photo.thumbnail,
+        medium: player.photo.medium ?? fallback.photo.medium,
+        large: player.photo.large ?? fallback.photo.large,
+        full: player.photo.full ?? fallback.photo.full,
+      },
+      profile: {
+        birthdate: player.profile.birthdate ?? fallback.profile.birthdate,
+        hometown: player.profile.hometown ?? fallback.profile.hometown,
+        height: player.profile.height ?? fallback.profile.height,
+        bloodType: player.profile.bloodType ?? fallback.profile.bloodType,
+        career: player.profile.career ?? fallback.profile.career,
+      },
+      personal: player.personal.length > 0 ? player.personal : fallback.personal,
+    };
+  });
+  const additions = supplemental.filter(
+    (player) => !officialNames.has(normalizeName(player.nameJa)),
+  );
+  const replacedNumbers = new Set(
+    additions.flatMap((player) => (player.number === null ? [] : [player.number])),
+  );
+  const kept = enriched.filter(
+    (player) =>
+      supplementalNames.has(normalizeName(player.nameJa))
+      || player.number === null
+      || !replacedNumbers.has(player.number),
+  );
+  return sortPlayers([...kept, ...additions]);
+}
+
 function normalizedSourceUrl(value: string): string {
   const url = new URL(value);
   url.hash = "";

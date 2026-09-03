@@ -1,0 +1,81 @@
+[
+  {
+    "id": 27930,
+    "number": 21,
+    "position": "GK",
+    "nameJa": "熊澤果歩",
+    "nameEn": "KUMAZAWA KAHO",
+    "nickname": "くま",
+    "photo": {
+      "thumbnail": "https://anclas.jp/wp-content/uploads/2026/08/い-150x150.png",
+      "medium": "https://anclas.jp/wp-content/uploads/2026/08/い-240x300.png",
+      "large": "https://anclas.jp/wp-content/uploads/2026/08/い-819x1024.png",
+      "full": "https://anclas.jp/wp-content/uploads/2026/08/い.png"
+    },
+    "profile": {
+      "birthdate": "2008年7月31日",
+      "hometown": "埼玉県",
+      "height": "175cm",
+      "bloodType": "A型",
+      "career": "はくつるFC – INAC白岡SCレディース – 三菱重工浦和レッズレディースユース"
+    },
+    "personal": [
+      {
+        "label": "サッカー歴",
+        "value": "13年目"
+      },
+      {
+        "label": "サッカーを始めたきっかけ",
+        "value": "サッカーしているのを見てやりたくなった"
+      },
+      {
+        "label": "MBTI",
+        "value": "ESTP-A 起業家"
+      },
+      {
+        "label": "趣味、ハマってること",
+        "value": "Netflix"
+      },
+      {
+        "label": "好きな食べ物",
+        "value": "ハンバーグ"
+      },
+      {
+        "label": "好きなアニメ・キャラクター",
+        "value": "ミニオン"
+      },
+      {
+        "label": "オフの日の過ごし方",
+        "value": "友達と遊ぶ！"
+      },
+      {
+        "label": "自分のプレーの特長・長所(ここを見てほしい！)",
+        "value": "ロングキック"
+      },
+      {
+        "label": "試合前／試合前日のルーティン",
+        "value": "音楽聴きまくる"
+      },
+      {
+        "label": "パワーソング(歌手名／曲名)",
+        "value": "虹/AquaTimez"
+      },
+      {
+        "label": "今シーズンの目標",
+        "value": "九州リーグ優勝 皇后杯で勝ち進める"
+      },
+      {
+        "label": "今年、挑戦してみたいこと",
+        "value": "自動車免許 旅行"
+      },
+      {
+        "label": "ファン・サポーターへ一言",
+        "value": "3ヶ月という短い期間ですが、精一杯頑張りますので応援よろしくお願いいたします！共に闘いましょう！"
+      }
+    ],
+    "sourceUrl": "https://anclas.jp/player/%e7%86%8a%e6%be%a4%e6%9e%9c%e6%ad%a9/",
+    "blogPosts": [],
+    "sns": {},
+    "role": null
+  }
+]

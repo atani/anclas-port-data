@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-09-05T05:48:35.935Z",
+  "generatedAt": "2026-09-05T10:40:45.630Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
-      "id": "su-post-9411",
-      "competition": "Qリーグ",
-      "round": 13,
-      "date": "2026-09-05",
-      "kickoff": "18:00",
-      "datetime": "2026-09-05T18:00:00+09:00",
-      "homeTeam": "国見FCレディース",
-      "awayTeam": "福岡J・アンクラス",
+      "id": "empress-cup-2026-round1",
+      "competition": "皇后杯 1回戦",
+      "round": null,
+      "date": "2026-09-12",
+      "kickoff": null,
+      "datetime": "2026-09-12T00:00:00+09:00",
+      "homeTeam": "福岡J・アンクラス",
+      "awayTeam": "活水女子大学サッカー部",
       "status": "scheduled",
       "score": null,
       "isAnclas": true,
-      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-29/",
-      "venue": "南島原多目的運動広場",
+      "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945",
+      "venue": "長崎県 島原市営 平成町多目的広場",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -27,12 +27,7 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": {
-        "temperatureC": 28.2,
-        "precipitationProbability": 4,
-        "weatherCode": 3,
-        "fetchedAt": "2026-09-05T05:48:33.647Z"
-      }
+      "forecast": null
     },
     "latestResult": {
       "id": "su-post-9892",
@@ -5403,12 +5398,7 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": {
-        "temperatureC": 28.2,
-        "precipitationProbability": 4,
-        "weatherCode": 3,
-        "fetchedAt": "2026-09-05T05:48:33.647Z"
-      }
+      "forecast": null
     },
     {
       "id": "su-post-9536",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T00:00:00+09:00",
+  "generatedAt": "2026-09-06T08:10:00+09:00",
   "items": [
     {
       "id": "kyfa-2026-09-20-j-league-vs-100-kids",
@@ -11,17 +11,6 @@
       "periodLabel": "9/20(日) 8:30集合｜9:00開始",
       "actionTitle": "参加を申し込む",
       "actionUrl": "https://docs.google.com/forms/d/1HYlJHyAoDQfxWm7qTN4Oy2hC5iousdpLkBTzyfteSJ0/viewform?edit_requested=true",
-      "priority": 200
-    },
-    {
-      "id": "anclas-night-hatch-2026-09-06",
-      "title": "【開催中止】9/6(日) アンクラスナイト",
-      "summary": "9/6(日)にスポーツバーハッチで開催予定だったアンクラスナイトは中止になりました。",
-      "startsAt": "2026-08-30T14:00:00+09:00",
-      "endsAt": "2026-09-06T19:00:00+09:00",
-      "periodLabel": "開催中止",
-      "actionTitle": "中止のお知らせをXで確認",
-      "actionUrl": "https://x.com/ANCLAS_OFFICIAL/status/2094760729547329853",
       "priority": 200
     }
   ]

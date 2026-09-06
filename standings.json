@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-09-06T04:46:47.329Z",
+  "generatedAt": "2026-09-06T06:00:19.441Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
     {
       "rank": 1,
       "team": "福岡J・アンクラス",
-      "played": 10,
-      "win": 9,
+      "played": 9,
+      "win": 8,
       "draw": 1,
       "loss": 0,
-      "gf": 21,
+      "gf": 20,
       "ga": 4,
-      "points": 28,
-      "gd": 17,
+      "points": 25,
+      "gd": 16,
       "isAnclas": true
     },
     {
@@ -97,14 +97,14 @@
     {
       "rank": 8,
       "team": "国見FCレディース",
-      "played": 9,
+      "played": 8,
       "win": 0,
       "draw": 1,
-      "loss": 8,
+      "loss": 7,
       "gf": 4,
-      "ga": 26,
+      "ga": 25,
       "points": 1,
-      "gd": -22,
+      "gd": -21,
       "isAnclas": false
     }
   ],
@@ -170,13 +170,6 @@
       "leagueRank": 21,
       "name": "田中 花奈",
       "number": 15,
-      "goals": 1
-    },
-    {
-      "rank": 6,
-      "leagueRank": 21,
-      "name": "田川 葵",
-      "number": 20,
       "goals": 1
     }
   ],

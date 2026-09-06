@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T06:00:19.441Z",
+  "generatedAt": "2026-09-06T11:02:48.634Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -30,116 +30,102 @@
       "forecast": null
     },
     "latestResult": {
-      "id": "su-post-9892",
+      "id": "su-post-9411",
       "competition": "Qリーグ",
-      "round": 2,
-      "date": "2026-07-12",
-      "kickoff": "16:00",
-      "datetime": "2026-07-12T16:00:00+09:00",
-      "homeTeam": "水俣ユニオンフットボールクラブウィメン",
+      "round": 13,
+      "date": "2026-09-05",
+      "kickoff": "18:00",
+      "datetime": "2026-09-05T18:00:00+09:00",
+      "homeTeam": "国見FCレディース",
       "awayTeam": "福岡J・アンクラス",
       "status": "finished",
       "score": {
-        "home": 1,
-        "away": 2
+        "home": 0,
+        "away": 1
       },
       "isAnclas": true,
-      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-7-2/",
-      "venue": null,
+      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-29/",
+      "venue": "南島原多目的運動広場",
       "goals": [
         {
-          "minute": "後半",
-          "team": "水俣ユニオンフットボールクラブウィメン",
-          "playerNumber": 17,
-          "playerName": "本村 海里",
-          "assist": null
-        },
-        {
-          "minute": "前半",
+          "minute": "7分(前半7分)",
           "team": "福岡J・アンクラス",
-          "playerNumber": 8,
-          "playerName": "野沢 真由",
-          "assist": null
-        },
-        {
-          "minute": "後半",
-          "team": "福岡J・アンクラス",
-          "playerNumber": 13,
-          "playerName": "原 日樺",
+          "playerNumber": 20,
+          "playerName": "田川 葵",
           "assist": null
         }
       ],
       "starters": [
         {
-          "number": 1,
+          "number": 12,
           "position": "GK",
-          "name": "佐々木 妃那多",
+          "name": "正木 唯海",
           "team": "home"
         },
         {
           "number": 2,
           "position": "DF",
-          "name": "鹿毛 千聖",
+          "name": "布田 雫",
           "team": "home"
         },
         {
-          "number": 13,
+          "number": 3,
           "position": "DF",
-          "name": "KIM MINSEO",
+          "name": "平 望優",
+          "team": "home"
+        },
+        {
+          "number": 14,
+          "position": "DF",
+          "name": "兼俵 夏葉",
+          "team": "home"
+        },
+        {
+          "number": 21,
+          "position": "DF",
+          "name": "吉川 美海",
+          "team": "home"
+        },
+        {
+          "number": 4,
+          "position": "MF",
+          "name": "宇土 來南",
           "team": "home"
         },
         {
           "number": 8,
           "position": "MF",
-          "name": "平田 こころ",
+          "name": "宮園 華",
+          "team": "home"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "梅崎 彩芭",
+          "team": "home"
+        },
+        {
+          "number": 18,
+          "position": "MF",
+          "name": "桜井 みゆき",
           "team": "home"
         },
         {
           "number": 11,
           "position": "FW",
-          "name": "KIM MINKYUNG",
+          "name": "菊地 彩花",
           "team": "home"
         },
         {
-          "number": 4,
-          "position": "FP",
-          "name": "渡辺 彩香",
+          "number": 13,
+          "position": "FW",
+          "name": "井手 心愛",
           "team": "home"
         },
         {
-          "number": 7,
-          "position": "FP",
-          "name": "上村 美月",
-          "team": "home"
-        },
-        {
-          "number": 9,
-          "position": "FP",
-          "name": "宮﨑 水鳥",
-          "team": "home"
-        },
-        {
-          "number": 14,
-          "position": "FP",
-          "name": "武田 綾香",
-          "team": "home"
-        },
-        {
-          "number": 17,
-          "position": "FP",
-          "name": "本村 海里",
-          "team": "home"
-        },
-        {
-          "number": 22,
-          "position": "FP",
-          "name": "藤山 眞子",
-          "team": "home"
-        },
-        {
-          "number": 17,
+          "number": 21,
           "position": "GK",
-          "name": "釜坂 慧",
+          "name": "熊澤 果歩",
           "team": "away"
         },
         {
@@ -149,21 +135,15 @@
           "team": "away"
         },
         {
-          "number": 5,
+          "number": 6,
           "position": "DF",
-          "name": "大河内 友貴",
+          "name": "森 和奏",
           "team": "away"
         },
         {
           "number": 10,
           "position": "DF",
           "name": "平坂 咲希",
-          "team": "away"
-        },
-        {
-          "number": 23,
-          "position": "DF",
-          "name": "北条 あゆみ",
           "team": "away"
         },
         {
@@ -176,6 +156,12 @@
           "number": 16,
           "position": "MF",
           "name": "端山 新",
+          "team": "away"
+        },
+        {
+          "number": 20,
+          "position": "MF",
+          "name": "田川 葵",
           "team": "away"
         },
         {
@@ -205,51 +191,51 @@
       ],
       "subs": [
         {
+          "number": 1,
+          "position": "GK",
+          "name": "田上 未希",
+          "team": "home"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "中村 朱里",
+          "team": "home"
+        },
+        {
+          "number": 6,
+          "position": "DF",
+          "name": "岡﨑 亜美伽",
+          "team": "home"
+        },
+        {
           "number": 23,
-          "position": "GK",
-          "name": "男鹿 藍里",
+          "position": "MF",
+          "name": "平田 そら",
           "team": "home"
         },
         {
-          "number": 3,
-          "position": "DF",
-          "name": "佐藤 衣里子",
+          "number": 10,
+          "position": "FW",
+          "name": "中村 怜愛",
           "team": "home"
         },
         {
-          "number": 6,
-          "position": "FP",
-          "name": "稲田 雛",
+          "number": 19,
+          "position": "FW",
+          "name": "牛嶋 空来",
           "team": "home"
         },
         {
-          "number": 18,
-          "position": "FP",
-          "name": "喜元 はずき",
+          "number": 24,
+          "position": "FW",
+          "name": "吉川 美空",
           "team": "home"
-        },
-        {
-          "number": 21,
-          "position": "GK",
-          "name": "進藤 真奈花",
-          "team": "away"
-        },
-        {
-          "number": 6,
-          "position": "DF",
-          "name": "森 和奏",
-          "team": "away"
         },
         {
           "number": 14,
           "position": "MF",
           "name": "宮脇 ゆりあ",
-          "team": "away"
-        },
-        {
-          "number": 20,
-          "position": "MF",
-          "name": "田川 葵",
           "team": "away"
         },
         {
@@ -263,179 +249,62 @@
           "position": "FW",
           "name": "田邉 いちご",
           "team": "away"
-        },
-        {
-          "number": 18,
-          "position": "FW",
-          "name": "玉城 薪瀬",
-          "team": "away"
         }
       ],
       "substitutions": [
         {
           "minute": "ＨＴ",
+          "team": "home",
+          "outNumber": 14,
+          "outName": "兼俵 夏葉",
+          "inNumber": 5,
+          "inName": "中村 朱里"
+        },
+        {
+          "minute": "53分(後半13分)",
+          "team": "home",
+          "outNumber": 13,
+          "outName": "井手 心愛",
+          "inNumber": 24,
+          "inName": "吉川 美空"
+        },
+        {
+          "minute": "63分(後半23分)",
+          "team": "home",
+          "outNumber": 18,
+          "outName": "桜井 みゆき",
+          "inNumber": 23,
+          "inName": "平田 そら"
+        },
+        {
+          "minute": "63分(後半23分)",
           "team": "away",
-          "outNumber": 23,
-          "outName": "北条 あゆみ",
+          "outNumber": 8,
+          "outName": "野沢 真由",
           "inNumber": 25,
           "inName": "伊藤 なずな"
+        },
+        {
+          "minute": "72分(後半32分)",
+          "team": "away",
+          "outNumber": 11,
+          "outName": "嘉数 クレア姫麗",
+          "inNumber": 9,
+          "inName": "田邉 いちご"
         }
       ],
       "stats": {
-        "attendance": "140人",
+        "attendance": "70人",
         "weather": "晴",
-        "temperature": "32℃",
-        "pitch": "良芝、乾燥"
+        "temperature": "24℃",
+        "pitch": "人工芝、乾燥"
       },
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341600",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
-      "matchReport": {
-        "summary": "厳しい暑さの中で行われた一戦。クーリングブレイクや飲水タイムが設けられ、試合の流れやリズムを維持することが難しいゲームとなりましたが、選手たちは最後まで集中を切らさず戦い抜きました。\n\n前半に先制点を奪い、1-0で試合を折り返しましたが、後半開始直後に失点。試合を振り出しに戻される苦しい展開となりました。それでも慌てることなく粘り強く戦い続け、互いにチャンスを作り合う白熱したゲームが続きました。\n\nそして迎えた後半アディショナルタイム。最後まで勝利を信じて走り続けた選手たちに劇的な決勝ゴールが生まれ、2-1で勝利。暑さの中でも最後まで諦めない姿勢が実を結び、痺れる試合となりました。\n\nまた、本日の試合をもって、21番・進藤選手が海外留学へと出発します。\n\n試合終盤、ピッチサイドで交代出場の準備を進めていましたが、そのまま試合終了のホイッスル。残念ながらピッチに立つことはできませんでした。しかし、日々チームのために努力を続けてきた姿勢は、仲間やスタッフの心にしっかりと刻まれています。\n\n海外という新たな舞台でも、アンクラスで培った経験を糧に大きく成長し、さらに活躍してくれることをチーム一同願っています。\n\n進藤選手、行ってらっしゃい。これからの挑戦を心から応援しています！",
-        "coachComment": {
-          "name": "上田 涼斗",
-          "comment": "昨日も暑い中、会場まで足を運び、熱い応援を送ってくださった皆さま、本当にありがとうございました。\n\n皆さまの後押しのおかげで、勝利という結果を掴むことができました。心より感謝申し上げます。\n\nこれからさらに暑さが厳しくなり、難しい試合が続いていきます。そんな中でも、皆さまの応援は選手・スタッフにとって大きな力になります。\n\nチームは今、成長していく過程にあります。うまくいくこともあれば、思うようにいかないこともありますが、一つひとつ課題と向き合いながら、良いバランスで前進していきたいと思っています。"
-        },
-        "playerComments": [
-          {
-            "name": "進藤真奈花",
-            "number": 21,
-            "comment": "暑い中たくさんの応援ありがとうございました。\n\nみんなの全力で走る姿、ゴールへの執着心が外から見ていて凄く伝わってくるぐらい勝ちへのこだわり、最後まで点を取りに行く姿最高にかっこよかったです。\n\n自分にとってアンクラスでの最後の試合、勝利で終われて最高でした。\n\nリーグ中断期間に入りますが、なでしこリーグ昇格、九州リーグ1部優勝に向けて走り続けるアンクラスへのご支援ご声援をよろしくお願いします。"
-          },
-          {
-            "name": "伊藤なずな",
-            "number": 25,
-            "comment": "本日もたくさんの応援ありがとうございました！\n\n今節は途中出場で試合に出て、アシストをすることが出来ました。目に見える形でチームに貢献出来たこと、とても嬉しく思います。\n\nまた次の出場の機会には、得点を取れるように、日々の練習を一生懸命頑張ります。\n\n引き続き、福岡J・アンクラスの応援よろしくお願いします！"
-          }
-        ],
-        "sourceUrl": "https://anclas.jp/news/2026/07/13/post-27574/"
-      },
-      "photoGallery": [
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029261_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029262_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029263_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029264_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029265_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029266_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029267_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029268_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029269_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029270_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029272_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029273_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029274_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029275_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029276_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029277_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029278_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029279_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029280_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029281_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029283_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029284_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029285_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029286_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029287_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029288_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029289_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029290_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029291_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029292_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029294_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029295_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029296_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029297_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029298_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029299_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029300_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029301_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029302_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029303_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029305_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029306_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029307_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029308_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029309_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029310_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029311_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029312_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029313_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029314_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029316_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029317_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029318_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029319_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029320_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029321_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029322_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029323_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029324_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029325_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029327_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029328_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029329_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029330_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029331_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029332_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029333_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029334_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029335_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029336_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029338_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029339_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029340_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029341_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029342_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029343_0-2.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029344_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029345_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029346_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029347_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029349_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029350_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029351_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029352_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029353_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029354_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029355_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029356_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029357_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029358_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029360_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029361_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029362_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029363_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029364_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029365_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029366_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029367_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029368_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029369_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029371_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029372_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029373_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029374_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029375_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029376_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029377_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029378_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029379_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029380_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029382_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029383_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029384_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029386_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029387_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029389_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029388_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029390_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029391_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029385_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029394_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029393_0-1.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/07/S__63029395_0-1.jpg"
-      ],
+      "matchReport": null,
+      "photoGallery": [],
       "forecast": null
     },
     "latestPodcast": {
@@ -659,13 +528,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-7/",
-      "venue": null,
+      "venue": "東風平運動公園サッカー場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341564",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -689,7 +558,7 @@
       },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2/",
-      "venue": null,
+      "venue": "宇美町総合スポーツ公園",
       "goals": [
         {
           "minute": "29分",
@@ -972,7 +841,7 @@
         "temperature": "23℃",
         "pitch": "不良、水含み"
       },
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341563",
       "posterUrl": null,
       "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/04/4.12%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
       "cards": [],
@@ -1065,13 +934,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-74/",
-      "venue": null,
+      "venue": "東海大学付属福岡高校人工芝グランド",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341566",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -1095,13 +964,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-9-2/",
-      "venue": null,
+      "venue": "東海大学付属福岡高校人工芝グランド",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341568",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -1125,13 +994,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-39/",
-      "venue": null,
+      "venue": "百花台公園サッカー場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341585",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -1155,13 +1024,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-16/",
-      "venue": null,
+      "venue": "新富町富田浜公園",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341584",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -1185,13 +1054,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-37/",
-      "venue": null,
+      "venue": "島原市営平成町多目的広場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341569",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -1215,13 +1084,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-58/",
-      "venue": null,
+      "venue": "東風平運動公園サッカー場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341571",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -1245,13 +1114,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-5/",
-      "venue": null,
+      "venue": "宮崎県串間陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341572",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -1275,7 +1144,7 @@
       },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-64/",
-      "venue": null,
+      "venue": "宇美町総合スポーツ公園",
       "goals": [
         {
           "minute": "1分",
@@ -1535,7 +1404,7 @@
         "temperature": "17℃",
         "pitch": "不良、泥沼"
       },
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341570",
       "posterUrl": null,
       "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/05/5.3%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
       "cards": [],
@@ -1678,13 +1547,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-11/",
-      "venue": null,
+      "venue": "平成令和の森陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341573",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -1708,13 +1577,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-6/",
-      "venue": null,
+      "venue": "新富町富田浜公園",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341574",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -1738,13 +1607,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-25/",
-      "venue": null,
+      "venue": "いちご宮崎新富サッカー場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341578",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -1768,13 +1637,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-22/",
-      "venue": null,
+      "venue": "国見総合運動公園(遊学の館)",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341575",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -1798,7 +1667,7 @@
       },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-34/",
-      "venue": null,
+      "venue": "東海大学付属福岡高校人工芝グランド",
       "goals": [
         {
           "minute": "3分(前半3分)",
@@ -2102,7 +1971,7 @@
         "temperature": "33℃",
         "pitch": "人工芝、乾燥"
       },
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341576",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -2185,13 +2054,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-7-3/",
-      "venue": null,
+      "venue": "エコパーク水俣 陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341577",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -2215,13 +2084,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-19/",
-      "venue": null,
+      "venue": "西原町民陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341580",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -2245,13 +2114,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-44/",
-      "venue": null,
+      "venue": "南島原多目的運動広場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341582",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -2275,7 +2144,7 @@
       },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-38/",
-      "venue": null,
+      "venue": "宇美町総合スポーツ公園",
       "goals": [
         {
           "minute": "52分",
@@ -2564,7 +2433,7 @@
         "temperature": "28℃",
         "pitch": "良芝"
       },
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341579",
       "posterUrl": null,
       "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/05/5.24%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
       "cards": [],
@@ -2713,7 +2582,7 @@
       },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-16-2/",
-      "venue": null,
+      "venue": "桷志田サッカー場人工芝A",
       "goals": [
         {
           "minute": "32分(前半32分)",
@@ -3013,7 +2882,7 @@
         "temperature": "27℃",
         "pitch": "人工芝、乾燥"
       },
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341583",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -3192,13 +3061,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-13/",
-      "venue": null,
+      "venue": "平成令和の森陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341586",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -3222,13 +3091,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-27/",
-      "venue": null,
+      "venue": "ビーラインフットボールセンター姶良(天然芝)",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341588",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -3252,7 +3121,7 @@
       },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-23/",
-      "venue": null,
+      "venue": "東海大学付属福岡高校人工芝グランド",
       "goals": [
         {
           "minute": "80+1分",
@@ -3550,7 +3419,7 @@
         "temperature": "27℃",
         "pitch": "人工芝"
       },
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341587",
       "posterUrl": null,
       "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/06/6.7%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
       "cards": [],
@@ -3780,13 +3649,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-57/",
-      "venue": null,
+      "venue": "エコパーク水俣 陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341590",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -3810,13 +3679,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-68/",
-      "venue": null,
+      "venue": "南島原多目的運動広場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341592",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -3840,13 +3709,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-24/",
-      "venue": null,
+      "venue": "東海大学付属福岡高校人工芝グランド",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341581",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -3870,7 +3739,7 @@
       },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-48/",
-      "venue": null,
+      "venue": "新富町富田浜公園",
       "goals": [
         {
           "minute": "47分",
@@ -4130,7 +3999,7 @@
         "temperature": "22℃",
         "pitch": "良芝、水含み"
       },
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341591",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -4255,7 +4124,7 @@
       },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-15/",
-      "venue": null,
+      "venue": "福岡フットボールセンター",
       "goals": [
         {
           "minute": "30分",
@@ -4536,7 +4405,7 @@
         "temperature": "28℃",
         "pitch": "人工芝"
       },
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341594",
       "posterUrl": null,
       "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/06/6.27%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
       "cards": [
@@ -4773,13 +4642,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-73/",
-      "venue": null,
+      "venue": "平成令和の森陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341597",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -4803,13 +4672,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-17/",
-      "venue": null,
+      "venue": "エコパーク水俣 陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341598",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -4833,13 +4702,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-31/",
-      "venue": null,
+      "venue": "新富町富田浜公園",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341601",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -4863,13 +4732,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-26/",
-      "venue": null,
+      "venue": "東海大学付属福岡高校人工芝グランド",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341599",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -4893,13 +4762,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-17/",
-      "venue": null,
+      "venue": "平成令和の森陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341593",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -4923,7 +4792,7 @@
       },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-7-2/",
-      "venue": null,
+      "venue": "エコパーク水俣 陸上競技場",
       "goals": [
         {
           "minute": "後半",
@@ -5165,7 +5034,7 @@
         "temperature": "32℃",
         "pitch": "良芝、乾燥"
       },
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341567",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -5332,13 +5201,13 @@
       },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-3/",
-      "venue": null,
+      "venue": "東海大学付属福岡高校人工芝グランド",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341589",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -5382,17 +5251,268 @@
       "datetime": "2026-09-05T18:00:00+09:00",
       "homeTeam": "国見FCレディース",
       "awayTeam": "福岡J・アンクラス",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "home": 0,
+        "away": 1
+      },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-29/",
       "venue": "南島原多目的運動広場",
-      "goals": [],
-      "starters": [],
-      "subs": [],
-      "substitutions": [],
-      "stats": null,
-      "goalnoteUrl": null,
+      "goals": [
+        {
+          "minute": "7分(前半7分)",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 20,
+          "playerName": "田川 葵",
+          "assist": null
+        }
+      ],
+      "starters": [
+        {
+          "number": 12,
+          "position": "GK",
+          "name": "正木 唯海",
+          "team": "home"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "布田 雫",
+          "team": "home"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "平 望優",
+          "team": "home"
+        },
+        {
+          "number": 14,
+          "position": "DF",
+          "name": "兼俵 夏葉",
+          "team": "home"
+        },
+        {
+          "number": 21,
+          "position": "DF",
+          "name": "吉川 美海",
+          "team": "home"
+        },
+        {
+          "number": 4,
+          "position": "MF",
+          "name": "宇土 來南",
+          "team": "home"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "宮園 華",
+          "team": "home"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "梅崎 彩芭",
+          "team": "home"
+        },
+        {
+          "number": 18,
+          "position": "MF",
+          "name": "桜井 みゆき",
+          "team": "home"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "菊地 彩花",
+          "team": "home"
+        },
+        {
+          "number": 13,
+          "position": "FW",
+          "name": "井手 心愛",
+          "team": "home"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "熊澤 果歩",
+          "team": "away"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "澁澤 光",
+          "team": "away"
+        },
+        {
+          "number": 6,
+          "position": "DF",
+          "name": "森 和奏",
+          "team": "away"
+        },
+        {
+          "number": 10,
+          "position": "DF",
+          "name": "平坂 咲希",
+          "team": "away"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "田中 花奈",
+          "team": "away"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "端山 新",
+          "team": "away"
+        },
+        {
+          "number": 20,
+          "position": "MF",
+          "name": "田川 葵",
+          "team": "away"
+        },
+        {
+          "number": 22,
+          "position": "MF",
+          "name": "野田 夏未",
+          "team": "away"
+        },
+        {
+          "number": 8,
+          "position": "FW",
+          "name": "野沢 真由",
+          "team": "away"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "嘉数 クレア姫麗",
+          "team": "away"
+        },
+        {
+          "number": 13,
+          "position": "FW",
+          "name": "原 日樺",
+          "team": "away"
+        }
+      ],
+      "subs": [
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "田上 未希",
+          "team": "home"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "中村 朱里",
+          "team": "home"
+        },
+        {
+          "number": 6,
+          "position": "DF",
+          "name": "岡﨑 亜美伽",
+          "team": "home"
+        },
+        {
+          "number": 23,
+          "position": "MF",
+          "name": "平田 そら",
+          "team": "home"
+        },
+        {
+          "number": 10,
+          "position": "FW",
+          "name": "中村 怜愛",
+          "team": "home"
+        },
+        {
+          "number": 19,
+          "position": "FW",
+          "name": "牛嶋 空来",
+          "team": "home"
+        },
+        {
+          "number": 24,
+          "position": "FW",
+          "name": "吉川 美空",
+          "team": "home"
+        },
+        {
+          "number": 14,
+          "position": "MF",
+          "name": "宮脇 ゆりあ",
+          "team": "away"
+        },
+        {
+          "number": 25,
+          "position": "MF",
+          "name": "伊藤 なずな",
+          "team": "away"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "田邉 いちご",
+          "team": "away"
+        }
+      ],
+      "substitutions": [
+        {
+          "minute": "ＨＴ",
+          "team": "home",
+          "outNumber": 14,
+          "outName": "兼俵 夏葉",
+          "inNumber": 5,
+          "inName": "中村 朱里"
+        },
+        {
+          "minute": "53分(後半13分)",
+          "team": "home",
+          "outNumber": 13,
+          "outName": "井手 心愛",
+          "inNumber": 24,
+          "inName": "吉川 美空"
+        },
+        {
+          "minute": "63分(後半23分)",
+          "team": "home",
+          "outNumber": 18,
+          "outName": "桜井 みゆき",
+          "inNumber": 23,
+          "inName": "平田 そら"
+        },
+        {
+          "minute": "63分(後半23分)",
+          "team": "away",
+          "outNumber": 8,
+          "outName": "野沢 真由",
+          "inNumber": 25,
+          "inName": "伊藤 なずな"
+        },
+        {
+          "minute": "72分(後半32分)",
+          "team": "away",
+          "outNumber": 11,
+          "outName": "嘉数 クレア姫麗",
+          "inNumber": 9,
+          "inName": "田邉 いちご"
+        }
+      ],
+      "stats": {
+        "attendance": "70人",
+        "weather": "晴",
+        "temperature": "24℃",
+        "pitch": "人工芝、乾燥"
+      },
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341600",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -5409,17 +5529,20 @@
       "datetime": "2026-09-06T14:00:00+09:00",
       "homeTeam": "水俣ユニオンフットボールクラブウィメン",
       "awayTeam": "柳ヶ浦高等学校　女子サッカー部",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "home": 1,
+        "away": 3
+      },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-24/",
-      "venue": null,
+      "venue": "エコパーク水俣 陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341602",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -5467,7 +5590,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-21/",
-      "venue": null,
+      "venue": "平成令和の森陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5494,7 +5617,7 @@
       "score": null,
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-67/",
-      "venue": null,
+      "venue": "宇美町総合スポーツ公園",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5506,7 +5629,12 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": null
+      "forecast": {
+        "temperatureC": 26.5,
+        "precipitationProbability": 21,
+        "weatherCode": 0,
+        "fetchedAt": "2026-09-06T11:02:39.581Z"
+      }
     },
     {
       "id": "su-post-9442",
@@ -5521,7 +5649,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-55/",
-      "venue": null,
+      "venue": "いぶすきフットボールパーク(人工芝)",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5548,7 +5676,7 @@
       "score": null,
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-35/",
-      "venue": null,
+      "venue": "大分県サッカー協会人工芝グランド",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5575,7 +5703,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-54/",
-      "venue": null,
+      "venue": "ビーラインフットボールセンター姶良(天然芝)",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5602,7 +5730,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-41/",
-      "venue": null,
+      "venue": "新富町富田浜公園",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5629,7 +5757,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-30/",
-      "venue": null,
+      "venue": "エコパーク水俣 陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5656,7 +5784,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-32/",
-      "venue": null,
+      "venue": "石垣市サッカ-パークあかんま",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5683,7 +5811,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-63/",
-      "venue": null,
+      "venue": "東風平運動公園サッカー場",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5710,7 +5838,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-65/",
-      "venue": null,
+      "venue": "東海大学付属福岡高校人工芝グランド",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5737,7 +5865,7 @@
       "score": null,
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-51/",
-      "venue": null,
+      "venue": "宇美町総合スポーツ公園",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5764,7 +5892,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-2/",
-      "venue": null,
+      "venue": "エコパーク水俣 陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5818,7 +5946,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-60/",
-      "venue": null,
+      "venue": "平成令和の森陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5845,7 +5973,7 @@
       "score": null,
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-70/",
-      "venue": null,
+      "venue": "東風平運動公園サッカー場",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5872,7 +6000,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-14/",
-      "venue": null,
+      "venue": "志布志しおかぜ公園",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5899,7 +6027,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-43/",
-      "venue": null,
+      "venue": "国見総合運動公園(遊学の館)",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -5926,7 +6054,7 @@
       "score": null,
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-40/",
-      "venue": null,
+      "venue": "吉の浦ござまる陸上競技場",
       "goals": [],
       "starters": [],
       "subs": [],

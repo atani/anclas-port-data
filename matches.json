@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T23:56:33.500Z",
+  "generatedAt": "2026-09-06T04:46:47.329Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -310,7 +310,7 @@
     "latestPodcast": {
       "id": "0EnfHrhxHixbG33XiUt7PC",
       "title": "#22【インタビュー：リゾスポ学生の小田さん、福田さん、野口さん】元Jリーガーvs100人の小学生の仕掛け人たち",
-      "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+      "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
       "showUrl": "https://open.spotify.com/episode/0EnfHrhxHixbG33XiUt7PC",
       "embedUrl": "https://open.spotify.com/embed/episode/0EnfHrhxHixbG33XiUt7PC",
       "publishedAt": "2026-09-02"
@@ -319,7 +319,7 @@
       {
         "id": "0EnfHrhxHixbG33XiUt7PC",
         "title": "#22【インタビュー：リゾスポ学生の小田さん、福田さん、野口さん】元Jリーガーvs100人の小学生の仕掛け人たち",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/0EnfHrhxHixbG33XiUt7PC",
         "embedUrl": "https://open.spotify.com/embed/episode/0EnfHrhxHixbG33XiUt7PC",
         "publishedAt": "2026-09-02"
@@ -327,7 +327,7 @@
       {
         "id": "5s76C6q7hi8K3aGmtBRQsd",
         "title": "＃21【番外編】セールストーーク！誰でも上手くいく営業のおはなし",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/5s76C6q7hi8K3aGmtBRQsd",
         "embedUrl": "https://open.spotify.com/embed/episode/5s76C6q7hi8K3aGmtBRQsd",
         "publishedAt": "2026-08-27"
@@ -335,7 +335,7 @@
       {
         "id": "50gyz3cbG9y8aP39H6HElX",
         "title": "＃20【ゲスト：ベランダから夕日（石垣島さん）】出会いはインスタ...海を越えて応援に駆けつけるウワサのあの人",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/50gyz3cbG9y8aP39H6HElX",
         "embedUrl": "https://open.spotify.com/embed/episode/50gyz3cbG9y8aP39H6HElX",
         "publishedAt": "2026-08-21"
@@ -343,7 +343,7 @@
       {
         "id": "55pB3l8IPMpCRWBpO9BDHM",
         "title": "＃19【インタビュー：宮脇ゆりあ】鳥かごで泣いたあの頃...デュアルキャリアで大忙しの弱冠18歳の日常と道のり",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/55pB3l8IPMpCRWBpO9BDHM",
         "embedUrl": "https://open.spotify.com/embed/episode/55pB3l8IPMpCRWBpO9BDHM",
         "publishedAt": "2026-08-12"
@@ -351,7 +351,7 @@
       {
         "id": "50yfLJXCpgd2mwSIouT1Zy",
         "title": "#18【インタビュー：嘉数クレア姫麗（後編）】繊細な自分を助けてくれる2人の存在",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/50yfLJXCpgd2mwSIouT1Zy",
         "embedUrl": "https://open.spotify.com/embed/episode/50yfLJXCpgd2mwSIouT1Zy",
         "publishedAt": "2026-07-31"
@@ -5626,7 +5626,12 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": null
+      "forecast": {
+        "temperatureC": 27.6,
+        "precipitationProbability": 25,
+        "weatherCode": 51,
+        "fetchedAt": "2026-09-06T04:46:44.759Z"
+      }
     },
     {
       "id": "su-post-9442",

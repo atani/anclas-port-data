@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T00:28:01.904Z",
+  "generatedAt": "2026-09-08T04:44:54.008Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -449,63 +449,63 @@
       {
         "id": "146226679",
         "name": "【40周年記念！】マフラータオル2026",
-        "price": "¥3,750",
+        "price": "¥3,750($24.05)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/2edc17bff3df3722b83a66f36d2058cd.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/146226679"
       },
       {
         "id": "146226597",
         "name": "オレンジフェイスタオル",
-        "price": "¥4,500",
+        "price": "¥4,500($28.86)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/f85a12bda2f78c81de78a076ffc68b1b.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/146226597"
       },
       {
         "id": "141942648",
         "name": "2026シーズン選手キーホルダー",
-        "price": "¥770",
+        "price": "¥770($4.94)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/1c6b73b82f3570b59dcb4c8ffaa9e46a.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/141942648"
       },
       {
         "id": "140216254",
         "name": "2026オーセンティックユニフォーム　【オレンジ】",
-        "price": "¥16,500",
+        "price": "¥16,500($105.80)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/90dc1f90173d11022a9da327accaeb3a.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140216254"
       },
       {
         "id": "140217401",
         "name": "2026オーセンティックユニフォーム　【アクア】",
-        "price": "¥16,500",
+        "price": "¥16,500($105.80)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/44c97fca39befd27fbbb5f8dfea6fad1.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140217401"
       },
       {
         "id": "140216939",
         "name": "2026オーセンティックユニフォーム　【ホワイト】",
-        "price": "¥16,500",
+        "price": "¥16,500($105.80)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/abf342f7be661bb3eab0e542fa4fa05b.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140216939"
       },
       {
         "id": "140217933",
         "name": "2026オーセンティックユニフォーム【サクラ】",
-        "price": "¥16,500",
+        "price": "¥16,500($105.80)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/76710215a7072bafd3ef77c0c12c9173.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140217933"
       },
       {
         "id": "85193356",
         "name": "エンブレムフェイスタオル",
-        "price": "¥2,310",
+        "price": "¥2,310($14.81)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/b3000fa066c5c2692d4ef55bcd838ffe.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/85193356"
       },
       {
         "id": "75388658",
         "name": "アンクラスロゴ　スポーツタオル",
-        "price": "¥2,310",
+        "price": "¥2,310($14.81)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/ba32eebcd7fbc1dd878a4a8974b06e5c.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/75388658"
       }
@@ -5633,7 +5633,7 @@
         "temperatureC": 25.7,
         "precipitationProbability": 33,
         "weatherCode": 2,
-        "fetchedAt": "2026-09-08T00:27:54.238Z"
+        "fetchedAt": "2026-09-08T04:44:51.538Z"
       }
     },
     {

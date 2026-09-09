@@ -39,7 +39,9 @@ jobs:
         working-directory: scripts
         run: npm ci
 
+      # コード変更時と日次実行で検証し、同じコードを毎時再検証しない。
       - name: Typecheck & test
+        if: github.event_name != 'schedule' || github.event.schedule == '17 0 * * *'
         working-directory: scripts
         run: |
           npm run typecheck

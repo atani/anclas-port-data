@@ -56,17 +56,23 @@ test("parseLatestNewsFeedItem: 対象記事がなければnullを返す", () => 
   assert.equal(parseLatestNewsFeedItem(`<rss><channel>${item(9, "選手ブログ", ["選手ブログ"])}</channel></rss>`), null);
 });
 
-test("news.json: トップチーム体制変更のお知らせを最新記事として掲載する", () => {
+test("parseNewsFeedItems: 新着記事が追加されてもALL NEWSのない既存記事を保持する", () => {
+  const xml = `<rss><channel>
+    ${item(28960, "新しいお知らせ", ["ALL NEWS", "お知らせ"])}
+    ${item(28787, "トップチーム体制変更のお知らせ", ["お知らせ"])}
+  </channel></rss>`;
+
+  assert.equal(parseLatestNewsFeedItem(xml)?.id, 28960);
+  assert.deepEqual(parseNewsFeedItems(xml).map((entry) => entry.id), [28960, 28787]);
+});
+
+test("news.json: 記事IDが重複せず公開日時の新しい順に掲載する", () => {
   const data = JSON.parse(
     readFileSync(fileURLToPath(new URL("../../news.json", import.meta.url)), "utf-8"),
   ) as NewsData;
-  const articles = data.items.filter((entry) => entry.id === 28787);
-
-  assert.equal(articles.length, 1);
-  assert.equal(data.items[0]?.id, 28787);
-  assert.equal(articles[0]?.title, "トップチーム体制変更のお知らせ");
-  assert.equal(
-    articles[0]?.thumbnailUrl,
-    "https://anclas.jp/wp-content/uploads/2026/08/名称未設定のデザイン-4.png",
-  );
+  assert.ok(data.items.length > 0);
+  assert.equal(new Set(data.items.map((entry) => entry.id)).size, data.items.length);
+  const dates = data.items.map((entry) => Date.parse(entry.date));
+  assert.ok(dates.every(Number.isFinite), "すべての記事に有効な公開日時がある");
+  assert.deepEqual(dates, [...dates].sort((a, b) => b - a));
 });

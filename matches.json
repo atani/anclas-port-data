@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T19:46:16.227Z",
+  "generatedAt": "2026-09-11T22:38:15.078Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -5633,7 +5633,7 @@
         "temperatureC": 30.2,
         "precipitationProbability": 38,
         "weatherCode": 3,
-        "fetchedAt": "2026-09-11T19:46:09.702Z"
+        "fetchedAt": "2026-09-11T22:38:07.359Z"
       }
     },
     {

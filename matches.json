@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T17:14:20.037Z",
+  "generatedAt": "2026-09-12T19:26:20.640Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -228,6 +228,13 @@
         "publishedAt": "2026-07-26T01:28:09+00:00"
       },
       {
+        "videoId": "Tun-vMtcLBk",
+        "title": "◤🐝アビスパ福岡 × 福岡J・アンクラス⚓️◢",
+        "thumbnailUrl": "https://i1.ytimg.com/vi/Tun-vMtcLBk/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=Tun-vMtcLBk",
+        "publishedAt": "2026-07-25T01:17:29+00:00"
+      },
+      {
         "videoId": "I7T8Bsn-jtQ",
         "title": "◤🐝アビスパ福岡 × 福岡J・アンクラス⚓️◢",
         "thumbnailUrl": "https://i2.ytimg.com/vi/I7T8Bsn-jtQ/hqdefault.jpg",
@@ -247,13 +254,6 @@
         "thumbnailUrl": "https://i4.ytimg.com/vi/KgAdjt_tQRo/hqdefault.jpg",
         "url": "https://www.youtube.com/watch?v=KgAdjt_tQRo",
         "publishedAt": "2026-03-19T12:00:39+00:00"
-      },
-      {
-        "videoId": "PoBWkbhiINY",
-        "title": "サプライズ発表！アンクラスにテーマソング誕生！？制作裏側ドキュメンタリー",
-        "thumbnailUrl": "https://i1.ytimg.com/vi/PoBWkbhiINY/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=PoBWkbhiINY",
-        "publishedAt": "2026-03-04T12:00:47+00:00"
       }
     ],
     "latestYouTubeShort": {
@@ -5618,10 +5618,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 30,
+        "temperatureC": 28.9,
         "precipitationProbability": 34,
         "weatherCode": 3,
-        "fetchedAt": "2026-09-12T17:14:08.600Z"
+        "fetchedAt": "2026-09-12T19:26:13.676Z"
       }
     },
     {

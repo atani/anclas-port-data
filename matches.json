@@ -4,7 +4,7 @@
   "anclas": {
     "nextMatch": {
       "id": "empress-cup-2026-round2",
-      "competition": "皇后杯 2回戦",
+      "competition": "皇后杯 九州地域予選 2回戦",
       "round": null,
       "date": "2026-09-13",
       "kickoff": "14:00",
@@ -31,7 +31,7 @@
     },
     "latestResult": {
       "id": "empress-cup-2026-round1",
-      "competition": "皇后杯 1回戦",
+      "competition": "皇后杯 九州地域予選 1回戦",
       "round": null,
       "date": "2026-09-12",
       "kickoff": "12:00",
@@ -5407,7 +5407,7 @@
     },
     {
       "id": "empress-cup-2026-round1",
-      "competition": "皇后杯 1回戦",
+      "competition": "皇后杯 九州地域予選 1回戦",
       "round": null,
       "date": "2026-09-12",
       "kickoff": "12:00",
@@ -5540,7 +5540,7 @@
     },
     {
       "id": "empress-cup-2026-round2",
-      "competition": "皇后杯 2回戦",
+      "competition": "皇后杯 九州地域予選 2回戦",
       "round": null,
       "date": "2026-09-13",
       "kickoff": "14:00",

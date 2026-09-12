@@ -14,6 +14,9 @@ interface ManualMatchInput {
   score: { home: number; away: number } | null;
   venue: string | null;
   sourceUrl: string;
+  goals?: Match["goals"];
+  substitutions?: Match["substitutions"];
+  matchReport?: Match["matchReport"];
 }
 
 /**
@@ -41,16 +44,16 @@ export function loadManualMatches(): Match[] {
       isAnclas: match.homeTeam === ANCLAS_TEAM_NAME || match.awayTeam === ANCLAS_TEAM_NAME,
       sourceUrl: match.sourceUrl,
       venue: match.venue,
-      goals: [],
+      goals: match.goals ?? [],
       starters: [],
       subs: [],
-      substitutions: [],
+      substitutions: match.substitutions ?? [],
       stats: null,
       goalnoteUrl: null,
       posterUrl: null,
       matchdayProgramUrl: null,
       cards: [],
-      matchReport: null,
+      matchReport: match.matchReport ?? null,
       photoGallery: [],
       forecast: null,
     } satisfies Match;

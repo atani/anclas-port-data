@@ -28,8 +28,8 @@ test("loadManualMatches: manual-matches.jsonをMatch型として正しく読み�
     if (m.status === "finished") {
       assert.ok(m.score !== null, `${m.id}.score must be set once finished`);
     }
-    // GoalNote由来のフィールドは手動データには無いため、常に空のプレースホルダになる
-    assert.deepEqual(m.goals, []);
+    // 公式レポートの得点情報を許容し、未登録のメンバーは空のままにする
+    assert.ok(Array.isArray(m.goals));
     assert.deepEqual(m.starters, []);
     assert.equal(m.goalnoteUrl, null);
   }
@@ -44,4 +44,20 @@ test("loadManualMatches: 皇后杯1回戦が正しい対戦カードで登録さ
   assert.equal(round1?.date, "2026-09-12");
   assert.equal(round1?.homeTeam, ANCLAS_TEAM_NAME);
   assert.equal(round1?.awayTeam, "活水女子大学サッカー部");
+});
+
+
+test("cup result details survive manual feed loading", () => {
+  const matches = loadManualMatches();
+  const result = matches.find((m) => m.id === "empress-cup-2026-round1")!;
+  assert.equal(result.goals.length, 8);
+  assert.equal(result.goals.filter((g) => g.minute === "前半").length, 7);
+  assert.equal(result.goals.filter((g) => g.minute === "後半").length, 1);
+  assert.equal(result.substitutions.length, 5);
+  assert.equal(result.matchReport?.sourceUrl, "https://anclas.jp/news/2026/09/12/0912/");
+  const next = matches.find((m) => m.id === "empress-cup-2026-round2")!;
+  assert.deepEqual(next.goals, []);
+  assert.deepEqual(next.substitutions, []);
+  assert.equal(next.matchReport, null);
+  assert.equal(next.kickoff, "14:00");
 });

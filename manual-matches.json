@@ -12,8 +12,114 @@
         "home": 8,
         "away": 0
       },
-      "venue": "長崎県 島原市営 平成町多目的広場",
-      "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945"
+      "venue": "長崎県 島原市営 平成町多目的広場Aコート",
+      "sourceUrl": "https://anclas.jp/news/2026/09/12/0912/",
+      "goals": [
+        {
+          "minute": "前半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 13,
+          "playerName": "原日樺",
+          "assist": null
+        },
+        {
+          "minute": "前半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 11,
+          "playerName": "嘉数クレア姫麗",
+          "assist": null
+        },
+        {
+          "minute": "前半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 11,
+          "playerName": "嘉数クレア姫麗",
+          "assist": null
+        },
+        {
+          "minute": "前半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 20,
+          "playerName": "田川葵",
+          "assist": null
+        },
+        {
+          "minute": "前半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 20,
+          "playerName": "田川葵",
+          "assist": null
+        },
+        {
+          "minute": "前半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 8,
+          "playerName": "野沢真由",
+          "assist": null
+        },
+        {
+          "minute": "前半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 8,
+          "playerName": "野沢真由",
+          "assist": null
+        },
+        {
+          "minute": "後半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 28,
+          "playerName": "益田紗也",
+          "assist": null
+        }
+      ],
+      "substitutions": [
+        {
+          "minute": "HT",
+          "team": "home",
+          "outNumber": 22,
+          "outName": "野田夏未",
+          "inNumber": 9,
+          "inName": "田邊いちご"
+        },
+        {
+          "minute": "HT",
+          "team": "home",
+          "outNumber": 8,
+          "outName": "野沢真由",
+          "inNumber": 25,
+          "inName": "伊藤なずな"
+        },
+        {
+          "minute": "後半",
+          "team": "home",
+          "outNumber": 3,
+          "outName": "渋澤光",
+          "inNumber": 28,
+          "inName": "益田紗也"
+        },
+        {
+          "minute": "後半",
+          "team": "home",
+          "outNumber": 11,
+          "outName": "嘉数クレア姫麗",
+          "inNumber": 14,
+          "inName": "宮脇ゆりあ"
+        },
+        {
+          "minute": "後半",
+          "team": "home",
+          "outNumber": 13,
+          "outName": "原日樺",
+          "inNumber": 23,
+          "inName": "北条あゆみ"
+        }
+      ],
+      "matchReport": {
+        "summary": "前半7–0、後半1–0、合計8–0で勝利。前半は原日樺が1得点、嘉数クレア姫麗・田川葵・野沢真由が各2得点。後半は益田紗也が1得点を挙げ、無失点で試合を終えた。",
+        "coachComment": null,
+        "playerComments": [],
+        "sourceUrl": "https://anclas.jp/news/2026/09/12/0912/"
+      }
     },
     {
       "id": "empress-cup-2026-round2",

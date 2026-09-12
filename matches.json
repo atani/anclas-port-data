@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-09-12T10:52:57.162Z",
+  "generatedAt": "2026-09-12T11:03:21.171Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
-      "id": "su-post-9451",
-      "competition": "Qリーグ",
-      "round": 14,
-      "date": "2026-09-20",
-      "kickoff": "12:00",
-      "datetime": "2026-09-20T12:00:00+09:00",
-      "homeTeam": "福岡J・アンクラス",
-      "awayTeam": "東海大学付属福岡高等学校",
+      "id": "empress-cup-2026-round2",
+      "competition": "皇后杯 2回戦",
+      "round": null,
+      "date": "2026-09-13",
+      "kickoff": null,
+      "datetime": "2026-09-13T00:00:00+09:00",
+      "homeTeam": "神村学園高等部",
+      "awayTeam": "福岡J・アンクラス",
       "status": "scheduled",
       "score": null,
       "isAnclas": true,
-      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-67/",
-      "venue": "宇美町総合スポーツ公園",
+      "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945",
+      "venue": null,
       "goals": [],
       "starters": [],
       "subs": [],
@@ -27,284 +27,31 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": {
-        "temperatureC": 30,
-        "precipitationProbability": 35,
-        "weatherCode": 3,
-        "fetchedAt": "2026-09-12T10:52:50.481Z"
-      }
+      "forecast": null
     },
     "latestResult": {
-      "id": "su-post-9411",
-      "competition": "Qリーグ",
-      "round": 13,
-      "date": "2026-09-05",
-      "kickoff": "18:00",
-      "datetime": "2026-09-05T18:00:00+09:00",
-      "homeTeam": "国見FCレディース",
-      "awayTeam": "福岡J・アンクラス",
+      "id": "empress-cup-2026-round1",
+      "competition": "皇后杯 1回戦",
+      "round": null,
+      "date": "2026-09-12",
+      "kickoff": "12:00",
+      "datetime": "2026-09-12T12:00:00+09:00",
+      "homeTeam": "福岡J・アンクラス",
+      "awayTeam": "活水女子大学サッカー部",
       "status": "finished",
       "score": {
-        "home": 0,
-        "away": 1
+        "home": 8,
+        "away": 0
       },
       "isAnclas": true,
-      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-29/",
-      "venue": "南島原多目的運動広場",
-      "goals": [
-        {
-          "minute": "7分(前半7分)",
-          "team": "福岡J・アンクラス",
-          "playerNumber": 20,
-          "playerName": "田川 葵",
-          "assist": null
-        }
-      ],
-      "starters": [
-        {
-          "number": 12,
-          "position": "GK",
-          "name": "正木 唯海",
-          "team": "home"
-        },
-        {
-          "number": 2,
-          "position": "DF",
-          "name": "布田 雫",
-          "team": "home"
-        },
-        {
-          "number": 3,
-          "position": "DF",
-          "name": "平 望優",
-          "team": "home"
-        },
-        {
-          "number": 14,
-          "position": "DF",
-          "name": "兼俵 夏葉",
-          "team": "home"
-        },
-        {
-          "number": 21,
-          "position": "DF",
-          "name": "吉川 美海",
-          "team": "home"
-        },
-        {
-          "number": 4,
-          "position": "MF",
-          "name": "宇土 來南",
-          "team": "home"
-        },
-        {
-          "number": 8,
-          "position": "MF",
-          "name": "宮園 華",
-          "team": "home"
-        },
-        {
-          "number": 16,
-          "position": "MF",
-          "name": "梅崎 彩芭",
-          "team": "home"
-        },
-        {
-          "number": 18,
-          "position": "MF",
-          "name": "桜井 みゆき",
-          "team": "home"
-        },
-        {
-          "number": 11,
-          "position": "FW",
-          "name": "菊地 彩花",
-          "team": "home"
-        },
-        {
-          "number": 13,
-          "position": "FW",
-          "name": "井手 心愛",
-          "team": "home"
-        },
-        {
-          "number": 21,
-          "position": "GK",
-          "name": "熊澤 果歩",
-          "team": "away"
-        },
-        {
-          "number": 3,
-          "position": "DF",
-          "name": "澁澤 光",
-          "team": "away"
-        },
-        {
-          "number": 6,
-          "position": "DF",
-          "name": "森 和奏",
-          "team": "away"
-        },
-        {
-          "number": 10,
-          "position": "DF",
-          "name": "平坂 咲希",
-          "team": "away"
-        },
-        {
-          "number": 15,
-          "position": "MF",
-          "name": "田中 花奈",
-          "team": "away"
-        },
-        {
-          "number": 16,
-          "position": "MF",
-          "name": "端山 新",
-          "team": "away"
-        },
-        {
-          "number": 20,
-          "position": "MF",
-          "name": "田川 葵",
-          "team": "away"
-        },
-        {
-          "number": 22,
-          "position": "MF",
-          "name": "野田 夏未",
-          "team": "away"
-        },
-        {
-          "number": 8,
-          "position": "FW",
-          "name": "野沢 真由",
-          "team": "away"
-        },
-        {
-          "number": 11,
-          "position": "FW",
-          "name": "嘉数 クレア姫麗",
-          "team": "away"
-        },
-        {
-          "number": 13,
-          "position": "FW",
-          "name": "原 日樺",
-          "team": "away"
-        }
-      ],
-      "subs": [
-        {
-          "number": 1,
-          "position": "GK",
-          "name": "田上 未希",
-          "team": "home"
-        },
-        {
-          "number": 5,
-          "position": "DF",
-          "name": "中村 朱里",
-          "team": "home"
-        },
-        {
-          "number": 6,
-          "position": "DF",
-          "name": "岡﨑 亜美伽",
-          "team": "home"
-        },
-        {
-          "number": 23,
-          "position": "MF",
-          "name": "平田 そら",
-          "team": "home"
-        },
-        {
-          "number": 10,
-          "position": "FW",
-          "name": "中村 怜愛",
-          "team": "home"
-        },
-        {
-          "number": 19,
-          "position": "FW",
-          "name": "牛嶋 空来",
-          "team": "home"
-        },
-        {
-          "number": 24,
-          "position": "FW",
-          "name": "吉川 美空",
-          "team": "home"
-        },
-        {
-          "number": 14,
-          "position": "MF",
-          "name": "宮脇 ゆりあ",
-          "team": "away"
-        },
-        {
-          "number": 25,
-          "position": "MF",
-          "name": "伊藤 なずな",
-          "team": "away"
-        },
-        {
-          "number": 9,
-          "position": "FW",
-          "name": "田邉 いちご",
-          "team": "away"
-        }
-      ],
-      "substitutions": [
-        {
-          "minute": "ＨＴ",
-          "team": "home",
-          "outNumber": 14,
-          "outName": "兼俵 夏葉",
-          "inNumber": 5,
-          "inName": "中村 朱里"
-        },
-        {
-          "minute": "53分(後半13分)",
-          "team": "home",
-          "outNumber": 13,
-          "outName": "井手 心愛",
-          "inNumber": 24,
-          "inName": "吉川 美空"
-        },
-        {
-          "minute": "63分(後半23分)",
-          "team": "home",
-          "outNumber": 18,
-          "outName": "桜井 みゆき",
-          "inNumber": 23,
-          "inName": "平田 そら"
-        },
-        {
-          "minute": "63分(後半23分)",
-          "team": "away",
-          "outNumber": 8,
-          "outName": "野沢 真由",
-          "inNumber": 25,
-          "inName": "伊藤 なずな"
-        },
-        {
-          "minute": "72分(後半32分)",
-          "team": "away",
-          "outNumber": 11,
-          "outName": "嘉数 クレア姫麗",
-          "inNumber": 9,
-          "inName": "田邉 いちご"
-        }
-      ],
-      "stats": {
-        "attendance": "70人",
-        "weather": "晴",
-        "temperature": "24℃",
-        "pitch": "人工芝、乾燥"
-      },
-      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341600",
+      "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945",
+      "venue": "長崎県 島原市営 平成町多目的広場",
+      "goals": [],
+      "starters": [],
+      "subs": [],
+      "substitutions": [],
+      "stats": null,
+      "goalnoteUrl": null,
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -5564,11 +5311,41 @@
       "datetime": "2026-09-12T12:00:00+09:00",
       "homeTeam": "福岡J・アンクラス",
       "awayTeam": "活水女子大学サッカー部",
+      "status": "finished",
+      "score": {
+        "home": 8,
+        "away": 0
+      },
+      "isAnclas": true,
+      "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945",
+      "venue": "長崎県 島原市営 平成町多目的広場",
+      "goals": [],
+      "starters": [],
+      "subs": [],
+      "substitutions": [],
+      "stats": null,
+      "goalnoteUrl": null,
+      "posterUrl": null,
+      "matchdayProgramUrl": null,
+      "cards": [],
+      "matchReport": null,
+      "photoGallery": [],
+      "forecast": null
+    },
+    {
+      "id": "empress-cup-2026-round2",
+      "competition": "皇后杯 2回戦",
+      "round": null,
+      "date": "2026-09-13",
+      "kickoff": null,
+      "datetime": "2026-09-13T00:00:00+09:00",
+      "homeTeam": "神村学園高等部",
+      "awayTeam": "福岡J・アンクラス",
       "status": "scheduled",
       "score": null,
       "isAnclas": true,
       "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945",
-      "venue": "長崎県 島原市営 平成町多目的広場",
+      "venue": null,
       "goals": [],
       "starters": [],
       "subs": [],

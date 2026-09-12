@@ -7,9 +7,24 @@
       "kickoff": "12:00",
       "homeTeam": "福岡J・アンクラス",
       "awayTeam": "活水女子大学サッカー部",
+      "status": "finished",
+      "score": {
+        "home": 8,
+        "away": 0
+      },
+      "venue": "長崎県 島原市営 平成町多目的広場",
+      "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945"
+    },
+    {
+      "id": "empress-cup-2026-round2",
+      "competition": "皇后杯 2回戦",
+      "date": "2026-09-13",
+      "kickoff": null,
+      "homeTeam": "神村学園高等部",
+      "awayTeam": "福岡J・アンクラス",
       "status": "scheduled",
       "score": null,
-      "venue": "長崎県 島原市営 平成町多目的広場",
+      "venue": null,
       "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945"
     }
   ]

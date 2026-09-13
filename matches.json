@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-09-13T04:54:13.913Z",
+  "generatedAt": "2026-09-13T12:02:17.136Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
-      "id": "empress-cup-2026-round2",
-      "competition": "皇后杯 九州地域予選 2回戦",
-      "round": null,
-      "date": "2026-09-13",
-      "kickoff": "14:00",
-      "datetime": "2026-09-13T14:00:00+09:00",
-      "homeTeam": "神村学園高等部",
-      "awayTeam": "福岡J・アンクラス",
+      "id": "su-post-9451",
+      "competition": "Qリーグ",
+      "round": 14,
+      "date": "2026-09-20",
+      "kickoff": "12:00",
+      "datetime": "2026-09-20T12:00:00+09:00",
+      "homeTeam": "福岡J・アンクラス",
+      "awayTeam": "東海大学付属福岡高等学校",
       "status": "scheduled",
       "score": null,
       "isAnclas": true,
-      "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945",
-      "venue": "長崎県 島原市営 平成町多目的広場",
+      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-67/",
+      "venue": "宇美町総合スポーツ公園",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -27,7 +27,12 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": null
+      "forecast": {
+        "temperatureC": 30.1,
+        "precipitationProbability": 30,
+        "weatherCode": 51,
+        "fetchedAt": "2026-09-13T12:02:09.019Z"
+      }
     },
     "latestResult": {
       "id": "empress-cup-2026-round1",
@@ -5618,10 +5623,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 28.9,
-        "precipitationProbability": 32,
-        "weatherCode": 3,
-        "fetchedAt": "2026-09-13T04:54:11.968Z"
+        "temperatureC": 30.1,
+        "precipitationProbability": 30,
+        "weatherCode": 51,
+        "fetchedAt": "2026-09-13T12:02:09.019Z"
       }
     },
     {

@@ -56,8 +56,12 @@ test("cup result details survive manual feed loading", () => {
   assert.equal(result.substitutions.length, 5);
   assert.equal(result.matchReport?.sourceUrl, "https://anclas.jp/news/2026/09/12/0912/");
   const next = matches.find((m) => m.id === "empress-cup-2026-round2")!;
-  assert.deepEqual(next.goals, []);
-  assert.deepEqual(next.substitutions, []);
-  assert.equal(next.matchReport, null);
+  assert.equal(next.status, "finished");
+  assert.deepEqual(next.score, { home: 3, away: 1 });
+  assert.equal(next.awayTeam, ANCLAS_TEAM_NAME);
+  assert.deepEqual(next.goals, [{ minute: "後半", team: ANCLAS_TEAM_NAME, playerNumber: null, playerName: "オウンゴール", assist: null }]);
+  assert.equal(next.substitutions.length, 2);
+  assert.ok(next.substitutions.every((s) => s.team === "away"));
+  assert.equal(next.matchReport?.sourceUrl, "https://anclas.jp/news/2026/09/14/0913/");
   assert.equal(next.kickoff, "14:00");
 });

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T06:22:44.141Z",
+  "generatedAt": "2026-09-14T07:30:32.970Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -35,77 +35,28 @@
       }
     },
     "latestResult": {
-      "id": "empress-cup-2026-round1",
-      "competition": "皇后杯 九州地域予選 1回戦",
+      "id": "empress-cup-2026-round2",
+      "competition": "皇后杯 九州地域予選 2回戦",
       "round": null,
-      "date": "2026-09-12",
-      "kickoff": "12:00",
-      "datetime": "2026-09-12T12:00:00+09:00",
-      "homeTeam": "福岡J・アンクラス",
-      "awayTeam": "活水女子大学サッカー部",
+      "date": "2026-09-13",
+      "kickoff": "14:00",
+      "datetime": "2026-09-13T14:00:00+09:00",
+      "homeTeam": "神村学園高等部",
+      "awayTeam": "福岡J・アンクラス",
       "status": "finished",
       "score": {
-        "home": 8,
-        "away": 0
+        "home": 3,
+        "away": 1
       },
       "isAnclas": true,
-      "sourceUrl": "https://anclas.jp/news/2026/09/12/0912/",
+      "sourceUrl": "https://anclas.jp/news/2026/09/14/0913/",
       "venue": "長崎県 島原市営 平成町多目的広場Aコート",
       "goals": [
         {
-          "minute": "前半",
-          "team": "福岡J・アンクラス",
-          "playerNumber": 13,
-          "playerName": "原日樺",
-          "assist": null
-        },
-        {
-          "minute": "前半",
-          "team": "福岡J・アンクラス",
-          "playerNumber": 11,
-          "playerName": "嘉数クレア姫麗",
-          "assist": null
-        },
-        {
-          "minute": "前半",
-          "team": "福岡J・アンクラス",
-          "playerNumber": 11,
-          "playerName": "嘉数クレア姫麗",
-          "assist": null
-        },
-        {
-          "minute": "前半",
-          "team": "福岡J・アンクラス",
-          "playerNumber": 20,
-          "playerName": "田川葵",
-          "assist": null
-        },
-        {
-          "minute": "前半",
-          "team": "福岡J・アンクラス",
-          "playerNumber": 20,
-          "playerName": "田川葵",
-          "assist": null
-        },
-        {
-          "minute": "前半",
-          "team": "福岡J・アンクラス",
-          "playerNumber": 8,
-          "playerName": "野沢真由",
-          "assist": null
-        },
-        {
-          "minute": "前半",
-          "team": "福岡J・アンクラス",
-          "playerNumber": 8,
-          "playerName": "野沢真由",
-          "assist": null
-        },
-        {
           "minute": "後半",
           "team": "福岡J・アンクラス",
-          "playerNumber": 28,
-          "playerName": "益田紗也",
+          "playerNumber": null,
+          "playerName": "オウンゴール",
           "assist": null
         }
       ],
@@ -114,41 +65,17 @@
       "substitutions": [
         {
           "minute": "HT",
-          "team": "home",
-          "outNumber": 22,
-          "outName": "野田夏未",
-          "inNumber": 9,
-          "inName": "田邊いちご"
-        },
-        {
-          "minute": "HT",
-          "team": "home",
-          "outNumber": 8,
-          "outName": "野沢真由",
+          "team": "away",
+          "outNumber": 15,
+          "outName": "田中花奈",
           "inNumber": 25,
           "inName": "伊藤なずな"
         },
         {
           "minute": "後半",
-          "team": "home",
-          "outNumber": 3,
-          "outName": "渋澤光",
-          "inNumber": 28,
-          "inName": "益田紗也"
-        },
-        {
-          "minute": "後半",
-          "team": "home",
+          "team": "away",
           "outNumber": 11,
           "outName": "嘉数クレア姫麗",
-          "inNumber": 14,
-          "inName": "宮脇ゆりあ"
-        },
-        {
-          "minute": "後半",
-          "team": "home",
-          "outNumber": 13,
-          "outName": "原日樺",
           "inNumber": 23,
           "inName": "北条あゆみ"
         }
@@ -159,10 +86,10 @@
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": {
-        "summary": "前半7–0、後半1–0、合計8–0で勝利。前半は原日樺が1得点、嘉数クレア姫麗・田川葵・野沢真由が各2得点。後半は益田紗也が1得点を挙げ、無失点で試合を終えた。",
+        "summary": "アンクラスは神村学園高等部に1–3で敗れ、皇后杯 九州地域予選2回戦で敗退。前半は0–2。後半はオウンゴールで1点を返したが、追加点を許し、後半1–1、合計1–3で試合を終えた。",
         "coachComment": null,
         "playerComments": [],
-        "sourceUrl": "https://anclas.jp/news/2026/09/12/0912/"
+        "sourceUrl": "https://anclas.jp/news/2026/09/14/0913/"
       },
       "photoGallery": [],
       "forecast": null
@@ -5552,21 +5479,54 @@
       "datetime": "2026-09-13T14:00:00+09:00",
       "homeTeam": "神村学園高等部",
       "awayTeam": "福岡J・アンクラス",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
       "isAnclas": true,
-      "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945",
-      "venue": "長崎県 島原市営 平成町多目的広場",
-      "goals": [],
+      "sourceUrl": "https://anclas.jp/news/2026/09/14/0913/",
+      "venue": "長崎県 島原市営 平成町多目的広場Aコート",
+      "goals": [
+        {
+          "minute": "後半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": null,
+          "playerName": "オウンゴール",
+          "assist": null
+        }
+      ],
       "starters": [],
       "subs": [],
-      "substitutions": [],
+      "substitutions": [
+        {
+          "minute": "HT",
+          "team": "away",
+          "outNumber": 15,
+          "outName": "田中花奈",
+          "inNumber": 25,
+          "inName": "伊藤なずな"
+        },
+        {
+          "minute": "後半",
+          "team": "away",
+          "outNumber": 11,
+          "outName": "嘉数クレア姫麗",
+          "inNumber": 23,
+          "inName": "北条あゆみ"
+        }
+      ],
       "stats": null,
       "goalnoteUrl": null,
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
-      "matchReport": null,
+      "matchReport": {
+        "summary": "アンクラスは神村学園高等部に1–3で敗れ、皇后杯 九州地域予選2回戦で敗退。前半は0–2。後半はオウンゴールで1点を返したが、追加点を許し、後半1–1、合計1–3で試合を終えた。",
+        "coachComment": null,
+        "playerComments": [],
+        "sourceUrl": "https://anclas.jp/news/2026/09/14/0913/"
+      },
       "photoGallery": [],
       "forecast": null
     },

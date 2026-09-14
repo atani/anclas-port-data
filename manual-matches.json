@@ -128,10 +128,46 @@
       "kickoff": "14:00",
       "homeTeam": "神村学園高等部",
       "awayTeam": "福岡J・アンクラス",
-      "status": "scheduled",
-      "score": null,
-      "venue": "長崎県 島原市営 平成町多目的広場",
-      "sourceUrl": "https://www.juniorsoccer-news.com/post-1937945"
+      "status": "finished",
+      "score": {
+        "home": 3,
+        "away": 1
+      },
+      "venue": "長崎県 島原市営 平成町多目的広場Aコート",
+      "sourceUrl": "https://anclas.jp/news/2026/09/14/0913/",
+      "goals": [
+        {
+          "minute": "後半",
+          "team": "福岡J・アンクラス",
+          "playerNumber": null,
+          "playerName": "オウンゴール",
+          "assist": null
+        }
+      ],
+      "substitutions": [
+        {
+          "minute": "HT",
+          "team": "away",
+          "outNumber": 15,
+          "outName": "田中花奈",
+          "inNumber": 25,
+          "inName": "伊藤なずな"
+        },
+        {
+          "minute": "後半",
+          "team": "away",
+          "outNumber": 11,
+          "outName": "嘉数クレア姫麗",
+          "inNumber": 23,
+          "inName": "北条あゆみ"
+        }
+      ],
+      "matchReport": {
+        "summary": "アンクラスは神村学園高等部に1–3で敗れ、皇后杯 九州地域予選2回戦で敗退。前半は0–2。後半はオウンゴールで1点を返したが、追加点を許し、後半1–1、合計1–3で試合を終えた。",
+        "coachComment": null,
+        "playerComments": [],
+        "sourceUrl": "https://anclas.jp/news/2026/09/14/0913/"
+      }
     }
   ]
 }

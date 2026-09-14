@@ -10,7 +10,7 @@ import { ANCLAS_TEAM_NAME, type Match, type StandingRow } from "./types.js";
  *   3. 総得点が多い
  *   4. チーム名（昇順・決定不能時の安定化）
  */
-export function calculateStandings(matches: Match[]): StandingRow[] {
+export function calculateStandings(matches: Match[], competition = "Qリーグ"): StandingRow[] {
   type Acc = Omit<StandingRow, "rank" | "gd" | "isAnclas">;
   const table = new Map<string, Acc>();
 
@@ -24,7 +24,7 @@ export function calculateStandings(matches: Match[]): StandingRow[] {
   };
 
   for (const m of matches) {
-    if (m.status !== "finished" || !m.score) continue;
+    if (m.competition !== competition || m.status !== "finished" || !m.score) continue;
     const home = ensure(m.homeTeam);
     const away = ensure(m.awayTeam);
     const { home: hs, away: as_ } = m.score;

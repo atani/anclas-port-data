@@ -84,3 +84,13 @@ test("calculateStandings: 実fixtureでアンクラスが首位、合計試合�
   const totalPlayed = table.reduce((s, r) => s + r.played, 0);
   assert.equal(totalPlayed, finished * 2);
 });
+
+ test("皇后杯の勝敗・得失点・参加チームをリーグ順位に含めない", () => {
+  const league = [m("福岡J・アンクラス", "A", 2, 1)];
+  const cup = [
+    { ...m("福岡J・アンクラス", "活水女子大学", 8, 0), competition: "皇后杯 九州地域予選 1回戦" },
+    { ...m("神村学園高等部女子サッカー部", "福岡J・アンクラス", 3, 1), competition: "皇后杯 九州地域予選 2回戦" },
+    { ...m("A", "福岡J・アンクラス", 9, 0), competition: "皇后杯" },
+  ];
+  assert.deepEqual(calculateStandings([...league, ...cup]), calculateStandings(league));
+});

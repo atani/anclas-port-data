@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-09-14T14:08:59.572Z",
+  "generatedAt": "2026-09-14T14:16:19Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
     {
       "rank": 1,
       "team": "福岡J・アンクラス",
-      "played": 12,
-      "win": 10,
+      "played": 10,
+      "win": 9,
       "draw": 1,
-      "loss": 1,
-      "gf": 30,
-      "ga": 7,
-      "points": 31,
-      "gd": 23,
+      "loss": 0,
+      "gf": 21,
+      "ga": 4,
+      "points": 28,
+      "gd": 17,
       "isAnclas": true
     },
     {
@@ -84,14 +84,14 @@
     {
       "rank": 7,
       "team": "神村学園高等部女子サッカー部",
-      "played": 9,
-      "win": 2,
+      "played": 8,
+      "win": 1,
       "draw": 2,
       "loss": 5,
-      "gf": 8,
-      "ga": 19,
-      "points": 8,
-      "gd": -11,
+      "gf": 5,
+      "ga": 18,
+      "points": 5,
+      "gd": -13,
       "isAnclas": false
     },
     {
@@ -106,19 +106,6 @@
       "points": 1,
       "gd": -22,
       "isAnclas": false
-    },
-    {
-      "rank": 9,
-      "team": "活水女子大学サッカー部",
-      "played": 1,
-      "win": 0,
-      "draw": 0,
-      "loss": 1,
-      "gf": 0,
-      "ga": 8,
-      "points": 0,
-      "gd": -8,
-      "isAnclas": false
     }
   ],
   "scorers": [
@@ -127,76 +114,69 @@
       "leagueRank": null,
       "name": "嘉数 クレア姫麗",
       "number": 11,
-      "goals": 6
+      "goals": 4
     },
     {
-      "rank": 2,
+      "rank": 1,
       "leagueRank": null,
       "name": "原 日樺",
       "number": 13,
-      "goals": 5
+      "goals": 4
     },
     {
       "rank": 3,
-      "leagueRank": null,
-      "name": "野沢 真由",
-      "number": 8,
-      "goals": 3
-    },
-    {
-      "rank": 3,
-      "leagueRank": null,
-      "name": "田川 葵",
-      "number": 20,
-      "goals": 3
-    },
-    {
-      "rank": 5,
       "leagueRank": 10,
       "name": "澁澤 光",
       "number": 3,
       "goals": 2
     },
     {
-      "rank": 5,
+      "rank": 3,
       "leagueRank": 10,
       "name": "端山 新",
       "number": 16,
       "goals": 2
     },
     {
-      "rank": 5,
+      "rank": 3,
       "leagueRank": 10,
       "name": "玉城 薪瀬",
       "number": 18,
       "goals": 2
     },
     {
-      "rank": 8,
+      "rank": 6,
       "leagueRank": 22,
       "name": "大河内 友貴",
       "number": 5,
       "goals": 1
     },
     {
-      "rank": 8,
+      "rank": 6,
+      "leagueRank": null,
+      "name": "野沢 真由",
+      "number": 8,
+      "goals": 1
+    },
+    {
+      "rank": 6,
       "leagueRank": 22,
       "name": "平坂 咲希",
       "number": 10,
       "goals": 1
     },
     {
-      "rank": 8,
+      "rank": 6,
       "leagueRank": 22,
       "name": "田中 花奈",
       "number": 15,
       "goals": 1
     },
     {
-      "rank": 8,
+      "rank": 6,
       "leagueRank": null,
-      "name": "益田紗也",
-      "number": 28,
+      "name": "田川 葵",
+      "number": 20,
       "goals": 1
     }
   ],

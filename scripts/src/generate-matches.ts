@@ -518,18 +518,19 @@ async function main(): Promise<void> {
     }
   }
   const numberByName = loadPlayerNumberByName();
-  scorers = computeScorers(matches, scorers, numberByName);
+  const leagueMatches = matches.filter((match) => match.competition === COMPETITION);
+  scorers = computeScorers(leagueMatches, scorers, numberByName);
 
   // アシストランキング（試合データから自前集計）
   const anclasNumbers = new Set<number>(numberByName.values());
-  const assists = computeAssists(matches, anclasNumbers, numberByName);
+  const assists = computeAssists(leagueMatches, anclasNumbers, numberByName);
   if (assists.length > 0) logger.info(`アシストランキング: ${assists.length}人`);
 
   const standingsData: StandingsData = {
     generatedAt,
     season,
     competition: COMPETITION,
-    table: calculateStandings(matches),
+    table: calculateStandings(leagueMatches, COMPETITION),
     scorers,
     assists,
   };

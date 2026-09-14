@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T07:31:46.760Z",
+  "generatedAt": "2026-09-14T14:08:59.572Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
@@ -84,31 +84,18 @@
     {
       "rank": 7,
       "team": "神村学園高等部女子サッカー部",
-      "played": 8,
-      "win": 1,
+      "played": 9,
+      "win": 2,
       "draw": 2,
       "loss": 5,
-      "gf": 5,
-      "ga": 18,
-      "points": 5,
-      "gd": -13,
+      "gf": 8,
+      "ga": 19,
+      "points": 8,
+      "gd": -11,
       "isAnclas": false
     },
     {
       "rank": 8,
-      "team": "神村学園高等部",
-      "played": 1,
-      "win": 1,
-      "draw": 0,
-      "loss": 0,
-      "gf": 3,
-      "ga": 1,
-      "points": 3,
-      "gd": 2,
-      "isAnclas": false
-    },
-    {
-      "rank": 9,
       "team": "国見FCレディース",
       "played": 9,
       "win": 0,
@@ -121,7 +108,7 @@
       "isAnclas": false
     },
     {
-      "rank": 10,
+      "rank": 9,
       "team": "活水女子大学サッカー部",
       "played": 1,
       "win": 0,

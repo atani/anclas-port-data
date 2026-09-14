@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-09-14T06:22:44.141Z",
+  "generatedAt": "2026-09-14T07:31:46.760Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
     {
       "rank": 1,
       "team": "福岡J・アンクラス",
-      "played": 11,
+      "played": 12,
       "win": 10,
       "draw": 1,
-      "loss": 0,
-      "gf": 29,
-      "ga": 4,
+      "loss": 1,
+      "gf": 30,
+      "ga": 7,
       "points": 31,
-      "gd": 25,
+      "gd": 23,
       "isAnclas": true
     },
     {
@@ -96,6 +96,19 @@
     },
     {
       "rank": 8,
+      "team": "神村学園高等部",
+      "played": 1,
+      "win": 1,
+      "draw": 0,
+      "loss": 0,
+      "gf": 3,
+      "ga": 1,
+      "points": 3,
+      "gd": 2,
+      "isAnclas": false
+    },
+    {
+      "rank": 9,
       "team": "国見FCレディース",
       "played": 9,
       "win": 0,
@@ -108,7 +121,7 @@
       "isAnclas": false
     },
     {
-      "rank": 9,
+      "rank": 10,
       "team": "活水女子大学サッカー部",
       "played": 1,
       "win": 0,

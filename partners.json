@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T01:32:10.827Z",
+  "generatedAt": "2026-09-15T05:00:06.718Z",
   "partners": [
     {
       "name": "株式会社トレス",
@@ -420,6 +420,21 @@
       "name": "株式会社ＭＹＲ　Ｌａｂ",
       "url": "https://myrlab.jp/",
       "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68370438.jpg"
+    },
+    {
+      "name": "株式会社F.F.m",
+      "url": "https://ffm-umimachi.com/",
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/HPヘッダーロゴ2-ffm-fukuya.png"
+    },
+    {
+      "name": "株式会社アダル",
+      "url": "https://www.adal.co.jp/",
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/messageImage_1789447225970.jpg"
+    },
+    {
+      "name": "株式会社志水ミート",
+      "url": "https://shimizu-meat.jp/",
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68861954.jpg"
     }
   ]
 }

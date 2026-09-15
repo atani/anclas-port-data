@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T05:00:06.718Z",
+  "generatedAt": "2026-09-15T07:49:16.517Z",
   "partners": [
     {
       "name": "株式会社トレス",
@@ -435,6 +435,11 @@
       "name": "株式会社志水ミート",
       "url": "https://shimizu-meat.jp/",
       "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68861954.jpg"
+    },
+    {
+      "name": "リハライズJAPAN 合同会社Universal  Design",
+      "url": "https://www.reharisejapan.com",
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68870146.jpg"
     }
   ]
 }

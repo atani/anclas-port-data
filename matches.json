@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T06:22:30.159Z",
+  "generatedAt": "2026-09-20T12:26:24.564Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -28,69 +28,304 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 20.3,
-        "precipitationProbability": 17,
-        "weatherCode": 51,
-        "fetchedAt": "2026-09-20T06:22:27.877Z"
+        "temperatureC": 20.1,
+        "precipitationProbability": 22,
+        "weatherCode": 0,
+        "fetchedAt": "2026-09-20T12:26:17.836Z"
       }
     },
     "latestResult": {
-      "id": "empress-cup-2026-round2",
-      "competition": "皇后杯 九州地域予選 2回戦",
-      "round": null,
-      "date": "2026-09-13",
-      "kickoff": "14:00",
-      "datetime": "2026-09-13T14:00:00+09:00",
-      "homeTeam": "神村学園高等部女子サッカー部",
-      "awayTeam": "福岡J・アンクラス",
+      "id": "su-post-9451",
+      "competition": "Qリーグ",
+      "round": 14,
+      "date": "2026-09-20",
+      "kickoff": "12:00",
+      "datetime": "2026-09-20T12:00:00+09:00",
+      "homeTeam": "福岡J・アンクラス",
+      "awayTeam": "東海大学付属福岡高等学校",
       "status": "finished",
       "score": {
-        "home": 3,
+        "home": 1,
         "away": 1
       },
       "isAnclas": true,
-      "sourceUrl": "https://anclas.jp/news/2026/09/14/0913/",
-      "venue": "長崎県 島原市営 平成町多目的広場Aコート",
+      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-67/",
+      "venue": "宇美町総合スポーツ公園",
       "goals": [
         {
-          "minute": "後半",
+          "minute": "61分",
           "team": "福岡J・アンクラス",
-          "playerNumber": null,
-          "playerName": "オウンゴール",
-          "assist": null
-        }
-      ],
-      "starters": [],
-      "subs": [],
-      "substitutions": [
-        {
-          "minute": "HT",
-          "team": "away",
-          "outNumber": 15,
-          "outName": "田中花奈",
-          "inNumber": 25,
-          "inName": "伊藤なずな"
+          "playerNumber": 13,
+          "playerName": "原 日樺",
+          "assist": "8CK↑13H"
         },
         {
-          "minute": "後半",
-          "team": "away",
-          "outNumber": 11,
-          "outName": "嘉数クレア姫麗",
-          "inNumber": 23,
-          "inName": "北条あゆみ"
+          "minute": "80+1分",
+          "team": "東海大学付属福岡高等学校",
+          "playerNumber": 11,
+          "playerName": "氷室 かんな",
+          "assist": "10→11S"
         }
       ],
-      "stats": null,
-      "goalnoteUrl": null,
-      "posterUrl": null,
-      "matchdayProgramUrl": null,
-      "cards": [],
-      "matchReport": {
-        "summary": "アンクラスは神村学園高等部女子サッカー部に1–3で敗れ、皇后杯 九州地域予選2回戦で敗退。前半は0–2。後半はオウンゴールで1点を返したが、追加点を許し、後半1–1、合計1–3で試合を終えた。",
-        "coachComment": null,
-        "playerComments": [],
-        "sourceUrl": "https://anclas.jp/news/2026/09/14/0913/"
+      "starters": [
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "熊澤 果歩",
+          "team": "home"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "澁澤 光",
+          "team": "home"
+        },
+        {
+          "number": 6,
+          "position": "DF",
+          "name": "森 和奏",
+          "team": "home"
+        },
+        {
+          "number": 10,
+          "position": "DF",
+          "name": "平坂 咲希",
+          "team": "home"
+        },
+        {
+          "number": 23,
+          "position": "DF",
+          "name": "北条 あゆみ",
+          "team": "home"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "田中 花奈",
+          "team": "home"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "端山 新",
+          "team": "home"
+        },
+        {
+          "number": 22,
+          "position": "MF",
+          "name": "野田 夏未",
+          "team": "home"
+        },
+        {
+          "number": 8,
+          "position": "FW",
+          "name": "野沢 真由",
+          "team": "home"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "田邉 いちご",
+          "team": "home"
+        },
+        {
+          "number": 13,
+          "position": "FW",
+          "name": "原 日樺",
+          "team": "home"
+        },
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "松井 美空",
+          "team": "away"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "野田 夏帆",
+          "team": "away"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "山岡 可歩",
+          "team": "away"
+        },
+        {
+          "number": 7,
+          "position": "DF",
+          "name": "山部 愛凜",
+          "team": "away"
+        },
+        {
+          "number": 5,
+          "position": "MF",
+          "name": "岡崎 愛未",
+          "team": "away"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "内田 衣怜",
+          "team": "away"
+        },
+        {
+          "number": 9,
+          "position": "MF",
+          "name": "藤本 萌空",
+          "team": "away"
+        },
+        {
+          "number": 10,
+          "position": "MF",
+          "name": "宮口 莉乃",
+          "team": "away"
+        },
+        {
+          "number": 21,
+          "position": "MF",
+          "name": "尾辻 莉奈",
+          "team": "away"
+        },
+        {
+          "number": 30,
+          "position": "MF",
+          "name": "松瀬 きりく",
+          "team": "away"
+        },
+        {
+          "number": 27,
+          "position": "FW",
+          "name": "木村 葵",
+          "team": "away"
+        }
+      ],
+      "subs": [
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "大河内 友貴",
+          "team": "home"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "杉浦 華穂",
+          "team": "home"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "嘉数 クレア姫麗",
+          "team": "home"
+        },
+        {
+          "number": 18,
+          "position": "FW",
+          "name": "玉城 薪瀬",
+          "team": "home"
+        },
+        {
+          "number": 17,
+          "position": "GK",
+          "name": "梶原 琉愛",
+          "team": "away"
+        },
+        {
+          "number": 26,
+          "position": "DF",
+          "name": "中村 美心",
+          "team": "away"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "伊藤 翼",
+          "team": "away"
+        },
+        {
+          "number": 13,
+          "position": "MF",
+          "name": "福本 來実花",
+          "team": "away"
+        },
+        {
+          "number": 22,
+          "position": "MF",
+          "name": "山口 愛空",
+          "team": "away"
+        },
+        {
+          "number": 29,
+          "position": "MF",
+          "name": "野見山 玲世",
+          "team": "away"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "氷室 かんな",
+          "team": "away"
+        },
+        {
+          "number": 12,
+          "position": "FW",
+          "name": "森山 絆杏",
+          "team": "away"
+        },
+        {
+          "number": 16,
+          "position": "FW",
+          "name": "森川 楓花",
+          "team": "away"
+        }
+      ],
+      "substitutions": [
+        {
+          "minute": "ＨＴ",
+          "team": "home",
+          "outNumber": 23,
+          "outName": "北条 あゆみ",
+          "inNumber": 5,
+          "inName": "大河内 友貴"
+        },
+        {
+          "minute": "ＨＴ",
+          "team": "away",
+          "outNumber": 27,
+          "outName": "木村 葵",
+          "inNumber": 11,
+          "inName": "氷室 かんな"
+        },
+        {
+          "minute": "72分(後半32分)",
+          "team": "away",
+          "outNumber": 2,
+          "outName": "野田 夏帆",
+          "inNumber": 13,
+          "inName": "福本 來実花"
+        },
+        {
+          "minute": "76分(後半36分)",
+          "team": "away",
+          "outNumber": 7,
+          "outName": "山部 愛凜",
+          "inNumber": 29,
+          "inName": "野見山 玲世"
+        }
+      ],
+      "stats": {
+        "attendance": "506人",
+        "weather": "晴れ",
+        "temperature": "28℃",
+        "pitch": "良芝"
       },
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341603",
+      "posterUrl": null,
+      "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/09/9.20%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
+      "cards": [],
+      "matchReport": null,
       "photoGallery": [],
       "forecast": null
     },
@@ -5569,17 +5804,285 @@
       "datetime": "2026-09-20T12:00:00+09:00",
       "homeTeam": "福岡J・アンクラス",
       "awayTeam": "東海大学付属福岡高等学校",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "home": 1,
+        "away": 1
+      },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-67/",
       "venue": "宇美町総合スポーツ公園",
-      "goals": [],
-      "starters": [],
-      "subs": [],
-      "substitutions": [],
-      "stats": null,
-      "goalnoteUrl": null,
+      "goals": [
+        {
+          "minute": "61分",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 13,
+          "playerName": "原 日樺",
+          "assist": "8CK↑13H"
+        },
+        {
+          "minute": "80+1分",
+          "team": "東海大学付属福岡高等学校",
+          "playerNumber": 11,
+          "playerName": "氷室 かんな",
+          "assist": "10→11S"
+        }
+      ],
+      "starters": [
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "熊澤 果歩",
+          "team": "home"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "澁澤 光",
+          "team": "home"
+        },
+        {
+          "number": 6,
+          "position": "DF",
+          "name": "森 和奏",
+          "team": "home"
+        },
+        {
+          "number": 10,
+          "position": "DF",
+          "name": "平坂 咲希",
+          "team": "home"
+        },
+        {
+          "number": 23,
+          "position": "DF",
+          "name": "北条 あゆみ",
+          "team": "home"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "田中 花奈",
+          "team": "home"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "端山 新",
+          "team": "home"
+        },
+        {
+          "number": 22,
+          "position": "MF",
+          "name": "野田 夏未",
+          "team": "home"
+        },
+        {
+          "number": 8,
+          "position": "FW",
+          "name": "野沢 真由",
+          "team": "home"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "田邉 いちご",
+          "team": "home"
+        },
+        {
+          "number": 13,
+          "position": "FW",
+          "name": "原 日樺",
+          "team": "home"
+        },
+        {
+          "number": 1,
+          "position": "GK",
+          "name": "松井 美空",
+          "team": "away"
+        },
+        {
+          "number": 2,
+          "position": "DF",
+          "name": "野田 夏帆",
+          "team": "away"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "山岡 可歩",
+          "team": "away"
+        },
+        {
+          "number": 7,
+          "position": "DF",
+          "name": "山部 愛凜",
+          "team": "away"
+        },
+        {
+          "number": 5,
+          "position": "MF",
+          "name": "岡崎 愛未",
+          "team": "away"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "内田 衣怜",
+          "team": "away"
+        },
+        {
+          "number": 9,
+          "position": "MF",
+          "name": "藤本 萌空",
+          "team": "away"
+        },
+        {
+          "number": 10,
+          "position": "MF",
+          "name": "宮口 莉乃",
+          "team": "away"
+        },
+        {
+          "number": 21,
+          "position": "MF",
+          "name": "尾辻 莉奈",
+          "team": "away"
+        },
+        {
+          "number": 30,
+          "position": "MF",
+          "name": "松瀬 きりく",
+          "team": "away"
+        },
+        {
+          "number": 27,
+          "position": "FW",
+          "name": "木村 葵",
+          "team": "away"
+        }
+      ],
+      "subs": [
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "大河内 友貴",
+          "team": "home"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "杉浦 華穂",
+          "team": "home"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "嘉数 クレア姫麗",
+          "team": "home"
+        },
+        {
+          "number": 18,
+          "position": "FW",
+          "name": "玉城 薪瀬",
+          "team": "home"
+        },
+        {
+          "number": 17,
+          "position": "GK",
+          "name": "梶原 琉愛",
+          "team": "away"
+        },
+        {
+          "number": 26,
+          "position": "DF",
+          "name": "中村 美心",
+          "team": "away"
+        },
+        {
+          "number": 6,
+          "position": "MF",
+          "name": "伊藤 翼",
+          "team": "away"
+        },
+        {
+          "number": 13,
+          "position": "MF",
+          "name": "福本 來実花",
+          "team": "away"
+        },
+        {
+          "number": 22,
+          "position": "MF",
+          "name": "山口 愛空",
+          "team": "away"
+        },
+        {
+          "number": 29,
+          "position": "MF",
+          "name": "野見山 玲世",
+          "team": "away"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "氷室 かんな",
+          "team": "away"
+        },
+        {
+          "number": 12,
+          "position": "FW",
+          "name": "森山 絆杏",
+          "team": "away"
+        },
+        {
+          "number": 16,
+          "position": "FW",
+          "name": "森川 楓花",
+          "team": "away"
+        }
+      ],
+      "substitutions": [
+        {
+          "minute": "ＨＴ",
+          "team": "home",
+          "outNumber": 23,
+          "outName": "北条 あゆみ",
+          "inNumber": 5,
+          "inName": "大河内 友貴"
+        },
+        {
+          "minute": "ＨＴ",
+          "team": "away",
+          "outNumber": 27,
+          "outName": "木村 葵",
+          "inNumber": 11,
+          "inName": "氷室 かんな"
+        },
+        {
+          "minute": "72分(後半32分)",
+          "team": "away",
+          "outNumber": 2,
+          "outName": "野田 夏帆",
+          "inNumber": 13,
+          "inName": "福本 來実花"
+        },
+        {
+          "minute": "76分(後半36分)",
+          "team": "away",
+          "outNumber": 7,
+          "outName": "山部 愛凜",
+          "inNumber": 29,
+          "inName": "野見山 玲世"
+        }
+      ],
+      "stats": {
+        "attendance": "506人",
+        "weather": "晴れ",
+        "temperature": "28℃",
+        "pitch": "良芝"
+      },
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341603",
       "posterUrl": null,
       "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/09/9.20%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
       "cards": [],
@@ -5596,8 +6099,11 @@
       "datetime": "2026-09-20T14:00:00+09:00",
       "homeTeam": "神村学園高等部女子サッカー部",
       "awayTeam": "水俣ユニオンフットボールクラブウィメン",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-55/",
       "venue": "いぶすきフットボールパーク(人工芝)",
@@ -5640,10 +6146,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 20.3,
-        "precipitationProbability": 17,
-        "weatherCode": 51,
-        "fetchedAt": "2026-09-20T06:22:27.877Z"
+        "temperatureC": 20.1,
+        "precipitationProbability": 22,
+        "weatherCode": 0,
+        "fetchedAt": "2026-09-20T12:26:17.836Z"
       }
     },
     {

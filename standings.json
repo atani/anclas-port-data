@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T01:13:35.442Z",
+  "generatedAt": "2026-09-20T04:58:56.181Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
@@ -32,27 +32,27 @@
     {
       "rank": 3,
       "team": "ヴィアマテラス宮崎Alegrita",
-      "played": 9,
+      "played": 10,
       "win": 5,
       "draw": 1,
-      "loss": 3,
-      "gf": 20,
-      "ga": 9,
+      "loss": 4,
+      "gf": 22,
+      "ga": 12,
       "points": 16,
-      "gd": 11,
+      "gd": 10,
       "isAnclas": false
     },
     {
       "rank": 4,
       "team": "柳ヶ浦高等学校　女子サッカー部",
-      "played": 10,
-      "win": 4,
+      "played": 11,
+      "win": 5,
       "draw": 1,
       "loss": 5,
-      "gf": 12,
-      "ga": 12,
-      "points": 13,
-      "gd": 0,
+      "gf": 15,
+      "ga": 14,
+      "points": 16,
+      "gd": 1,
       "isAnclas": false
     },
     {
@@ -125,56 +125,56 @@
     },
     {
       "rank": 3,
-      "leagueRank": 10,
+      "leagueRank": 11,
       "name": "澁澤 光",
       "number": 3,
       "goals": 2
     },
     {
       "rank": 3,
-      "leagueRank": 10,
+      "leagueRank": 11,
       "name": "端山 新",
       "number": 16,
       "goals": 2
     },
     {
       "rank": 3,
-      "leagueRank": 10,
+      "leagueRank": 11,
       "name": "玉城 薪瀬",
       "number": 18,
       "goals": 2
     },
     {
       "rank": 6,
-      "leagueRank": 22,
+      "leagueRank": 24,
       "name": "大河内 友貴",
       "number": 5,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 22,
+      "leagueRank": 24,
       "name": "野沢 真由",
       "number": 8,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 22,
+      "leagueRank": 24,
       "name": "平坂 咲希",
       "number": 10,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 22,
+      "leagueRank": 24,
       "name": "田中 花奈",
       "number": 15,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 22,
+      "leagueRank": 24,
       "name": "田川 葵",
       "number": 20,
       "goals": 1

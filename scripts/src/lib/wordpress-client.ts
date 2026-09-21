@@ -4,6 +4,7 @@
  * 選手名鑑（TOP選手紹介カテゴリ）の動的検出と _embed 取得を追加した。
  */
 
+import { fetchSearchFeedPosts, fetchSearchResultCards } from "./anclas-search.js";
 import { logger } from "./logger.js";
 import { toIsoJst } from "./qleague-parser.js";
 import type { BlogPost, MatchReport } from "./types.js";
@@ -51,6 +52,57 @@ export interface WPCategory {
 
 const ALLOWED_PATHS = ["/posts", "/categories", "/tags"] as const;
 
+/**
+ * REST API が使えないことが分かった時点で立てるフラグ。
+ * anclas.jp はデータセンター系IPからの `/wp-json/` を拒否するため、
+ * 一度失敗したら残りの取得も同じ結果になる。試合ごとに403を踏み直さず公開経路へ切り替える。
+ */
+let wpApiBlocked = false;
+
+/**
+ * REST API を使わない経路だけで動くことを確かめるための強制無効化。
+ * GitHub Actions で起きる403をローカルで再現する用途に使う。
+ */
+function isWpApiDisabled(): boolean {
+  return process.env.ANCLAS_WP_API_DISABLED === "1";
+}
+
+/** REST API が現時点で使える見込みかどうか。 */
+export function isWpApiAvailable(): boolean {
+  return !isWpApiDisabled() && !wpApiBlocked;
+}
+
+/** 遮断フラグを戻す（テストで経路ごとの要求回数を確かめるために使う）。 */
+export function resetWpApiBlockedState(): void {
+  wpApiBlocked = false;
+}
+
+/**
+ * REST API への唯一の出口。
+ * 無効化・遮断の判定と、失敗時のフラグ設定をここへ集約する。
+ */
+async function wpApiFetch(url: string): Promise<Response> {
+  if (isWpApiDisabled()) {
+    throw new Error("WordPress API error: 403 Forbidden - ANCLAS_WP_API_DISABLED により無効化されています");
+  }
+  if (wpApiBlocked) {
+    throw new Error("WordPress API error: 403 Forbidden - 同一実行で遮断済みのため要求しません");
+  }
+  let res: Response;
+  try {
+    res = await fetch(url, { signal: AbortSignal.timeout(15_000), headers: WP_HEADERS });
+  } catch (e) {
+    wpApiBlocked = true;
+    throw e;
+  }
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    wpApiBlocked = true;
+    throw new Error(`WordPress API error: ${res.status} ${res.statusText} - ${body.slice(0, 120)}`);
+  }
+  return res;
+}
+
 async function wpFetch<T>(path: string, params: Record<string, string> = {}): Promise<T> {
   if (!ALLOWED_PATHS.some((p) => path === p)) {
     throw new Error(`Invalid API path: ${path}`);
@@ -59,14 +111,7 @@ async function wpFetch<T>(path: string, params: Record<string, string> = {}): Pr
   for (const [key, value] of Object.entries(params)) {
     url.searchParams.set(key, value);
   }
-  const res = await fetch(url.toString(), {
-    signal: AbortSignal.timeout(15_000),
-    headers: WP_HEADERS,
-  });
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    throw new Error(`WordPress API error: ${res.status} ${res.statusText} - ${body}`);
-  }
+  const res = await wpApiFetch(url.toString());
   return res.json() as Promise<T>;
 }
 
@@ -149,6 +194,24 @@ export async function getCategories(): Promise<WPCategory[]> {
   return wpFetch<WPCategory[]>("/categories", { per_page: "100" });
 }
 
+/**
+ * 全文検索で投稿を引く。
+ * REST API が拒否された場合は、同じ検索語・同じ並び順で1ページ10件を返す検索RSSへ切り替える。
+ * ニュース生成と同じく、公開経路だけで結果が揃うようにするためのフォールバック。
+ */
+export async function searchPosts(search: string): Promise<WPPost[]> {
+  if (isWpApiAvailable()) {
+    try {
+      return await getPosts({ search, perPage: 10, order: "desc" });
+    } catch (e) {
+      logger.warn(
+        `WordPress REST APIで検索できないため検索RSSを使用します: ${e instanceof Error ? e.message.slice(0, 120) : e}`,
+      );
+    }
+  }
+  return fetchSearchFeedPosts(search);
+}
+
 /** リニューアル前後で重複した「お知らせ」カテゴリをすべて選ぶ。 */
 export function selectNewsCategories(categories: WPCategory[]): WPCategory[] {
   return categories
@@ -209,34 +272,71 @@ export async function getPlayerPosts(categoryId: number): Promise<WPPost[]> {
   return getPosts({ categories: [categoryId], perPage: 100, embed: true, orderby: "date", order: "asc" });
 }
 
+/** 告知ポスターとして採用する投稿かどうか（タイトルの種別と対戦相手名で判定）。 */
+function isPosterAnnouncement(title: string, shortName: string): boolean {
+  return /開催情報|試合情報/.test(title) && title.includes(shortName);
+}
+
+/** 告知ポスターの対象期間（試合日の30日前から試合日まで）。 */
+function posterDateRange(matchDate: string): { from: string; to: string } {
+  const from = new Date(matchDate);
+  from.setDate(from.getDate() - 30);
+  return { from: from.toISOString().slice(0, 10), to: matchDate };
+}
+
 /**
- * 「開催情報」投稿から試合告知ポスター画像URLを取得する。
- * タイトルに対戦相手名を含む最新投稿の featured_media を返す。
+ * 検索結果HTMLの記事カードから告知ポスターを探す。
+ * アイキャッチ画像はRSSに含まれないため、REST API が使えない場合はこの経路だけが残る。
+ * カードは公開日を日付までしか持たないため、REST API 経由と違い日付の文字列比較で絞り込む。
  */
+async function findMatchPosterFromCards(
+  opponentName: string,
+  matchDate: string,
+): Promise<string | null> {
+  const shortName = opponentName.slice(0, 4);
+  const { from, to } = posterDateRange(matchDate);
+  for (const card of await fetchSearchResultCards(opponentName)) {
+    if (!isPosterAnnouncement(card.title, shortName)) continue;
+    if (card.date < from || card.date > to) continue;
+    if (card.imageUrl) return card.imageUrl;
+  }
+  return null;
+}
+
 /**
  * 次節の告知ポスターを探す。
  * 投稿日が試合日の30日前以内の「開催情報」投稿のみを対象にする。
  * 古い試合の告知ポスターを誤って返さないための日付ガード。
  */
 export async function findMatchPoster(opponentName: string, matchDate: string): Promise<string | null> {
-  try {
-    const posts = await getPosts({ search: opponentName, perPage: 10, embed: true, order: "desc" });
-    const shortName = opponentName.slice(0, 4);
-    const matchMs = new Date(matchDate).getTime();
-    const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
+  if (isWpApiAvailable()) {
+    try {
+      const posts = await getPosts({ search: opponentName, perPage: 10, embed: true, order: "desc" });
+      const shortName = opponentName.slice(0, 4);
+      const matchMs = new Date(matchDate).getTime();
+      const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
 
-    for (const p of posts) {
-      const title = p.title.rendered;
-      if (!/開催情報|試合情報/.test(title) || !title.includes(shortName)) continue;
-      const postMs = new Date(p.date).getTime();
-      if (postMs < matchMs - thirtyDaysMs || postMs > matchMs) continue;
-      const media = p._embedded?.["wp:featuredmedia"]?.[0];
-      if (media?.source_url) return media.source_url;
+      for (const p of posts) {
+        const title = p.title.rendered;
+        if (!isPosterAnnouncement(title, shortName)) continue;
+        const postMs = new Date(p.date).getTime();
+        if (postMs < matchMs - thirtyDaysMs || postMs > matchMs) continue;
+        const media = p._embedded?.["wp:featuredmedia"]?.[0];
+        if (media?.source_url) return media.source_url;
+      }
+      return null;
+    } catch (e) {
+      logger.warn(
+        `WordPress REST APIでポスターを取得できないため検索結果HTMLを使用します: ${e instanceof Error ? e.message.slice(0, 120) : e}`,
+      );
     }
-  } catch (e) {
-    logger.warn(`ポスター検索失敗（WP API）: ${e instanceof Error ? e.message.slice(0, 120) : e}`);
   }
-  return null;
+  try {
+    return await findMatchPosterFromCards(opponentName, matchDate);
+  } catch (e) {
+    logger.warn(`ポスター検索失敗（検索結果HTML）: ${e instanceof Error ? e.message.slice(0, 120) : e}`);
+    return null;
+  }
 }
 
 export interface RescheduleInfo {
@@ -307,10 +407,9 @@ export async function findRescheduleInfo(
   originalMatchDate: string,
 ): Promise<RescheduleInfo | null> {
   try {
-    const postMap = new Map<number, WPPost>();
+    const postMap = new Map<string, WPPost>();
     for (const key of opponentSearchKeys(opponentName)) {
-      const posts = await getPosts({ search: key, perPage: 10, order: "desc" });
-      for (const post of posts) postMap.set(post.id, post);
+      for (const post of await searchPosts(key)) postMap.set(post.link, post);
     }
     const posts = [...postMap.values()].sort(
       (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
@@ -329,7 +428,7 @@ export async function findRescheduleInfo(
       return { ...dt, venue: parseAnnouncementVenue(text), sourceUrl: p.link };
     }
   } catch (e) {
-    logger.warn(`延期試合の代替日程告知検索失敗（WP API）: ${e instanceof Error ? e.message.slice(0, 120) : e}`);
+    logger.warn(`延期試合の代替日程告知検索失敗: ${e instanceof Error ? e.message.slice(0, 120) : e}`);
   }
   return null;
 }
@@ -539,14 +638,9 @@ export async function findMatchReport(
       opponentKey.slice(0, 3),
       opponentName.slice(0, 4),
     ].filter((key) => key.length >= 2))];
-    const postMap = new Map<number, WPPost>();
+    const postMap = new Map<string, WPPost>();
     for (const key of searchKeys) {
-      const posts = await getPosts({
-        search: `マッチレポート ${key}`,
-        perPage: 10,
-        order: "desc",
-      });
-      for (const post of posts) postMap.set(post.id, post);
+      for (const post of await searchPosts(`マッチレポート ${key}`)) postMap.set(post.link, post);
     }
     const matchMs = new Date(matchDate).getTime();
     const sevenDaysMs = 7 * 24 * 60 * 60 * 1000;
@@ -585,7 +679,7 @@ export async function findMatchReport(
       };
     }
   } catch (e) {
-    logger.warn(`マッチレポート検索失敗（WP API）: ${e instanceof Error ? e.message.slice(0, 120) : e}`);
+    logger.warn(`マッチレポート検索失敗: ${e instanceof Error ? e.message.slice(0, 120) : e}`);
   }
   return null;
 }
@@ -619,8 +713,7 @@ export async function fetchPlayerBlogPosts(): Promise<RawBlogEntry[]> {
     logger.info(`選手ブログカテゴリ: id=${category.id} count=${category.count}`);
     while (true) {
       const url = `${BASE_URL}/posts?categories=${category.id}&per_page=${perPage}&page=${page}&_fields=title,link,date`;
-      const res = await fetch(url, { signal: AbortSignal.timeout(15_000), headers: WP_HEADERS });
-      if (!res.ok) break;
+      const res = await wpApiFetch(url);
       const posts = (await res.json()) as WpBlogPost[];
       if (posts.length === 0) break;
       for (const p of posts) {

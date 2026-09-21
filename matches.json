@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T13:54:45.450Z",
+  "generatedAt": "2026-09-21T15:09:17.207Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -31,7 +31,7 @@
         "temperatureC": 18.8,
         "precipitationProbability": 15,
         "weatherCode": 55,
-        "fetchedAt": "2026-09-21T13:54:37.946Z"
+        "fetchedAt": "2026-09-21T15:09:09.911Z"
       }
     },
     "latestResult": {
@@ -325,14 +325,29 @@
       "posterUrl": null,
       "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/09/9.20%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
       "cards": [],
-      "matchReport": null,
-      "photoGallery": [],
+      "matchReport": {
+        "summary": "試合は立ち上がりから一進一退の攻防となり、互いにゴールを目指す展開となった。\n\n前半は相手の攻撃を受ける時間帯もあったが、最後のところで粘り強く対応し、ゴールを許さず0-0で折り返した。\n\n後半に入り、徐々に攻撃の時間を増やしていく中で、コーナーキックから先制点を奪った。セットプレーから得点を奪い、チームとして良い流れを作ることができた。\n\nその後も追加点を狙いながら、リードを守るためにチーム全体で戦い続けた。しかし、後半終盤に相手の攻撃を受けて失点。1-1に追いつかれる展開となった。\n\n最後まで勝ち越しを目指して戦ったが、追加点を奪うことができず、そのまま試合終了。1-1の引き分けとなった。\n\n監督黒澤怜コメント\n\n本日も最後まで熱い応援をありがとうございました。\n\n先制することができた中で、後半終盤に失点し、勝ち切れなかった悔しさが残る試合となりました。\n\n終盤の試合運びや守備の部分は、もう一度チームとしてさらに改善していかなければいけないと思います。\n\n今日の悔しさを次の試合につなげ、勝利を掴めるようにチーム全員で準備していきます。\n\n本日も応援ありがとうございました。\n\n#3 澁澤光\n\n先制しましたが、終了間際に失点してしまい、もったいない試合だったと思います。\n試合全体を通して、流れや時間帯を考えたプレー選択がもっとできたかなと思います。\n連勝は止まってしまいましたが、まだ自力で優勝を決められる状況なので、残り3試合を必ず勝ち切れるように、また良い準備をしていきたいです。\n\n#15 田中花奈\n\n今日もたくさんの応援ありがとうございました！\n結果も内容も悔いが残る試合となってしまいました。\nリーグ戦は残り3試合となりましたが、必ず勝ってリーグ優勝できるよう頑張ります。\n引き続き応援よろしくお願いします。",
+        "coachComment": null,
+        "playerComments": [],
+        "sourceUrl": "https://anclas.jp/news/2026/09/21/920/"
+      },
+      "photoGallery": [
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263386_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263387_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263388_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263389_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263390_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263391_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263392_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263393_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263394_0.jpg"
+      ],
       "forecast": null
     },
     "latestPodcast": {
       "id": "04ECwS2zybRJatrg7SAuOQ",
       "title": "＃23【インタビュー：黒澤怜】アンクラスの新監督ってどんな人？選手目線を持つ指導者の素顔",
-      "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+      "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
       "showUrl": "https://open.spotify.com/episode/04ECwS2zybRJatrg7SAuOQ",
       "embedUrl": "https://open.spotify.com/embed/episode/04ECwS2zybRJatrg7SAuOQ",
       "publishedAt": "2026-09-17"
@@ -341,7 +356,7 @@
       {
         "id": "04ECwS2zybRJatrg7SAuOQ",
         "title": "＃23【インタビュー：黒澤怜】アンクラスの新監督ってどんな人？選手目線を持つ指導者の素顔",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/04ECwS2zybRJatrg7SAuOQ",
         "embedUrl": "https://open.spotify.com/embed/episode/04ECwS2zybRJatrg7SAuOQ",
         "publishedAt": "2026-09-17"
@@ -349,7 +364,7 @@
       {
         "id": "0EnfHrhxHixbG33XiUt7PC",
         "title": "#22【インタビュー：リゾスポ学生の小田さん、福田さん、野口さん】元Jリーガーvs100人の小学生の仕掛け人たち",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/0EnfHrhxHixbG33XiUt7PC",
         "embedUrl": "https://open.spotify.com/embed/episode/0EnfHrhxHixbG33XiUt7PC",
         "publishedAt": "2026-09-02"
@@ -357,7 +372,7 @@
       {
         "id": "5s76C6q7hi8K3aGmtBRQsd",
         "title": "＃21【番外編】セールストーーク！誰でも上手くいく営業のおはなし",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/5s76C6q7hi8K3aGmtBRQsd",
         "embedUrl": "https://open.spotify.com/embed/episode/5s76C6q7hi8K3aGmtBRQsd",
         "publishedAt": "2026-08-27"
@@ -365,7 +380,7 @@
       {
         "id": "50gyz3cbG9y8aP39H6HElX",
         "title": "＃20【ゲスト：ベランダから夕日（石垣島さん）】出会いはインスタ...海を越えて応援に駆けつけるウワサのあの人",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/50gyz3cbG9y8aP39H6HElX",
         "embedUrl": "https://open.spotify.com/embed/episode/50gyz3cbG9y8aP39H6HElX",
         "publishedAt": "2026-08-21"
@@ -373,7 +388,7 @@
       {
         "id": "55pB3l8IPMpCRWBpO9BDHM",
         "title": "＃19【インタビュー：宮脇ゆりあ】鳥かごで泣いたあの頃...デュアルキャリアで大忙しの弱冠18歳の日常と道のり",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/55pB3l8IPMpCRWBpO9BDHM",
         "embedUrl": "https://open.spotify.com/embed/episode/55pB3l8IPMpCRWBpO9BDHM",
         "publishedAt": "2026-08-12"
@@ -5538,8 +5553,108 @@
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
-      "matchReport": null,
-      "photoGallery": [],
+      "matchReport": {
+        "summary": "前半の早い時間帯に先制点を奪い、幸先の良いスタートを切ることができた。\n\n先制後は、ボールを保持しながら追加点を狙う時間帯もあったものの、なかなかゴールを奪うことができず、1点リードのまま試合が進んだ。\n\n後半に入ってからも追加点を奪い、試合を決めたいところだったが、相手の攻撃を受ける時間帯も増え、ゴール前でピンチを迎える場面もあった。\n\nそれでも、守備陣を中心に最後まで集中力を切らさず、相手の攻撃に対して粘り強く対応。チーム全体でゴールを守り抜き、最後まで失点を許さなかった。\n\n攻撃面では、先制点以降に追加点を奪って試合を決め切ることができなかった点は課題として残った。一方で、苦しい時間帯でも全員が守備の意識を共有し、最後まで戦い抜いて無失点で終えられたことは大きな収穫となった。\n\n最後まで1点のリードを守り切り、1-0で勝利。\n\n苦しい試合展開の中でも、チーム全員で勝利を掴み取ることができた。\n\n監督代行黒澤怜コメント\n\n本日も最後まで熱い応援をいただき、本当にありがとうございました。\n\n今日の試合は、苦しい時間帯もありましたが、選手たちが最後まで戦い続け、勝利を掴み取ってくれました。苦しい状況の中でも選手たちに助けられたと感じていますし、最後まで戦い抜いてくれた選手たちに感謝しています。\n\nまだまだ改善すべき部分はありますが、今日の勝利を次につなげていきたいと思います。\n\n来週はいよいよ皇后杯予選です。今日の試合で出た課題をしっかりと振り返り、チームとしてさらに良い準備をして、次の試合に臨みたいと思います。\n\n引き続き、熱い応援をよろしくお願いいたします。\n\n#9田邉いちご\n\n後期リーグ戦が再開しました。\nチームとして勝ち点3を取ることができ、とてもいいスタートを切ることができました！！\n来週は皇后杯九州予選が始まります！\nしっかり勝って、本戦出れるように頑張ります！！\n引き続き応援よろしくお願いします！\n\n#21熊澤果歩\n\n九州リーグ後期開幕戦、アウェーでの試合でしたが、たくさんの応援ありがとうございました！\n試合開始早々にゴールを奪うことができたことで、落ち着いて自分たちのサッカーをすることができました。\nそして、アンクラスでは初めての公式戦出場となりましたが、最後までみんなが身体を張って守ってくれたおかげで、クリーンシートで試合を終えることができました！\n来週は皇后杯3連戦が始まります\n全試合クリーンシートで勝ち進み、優勝できるようにチーム一丸となって頑張ります！\n引き続き、福岡J・アンクラスへの応援をよろしくお願いします！",
+        "coachComment": null,
+        "playerComments": [],
+        "sourceUrl": "https://anclas.jp/news/2026/09/07/%e3%83%9e%e3%83%83%e3%83%81%e3%83%ac%e3%83%9d%e3%83%bc%e3%83%88%e3%80%902026%e5%b9%b4%e5%ba%a6kyfa%e7%ac%ac29%e5%9b%9e%e4%b9%9d%e5%b7%9e%e5%a5%b3%e5%ad%90%e3%82%b5%e3%83%83%e3%82%ab%e3%83%bc%e3%83%aa/"
+      },
+      "photoGallery": [
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_31.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_35.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_37.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_38.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_40.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_41.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_43.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_44.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_45.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_46.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_47.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_48.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_49.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_50.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_51.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_52.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_53.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_54.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_55.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_56.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_57.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_58.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_59.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_60.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_61.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_62.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_63.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_64.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_65.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_66.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_67.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_68.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_69.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_70.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_71.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_72.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_73.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_74.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_75.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_76.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_77.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_78.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_79.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_80.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_81.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_82.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_83.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_84.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_85.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_86.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_87.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_88.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_89.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_90.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_91.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_92.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_93.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_94.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_95.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_96.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_97.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_98.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_99.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_100.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_101.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_102.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_103.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_104.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_105.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_106.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_107.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_108.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_109.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_110.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_111.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_112.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_113.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_114.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_115.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_116.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_117.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_118.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_119.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_2.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_4.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_5.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_3.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_6.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_7.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_8.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_9.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_10.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_12.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_20260905_260907_28.jpg"
+      ],
       "forecast": null
     },
     {
@@ -6086,8 +6201,23 @@
       "posterUrl": null,
       "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/09/9.20%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
       "cards": [],
-      "matchReport": null,
-      "photoGallery": [],
+      "matchReport": {
+        "summary": "試合は立ち上がりから一進一退の攻防となり、互いにゴールを目指す展開となった。\n\n前半は相手の攻撃を受ける時間帯もあったが、最後のところで粘り強く対応し、ゴールを許さず0-0で折り返した。\n\n後半に入り、徐々に攻撃の時間を増やしていく中で、コーナーキックから先制点を奪った。セットプレーから得点を奪い、チームとして良い流れを作ることができた。\n\nその後も追加点を狙いながら、リードを守るためにチーム全体で戦い続けた。しかし、後半終盤に相手の攻撃を受けて失点。1-1に追いつかれる展開となった。\n\n最後まで勝ち越しを目指して戦ったが、追加点を奪うことができず、そのまま試合終了。1-1の引き分けとなった。\n\n監督黒澤怜コメント\n\n本日も最後まで熱い応援をありがとうございました。\n\n先制することができた中で、後半終盤に失点し、勝ち切れなかった悔しさが残る試合となりました。\n\n終盤の試合運びや守備の部分は、もう一度チームとしてさらに改善していかなければいけないと思います。\n\n今日の悔しさを次の試合につなげ、勝利を掴めるようにチーム全員で準備していきます。\n\n本日も応援ありがとうございました。\n\n#3 澁澤光\n\n先制しましたが、終了間際に失点してしまい、もったいない試合だったと思います。\n試合全体を通して、流れや時間帯を考えたプレー選択がもっとできたかなと思います。\n連勝は止まってしまいましたが、まだ自力で優勝を決められる状況なので、残り3試合を必ず勝ち切れるように、また良い準備をしていきたいです。\n\n#15 田中花奈\n\n今日もたくさんの応援ありがとうございました！\n結果も内容も悔いが残る試合となってしまいました。\nリーグ戦は残り3試合となりましたが、必ず勝ってリーグ優勝できるよう頑張ります。\n引き続き応援よろしくお願いします。",
+        "coachComment": null,
+        "playerComments": [],
+        "sourceUrl": "https://anclas.jp/news/2026/09/21/920/"
+      },
+      "photoGallery": [
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263386_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263387_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263388_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263389_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263390_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263391_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263392_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263393_0.jpg",
+        "https://anclas.jp/wp-content/uploads/2026/09/S__69263394_0.jpg"
+      ],
       "forecast": null
     },
     {
@@ -6149,7 +6279,7 @@
         "temperatureC": 18.8,
         "precipitationProbability": 15,
         "weatherCode": 55,
-        "fetchedAt": "2026-09-21T13:54:37.946Z"
+        "fetchedAt": "2026-09-21T15:09:09.911Z"
       }
     },
     {

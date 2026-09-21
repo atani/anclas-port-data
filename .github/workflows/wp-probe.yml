@@ -1,0 +1,37 @@
+name: wp-probe
+
+# anclas.jp の WordPress REST API が GitHub Actions から 403 になる原因を切り分ける。
+# User-Agent の違いで通るかを見るための一時的な診断用。原因が分かったら削除する。
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe WordPress REST API with several User-Agents
+        run: |
+          URL="https://anclas.jp/wp-json/wp/v2/posts?per_page=1&_fields=id"
+          probe() {
+            local label="$1"; shift
+            local code
+            code=$(curl -s -o /tmp/body.txt -w '%{http_code}' --max-time 20 "$@" "$URL" || echo "000")
+            echo "${label}: ${code}"
+          }
+          echo "== REST API =="
+          probe "default-curl-UA   "
+          probe "pipeline-UA       " -A 'Mozilla/5.0 (compatible; anclas-port-pipeline/1.0; +https://github.com/atani/anclas-port)'
+          probe "empty-UA          " -H 'User-Agent:'
+          probe "chrome-UA         " -A 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+          probe "chrome-UA+headers " -A 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36' -H 'Accept: application/json' -H 'Accept-Language: ja,en;q=0.9' -H 'Referer: https://anclas.jp/'
+          echo
+          echo "== 参考: 同じ IP から他の経路 =="
+          echo "top-page HTML     : $(curl -s -o /dev/null -w '%{http_code}' --max-time 20 https://anclas.jp/)"
+          echo "category RSS      : $(curl -s -o /dev/null -w '%{http_code}' --max-time 20 'https://anclas.jp/category/news/feed/')"
+          echo
+          echo "== 403 のときの本文（先頭）=="
+          curl -s --max-time 20 -A 'Mozilla/5.0 (compatible; anclas-port-pipeline/1.0; +https://github.com/atani/anclas-port)' "$URL" | head -c 400
+          echo
+          echo "== 応答ヘッダ =="
+          curl -s -D - -o /dev/null --max-time 20 -A 'Mozilla/5.0 (compatible; anclas-port-pipeline/1.0; +https://github.com/atani/anclas-port)' "$URL" | head -20

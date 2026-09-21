@@ -18,7 +18,9 @@ export interface NewsFeedItem {
   contentHtml: string;
 }
 
-function decodeXml(value: string): string {
+export const ANCLAS_FEED_HEADERS: Record<string, string> = FEED_HEADERS;
+
+export function decodeXml(value: string): string {
   return value
     .replace(/^<!\[CDATA\[([\s\S]*)\]\]>$/, "$1")
     .replace(/&#(\d+);/g, (_, n: string) => String.fromCodePoint(Number(n)))
@@ -31,12 +33,12 @@ function decodeXml(value: string): string {
     .trim();
 }
 
-function element(block: string, tag: string): string | null {
+export function element(block: string, tag: string): string | null {
   const match = block.match(new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, "i"));
   return match?.[1] == null ? null : decodeXml(match[1]);
 }
 
-function postId(guid: string, url: string): number | null {
+export function postId(guid: string, url: string): number | null {
   for (const candidate of [guid, url]) {
     try {
       const parsed = new URL(candidate);

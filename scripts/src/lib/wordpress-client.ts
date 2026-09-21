@@ -1,11 +1,13 @@
 /**
- * anclas.jp WordPress REST API クライアント。
- * reference/anclas-mcp-server/wordpress-client.ts を流用し、
- * 選手名鑑（TOP選手紹介カテゴリ）の動的検出と _embed 取得を追加した。
+ * anclas.jp の取得クライアント。
+ * ニュース・試合まわりは WordPress REST API を使い、
+ * REST API が拒否される選手・スタッフは公開ページのHTMLから取得する。
  */
 
 import { fetchSearchFeedPosts, fetchSearchResultCards } from "./anclas-search.js";
 import { logger } from "./logger.js";
+import { parsePlayerBlogCards, toPlayerBlogEntries } from "./player-parser.js";
+import type { PlayerBlogEntry } from "./player-parser.js";
 import { toIsoJst } from "./qleague-parser.js";
 import type { BlogPost, MatchReport } from "./types.js";
 
@@ -126,40 +128,14 @@ async function siteFetchText(url: string): Promise<string> {
   return res.text();
 }
 
-/** TOP選手紹介のカテゴリURLをサイトのグローバルメニューから取得する。 */
-export function parsePlayerArchiveUrl(html: string): string | null {
-  const match = html.match(/href=["']([^"']*\/category\/top-?players[^"']*)["']/i);
-  if (!match?.[1]) return null;
-  return new URL(match[1].replace(/&amp;/g, "&"), SITE_URL).toString();
+/** 公式サイトの選手一覧ページ。シーズンと各選手の個別ページURLを含む。 */
+export async function getPlayerArchiveHtml(): Promise<string> {
+  return siteFetchText(`${SITE_URL}/player/`);
 }
 
-/** TOP選手紹介一覧に現在公開されている選手投稿URLを取得する。 */
-export function parsePublishedPlayerUrls(html: string): string[] {
-  const urls = new Set<string>();
-  for (const match of html.matchAll(/<article\b[\s\S]*?<\/article>/gi)) {
-    const block = match[0];
-    const anchor = block.match(/<a\b(?=[^>]*\bclass=["'][^"']*\bwrap-anchor\b)[^>]*\bhref=["']([^"']+)["']/i);
-    if (!anchor?.[1]) continue;
-    const url = new URL(anchor[1].replace(/&amp;/g, "&"), SITE_URL);
-    url.hash = "";
-    url.search = "";
-    urls.add(url.toString());
-  }
-  return [...urls];
-}
-
-/** WordPress REST API が拒否されても取得できる、公式一覧HTML由来の現役選手URL。 */
-export async function getPublishedPlayerUrls(): Promise<string[]> {
-  const homeHtml = await siteFetchText(`${SITE_URL}/`);
-  const archiveUrl = parsePlayerArchiveUrl(homeHtml);
-  if (!archiveUrl) {
-    throw new Error("TOP選手紹介の一覧URLが公式サイトから見つかりませんでした");
-  }
-  const urls = parsePublishedPlayerUrls(await siteFetchText(archiveUrl));
-  if (urls.length === 0) {
-    throw new Error("TOP選手紹介の公開選手が0件でした");
-  }
-  return urls;
+/** 選手個別ページ。背番号・プロフィール・顔写真を含む。 */
+export async function getPlayerPageHtml(url: string): Promise<string> {
+  return siteFetchText(url);
 }
 
 /** 公式スタッフ紹介ページ。個別詳細ページを持たないカード一覧を取得する。 */
@@ -228,48 +204,6 @@ export function selectAllNewsCategory(categories: WPCategory[]): WPCategory | nu
         && (category.name === "ALL NEWS" || category.slug === "all"),
     )
     .sort((a, b) => b.count - a.count || a.id - b.id)[0] ?? null;
-}
-
-/** 選手ブログはリニューアルでカテゴリIDが変わるため、名前・slugから動的に選ぶ。 */
-export function selectPlayerBlogCategory(categories: WPCategory[]): WPCategory | null {
-  return categories
-    .filter(
-      (category) =>
-        category.count > 0
-        && (category.name === "選手ブログ" || category.slug === "blog"),
-    )
-    .sort((a, b) => b.count - a.count)[0] ?? null;
-}
-
-/** カテゴリ名から年を抽出: "TOP選手紹介2026" → 2026 */
-function extractYear(name: string): number | null {
-  const m = name.match(/(\d{4})/);
-  return m && m[1] ? Number(m[1]) : null;
-}
-
-/**
- * 選手名鑑（TOP選手紹介）カテゴリを動的に検出する。
- * 年度でカテゴリが変わるため（slug は top-players2025 でも name は TOP選手紹介2026 など
- * ずれがある）、name の年を信頼して count>0 の最新年カテゴリを返す。
- */
-export async function getPlayerCategory(): Promise<{ id: number; name: string; season: string }> {
-  const cats = await getCategories();
-  const candidates = cats
-    .filter((c) => /TOP選手紹介|top-?players/i.test(`${c.name} ${c.slug}`) && c.count > 0)
-    .map((c) => ({ cat: c, year: extractYear(c.name) }))
-    .filter((x): x is { cat: WPCategory; year: number } => x.year !== null)
-    .sort((a, b) => b.year - a.year);
-
-  const top = candidates[0];
-  if (!top) {
-    throw new Error("選手名鑑カテゴリ（TOP選手紹介）が見つかりませんでした");
-  }
-  return { id: top.cat.id, name: top.cat.name, season: String(top.year) };
-}
-
-/** 指定カテゴリの全選手投稿を _embed 付きで取得する（背番号順は呼び出し側で整列） */
-export async function getPlayerPosts(categoryId: number): Promise<WPPost[]> {
-  return getPosts({ categories: [categoryId], perPage: 100, embed: true, orderby: "date", order: "asc" });
 }
 
 /** 告知ポスターとして採用する投稿かどうか（タイトルの種別と対戦相手名で判定）。 */
@@ -684,60 +618,59 @@ export async function findMatchReport(
   return null;
 }
 
-interface WpBlogPost {
-  title: { rendered: string };
-  link: string;
-  date: string;
-}
-
-interface RawBlogEntry {
-  number: number;
-  name: string | null;
-  post: BlogPost;
-}
+/**
+ * 選手ブログ一覧の巡回上限。
+ * 1ページ10件で、2026年9月時点の全407件は41ページに収まる。
+ * 打ち切り条件が効かなかった場合でも要求が際限なく増えないようにする。
+ */
+const PLAYER_BLOG_MAX_PAGES = 60;
 
 /**
  * 選手ブログ記事を全件取得し、背番号＋名前付きで返す。
  * 紐付け側で名前照合できるよう、背番号だけでなくタイトル内の選手名も抽出する。
  * これにより背番号が変わっても安全に紐付けられる。
+ *
+ * 途中のページで取得に失敗したら例外にする。
+ * 一部だけ拾って返すと、件数の急減ガードを潜り抜けた不完全なデータを書いてしまう。
  */
-export async function fetchPlayerBlogPosts(): Promise<RawBlogEntry[]> {
-  const entries: RawBlogEntry[] = [];
-  let page = 1;
-  const perPage = 100;
-  try {
-    const category = selectPlayerBlogCategory(await getCategories());
-    if (!category) {
-      throw new Error("選手ブログカテゴリが見つかりませんでした");
+export async function fetchPlayerBlogPosts(): Promise<PlayerBlogEntry[]> {
+  const posts: BlogPost[] = [];
+  const seen = new Set<string>();
+  let lastPage = 0;
+  for (let page = 1; page <= PLAYER_BLOG_MAX_PAGES; page++) {
+    const url = page === 1 ? `${SITE_URL}/player/blog/` : `${SITE_URL}/player/blog/page/${page}/`;
+    const cards = parsePlayerBlogCards(await siteFetchText(url));
+    // 記事が尽きたページは404ではなく空の一覧を返す。同じ記事が並ぶ場合も打ち切る。
+    const fresh = cards.filter((post) => !seen.has(post.url));
+    if (fresh.length === 0) break;
+    for (const post of fresh) {
+      seen.add(post.url);
+      posts.push(post);
     }
-    logger.info(`選手ブログカテゴリ: id=${category.id} count=${category.count}`);
-    while (true) {
-      const url = `${BASE_URL}/posts?categories=${category.id}&per_page=${perPage}&page=${page}&_fields=title,link,date`;
-      const res = await wpApiFetch(url);
-      const posts = (await res.json()) as WpBlogPost[];
-      if (posts.length === 0) break;
-      for (const p of posts) {
-        const title = decodeEntities(p.title.rendered);
-        const m = title.match(/#(\d+)\s*([　-鿿豈-﫿\u{20000}-\u{2FA1F}A-Za-zぁ-ん゠-ヿ]+(?:\s[　-鿿豈-﫿\u{20000}-\u{2FA1F}A-Za-zぁ-ん゠-ヿ]+)*)?/u);
-        if (!m) continue;
-        entries.push({
-          number: Number(m[1]),
-          name: m[2]?.replace(/\s+/g, "") ?? null,
-          post: { title, url: p.link, date: p.date.slice(0, 10) },
-        });
-      }
-      const totalPages = Number(res.headers.get("x-wp-totalpages") ?? "1");
-      if (page >= totalPages) break;
-      page++;
-    }
-  } catch (e) {
-    logger.warn(`選手ブログ取得失敗（WP API）: ${e instanceof Error ? e.message.slice(0, 120) : e}`);
+    lastPage = page;
   }
+  const entries = toPlayerBlogEntries(posts);
+  logger.info(`選手ブログ: ${lastPage}ページから${posts.length}記事（背番号付き${entries.length}件）`);
   return entries;
 }
+
 
 function decodeEntities(s: string): string {
   return s.replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
     .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)))
     .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"');
+}
+
+/** 画像URLの実在確認。派生サイズの画像を採用してよいかの判定に使う。 */
+export async function imageExists(url: string): Promise<boolean> {
+  try {
+    const res = await fetch(url, {
+      method: "HEAD",
+      signal: AbortSignal.timeout(10_000),
+      headers: WP_HEADERS,
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
 }

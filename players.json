@@ -1,31 +1,31 @@
 {
-  "generatedAt": "2026-09-03T13:12:47Z",
+  "generatedAt": "2026-09-21T15:56:18.162Z",
   "season": "2026",
   "players": [
     {
-      "id": 25405,
+      "id": 133,
       "number": 3,
       "position": null,
       "nameJa": "澁澤光",
       "nameEn": "SHIBUSAWA HIKARU",
       "nickname": "ひか",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/澁澤＿笑顔-e1774849557904-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/澁澤＿笑顔-e1774849557904-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/澁澤＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/澁澤＿笑顔-e1774849557904-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/07/tanabe-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/07/tanabe-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/07/tanabe.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/07/tanabe.jpg"
       },
       "profile": {
         "birthdate": "2000年3月3日",
         "hometown": "埼玉県",
         "height": "168cm",
-        "bloodType": "O型",
+        "bloodType": "O 型",
         "career": "常盤木学園高等学校 – 東洋大学 – 大宮アルディージャVENTUS – バニーズ群馬FCホワイトスター – Lion City Sailors FC"
       },
       "personal": [
         {
           "label": "サッカー歴",
-          "value": "17年"
+          "value": "17 年"
         },
         {
           "label": "サッカーを始めたきっかけ",
@@ -76,26 +76,26 @@
           "value": "昇格しましょう！応援よろしくお願いします！"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25405/",
+      "sourceUrl": "https://anclas.jp/player/shibusawa-hikaru/",
       "blogPosts": [
         {
           "title": "私のイチオシ！🍚 #3 澁澤光",
-          "url": "https://anclas.jp/news/2026/08/20/post-27976/",
+          "url": "https://anclas.jp/player/blog/post-27976/",
           "date": "2026-08-20"
         },
         {
           "title": "初韓国🇰🇷 #3 澁澤光",
-          "url": "https://anclas.jp/news/2026/06/23/post-27160/",
+          "url": "https://anclas.jp/player/blog/post-27160/",
           "date": "2026-06-23"
         },
         {
           "title": "ゴーゴーライジング！！ #3澁澤光",
-          "url": "https://anclas.jp/news/2026/04/21/post-26017/",
+          "url": "https://anclas.jp/player/blog/post-26017/",
           "date": "2026-04-21"
         },
         {
           "title": "初めまして！ #3 澁澤光",
-          "url": "https://anclas.jp/news/2026/02/20/post-25541/",
+          "url": "https://anclas.jp/player/blog/post-25541/",
           "date": "2026-02-20"
         }
       ],
@@ -105,29 +105,29 @@
       "role": null
     },
     {
-      "id": 25403,
+      "id": 135,
       "number": 5,
       "position": null,
       "nameJa": "大河内友貴",
       "nameEn": "OKOUCHI YUKI",
       "nickname": "ゆき、ゆきちゃん",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/大河内＿笑顔-e1774849471840-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/大河内＿笑顔-e1774849471840-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/大河内＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/大河内＿笑顔-e1774849471840-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/07/大河内＿笑顔-e1774849471840-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/07/大河内＿笑顔-e1774849471840-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/07/大河内＿笑顔-e1774849471840-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/07/大河内＿笑顔-e1774849471840-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2000年9月15日",
         "hometown": "北海道",
         "height": "161cm",
         "bloodType": "AB型",
-        "career": "常盤木学園高等学校 – 長野パルセイロレディース – リリーウルフ.F石川 – VONDS市原FCレディース – 静岡SSUボニータ"
+        "career": "常盤木学園高等学校 – 長野パルセイロレディース – リリーウルフ.F石川 – VONDS 市原 FC レディース – 静岡 SSU ボニータ"
       },
       "personal": [
         {
           "label": "サッカー歴",
-          "value": "19年"
+          "value": "19 年"
         },
         {
           "label": "サッカーを始めたきっかけ",
@@ -178,26 +178,26 @@
           "value": "後悔させないのでぜひ会場に来て応援してください！！待ってまーす！"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25403/",
+      "sourceUrl": "https://anclas.jp/player/%e5%a4%a7%e6%b2%b3%e5%86%85%e5%8f%8b%e8%b2%b4/",
       "blogPosts": [
         {
-          "title": "おすすめ朝活　#5大河内友貴",
-          "url": "https://anclas.jp/news/2026/08/25/post-27988/",
+          "title": "おすすめ朝活 #5大河内友貴",
+          "url": "https://anclas.jp/player/blog/post-27988/",
           "date": "2026-08-25"
         },
         {
-          "title": "犬🐶いぬ🐶イヌ🐶　#5 大河内友貴",
-          "url": "https://anclas.jp/news/2026/06/26/post-27186/",
+          "title": "犬🐶いぬ🐶イヌ🐶 #5 大河内友貴",
+          "url": "https://anclas.jp/player/blog/post-27186/",
           "date": "2026-06-26"
         },
         {
-          "title": "リカバリータイム  #5 大河内友貴",
-          "url": "https://anclas.jp/news/2026/04/24/post-26035/",
+          "title": "リカバリータイム #5 大河内友貴",
+          "url": "https://anclas.jp/player/blog/post-26035/",
           "date": "2026-04-24"
         },
         {
           "title": "バレンタイン❤️ #5 大河内友貴",
-          "url": "https://anclas.jp/news/2026/02/18/post-25524/",
+          "url": "https://anclas.jp/player/blog/post-25524/",
           "date": "2026-02-18"
         }
       ],
@@ -205,17 +205,17 @@
       "role": "captain"
     },
     {
-      "id": 25369,
+      "id": 137,
       "number": 6,
       "position": null,
       "nameJa": "森和奏",
       "nameEn": "MORI WAKANA",
       "nickname": "わかな",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/森＿笑顔-e1774848088978-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/森＿笑顔-e1774848088978-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/森＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/森＿笑顔-e1774848088978-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/07/森＿笑顔-e1774848088978-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/07/森＿笑顔-e1774848088978-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/07/森＿笑顔-e1774848088978-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/07/森＿笑顔-e1774848088978-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2004年9月3日",
@@ -239,7 +239,7 @@
         },
         {
           "label": "趣味、ハマってること",
-          "value": "YouTubeみたりネトフリ見たり工作したり、基本すぐハマってすぐ飽きます。"
+          "value": "YouTube みたりネトフリ見たり工作したり、基本すぐハマってすぐ飽きます。"
         },
         {
           "label": "好きな食べ物",
@@ -278,21 +278,26 @@
           "value": "今シーズンも熱い応援よろしくお願いします！"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25369/",
+      "sourceUrl": "https://anclas.jp/player/%e6%a3%ae%e5%92%8c%e5%a5%8f/",
       "blogPosts": [
         {
-          "title": "最近気に入ったあれこれ　#6森和奏",
-          "url": "https://anclas.jp/news/2026/06/30/post-27393/",
+          "title": "なつ #6森和奏",
+          "url": "https://anclas.jp/player/blog/%e3%81%aa%e3%81%a4%e3%80%806%e6%a3%ae%e5%92%8c%e5%a5%8f/",
+          "date": "2026-09-02"
+        },
+        {
+          "title": "最近気に入ったあれこれ #6森和奏",
+          "url": "https://anclas.jp/player/blog/post-27393/",
           "date": "2026-06-30"
         },
         {
-          "title": "春を満喫  #6森和奏",
-          "url": "https://anclas.jp/news/2026/04/28/post-26078/",
+          "title": "春を満喫 #6森和奏",
+          "url": "https://anclas.jp/player/blog/post-26078/",
           "date": "2026-04-28"
         },
         {
-          "title": "初詣　#6森和奏",
-          "url": "https://anclas.jp/news/2026/02/13/post-25457/",
+          "title": "初詣 #6森和奏",
+          "url": "https://anclas.jp/player/blog/post-25457/",
           "date": "2026-02-13"
         }
       ],
@@ -300,17 +305,17 @@
       "role": null
     },
     {
-      "id": 25410,
+      "id": 139,
       "number": 7,
       "position": null,
       "nameJa": "杉浦華穂",
       "nameEn": "SUGIURA KAHO",
       "nickname": "かほ",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/杉浦＿笑顔-e1774849177922-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/杉浦＿笑顔-e1774849177922-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/杉浦＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/杉浦＿笑顔-e1774849177922-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/07/杉浦＿笑顔-e1774849177922-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/07/杉浦＿笑顔-e1774849177922-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/07/杉浦＿笑顔-e1774849177922-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/07/杉浦＿笑顔-e1774849177922-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2001年3月15日",
@@ -373,21 +378,26 @@
           "value": "皆さんの応援を力に変えて、最後まで戦い抜きます。共に闘いましょう！"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25410/",
+      "sourceUrl": "https://anclas.jp/player/sugiura-kaho/",
       "blogPosts": [
         {
+          "title": "最近のオタ活🫧 #7 杉浦華穂",
+          "url": "https://anclas.jp/player/blog/%e6%9c%80%e8%bf%91%e3%81%ae%e3%82%aa%e3%82%bf%e6%b4%bb%f0%9f%ab%a7-7-%e6%9d%89%e6%b5%a6%e8%8f%af%e7%a9%82/",
+          "date": "2026-09-04"
+        },
+        {
           "title": "手術を終えて🦵🏼❤️‍🩹 #7 杉浦華穂",
-          "url": "https://anclas.jp/news/2026/07/03/post-27406/",
+          "url": "https://anclas.jp/player/blog/post-27406/",
           "date": "2026-07-03"
         },
         {
           "title": "トモコレ始めました🌼 #7 杉浦華穂",
-          "url": "https://anclas.jp/news/2026/05/04/post-26096/",
+          "url": "https://anclas.jp/player/blog/post-26096/",
           "date": "2026-05-04"
         },
         {
           "title": "カフェ探索隊☕️ #7 杉浦華穂",
-          "url": "https://anclas.jp/news/2026/02/25/post-25547/",
+          "url": "https://anclas.jp/player/blog/post-25547/",
           "date": "2026-02-25"
         }
       ],
@@ -395,17 +405,17 @@
       "role": null
     },
     {
-      "id": 25399,
+      "id": 141,
       "number": 8,
       "position": null,
       "nameJa": "野沢真由",
       "nameEn": "NOZAWA MAYU",
       "nickname": "まゆ",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/野沢＿笑顔-e1774849346562-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/野沢＿笑顔-e1774849346562-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/野沢＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/野沢＿笑顔-e1774849346562-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/07/野沢＿笑顔-e1774849346562-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/07/野沢＿笑顔-e1774849346562-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/07/野沢＿笑顔-e1774849346562-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/07/野沢＿笑顔-e1774849346562-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2000年12月17日",
@@ -468,21 +478,26 @@
           "value": "チームの勝利に貢献できるように頑張ります。2026シーズンも応援よろしくお願いいたします。"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25399/",
+      "sourceUrl": "https://anclas.jp/player/nozawa-mayu/",
       "blogPosts": [
         {
-          "title": "蕎麦　#8野沢真由",
-          "url": "https://anclas.jp/news/2026/07/07/post-27426/",
+          "title": "私の夏休み #8野沢真由",
+          "url": "https://anclas.jp/player/blog/qq/",
+          "date": "2026-09-07"
+        },
+        {
+          "title": "蕎麦 #8野沢真由",
+          "url": "https://anclas.jp/player/blog/post-27426/",
           "date": "2026-07-07"
         },
         {
-          "title": "私のパワースポット　#8野沢真由",
-          "url": "https://anclas.jp/news/2026/05/06/post-26229/",
+          "title": "私のパワースポット #8野沢真由",
+          "url": "https://anclas.jp/player/blog/post-26229/",
           "date": "2026-05-06"
         },
         {
-          "title": "ティッシュ　#8野沢真由",
-          "url": "https://anclas.jp/news/2026/03/03/post-25569/",
+          "title": "ティッシュ #8野沢真由",
+          "url": "https://anclas.jp/player/blog/post-25569/",
           "date": "2026-03-03"
         }
       ],
@@ -490,17 +505,17 @@
       "role": null
     },
     {
-      "id": 25376,
+      "id": 144,
       "number": 9,
       "position": null,
       "nameJa": "田邉いちご",
       "nameEn": "TANABE ICHIGO",
       "nickname": "ごん、ぶー、ごいち",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/田邉＿笑顔-e1774848689912-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/田邉＿笑顔-e1774848689912-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/田邉＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/田邉＿笑顔-e1774848689912-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/07/田邉＿笑顔-e1774848689912-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/07/田邉＿笑顔-e1774848689912-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/07/田邉＿笑顔-e1774848689912-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/07/田邉＿笑顔-e1774848689912-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2003年12月28日",
@@ -563,21 +578,26 @@
           "value": "いつも熱い応援ありがとうございます！！"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25376/",
+      "sourceUrl": "https://anclas.jp/player/tanabe-ichigo/",
       "blogPosts": [
         {
+          "title": "リラックス休日DAY🌿 #9田邉いちご",
+          "url": "https://anclas.jp/player/blog/20260909/",
+          "date": "2026-09-09"
+        },
+        {
           "title": "八百屋のお野菜紹介🍓 #9田邉いちご",
-          "url": "https://anclas.jp/news/2026/07/10/post-27476/",
+          "url": "https://anclas.jp/player/blog/post-27476/",
           "date": "2026-07-10"
         },
         {
           "title": "ショッピング🛍️ #9田邉いちご",
-          "url": "https://anclas.jp/news/2026/05/08/post-26237/",
+          "url": "https://anclas.jp/player/blog/post-26237/",
           "date": "2026-05-08"
         },
         {
-          "title": "in東京🗼　#9田邉いちご",
-          "url": "https://anclas.jp/news/2026/03/06/post-25573/",
+          "title": "in東京🗼 #9田邉いちご",
+          "url": "https://anclas.jp/player/blog/post-25573/",
           "date": "2026-03-06"
         }
       ],
@@ -585,17 +605,17 @@
       "role": null
     },
     {
-      "id": 25391,
+      "id": 147,
       "number": 10,
       "position": null,
       "nameJa": "平坂咲希",
       "nameEn": "HIRASAKA SAKI",
       "nickname": "さち",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/平坂＿笑顔-e1774849117305-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/平坂＿笑顔-e1774849117305-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/平坂＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/平坂＿笑顔-e1774849117305-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/07/平坂＿笑顔-e1774849117305-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/07/平坂＿笑顔-e1774849117305-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/07/平坂＿笑顔-e1774849117305-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/07/平坂＿笑顔-e1774849117305-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2002年1月27日",
@@ -623,7 +643,7 @@
         },
         {
           "label": "好きな食べ物",
-          "value": "ハンバーグ・お寿司・チョコレート"
+          "value": "ハンバーグ・お寿司🍣・チョコレート"
         },
         {
           "label": "好きなアニメ・キャラクター",
@@ -639,7 +659,7 @@
         },
         {
           "label": "試合前／試合前日のルーティン",
-          "value": "お米を食べる"
+          "value": "お米を食べる🍙"
         },
         {
           "label": "パワーソング(歌手名／曲名)",
@@ -658,21 +678,26 @@
           "value": "今シーズンも精一杯頑張ります‼︎"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25391/",
+      "sourceUrl": "https://anclas.jp/player/%e5%b9%b3%e5%9d%82%e5%92%b2%e5%b8%8c/",
       "blogPosts": [
         {
-          "title": "🐙🇰🇷🐙　#10 平坂咲希",
-          "url": "https://anclas.jp/news/2026/07/14/post-27824/",
+          "title": "👴🎂🎉 #10 平坂咲希",
+          "url": "https://anclas.jp/player/blog/916/",
+          "date": "2026-09-16"
+        },
+        {
+          "title": "🐙🇰🇷🐙 #10 平坂咲希",
+          "url": "https://anclas.jp/player/blog/post-27824/",
           "date": "2026-07-14"
         },
         {
-          "title": "🤩💛🤩　#10 平坂咲希",
-          "url": "https://anclas.jp/news/2026/05/12/post-26254/",
+          "title": "🤩💛🤩 #10 平坂咲希",
+          "url": "https://anclas.jp/player/blog/post-26254/",
           "date": "2026-05-12"
         },
         {
-          "title": "😍🤍😍　#10 平坂咲希",
-          "url": "https://anclas.jp/news/2026/03/10/post-25578/",
+          "title": "😍🤍😍 #10 平坂咲希",
+          "url": "https://anclas.jp/player/blog/post-25578/",
           "date": "2026-03-10"
         }
       ],
@@ -680,17 +705,17 @@
       "role": null
     },
     {
-      "id": 25383,
+      "id": 302,
       "number": 11,
       "position": null,
       "nameJa": "嘉数クレア姫麗",
       "nameEn": "KAKAZU CLAIRE KIRARA",
       "nickname": "くーちゃん、くー、くれ",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/嘉数＿笑顔-e1774848848483-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/嘉数＿笑顔-e1774848848483-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/嘉数＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/嘉数＿笑顔-e1774848848483-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/08/11-クレア-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/08/11-クレア-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/08/11-クレア.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/08/11-クレア.jpg"
       },
       "profile": {
         "birthdate": "2003年3月15日",
@@ -753,46 +778,51 @@
           "value": "いつも福岡J・アンクラスの応援ありがとうございます。今年は去年よりもさらにレベルアップした姿をピッチで表現できたらと思います。引き続き熱い応援よろしくお願いします。"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25383/",
+      "sourceUrl": "https://anclas.jp/player/%e5%98%89%e6%95%b0%e3%82%af%e3%83%ac%e3%82%a2%e5%a7%ab%e9%ba%97/",
       "blogPosts": [
         {
+          "title": "8月の思い出 #11嘉数クレア姫麗",
+          "url": "https://anclas.jp/player/blog/918/",
+          "date": "2026-09-18"
+        },
+        {
           "title": "おもちゃ好きによるおもちゃ紹介 #11嘉数クレア姫麗",
-          "url": "https://anclas.jp/news/2026/07/21/post-27817/",
+          "url": "https://anclas.jp/player/blog/post-27817/",
           "date": "2026-07-21"
         },
         {
           "title": "GW🤘🏻 #11嘉数クレア姫麗",
-          "url": "https://anclas.jp/news/2026/05/14/post-26258/",
+          "url": "https://anclas.jp/player/blog/post-26258/",
           "date": "2026-05-14"
         },
         {
           "title": "「今年に入って初めて花粉が散らかり始めた日」 #11嘉数クレア姫麗",
-          "url": "https://anclas.jp/news/2026/03/13/post-25625/",
+          "url": "https://anclas.jp/player/blog/post-25625/",
           "date": "2026-03-13"
         },
         {
           "title": "「おしゃカフェに挑戦」 #11嘉数クレア姫麗",
-          "url": "https://anclas.jp/news/2025/11/27/post-23633/",
+          "url": "https://anclas.jp/player/blog/post-23633/",
           "date": "2025-11-27"
         },
         {
           "title": "「ちょいと遠出」 #11嘉数クレア姫麗",
-          "url": "https://anclas.jp/news/2025/09/18/post-21796/",
+          "url": "https://anclas.jp/player/blog/post-21796/",
           "date": "2025-09-18"
         },
         {
           "title": "「定食屋さん」 #11嘉数クレア姫麗",
-          "url": "https://anclas.jp/news/2025/07/22/post-21391/",
+          "url": "https://anclas.jp/player/blog/post-21391/",
           "date": "2025-07-22"
         },
         {
           "title": "「大先輩とパン屋さん」 #11嘉数クレア姫麗",
-          "url": "https://anclas.jp/news/2025/05/27/post-20699/",
+          "url": "https://anclas.jp/player/blog/post-20699/",
           "date": "2025-05-27"
         },
         {
-          "title": "「景色」　#11 嘉数クレア姫麗",
-          "url": "https://anclas.jp/news/2025/04/10/post-19881/",
+          "title": "「景色」 #11 嘉数クレア姫麗",
+          "url": "https://anclas.jp/player/blog/post-19881/",
           "date": "2025-04-10"
         }
       ],
@@ -800,17 +830,17 @@
       "role": null
     },
     {
-      "id": 25401,
+      "id": 313,
       "number": 13,
       "position": null,
       "nameJa": "原日樺",
       "nameEn": "HARA NICHIKA",
       "nickname": "にちか",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/原＿笑顔-e1774849408622-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/原＿笑顔-e1774849408622-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/原＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/原＿笑顔-e1774849408622-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/08/13-原＿笑顔-e1774849408622-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/08/13-原＿笑顔-e1774849408622-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/08/13-原＿笑顔-e1774849408622-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/08/13-原＿笑顔-e1774849408622-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2000年8月3日",
@@ -873,46 +903,46 @@
           "value": "どんな時も背中を押してくれる皆さんの応援が力になっています。 今シーズンも共に戦いましょう‼︎"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25401/",
+      "sourceUrl": "https://anclas.jp/player/%e5%8e%9f%e6%97%a5%e6%a8%ba/",
       "blogPosts": [
         {
           "title": "前半戦を終えて✊🏻 #13原日樺",
-          "url": "https://anclas.jp/news/2026/07/23/post-27844/",
+          "url": "https://anclas.jp/player/blog/post-27844/",
           "date": "2026-07-23"
         },
         {
           "title": "今年挑戦したいことが叶いました🪄 #13原日樺",
-          "url": "https://anclas.jp/news/2026/05/19/post-26352/",
+          "url": "https://anclas.jp/player/blog/post-26352/",
           "date": "2026-05-19"
         },
         {
           "title": "オフシーズン🍁 #13原日樺",
-          "url": "https://anclas.jp/news/2026/03/17/post-25663/",
+          "url": "https://anclas.jp/player/blog/post-25663/",
           "date": "2026-03-17"
         },
         {
           "title": "命の燃やし方❤️‍🔥 #13原日樺",
-          "url": "https://anclas.jp/news/2025/10/16/post-22615/",
+          "url": "https://anclas.jp/player/blog/post-22615/",
           "date": "2025-10-16"
         },
         {
-          "title": "夏チャージ🌻　#13原日樺",
-          "url": "https://anclas.jp/news/2025/08/19/post-21525/",
+          "title": "夏チャージ🌻 #13原日樺",
+          "url": "https://anclas.jp/player/blog/post-21525/",
           "date": "2025-08-19"
         },
         {
-          "title": "オハナ🌺　#13原日樺",
-          "url": "https://anclas.jp/news/2025/06/19/post-21003/",
+          "title": "オハナ🌺 #13原日樺",
+          "url": "https://anclas.jp/player/blog/post-21003/",
           "date": "2025-06-19"
         },
         {
-          "title": "地元🏝️　#13原日樺",
-          "url": "https://anclas.jp/news/2025/04/23/post-20192/",
+          "title": "地元🏝️ #13原日樺",
+          "url": "https://anclas.jp/player/blog/post-20192/",
           "date": "2025-04-23"
         },
         {
-          "title": "初勝利🐝  #13 原日樺",
-          "url": "https://anclas.jp/news/2025/03/11/post-19520/",
+          "title": "初勝利🐝 #13 原日樺",
+          "url": "https://anclas.jp/player/blog/post-19520/",
           "date": "2025-03-11"
         }
       ],
@@ -920,17 +950,17 @@
       "role": "vice_captain"
     },
     {
-      "id": 25363,
+      "id": 314,
       "number": 14,
       "position": null,
       "nameJa": "宮脇ゆりあ",
       "nameEn": "MIYAWAKI YURIA",
       "nickname": "ゆり",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/宮脇＿笑顔-e1774847946357-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/宮脇＿笑顔-e1774847946357-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/宮脇＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/宮脇＿笑顔-e1774847946357-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/08/14-宮脇＿笑顔-e1774847946357-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/08/14-宮脇＿笑顔-e1774847946357-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/08/14-宮脇＿笑顔-e1774847946357-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/08/14-宮脇＿笑顔-e1774847946357-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2008年2月27日",
@@ -993,21 +1023,21 @@
           "value": "今シーズンから入団することが決まりました、宮脇ゆりあです！皆さんの声援を力に、勝利に貢献できるように頑張ります。応援よろしくお願いします！"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25363/",
+      "sourceUrl": "https://anclas.jp/player/%e5%ae%ae%e8%84%87%e3%82%86%e3%82%8a%e3%81%82/",
       "blogPosts": [
         {
           "title": "免許を取りました🔰🚗 #14 宮脇ゆりあ",
-          "url": "https://anclas.jp/news/2026/07/24/post-27859/",
+          "url": "https://anclas.jp/player/blog/post-27859/",
           "date": "2026-07-24"
         },
         {
           "title": "OFF😆🔌🔋 #14 宮脇ゆりあ",
-          "url": "https://anclas.jp/news/2026/05/21/post-26367/",
+          "url": "https://anclas.jp/player/blog/post-26367/",
           "date": "2026-05-21"
         },
         {
-          "title": "最年少ゆりあの初ブログ✨️　#14宮脇ゆりあ",
-          "url": "https://anclas.jp/news/2026/03/20/post-25700/",
+          "title": "最年少ゆりあの初ブログ✨️ #14宮脇ゆりあ",
+          "url": "https://anclas.jp/player/blog/post-25700/",
           "date": "2026-03-20"
         }
       ],
@@ -1015,17 +1045,17 @@
       "role": null
     },
     {
-      "id": 25380,
+      "id": 315,
       "number": 15,
       "position": null,
       "nameJa": "田中花奈",
       "nameEn": "TANAKA HANA",
       "nickname": "はな",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/田中＿笑顔-e1774848775626-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/田中＿笑顔-e1774848775626-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/田中＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/田中＿笑顔-e1774848775626-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/08/15-田中＿笑顔-e1774848775626-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/08/15-田中＿笑顔-e1774848775626-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/08/15-田中＿笑顔-e1774848775626-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/08/15-田中＿笑顔-e1774848775626-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2003年4月1日",
@@ -1088,21 +1118,21 @@
           "value": "応援よろしくお願いします。"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25380/",
+      "sourceUrl": "https://anclas.jp/player/%e7%94%b0%e4%b8%ad%e8%8a%b1%e5%a5%88/",
       "blogPosts": [
         {
-          "title": "Blue Jeans 古いスニーカー  #15田中花奈",
-          "url": "https://anclas.jp/news/2026/07/28/post-27866/",
+          "title": "Blue Jeans 古いスニーカー #15田中花奈",
+          "url": "https://anclas.jp/player/blog/post-27866/",
           "date": "2026-07-28"
         },
         {
-          "title": "類は友を呼ぶオフ　#15田中花奈",
-          "url": "https://anclas.jp/news/2026/05/27/post-26522/",
+          "title": "類は友を呼ぶオフ #15田中花奈",
+          "url": "https://anclas.jp/player/blog/post-26522/",
           "date": "2026-05-27"
         },
         {
-          "title": "田中 花奈（HANA）　#15田中花奈",
-          "url": "https://anclas.jp/news/2026/03/24/post-25751/",
+          "title": "田中 花奈（HANA） #15田中花奈",
+          "url": "https://anclas.jp/player/blog/post-25751/",
           "date": "2026-03-24"
         }
       ],
@@ -1110,17 +1140,17 @@
       "role": null
     },
     {
-      "id": 25387,
+      "id": 316,
       "number": 16,
       "position": null,
       "nameJa": "端山新",
       "nameEn": "HAYAMA ARATA",
       "nickname": "あらた",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/端山＿笑顔-e1774849001765-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/端山＿笑顔-e1774849001765-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/端山＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/端山＿笑顔-e1774849001765-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/08/16-端山＿笑顔-e1774849001765-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/08/16-端山＿笑顔-e1774849001765-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/08/16-端山＿笑顔-e1774849001765-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/08/16-端山＿笑顔-e1774849001765-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2002年1月17日",
@@ -1183,21 +1213,21 @@
           "value": "チームの為に全力を尽くすので、今シーズンも応援の程宜しくお願いします！"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25387/",
+      "sourceUrl": "https://anclas.jp/player/%e7%ab%af%e5%b1%b1%e6%96%b0/",
       "blogPosts": [
         {
-          "title": "ハッピーデイ⑤  #16端山新",
-          "url": "https://anclas.jp/news/2026/07/31/post-27875/",
+          "title": "ハッピーデイ⑤ #16端山新",
+          "url": "https://anclas.jp/player/blog/post-27875/",
           "date": "2026-07-31"
         },
         {
           "title": "クルクルパーマ #16端山新",
-          "url": "https://anclas.jp/news/2026/05/29/post-26566/",
+          "url": "https://anclas.jp/player/blog/post-26566/",
           "date": "2026-05-29"
         },
         {
           "title": "ハッピーデイ④ #16端山新",
-          "url": "https://anclas.jp/news/2026/03/27/post-25774/",
+          "url": "https://anclas.jp/player/blog/post-25774/",
           "date": "2026-03-27"
         }
       ],
@@ -1205,17 +1235,17 @@
       "role": "vice_captain"
     },
     {
-      "id": 25385,
+      "id": 149,
       "number": 17,
       "position": null,
       "nameJa": "釜坂慧",
       "nameEn": "KAMASAKA KEI",
       "nickname": "けい",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/釜坂＿笑顔-e1774848935867-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/釜坂＿笑顔-e1774848935867-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/釜坂＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/釜坂＿笑顔-e1774848935867-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/07/釜坂＿笑顔-e1774848935867-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/07/釜坂＿笑顔-e1774848935867-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/07/釜坂＿笑顔-e1774848935867-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/07/釜坂＿笑顔-e1774848935867-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2002年3月7日",
@@ -1239,7 +1269,7 @@
         },
         {
           "label": "趣味、ハマってること",
-          "value": "推し活勺"
+          "value": "推し活🩷"
         },
         {
           "label": "好きな食べ物",
@@ -1278,21 +1308,21 @@
           "value": "今年も熱い応援よろしくお願いします！！"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25385/",
+      "sourceUrl": "https://anclas.jp/player/kamasaka-kei/",
       "blogPosts": [
         {
-          "title": "色々あった7月　#17釜坂慧",
-          "url": "https://anclas.jp/news/2026/08/04/post-27883/",
+          "title": "色々あった7月 #17釜坂慧",
+          "url": "https://anclas.jp/player/blog/post-27883/",
           "date": "2026-08-04"
         },
         {
-          "title": "私の家族　#17釜坂慧",
-          "url": "https://anclas.jp/news/2026/06/02/post-26736/",
+          "title": "私の家族 #17釜坂慧",
+          "url": "https://anclas.jp/player/blog/post-26736/",
           "date": "2026-06-02"
         },
         {
           "title": "「私の推し②」#17釜坂慧",
-          "url": "https://anclas.jp/news/2026/03/31/post-25836/",
+          "url": "https://anclas.jp/player/blog/post-25836/",
           "date": "2026-03-31"
         }
       ],
@@ -1300,17 +1330,17 @@
       "role": null
     },
     {
-      "id": 25389,
+      "id": 317,
       "number": 18,
       "position": null,
       "nameJa": "玉城薪瀬",
       "nameEn": "TAMASHIRO MAKISE",
       "nickname": "まきせ",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/玉城＿笑顔-e1774849060594-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/玉城＿笑顔-e1774849060594-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/玉城＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/玉城＿笑顔-e1774849060594-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/08/18-玉城＿笑顔-e1774849060594-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/08/18-玉城＿笑顔-e1774849060594-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/08/18-玉城＿笑顔-e1774849060594-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/08/18-玉城＿笑顔-e1774849060594-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2002年2月6日",
@@ -1373,46 +1403,46 @@
           "value": "皆さんと共に頑張るので引き続き熱い応援よろしくお願いします！！"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25389/",
+      "sourceUrl": "https://anclas.jp/player/%e7%8e%89%e5%9f%8e%e8%96%aa%e7%80%ac/",
       "blogPosts": [
         {
-          "title": "夏だね〜🍉⚾️　#18玉城薪瀬",
-          "url": "https://anclas.jp/news/2026/08/06/post-27908/",
+          "title": "夏だね〜🍉⚾️ #18玉城薪瀬",
+          "url": "https://anclas.jp/player/blog/post-27908/",
           "date": "2026-08-06"
         },
         {
-          "title": "最近の出来事⚾️　#18玉城薪瀬",
-          "url": "https://anclas.jp/news/2026/06/05/post-26746/",
+          "title": "最近の出来事⚾️ #18玉城薪瀬",
+          "url": "https://anclas.jp/player/blog/post-26746/",
           "date": "2026-06-05"
         },
         {
           "title": "🐒紹介✨ #18玉城薪瀬",
-          "url": "https://anclas.jp/news/2026/04/03/post-25875/",
+          "url": "https://anclas.jp/player/blog/post-25875/",
           "date": "2026-04-03"
         },
         {
           "title": "最近のいろいろ #18玉城薪瀬",
-          "url": "https://anclas.jp/news/2025/10/28/post-23031/",
+          "url": "https://anclas.jp/player/blog/post-23031/",
           "date": "2025-10-28"
         },
         {
-          "title": "BBQ🥩　#18玉城薪瀬",
-          "url": "https://anclas.jp/news/2025/08/21/post-21552/",
+          "title": "BBQ🥩 #18玉城薪瀬",
+          "url": "https://anclas.jp/player/blog/post-21552/",
           "date": "2025-08-21"
         },
         {
-          "title": "地元チームと試合🐣　#18玉城薪瀬",
-          "url": "https://anclas.jp/news/2025/06/24/post-21024/",
+          "title": "地元チームと試合🐣 #18玉城薪瀬",
+          "url": "https://anclas.jp/player/blog/post-21024/",
           "date": "2025-06-24"
         },
         {
-          "title": "リーグ戦開幕🐣　#18 玉城薪瀬",
-          "url": "https://anclas.jp/news/2025/04/29/post-20365/",
+          "title": "リーグ戦開幕🐣 #18 玉城薪瀬",
+          "url": "https://anclas.jp/player/blog/post-20365/",
           "date": "2025-04-29"
         },
         {
-          "title": "野口選手の旅立ち✈️🐣　　#18 玉城薪瀬",
-          "url": "https://anclas.jp/news/2025/03/13/post-19624/",
+          "title": "野口選手の旅立ち✈️🐣 #18 玉城薪瀬",
+          "url": "https://anclas.jp/player/blog/post-19624/",
           "date": "2025-03-13"
         }
       ],
@@ -1420,17 +1450,17 @@
       "role": null
     },
     {
-      "id": 25374,
+      "id": 318,
       "number": 20,
       "position": null,
       "nameJa": "田川葵",
       "nameEn": "TAGAWA AOI",
       "nickname": "あおい",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/田川＿笑顔-e1774848612433-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/田川＿笑顔-e1774848612433-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/田川＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/田川＿笑顔-e1774848612433-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/08/20-田川＿笑顔-e1774848612433-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/08/20-田川＿笑顔-e1774848612433-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/08/20-田川＿笑顔-e1774848612433-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/08/20-田川＿笑顔-e1774848612433-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "2003年5月8日",
@@ -1493,21 +1523,21 @@
           "value": "チームの勝利のために一生懸命、そしてがむしゃらに頑張ります。応援よろしくお願いします。"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25374/",
+      "sourceUrl": "https://anclas.jp/player/%e7%94%b0%e5%b7%9d%e8%91%b5/",
       "blogPosts": [
         {
-          "title": "やっと開幕！　#20 田川葵",
-          "url": "https://anclas.jp/news/2026/08/11/post-27918/",
+          "title": "やっと開幕！ #20 田川葵",
+          "url": "https://anclas.jp/player/blog/post-27918/",
           "date": "2026-08-11"
         },
         {
-          "title": "ハマっていること　#20 田川葵",
-          "url": "https://anclas.jp/news/2026/06/09/post-26978/",
+          "title": "ハマっていること #20 田川葵",
+          "url": "https://anclas.jp/player/blog/post-26978/",
           "date": "2026-06-09"
         },
         {
-          "title": "私とは💭　#20 田川葵",
-          "url": "https://anclas.jp/news/2026/04/07/post-25886/",
+          "title": "私とは💭 #20 田川葵",
+          "url": "https://anclas.jp/player/blog/post-25886/",
           "date": "2026-04-07"
         }
       ],
@@ -1515,15 +1545,15 @@
       "role": null
     },
     {
-      "id": 27930,
+      "id": 28736,
       "number": 21,
       "position": "GK",
       "nameJa": "熊澤果歩",
       "nameEn": "KUMAZAWA KAHO",
       "nickname": "くま",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/09/名称未設定のデザイン-5.png",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/09/名称未設定のデザイン-5.png",
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/09/名称未設定のデザイン-5-150x150.png",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/09/名称未設定のデザイン-5-300x300.png",
         "large": "https://anclas.jp/wp-content/uploads/2026/09/名称未設定のデザイン-5.png",
         "full": "https://anclas.jp/wp-content/uploads/2026/09/名称未設定のデザイン-5.png"
       },
@@ -1589,22 +1619,28 @@
         }
       ],
       "sourceUrl": "https://anclas.jp/player/%e7%86%8a%e6%be%a4%e6%9e%9c%e6%ad%a9/",
-      "blogPosts": [],
+      "blogPosts": [
+        {
+          "title": "⭐️最近の思い出⭐️ #21熊澤果歩",
+          "url": "https://anclas.jp/player/blog/29014/",
+          "date": "2026-09-11"
+        }
+      ],
       "sns": {},
       "role": null
     },
     {
-      "id": 25408,
+      "id": 319,
       "number": 22,
       "position": null,
       "nameJa": "野田夏未",
       "nameEn": "NODA NATSUMI",
       "nickname": "なつ",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/野田＿笑顔-e1774849625191-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/野田＿笑顔-e1774849625191-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/野田＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/野田＿笑顔-e1774849625191-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/08/22-野田＿笑顔-e1774849625191-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/08/22-野田＿笑顔-e1774849625191-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/08/22-野田＿笑顔-e1774849625191-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/08/22-野田＿笑顔-e1774849625191-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "1999年7月6日",
@@ -1628,7 +1664,7 @@
         },
         {
           "label": "趣味、ハマってること",
-          "value": "アビスパ"
+          "value": "アビスパ🐝"
         },
         {
           "label": "好きな食べ物",
@@ -1667,46 +1703,46 @@
           "value": "いつも応援ありがとうございます！これからもよろしくお願いします！"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25408/",
+      "sourceUrl": "https://anclas.jp/player/%e9%87%8e%e7%94%b0%e5%a4%8f%e6%9c%aa/",
       "blogPosts": [
         {
           "title": "最高の誕生日プレゼント🎁#22 野田夏未",
-          "url": "https://anclas.jp/news/2026/08/14/post-27932/",
+          "url": "https://anclas.jp/player/blog/post-27932/",
           "date": "2026-08-14"
         },
         {
           "title": "おすすめのご飯屋さん🍚 #22 野田夏未",
-          "url": "https://anclas.jp/news/2026/06/16/post-27101/",
+          "url": "https://anclas.jp/player/blog/post-27101/",
           "date": "2026-06-16"
         },
         {
           "title": "開幕🔥🏟️ #22野田夏未",
-          "url": "https://anclas.jp/news/2026/04/14/post-25987/",
+          "url": "https://anclas.jp/player/blog/post-25987/",
           "date": "2026-04-14"
         },
         {
           "title": "最近嬉しかったこと🐵 #22野田夏未",
-          "url": "https://anclas.jp/news/2025/10/09/post-22496/",
+          "url": "https://anclas.jp/player/blog/post-22496/",
           "date": "2025-10-09"
         },
         {
-          "title": "念願の！🍜 　#22野田夏未",
-          "url": "https://anclas.jp/news/2025/08/12/post-21496/",
+          "title": "念願の！🍜 #22野田夏未",
+          "url": "https://anclas.jp/player/blog/post-21496/",
           "date": "2025-08-12"
         },
         {
-          "title": "最近のごはん🍚　#22野田夏未",
-          "url": "https://anclas.jp/news/2025/06/12/post-20968/",
+          "title": "最近のごはん🍚 #22野田夏未",
+          "url": "https://anclas.jp/player/blog/post-20968/",
           "date": "2025-06-12"
         },
         {
-          "title": "サッカー観戦🐝　#22野田夏未",
-          "url": "https://anclas.jp/news/2025/04/25/post-20210/",
+          "title": "サッカー観戦🐝 #22野田夏未",
+          "url": "https://anclas.jp/player/blog/post-20210/",
           "date": "2025-04-25"
         },
         {
-          "title": "とある日…🌅✈️ 📸　#22 野田夏未",
-          "url": "https://anclas.jp/news/2025/03/04/post-19494/",
+          "title": "とある日…🌅✈️ 📸 #22 野田夏未",
+          "url": "https://anclas.jp/player/blog/post-19494/",
           "date": "2025-03-04"
         }
       ],
@@ -1714,17 +1750,17 @@
       "role": null
     },
     {
-      "id": 25494,
+      "id": 320,
       "number": 23,
       "position": null,
       "nameJa": "北条あゆみ",
       "nameEn": "HOJO AYUMI",
       "nickname": "あゆみ、ぽち",
       "photo": {
-        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/03/北条＿笑顔-e1774849705979-1-150x150.jpg",
-        "medium": "https://anclas.jp/wp-content/uploads/2026/03/北条＿笑顔-e1774849705979-1-300x300.jpg",
-        "large": "https://anclas.jp/wp-content/uploads/2026/03/北条＿笑顔-683x1024.jpg",
-        "full": "https://anclas.jp/wp-content/uploads/2026/03/北条＿笑顔-e1774849705979-1.jpg"
+        "thumbnail": "https://anclas.jp/wp-content/uploads/2026/08/23-北条＿笑顔-e1774849705979-940x940-1-150x150.jpg",
+        "medium": "https://anclas.jp/wp-content/uploads/2026/08/23-北条＿笑顔-e1774849705979-940x940-1-300x300.jpg",
+        "large": "https://anclas.jp/wp-content/uploads/2026/08/23-北条＿笑顔-e1774849705979-940x940-1.jpg",
+        "full": "https://anclas.jp/wp-content/uploads/2026/08/23-北条＿笑顔-e1774849705979-940x940-1.jpg"
       },
       "profile": {
         "birthdate": "1998年3月30日",
@@ -1783,21 +1819,21 @@
           "value": "皆さんとたくさんの「嬉しい」や「楽しい」を共有出来るよう、ピッチ内外問わず頑張っていきます！ぜひ、気軽に試合を観に来てください！"
         }
       ],
-      "sourceUrl": "https://anclas.jp/news/2026/02/02/post-25494/",
+      "sourceUrl": "https://anclas.jp/player/%e5%8c%97%e6%9d%a1%e3%81%82%e3%82%86%e3%81%bf/",
       "blogPosts": [
         {
-          "title": "夏のにおい　#23北条あゆみ",
-          "url": "https://anclas.jp/news/2026/08/18/post-27969/",
+          "title": "夏のにおい #23北条あゆみ",
+          "url": "https://anclas.jp/player/blog/post-27969/",
           "date": "2026-08-18"
         },
         {
-          "title": "能登は優しや、土までも。　#23北条あゆみ",
-          "url": "https://anclas.jp/news/2026/06/19/post-27146/",
+          "title": "能登は優しや、土までも。 #23北条あゆみ",
+          "url": "https://anclas.jp/player/blog/post-27146/",
           "date": "2026-06-19"
         },
         {
-          "title": "猫の島　#23北条あゆみ",
-          "url": "https://anclas.jp/news/2026/04/17/post-25999/",
+          "title": "猫の島 #23北条あゆみ",
+          "url": "https://anclas.jp/player/blog/post-25999/",
           "date": "2026-04-17"
         }
       ],

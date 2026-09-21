@@ -11,7 +11,7 @@ const topFix = readFileSync(
 
 test("parsePartners: 実fixtureからパートナーを抽出（下限チェック）", () => {
   const partners = parsePartners(topFix);
-  // 現時点で85社。サイト更新で増減するため下限のみ検証して壊れにくくする。
+  // 現時点で89社（オフィシャルパートナー85＋雇用サポート4）。増減するため下限のみ見る。
   assert.ok(partners.length >= 50, `パートナー数 ${partners.length}`);
 
   // ロゴは全て anclas.jp の uploads を指す
@@ -22,6 +22,9 @@ test("parsePartners: 実fixtureからパートナーを抽出（下限チェッ�
   const linked = partners.filter((p) => p.url).length;
   assert.ok(linked > partners.length * 0.8, `リンクあり ${linked}/${partners.length}`);
 
+  // グループは必ず入る
+  for (const p of partners) assert.ok(p.group.length > 0, `${p.name} に group がある`);
+
   // 先頭は TRES（リンク・ロゴ・社名が取れている）
   const tres = partners.find((p) => p.logoUrl.endsWith("/TRES.png"));
   assert.ok(tres, "TRES のロゴが取れている");
@@ -29,17 +32,31 @@ test("parsePartners: 実fixtureからパートナーを抽出（下限チェッ�
   assert.equal(tres!.name, "株式会社トレス");
 });
 
-test("parsePartners: 雇用サポート企業を取り込まない", () => {
+test("parsePartners: グループ名を付けてサイトの並び順で返す", () => {
   const partners = parsePartners(topFix);
-  // SPONSOR セクションは「オフィシャルパートナー」と「雇用サポート企業」に分かれる。
-  // アプリが出すのは前者だけなので、後者のロゴが混ざってはいけない。
-  assert.ok(topFix.includes("雇用サポート企業"), "fixture に両グループがある");
-  for (const needle of ["ADAL", "志水ミート", "universal"]) {
-    assert.ok(
-      !partners.some((p) => new RegExp(needle, "i").test(`${p.name} ${p.logoUrl}`)),
-      `${needle} を含まない`,
-    );
+  const labels = [...new Set(partners.map((p) => p.group))];
+  assert.deepEqual(labels, ["オフィシャルパートナー", "雇用サポート企業"]);
+
+  const counts = labels.map((l) => partners.filter((p) => p.group === l).length);
+  assert.deepEqual(counts, [85, 4]);
+
+  // 雇用サポート企業をオフィシャルパートナーとして出さない。
+  for (const needle of ["アダル", "志水ミート", "Universal"]) {
+    const hit = partners.filter((p) => new RegExp(needle, "i").test(p.name));
+    assert.ok(hit.length > 0, `${needle} が候補にある`);
+    for (const p of hit) assert.equal(p.group, "雇用サポート企業");
   }
+});
+
+test("parsePartners: 両方の枠に載る会社は両方へ出す", () => {
+  const partners = parsePartners(topFix);
+  // スーパーレンタカーはサイト側で2つの枠に載っている。
+  // 重複除去はグループの中だけで行い、枠をまたいで落とさない。
+  const rental = partners.filter((p) => p.name.includes("スーパーレンタカー"));
+  assert.deepEqual(
+    rental.map((p) => p.group),
+    ["オフィシャルパートナー", "雇用サポート企業"],
+  );
 });
 
 test("parsePartners: 外部サイトが無いパートナーもロゴを残す", () => {
@@ -52,7 +69,7 @@ test("parsePartners: 外部サイトが無いパートナーもロゴを残す",
   assert.ok(!partners.some((p) => /anclas\.jp\/partner/.test(p.url)), "自サイトURLは残さない");
 });
 
-test("parsePartners: グループ外のロゴを拾わない", () => {
+test("parsePartners: グループごとに切り分ける", () => {
   const html = `
     <div class="c-sponsor__group">
       <h3 class="c-sponsor__group-label"><span>オフィシャルパートナー</span></h3>
@@ -71,12 +88,12 @@ test("parsePartners: グループ外のロゴを拾わない", () => {
   `;
   const partners = parsePartners(html);
 
-  assert.equal(partners.length, 2);
   assert.deepEqual(
-    partners.map((p) => [p.name, p.url]),
+    partners.map((p) => [p.group, p.name, p.url]),
     [
-      ["例株式会社", "https://example.com/"],
-      ["リンク無し社", ""],
+      ["オフィシャルパートナー", "例株式会社", "https://example.com/"],
+      ["オフィシャルパートナー", "リンク無し社", ""],
+      ["雇用サポート企業", "雇用社", "https://hire.example.com/"],
     ],
   );
 });
@@ -97,6 +114,8 @@ test("parsePartners: 旧構造でも壊れない", () => {
   assert.equal(partners[0]!.name, "example"); // alt 空 → ファイル名補完
   assert.equal(partners[1]!.url, "");
   assert.equal(partners[1]!.name, "リンク無し社");
+  // 旧構造にはグループが無いので、全件をオフィシャルパートナーとして扱う。
+  assert.deepEqual([...new Set(partners.map((p) => p.group))], ["オフィシャルパートナー"]);
 });
 
 test("parsePartners: 見出しが無ければ空配列", () => {

@@ -2,7 +2,7 @@ import type { Partner } from "./types.js";
 
 /**
  * anclas.jp トップページの SPONSOR セクションから、
- * 「オフィシャルパートナー」各社のロゴ・リンクを抽出する。
+ * スポンサー各社のロゴ・リンクをグループ名付きで抽出する。
  *
  * DOM 構造（2026-09 のリニューアル後）:
  *   <div class="c-sponsor__group">
@@ -22,8 +22,8 @@ import type { Partner } from "./types.js";
  *   2. alt に正式社名が入る（以前は空が多く、ファイル名から補完していた）
  *   3. グループが見出し付きで分かれ、「雇用サポート企業」が併記される
  *
- * アプリの画面は「オフィシャルパートナー」を出すため、そのグループだけを取る。
- * 見出しで範囲を区切らずに全ロゴを拾うと、雇用サポート企業が混ざる。
+ * 見出しで範囲を区切らずに全ロゴを拾うと、どの会社がどのグループか分からなくなる。
+ * アプリは group ごとに見出しを付けて出すため、グループ単位で切り出す。
  */
 
 /** &amp; などの基本エンティティをデコード */
@@ -54,35 +54,47 @@ function nameFromLogo(logoUrl: string): string {
     .trim();
 }
 
+/** 旧構造で抽出したときに付けるグループ名。 */
+const LEGACY_GROUP = "オフィシャルパートナー";
+
 /**
- * 「オフィシャルパートナー」グループの `<ul>` の中身を切り出す。見つからなければ null。
+ * SPONSOR セクションのグループを、サイトに並ぶ順で切り出す。
  *
- * 旧構造には見出しと `<ul>` の対応が無いため、そのときは `<footer>` までを範囲にする。
+ * 新構造は見出しと `<ul>` が対になっている。旧構造には対応が無いため、
+ * 「オフィシャルパートナー」の見出しから `<footer>` までを 1 グループとして扱う。
+ * `scoped` は新構造で切り出せたかを表し、ノイズの落とし方の判断に使う。
  */
-function officialPartnerList(
+function sponsorGroups(
   html: string,
-): { region: string; scoped: boolean } | null {
+): { label: string; region: string; scoped: boolean }[] {
   const groupRe =
     /<h3[^>]*class="[^"]*c-sponsor__group-label[^"]*"[^>]*>([\s\S]*?)<\/h3>\s*<ul[^>]*class="[^"]*c-sponsor__list[^"]*"[^>]*>([\s\S]*?)<\/ul>/gi;
+  const groups: { label: string; region: string; scoped: boolean }[] = [];
   let m: RegExpExecArray | null;
   while ((m = groupRe.exec(html)) !== null) {
     const label = decodeEntities((m[1] ?? "").replace(/<[^>]*>/g, "")).trim();
-    if (label.includes("オフィシャルパートナー")) {
-      return { region: m[2] ?? "", scoped: true };
-    }
+    if (label) groups.push({ label, region: m[2] ?? "", scoped: true });
   }
+  if (groups.length > 0) return groups;
 
-  const start = html.indexOf("オフィシャルパートナー");
-  if (start < 0) return null;
+  const start = html.indexOf(LEGACY_GROUP);
+  if (start < 0) return [];
   const footIdx = html.indexOf("<footer", start);
-  return {
-    region: html.slice(start, footIdx >= 0 ? footIdx : undefined),
-    scoped: false,
-  };
+  return [
+    {
+      label: LEGACY_GROUP,
+      region: html.slice(start, footIdx >= 0 ? footIdx : undefined),
+      scoped: false,
+    },
+  ];
 }
 
 /**
- * オフィシャルパートナー各社を抽出する。
+ * SPONSOR セクションの各社を、グループ名付きで並び順どおりに抽出する。
+ *
+ * グループは「オフィシャルパートナー」と「雇用サポート企業」の 2 つ。
+ * 両方に載る会社（スーパーレンタカー）はサイトと同じく両方へ出したいので、
+ * 重複除去はグループの中だけで行う。
  *
  * 外部サイトを持たないパートナーは、サイト側で href が空か anclas.jp 内の
  * パートナー紹介ページへ向く。どちらもロゴは出したいので候補には残し、
@@ -93,33 +105,32 @@ function officialPartnerList(
  * anclas.jp へのリンクを落とす。
  */
 export function parsePartners(html: string): Partner[] {
-  const found = officialPartnerList(html);
-  if (found === null) return [];
-  const { region, scoped } = found;
-
   const partners: Partner[] = [];
-  const seen = new Set<string>();
-  const pairRe = /<a\b[^>]*href="([^"]*)"[^>]*>\s*<img\b([^>]*?)>/gi;
-  let m: RegExpExecArray | null;
-  while ((m = pairRe.exec(region)) !== null) {
-    const raw = decodeEntities((m[1] ?? "").trim());
-    const isSelf = /anclas\.jp/i.test(raw);
-    if (isSelf && !scoped) continue; // 旧構造では自サイトへのリンクはノイズ
-    const href = isSelf ? "" : raw;
+  for (const { label, region, scoped } of sponsorGroups(html)) {
+    const seen = new Set<string>();
+    const pairRe = /<a\b[^>]*href="([^"]*)"[^>]*>\s*<img\b([^>]*?)>/gi;
+    let m: RegExpExecArray | null;
+    while ((m = pairRe.exec(region)) !== null) {
+      const raw = decodeEntities((m[1] ?? "").trim());
+      const isSelf = /anclas\.jp/i.test(raw);
+      if (isSelf && !scoped) continue; // 旧構造では自サイトへのリンクはノイズ
+      const href = isSelf ? "" : raw;
 
-    const imgTag = m[2] ?? "";
-    // 新構造は src が実URL。旧構造の data-src も読み、どちらでも通るようにする。
-    const logoUrl = attr(imgTag, "data-src") ?? attr(imgTag, "src");
-    if (!logoUrl || !/wp-content\/uploads\//.test(logoUrl)) continue;
-    if (seen.has(logoUrl)) continue;
-    seen.add(logoUrl);
+      const imgTag = m[2] ?? "";
+      // 新構造は src が実URL。旧構造の data-src も読み、どちらでも通るようにする。
+      const logoUrl = attr(imgTag, "data-src") ?? attr(imgTag, "src");
+      if (!logoUrl || !/wp-content\/uploads\//.test(logoUrl)) continue;
+      if (seen.has(logoUrl)) continue;
+      seen.add(logoUrl);
 
-    const alt = decodeEntities((attr(imgTag, "alt") ?? "").trim());
-    partners.push({
-      name: alt || nameFromLogo(logoUrl),
-      url: href,
-      logoUrl,
-    });
+      const alt = decodeEntities((attr(imgTag, "alt") ?? "").trim());
+      partners.push({
+        name: alt || nameFromLogo(logoUrl),
+        url: href,
+        logoUrl,
+        group: label,
+      });
+    }
   }
   return partners;
 }

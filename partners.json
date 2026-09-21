@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T06:25:45.975Z",
+  "generatedAt": "2026-09-21T08:43:09.497Z",
   "partners": [
     {
       "name": "株式会社トレス",
@@ -398,7 +398,7 @@
     },
     {
       "name": "ユニオン電機有限会社",
-      "url": "https://anclas.jp/",
+      "url": "",
       "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/AE022FE4-A0BB-4D71-801F-7EA7CA4FA3A2.jpg"
     },
     {
@@ -425,21 +425,6 @@
       "name": "株式会社F.F.m",
       "url": "https://ffm-umimachi.com/",
       "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/HPヘッダーロゴ2-ffm-fukuya.png"
-    },
-    {
-      "name": "株式会社アダル",
-      "url": "https://www.adal.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/messageImage_1789447225970.jpg"
-    },
-    {
-      "name": "株式会社志水ミート",
-      "url": "https://shimizu-meat.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68861954.jpg"
-    },
-    {
-      "name": "リハライズJAPAN 合同会社Universal  Design",
-      "url": "https://www.reharisejapan.com",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68870146.jpg"
     }
   ]
 }

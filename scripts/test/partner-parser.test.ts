@@ -11,7 +11,7 @@ const topFix = readFileSync(
 
 test("parsePartners: 実fixtureからパートナーを抽出（下限チェック）", () => {
   const partners = parsePartners(topFix);
-  // 現時点で約77社。サイト更新で増減するため下限のみ検証して壊れにくくする。
+  // 現時点で85社。サイト更新で増減するため下限のみ検証して壊れにくくする。
   assert.ok(partners.length >= 50, `パートナー数 ${partners.length}`);
 
   // ロゴは全て anclas.jp の uploads を指す
@@ -22,19 +22,67 @@ test("parsePartners: 実fixtureからパートナーを抽出（下限チェッ�
   const linked = partners.filter((p) => p.url).length;
   assert.ok(linked > partners.length * 0.8, `リンクあり ${linked}/${partners.length}`);
 
-  // 先頭は TRES（リンク・ロゴが取れている）
+  // 先頭は TRES（リンク・ロゴ・社名が取れている）
   const tres = partners.find((p) => p.logoUrl.endsWith("/TRES.png"));
   assert.ok(tres, "TRES のロゴが取れている");
   assert.match(tres!.url, /^https:\/\/tres\.co\.jp\//);
+  assert.equal(tres!.name, "株式会社トレス");
 });
 
-test("parsePartners: 見出しより前の「募集」CTAを取り込まない", () => {
+test("parsePartners: 雇用サポート企業を取り込まない", () => {
   const partners = parsePartners(topFix);
-  // 募集バナー画像（IMG_5749）は見出しより前にあるため含まれない
-  assert.ok(!partners.some((p) => /IMG_5749/.test(p.logoUrl)), "募集バナーを除外");
+  // SPONSOR セクションは「オフィシャルパートナー」と「雇用サポート企業」に分かれる。
+  // アプリが出すのは前者だけなので、後者のロゴが混ざってはいけない。
+  assert.ok(topFix.includes("雇用サポート企業"), "fixture に両グループがある");
+  for (const needle of ["ADAL", "志水ミート", "universal"]) {
+    assert.ok(
+      !partners.some((p) => new RegExp(needle, "i").test(`${p.name} ${p.logoUrl}`)),
+      `${needle} を含まない`,
+    );
+  }
 });
 
-test("parsePartners: anclas.jp 自身へのリンクとロゴ無しを除外", () => {
+test("parsePartners: 外部サイトが無いパートナーもロゴを残す", () => {
+  const partners = parsePartners(topFix);
+  // サイト側は anclas.jp のパートナー紹介ページへ飛ばしている。
+  // アプリは url が空ならリンクを張らずロゴだけ出すので、候補からは落とさない。
+  const bono = partners.find((p) => p.name === "BONO");
+  assert.ok(bono, "BONO が候補に残る");
+  assert.equal(bono!.url, "");
+  assert.ok(!partners.some((p) => /anclas\.jp\/partner/.test(p.url)), "自サイトURLは残さない");
+});
+
+test("parsePartners: グループ外のロゴを拾わない", () => {
+  const html = `
+    <div class="c-sponsor__group">
+      <h3 class="c-sponsor__group-label"><span>オフィシャルパートナー</span></h3>
+      <ul class="c-sponsor__list">
+        <li class="c-sponsor__item"><a class="c-sponsor-card" href="https://example.com/"><img class="u-image-contain" src="https://anclas.jp/wp-content/uploads/2026/08/example.png" alt="例株式会社"></a></li>
+        <li class="c-sponsor__item"><a class="c-sponsor-card" href=""><img class="u-image-contain" src="https://anclas.jp/wp-content/uploads/2026/08/nolink.png" alt="リンク無し社"></a></li>
+        <li class="c-sponsor__item"><a class="c-sponsor-card" href="https://nologo.example.com/"><img class="u-image-contain" src="https://anclas.jp/wp-content/themes/logo.png" alt="テーマ画像"></a></li>
+      </ul>
+    </div>
+    <div class="c-sponsor__group">
+      <h3 class="c-sponsor__group-label"><span>雇用サポート企業</span></h3>
+      <ul class="c-sponsor__list">
+        <li class="c-sponsor__item"><a class="c-sponsor-card" href="https://hire.example.com/"><img class="u-image-contain" src="https://anclas.jp/wp-content/uploads/2026/08/hire.png" alt="雇用社"></a></li>
+      </ul>
+    </div>
+  `;
+  const partners = parsePartners(html);
+
+  assert.equal(partners.length, 2);
+  assert.deepEqual(
+    partners.map((p) => [p.name, p.url]),
+    [
+      ["例株式会社", "https://example.com/"],
+      ["リンク無し社", ""],
+    ],
+  );
+});
+
+test("parsePartners: 旧構造でも壊れない", () => {
+  // リニューアル前の DOM。data-src と <footer> 区切りで、自サイトリンクはノイズ。
   const html = `
     <h3>オフィシャルパートナー</h3>
     <div class="dp_sc_fl_item"><a href="https://example.com/"><img class="lazyload" src="data:image/png;base64,AAA" alt="" data-src="https://anclas.jp/wp-content/uploads/2026/01/example.png"></a></div>
@@ -45,36 +93,10 @@ test("parsePartners: anclas.jp 自身へのリンクとロゴ無しを除外", (
   `;
   const partners = parsePartners(html);
   assert.equal(partners.length, 2);
-  // 1件目: 通常
   assert.equal(partners[0]!.url, "https://example.com/");
   assert.equal(partners[0]!.name, "example"); // alt 空 → ファイル名補完
-  // 2件目: href 空でもロゴ表示のため残す（url は空文字、name は alt）
   assert.equal(partners[1]!.url, "");
   assert.equal(partners[1]!.name, "リンク無し社");
-});
-
-test("parsePartners: 新サイトのスポンサーカードからsrc画像と内部リンクを取得", () => {
-  const html = `
-    <h3 class="c-sponsor__group-label"><span>オフィシャルパートナー</span></h3>
-    <ul class="c-sponsor__list">
-      <li class="c-sponsor__item"><a class="c-sponsor-card" href="https://example.com/"><img src="https://anclas.jp/wp-content/uploads/2026/08/example.png" alt="株式会社example"></a></li>
-      <li class="c-sponsor__item"><a class="c-sponsor-card" href="https://anclas.jp/partner/"><img src="https://anclas.jp/wp-content/uploads/2026/08/internal.png" alt="リンク未設定社"></a></li>
-    </ul>
-    <footer></footer>
-  `;
-
-  assert.deepEqual(parsePartners(html), [
-    {
-      name: "株式会社example",
-      url: "https://example.com/",
-      logoUrl: "https://anclas.jp/wp-content/uploads/2026/08/example.png",
-    },
-    {
-      name: "リンク未設定社",
-      url: "",
-      logoUrl: "https://anclas.jp/wp-content/uploads/2026/08/internal.png",
-    },
-  ]);
 });
 
 test("parsePartners: 見出しが無ければ空配列", () => {

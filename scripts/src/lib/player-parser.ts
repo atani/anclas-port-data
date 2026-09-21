@@ -1,31 +1,31 @@
-import type { Player, PlayerPhoto, PlayerProfile } from "./types.js";
-import type { WPMedia, WPPost } from "./wordpress-client.js";
+import type { BlogPost, Player, PlayerPhoto, PlayerProfile } from "./types.js";
 
 /**
- * anclas.jp の TOP選手紹介投稿を Player に正規化する。
+ * anclas.jp の公開HTMLから選手データを取り出す。
  *
- * タイトル: "#3澁澤光-shibusawa hikaru-"（背番号 + 漢字名 + ローマ字）
- * 本文 <p>: ラベル + 全角スペース + 値（生年月日/出身/身長/血液型/ニックネーム/経歴）
- *           値が <span data-sheets-root="1">…</span> で囲まれる場合がある
- * 本文 <table>: 2列（ラベル / 値）でパーソナル情報（サッカー歴・MBTI・趣味 等）
- * 顔写真: _embedded["wp:featuredmedia"] の media_details.sizes
+ * サイト改装で選手は投稿カテゴリ「TOP選手紹介」からカスタム投稿タイプ `player` へ移った。
+ * REST API はデータセンター系IPから 403 になるため、公開ページだけを情報源にする。
+ *
+ * - 一覧 `/player/`: `c-season-switcher` にシーズン、`c-player-card` に各選手のURL
+ * - 個別 `/player/<slug>/`: `c-player-info` に背番号・氏名・プロフィール・顔写真、
+ *   `c-def-table` にパーソナル情報、`postid-<id>` または shortlink に投稿ID
+ * - ブログ一覧 `/player/blog/`: `c-player-blog-card-wide` にタイトル・URL・公開日
  */
 
-/** タグ除去 + エンティティデコード（<br> と </p> は改行に） */
+/** タグ除去 + エンティティデコード（<br> は改行に） */
 function htmlToText(html: string): string {
   return html
     .replace(/<br\s*\/?>/gi, "\n")
-    .replace(/<\/p>/gi, "\n")
-    .replace(/<\/tr>/gi, "\n")
     .replace(/<[^>]+>/g, "")
     .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
     .replace(/&#8211;/g, "–")
     .replace(/&#8220;|&#8221;/g, '"')
-    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(Number(code)))
-    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)));
+    .replace(/&#(\d+);/g, (_, code: string) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex: string) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&amp;/g, "&");
 }
 
 /** 先頭/末尾と内部の連続空白（全角含む）を整える。内部の単一スペースは保持 */
@@ -33,25 +33,44 @@ function cleanValue(s: string): string {
   return s.replace(/[\s　]+/gu, " ").trim();
 }
 
-interface ParsedTitle {
-  number: number | null;
-  nameJa: string;
-  nameEn: string | null;
+/** 指定クラスを持つ最初の要素の中身をテキストで返す。 */
+function classText(html: string, className: string): string | null {
+  const match = html.match(
+    new RegExp(`<[^>]+class=["'][^"']*\\b${className}\\b[^"']*["'][^>]*>([\\s\\S]*?)</[^>]+>`, "i"),
+  );
+  const value = match?.[1] == null ? "" : cleanValue(htmlToText(match[1]));
+  return value || null;
 }
 
-export function parsePlayerTitle(titleRaw: string): ParsedTitle {
-  const title = htmlToText(titleRaw).trim();
-  const numberMatch = title.match(/#\s*(\d+)/);
-  const number = numberMatch && numberMatch[1] ? Number(numberMatch[1]) : null;
+/**
+ * 一覧ページのシーズン切替から現在のシーズンを取り出す。
+ * 改装後はカテゴリ名（TOP選手紹介2026）が無くなり、ここだけが年度の情報源になる。
+ */
+export function parsePlayerSeason(html: string): string | null {
+  const block = html.match(/<nav[^>]*\bc-season-switcher\b[\s\S]*?<\/nav>/i)?.[0];
+  if (!block) return null;
+  const current = block.match(
+    /<a\b(?=[^>]*\bis-current\b)[^>]*>([\s\S]*?)<\/a>/i,
+  )?.[1] ?? block.match(/<a\b[^>]*>([\s\S]*?)<\/a>/i)?.[1];
+  return cleanValue(htmlToText(current ?? "")).match(/\d{4}/)?.[0] ?? null;
+}
 
-  // "#3" を除去 → "澁澤光-shibusawa hikaru-"
-  const rest = title.replace(/^#\s*\d+\s*/, "").trim();
-  // 末尾の "-ローマ字-" を取り出す（ローマ字は英字・空白・ドット）
-  const romaMatch = rest.match(/-\s*([A-Za-z][A-Za-z\s.'-]*?)\s*-?\s*$/);
-  const nameEn = romaMatch && romaMatch[1] ? cleanValue(romaMatch[1]).toUpperCase() : null;
-  const nameJa = cleanValue(rest.replace(/-\s*[A-Za-z][A-Za-z\s.'-]*-?\s*$/, "")) || rest;
-
-  return { number, nameJa, nameEn };
+/** 一覧ページのカードから選手個別ページのURLを掲載順に取り出す。 */
+export function parsePlayerPageUrls(html: string): string[] {
+  const urls: string[] = [];
+  const seen = new Set<string>();
+  for (const match of html.matchAll(
+    /<a\b(?=[^>]*\bclass=["'][^"']*\bc-player-card\b)[^>]*\bhref=["']([^"']+)["']/gi,
+  )) {
+    const url = new URL(match[1]!.replace(/&amp;/g, "&"), "https://anclas.jp/");
+    url.hash = "";
+    url.search = "";
+    const normalized = url.toString();
+    if (seen.has(normalized)) continue;
+    seen.add(normalized);
+    urls.push(normalized);
+  }
+  return urls;
 }
 
 const PROFILE_LABELS: { label: string; key: keyof PlayerProfile }[] = [
@@ -62,8 +81,8 @@ const PROFILE_LABELS: { label: string; key: keyof PlayerProfile }[] = [
   { label: "経歴", key: "career" },
 ];
 
-/** 本文 <p> 由来の基本プロフィールとニックネームを抽出 */
-function parseProfileBlock(text: string): { profile: PlayerProfile; nickname: string | null } {
+/** `c-player-info__detail` のラベル・値ペアから基本プロフィールとニックネームを取り出す。 */
+function parseProfileDetails(html: string): { profile: PlayerProfile; nickname: string | null } {
   const profile: PlayerProfile = {
     birthdate: null,
     hometown: null,
@@ -73,82 +92,132 @@ function parseProfileBlock(text: string): { profile: PlayerProfile; nickname: st
   };
   let nickname: string | null = null;
 
-  for (const line of text.split("\n")) {
-    const trimmed = line.trim();
-    if (!trimmed) continue;
-    if (nickname === null && trimmed.startsWith("ニックネーム")) {
-      nickname = cleanValue(trimmed.slice("ニックネーム".length));
+  for (const item of html.matchAll(
+    /<li\b(?=[^>]*\bc-player-info__detail\b)[\s\S]*?<\/li>/gi,
+  )) {
+    const label = classText(item[0], "c-player-info__detail-label");
+    const value = classText(item[0], "c-player-info__detail-value");
+    if (!label || !value) continue;
+    if (nickname === null && label === "ニックネーム") {
+      nickname = value;
       continue;
     }
-    for (const { label, key } of PROFILE_LABELS) {
-      if (profile[key] === null && trimmed.startsWith(label)) {
-        const value = cleanValue(trimmed.slice(label.length));
-        if (value) profile[key] = value;
-        break;
-      }
-    }
+    const known = PROFILE_LABELS.find((entry) => entry.label === label);
+    if (known && profile[known.key] === null) profile[known.key] = value;
   }
   return { profile, nickname };
 }
 
-/** 本文 <table> の2列をパーソナル情報配列に（表示順保持） */
+/** `c-def-table` の行（th=ラベル / td=値）をパーソナル情報配列に（表示順保持） */
 function parsePersonalTable(html: string): { label: string; value: string }[] {
   const out: { label: string; value: string }[] = [];
-  const rowRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
-  const cellRe = /<td[^>]*>([\s\S]*?)<\/td>/gi;
-  let row: RegExpExecArray | null;
-  while ((row = rowRe.exec(html)) !== null) {
-    const cells: string[] = [];
-    let cell: RegExpExecArray | null;
-    cellRe.lastIndex = 0;
-    while ((cell = cellRe.exec(row[1] ?? "")) !== null) {
-      cells.push(cleanValue(htmlToText(cell[1] ?? "")));
-    }
-    if (cells.length >= 2 && cells[0] && cells[1]) {
-      out.push({ label: cells[0], value: cells[1] });
-    }
+  for (const row of html.matchAll(/<tr\b(?=[^>]*\bc-def-table__row\b)[\s\S]*?<\/tr>/gi)) {
+    const label = classText(row[0], "c-def-table__cell--label");
+    const value = classText(row[0], "c-def-table__cell--value");
+    if (label && value) out.push({ label, value });
   }
   return out;
 }
 
-/** _embedded の featured media から各サイズのURLを取り出す */
-function extractPhoto(media: WPMedia | undefined): PlayerPhoto {
-  const sizes = media?.media_details?.sizes ?? {};
-  const pick = (name: string): string | null => sizes[name]?.source_url ?? null;
-  return {
-    thumbnail: pick("thumbnail"),
-    medium: pick("medium"),
-    large: pick("large"),
-    full: pick("full") ?? media?.source_url ?? null,
-  };
+/**
+ * 顔写真は公開ページに1枚しか出ないため、4サイズすべてに同じURLを入れる。
+ * REST API の `media_details.sizes` に相当する情報が公開経路に無く、
+ * `-150x150` のような派生URLを推測すると存在しない画像を配る恐れがある。
+ */
+function extractPhoto(html: string): PlayerPhoto {
+  // 顔写真以外の画像（ロゴ・関連選手カード）を拾わないよう、対象の picture 内に限定する。
+  const block = html.match(/<picture\b[^>]*\bc-player-info__photo\b[\s\S]*?<\/picture>/i)?.[0];
+  const src = block?.match(/\bsrc=["']([^"']+)["']/i)?.[1];
+  const url = src ? htmlToText(src) : null;
+  return { thumbnail: url, medium: url, large: url, full: url };
 }
 
-export function parsePlayer(post: WPPost): Player {
-  const { number, nameJa, nameEn } = parsePlayerTitle(post.title.rendered);
-  const contentHtml = post.content.rendered;
+/** 個別ページの投稿IDを shortlink か body クラスから取り出す。 */
+function extractPostId(html: string): number | null {
+  const shortlink = html.match(/rel=["']shortlink["']\s+href=["'][^"']*[?&]p=(\d+)/i)?.[1]
+    ?? html.match(/\bpostid-(\d+)\b/)?.[1];
+  return shortlink ? Number(shortlink) : null;
+}
 
-  // <table> より前を <p> ブロック扱いにして基本プロフィールを取る
-  const tableStart = contentHtml.search(/<table/i);
-  const profileHtml = tableStart >= 0 ? contentHtml.slice(0, tableStart) : contentHtml;
-  const { profile, nickname } = parseProfileBlock(htmlToText(profileHtml));
-  const personal = parsePersonalTable(contentHtml);
-  const photo = extractPhoto(post._embedded?.["wp:featuredmedia"]?.[0]);
+/** 選手個別ページを Player に正規化する。 */
+export function parsePlayerPage(html: string, sourceUrl: string): Player {
+  const id = extractPostId(html);
+  if (id === null) {
+    throw new Error(`選手ページから投稿IDを取得できませんでした: ${sourceUrl}`);
+  }
+  // 関連選手スライダーの `c-player-card` を巻き込まないよう、選手情報ブロックだけを見る。
+  const infoStart = html.search(/<div\b[^>]*\bc-player-info\b/i);
+  const info = infoStart < 0 ? html : html.slice(infoStart).split(/<div\b[^>]*\bc-player-faq\b/i)[0]!;
+  const nameJa = classText(info, "c-player-info__name");
+  if (!nameJa) {
+    throw new Error(`選手ページから氏名を取得できませんでした: ${sourceUrl}`);
+  }
+  const numberText = classText(info, "c-player-info__number");
+  const nameEn = classText(info, "c-player-info__furigana");
+  const { profile, nickname } = parseProfileDetails(info);
 
   return {
-    id: post.id,
-    number,
+    id,
+    number: numberText && /^\d+$/.test(numberText) ? Number(numberText) : null,
     position: null,
     nameJa,
-    nameEn,
+    nameEn: nameEn ? nameEn.toUpperCase() : null,
     nickname,
-    photo,
+    photo: extractPhoto(info),
     profile,
-    personal,
-    sourceUrl: post.link,
+    personal: parsePersonalTable(html),
+    sourceUrl,
     blogPosts: [],
     sns: {},
     role: null,
   };
+}
+
+export interface PlayerBlogEntry {
+  number: number;
+  name: string | null;
+  post: BlogPost;
+}
+
+/**
+ * ブログ記事タイトルの「#背番号 選手名」から紐付けキーを取り出す。
+ * 背番号が変わっても照合できるよう、番号だけでなく名前も拾う。
+ */
+const BLOG_TITLE_KEY =
+  /#(\d+)\s*([　-鿿豈-﫿\u{20000}-\u{2FA1F}A-Za-zぁ-ん゠-ヿ]+(?:\s[　-鿿豈-﫿\u{20000}-\u{2FA1F}A-Za-zぁ-ん゠-ヿ]+)*)?/u;
+
+/** ブログ一覧ページのカードを掲載順に取り出す（選手名が付かない記事も含む）。 */
+export function parsePlayerBlogCards(html: string): BlogPost[] {
+  const posts: BlogPost[] = [];
+  const blocks = html.split(/<a\b(?=[^>]*\bclass=["'][^"']*\bc-player-blog-card-wide\b)/i).slice(1);
+  for (const block of blocks) {
+    const url = block.match(/^[^>]*\bhref=["']([^"']+)["']/i)?.[1];
+    const title = classText(block, "c-player-blog-card-wide__title-text");
+    const date = block.match(
+      /<time[^>]*\bc-player-blog-card-wide__date\b[^>]*\bdatetime=["'](\d{4}-\d{2}-\d{2})["']/i,
+    )?.[1];
+    if (!url || !title || !date) continue;
+    posts.push({ title, url: htmlToText(url), date });
+  }
+  return posts;
+}
+
+/**
+ * タイトルに「#背番号 選手名」を持つ記事だけを紐付けキー付きで返す。
+ * 選手名の入らない記事（お知らせ等）は紐付けようがないため落とす。
+ */
+export function toPlayerBlogEntries(posts: BlogPost[]): PlayerBlogEntry[] {
+  const entries: PlayerBlogEntry[] = [];
+  for (const post of posts) {
+    const key = post.title.match(BLOG_TITLE_KEY);
+    if (!key) continue;
+    entries.push({
+      number: Number(key[1]),
+      name: key[2]?.replace(/\s+/g, "") ?? null,
+      post,
+    });
+  }
+  return entries;
 }
 
 /** 背番号順に整列（背番号 null は末尾） */
@@ -162,7 +231,7 @@ export function sortPlayers(players: Player[]): Player[] {
 }
 
 /**
- * 通常の WordPress API に現れない途中加入選手を補完する。
+ * 公式ページに現れない途中加入選手を補完する。
  * 同名の公式データが取得できた場合は公式データを優先し、
  * 背番号が再利用された場合は補完対象を現在の選手として扱う。
  */
@@ -211,37 +280,4 @@ export function mergeSupplementalPlayers(players: Player[], supplemental: Player
       || !replacedNumbers.has(player.number),
   );
   return sortPlayers([...kept, ...additions]);
-}
-
-function normalizedSourceUrl(value: string): string {
-  const url = new URL(value);
-  url.hash = "";
-  url.search = "";
-  return url.toString();
-}
-
-export interface PlayerRosterReconciliation {
-  players: Player[];
-  removed: Player[];
-  missingUrls: string[];
-}
-
-/** 公式一覧の公開URLを正として、前回データから退団選手を除外する。 */
-export function reconcilePublishedPlayers(
-  players: Player[],
-  publishedUrls: string[],
-): PlayerRosterReconciliation {
-  const minimumSafeCount = Math.max(10, Math.ceil(players.length / 2));
-  if (publishedUrls.length < minimumSafeCount) {
-    throw new Error(
-      `公式選手一覧が少なすぎます（${publishedUrls.length}件、最低${minimumSafeCount}件）。前回データを維持します`,
-    );
-  }
-
-  const published = new Set(publishedUrls.map(normalizedSourceUrl));
-  const kept = players.filter((player) => published.has(normalizedSourceUrl(player.sourceUrl)));
-  const removed = players.filter((player) => !published.has(normalizedSourceUrl(player.sourceUrl)));
-  const known = new Set(players.map((player) => normalizedSourceUrl(player.sourceUrl)));
-  const missingUrls = [...published].filter((url) => !known.has(url));
-  return { players: sortPlayers(kept), removed, missingUrls };
 }

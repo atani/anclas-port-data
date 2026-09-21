@@ -4,32 +4,12 @@ import {
   applyRescheduleInfo,
   parseAnnouncementDateTime,
   parseAnnouncementVenue,
-  parsePlayerArchiveUrl,
-  parsePublishedPlayerUrls,
   parseReportedGoals,
   selectAllNewsCategory,
   selectNewsCategories,
-  selectPlayerBlogCategory,
   selectRescheduleInfo,
 } from "../src/lib/wordpress-client.js";
 import { loadVerifiedReschedules } from "../src/lib/reschedule-cache.js";
-
-test("parsePlayerArchiveUrl: グローバルメニューから選手一覧URLを取得する", () => {
-  const html = '<a href="/category/top-players2025/">TOP選手紹介</a>';
-  assert.equal(parsePlayerArchiveUrl(html), "https://anclas.jp/category/top-players2025/");
-});
-
-test("parsePublishedPlayerUrls: 一覧カードの公開選手URLを重複なく取得する", () => {
-  const html = `
-    <article><a class="wrap-anchor" href="https://anclas.jp/post-1/?ref=list">選手1</a></article>
-    <article><a href="/post-2/" class="wrap-anchor other">選手2</a></article>
-    <article><a class="wrap-anchor" href="https://anclas.jp/post-1/">選手1</a></article>
-  `;
-  assert.deepEqual(parsePublishedPlayerUrls(html), [
-    "https://anclas.jp/post-1/",
-    "https://anclas.jp/post-2/",
-  ]);
-});
 
 test("selectNewsCategories: リニューアル前後の同名カテゴリを両方選ぶ", () => {
   const categories = [
@@ -48,15 +28,6 @@ test("selectAllNewsCategory: 名前またはslugから共通カテゴリを選�
   ];
 
   assert.equal(selectAllNewsCategory(categories)?.id, 6);
-});
-
-test("selectPlayerBlogCategory: IDではなく名前・slugから選手ブログを選ぶ", () => {
-  const categories = [
-    { id: 5, name: "旧ブログ", slug: "old-blog", count: 0 },
-    { id: 34, name: "選手ブログ", slug: "blog", count: 400 },
-  ];
-
-  assert.equal(selectPlayerBlogCategory(categories)?.id, 34);
 });
 
 test("parseReportedGoals: 前後半の得点とオウンゴールを通算分へ変換する", () => {

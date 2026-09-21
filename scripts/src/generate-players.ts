@@ -2,17 +2,17 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { logger } from "./lib/logger.js";
 import {
   mergeSupplementalPlayers,
-  parsePlayer,
-  reconcilePublishedPlayers,
+  parsePlayerPage,
+  parsePlayerPageUrls,
+  parsePlayerSeason,
   sortPlayers,
 } from "./lib/player-parser.js";
 import { parseStaff } from "./lib/staff-parser.js";
 import type { Player, PlayerSns, PlayersData, Staff } from "./lib/types.js";
 import {
   fetchPlayerBlogPosts,
-  getPlayerCategory,
-  getPlayerPosts,
-  getPublishedPlayerUrls,
+  getPlayerArchiveHtml,
+  getPlayerPageHtml,
   getStaffPageHtml,
 } from "./lib/wordpress-client.js";
 
@@ -24,48 +24,88 @@ function writeJson(name: string, data: unknown): void {
   logger.info(`wrote ${name}`);
 }
 
+/**
+ * 公開一覧から取得した選手ブログを各選手へ紐付ける。
+ * 件数が前回の半分を下回ったら例外にして、取得経路が壊れたまま上書きするのを防ぐ。
+ */
+async function linkBlogPosts(players: Player[], previousPlayers: Player[]): Promise<void> {
+  const blogEntries = await fetchPlayerBlogPosts();
+  const norm = (value: string) => value.replace(/[\s\u3000]/gu, "");
+  let blogCount = 0;
+  for (const player of players) {
+    // 背番号一致 + 名前照合（背番号変更対策: 名前が含まれない場合は番号のみ）
+    const matched = blogEntries.filter((entry) => {
+      if (entry.number !== player.number) return false;
+      if (entry.name && player.nameJa) {
+        return norm(entry.name) === norm(player.nameJa)
+          || norm(player.nameJa).includes(norm(entry.name))
+          || norm(entry.name).includes(norm(player.nameJa));
+      }
+      return true;
+    });
+    if (matched.length > 0) {
+      player.blogPosts = matched.map((entry) => entry.post);
+      blogCount += player.blogPosts.length;
+    }
+  }
+  const playersWithBlog = players.filter((player) => player.blogPosts.length > 0).length;
+  logger.info(`ブログ: ${blogCount}記事を${playersWithBlog}選手に紐付け`);
+  const previousBlogCount = previousPlayers.reduce(
+    (total, player) => total + player.blogPosts.length,
+    0,
+  );
+  if (previousBlogCount >= 10 && blogCount < Math.ceil(previousBlogCount * 0.5)) {
+    throw new Error(
+      `選手ブログ件数が急減したため更新を停止します（${previousBlogCount}件→${blogCount}件）`,
+    );
+  }
+}
+
 async function main(): Promise<void> {
   const previous = JSON.parse(
     readFileSync(new URL("players.json", DATA_DIR), "utf-8"),
   ) as PlayersData;
-  let season: string;
-  let players: Player[];
-  let loadedFreshProfiles = false;
+  const archiveHtml = await getPlayerArchiveHtml();
+  const pageUrls = parsePlayerPageUrls(archiveHtml);
+  if (pageUrls.length === 0) {
+    throw new Error("公式選手一覧に選手カードが1件もありませんでした（改装の可能性）");
+  }
+  const minimumSafeCount = Math.ceil(previous.players.length * 0.75);
+  if (previous.players.length >= 10 && pageUrls.length < minimumSafeCount) {
+    throw new Error(
+      `選手数が急減しました（${previous.players.length}人→${pageUrls.length}人）`,
+    );
+  }
 
-  try {
-    const category = await getPlayerCategory();
-    logger.info(`選手カテゴリ: id=${category.id} name=${category.name} season=${category.season}`);
-    const posts = await getPlayerPosts(category.id);
-    if (posts.length === 0) {
-      throw new Error("選手投稿が0件でした（カテゴリ変更の可能性）");
-    }
-    season = category.season;
-    players = sortPlayers(posts.map(parsePlayer));
-    const minimumSafeCount = Math.ceil(previous.players.length * 0.75);
-    if (previous.players.length >= 10 && players.length < minimumSafeCount) {
-      throw new Error(
-        `選手数が急減しました（${previous.players.length}人→${players.length}人）`,
-      );
-    }
-    const previousById = new Map(previous.players.map((player) => [player.id, player]));
-    for (const player of players) {
-      const old = previousById.get(player.id);
-      if (old?.photo.large && !player.photo.large) {
-        player.photo.large = old.photo.large;
-      }
-    }
-    loadedFreshProfiles = true;
-  } catch (error) {
-    logger.warn(`WordPress APIからの選手生成に失敗。公式一覧HTMLで整合します: ${error}`);
-    const reconciliation = reconcilePublishedPlayers(previous.players, await getPublishedPlayerUrls());
-    season = previous.season;
-    players = reconciliation.players;
-    for (const player of reconciliation.removed) {
-      logger.info(`公式一覧から削除: #${player.number ?? "-"} ${player.nameJa}`);
-    }
-    if (reconciliation.missingUrls.length > 0) {
-      logger.warn(`公式一覧に新規選手${reconciliation.missingUrls.length}件あり（API復旧後にプロフィールを追加）`);
-    }
+  const detectedSeason = parsePlayerSeason(archiveHtml);
+  if (!detectedSeason) {
+    logger.warn(`公式一覧からシーズンを取得できないため前回値${previous.season}を維持します`);
+  }
+  const season = detectedSeason ?? previous.season;
+
+  // 公式サイトへの負荷を抑えるため、個別ページは1件ずつ順に取得する。
+  const fetched: Player[] = [];
+  for (const url of pageUrls) {
+    fetched.push(parsePlayerPage(await getPlayerPageHtml(url), url));
+  }
+  let players = sortPlayers(fetched);
+  logger.info(`選手: ${players.length}人 / season=${season}`);
+
+  // 顔写真が公式ページから消えた場合だけ前回値で埋める。
+  // 投稿IDは改装で変わったため、氏名で前回データと突き合わせる。
+  const normalizeName = (name: string): string => name.replace(/[\s　]/gu, "");
+  const previousByName = new Map(
+    previous.players.map((player) => [normalizeName(player.nameJa), player]),
+  );
+  for (const player of players) {
+    const old = previousByName.get(normalizeName(player.nameJa));
+    if (!old) continue;
+    player.photo = {
+      thumbnail: player.photo.thumbnail ?? old.photo.thumbnail,
+      medium: player.photo.medium ?? old.photo.medium,
+      large: player.photo.large ?? old.photo.large,
+      full: player.photo.full ?? old.photo.full,
+    };
   }
 
   // 公式プロフィールが通常の WordPress API に現れない途中加入選手を補完する。
@@ -95,36 +135,7 @@ async function main(): Promise<void> {
     logger.warn(`スタッフ取得に失敗。前回値${staff.length}人を維持します: ${error}`);
   }
 
-  if (loadedFreshProfiles) {
-    const blogEntries = await fetchPlayerBlogPosts();
-    const norm = (s: string) => s.replace(/[\s　]/g, "");
-    let blogCount = 0;
-    for (const p of players) {
-      // 背番号一致 + 名前照合（背番号変更対策: 名前が含まれない場合は番号のみ）
-      const matched = blogEntries.filter((e) => {
-        if (e.number !== p.number) return false;
-        if (e.name && p.nameJa) {
-          return norm(e.name) === norm(p.nameJa) || norm(p.nameJa).includes(norm(e.name)) || norm(e.name).includes(norm(p.nameJa));
-        }
-        return true;
-      });
-      if (matched.length > 0) {
-        p.blogPosts = matched.map((e) => e.post);
-        blogCount += p.blogPosts.length;
-      }
-    }
-    const playersWithBlog = players.filter((p) => p.blogPosts.length > 0).length;
-    logger.info(`ブログ: ${blogCount}記事を${playersWithBlog}選手に紐付け`);
-    const previousBlogCount = previous.players.reduce(
-      (total, player) => total + player.blogPosts.length,
-      0,
-    );
-    if (previousBlogCount >= 10 && blogCount < Math.ceil(previousBlogCount * 0.5)) {
-      throw new Error(
-        `選手ブログ件数が急減したため更新を停止します（${previousBlogCount}件→${blogCount}件）`,
-      );
-    }
-  }
+  await linkBlogPosts(players, previous.players);
 
   // SNS アカウント（手動管理の JSON）
   try {

@@ -38,3 +38,20 @@ export async function resolvePhotoSizes(
   }
   return resolved;
 }
+
+/**
+ * 縮小版を1人も採用できなかったときに、前回値から引き継ぐ。
+ *
+ * HEAD が通らない環境では全員が原寸のまま残る。生成は成功扱いなので気づけず、
+ * 一覧の転送量だけが数十倍になる。原寸URLが前回と同じ選手に限って引き継ぐため、
+ * 写真が差し替わっていれば別URLになり、古い写真を出すことはない。
+ */
+export function carryForwardPhotoSizes(photo: PlayerPhoto, previous: PlayerPhoto): PlayerPhoto {
+  if (!photo.full || previous.full !== photo.full) return photo;
+  const carried: PlayerPhoto = { ...photo };
+  for (const key of ["thumbnail", "medium"] as const) {
+    const old = previous[key];
+    if (old && old !== previous.full) carried[key] = old;
+  }
+  return carried;
+}

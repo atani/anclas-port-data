@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { derivePhotoSizeUrl, resolvePhotoSizes } from "../src/lib/photo-sizes.js";
+import { carryForwardPhotoSizes, derivePhotoSizeUrl, resolvePhotoSizes } from "../src/lib/photo-sizes.js";
 import type { PlayerPhoto } from "../src/lib/types.js";
 
 const FULL = "https://anclas.jp/wp-content/uploads/2026/07/moriwa-940x940-1.jpg";
@@ -48,4 +48,22 @@ test("顔写真が無ければ実在確認をしない", async () => {
   });
   assert.deepEqual(resolved, photoOf(null));
   assert.equal(called, 0);
+});
+
+const SHRUNK = "https://anclas.jp/wp-content/uploads/2026/07/moriwa-940x940-1-150x150.jpg";
+
+test("同じ写真なら前回の縮小版を引き継ぐ", () => {
+  const carried = carryForwardPhotoSizes(photoOf(FULL), { ...photoOf(FULL), thumbnail: SHRUNK });
+  assert.equal(carried.thumbnail, SHRUNK);
+  assert.equal(carried.full, FULL);
+});
+
+test("写真が差し替わっていれば引き継がない", () => {
+  const other = "https://anclas.jp/wp-content/uploads/2026/09/moriwa-new.jpg";
+  const carried = carryForwardPhotoSizes(photoOf(other), { ...photoOf(FULL), thumbnail: SHRUNK });
+  assert.deepEqual(carried, photoOf(other));
+});
+
+test("前回も原寸のままなら引き継がない", () => {
+  assert.deepEqual(carryForwardPhotoSizes(photoOf(FULL), photoOf(FULL)), photoOf(FULL));
 });

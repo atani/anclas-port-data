@@ -16,7 +16,7 @@ import {
   getStaffPageHtml,
   imageExists,
 } from "./lib/wordpress-client.js";
-import { resolvePhotoSizes } from "./lib/photo-sizes.js";
+import { carryForwardPhotoSizes, resolvePhotoSizes } from "./lib/photo-sizes.js";
 
 const DATA_DIR = new URL("../../", import.meta.url);
 
@@ -93,21 +93,6 @@ async function main(): Promise<void> {
   let players = sortPlayers(fetched);
   logger.info(`選手: ${players.length}人 / season=${season}`);
 
-  // 同じ写真を使う選手がいるため、実在確認の結果はURL単位で使い回す。
-  const existsCache = new Map<string, Promise<boolean>>();
-  const existsOnce = (url: string): Promise<boolean> => {
-    const hit = existsCache.get(url);
-    if (hit) return hit;
-    const probe = imageExists(url);
-    existsCache.set(url, probe);
-    return probe;
-  };
-  for (const player of players) {
-    player.photo = await resolvePhotoSizes(player.photo, existsOnce);
-  }
-  const shrunk = players.filter((p) => p.photo.thumbnail !== p.photo.full).length;
-  logger.info(`顔写真: ${shrunk}/${players.length}人で縮小版を採用`);
-
   // 顔写真が公式ページから消えた場合だけ前回値で埋める。
   // 投稿IDは改装で変わったため、氏名で前回データと突き合わせる。
   const normalizeName = (name: string): string => name.replace(/[\s　]/gu, "");
@@ -124,6 +109,35 @@ async function main(): Promise<void> {
       full: player.photo.full ?? old.photo.full,
     };
   }
+
+  // 同じ写真を使う選手がいるため、実在確認の結果はURL単位で使い回す。
+  const existsCache = new Map<string, Promise<boolean>>();
+  const existsOnce = (url: string): Promise<boolean> => {
+    const hit = existsCache.get(url);
+    if (hit) return hit;
+    const probe = imageExists(url);
+    existsCache.set(url, probe);
+    return probe;
+  };
+  for (const player of players) {
+    player.photo = await resolvePhotoSizes(player.photo, existsOnce);
+  }
+  const countShrunk = (key: "thumbnail" | "medium"): number =>
+    players.filter((p) => p.photo[key] !== p.photo.full).length;
+
+  // 理由は carryForwardPhotoSizes のコメントを参照。
+  if (countShrunk("thumbnail") === 0 && players.length > 0) {
+    for (const player of players) {
+      const old = previousByName.get(normalizeName(player.nameJa));
+      if (old) player.photo = carryForwardPhotoSizes(player.photo, old.photo);
+    }
+    logger.warn(
+      `顔写真: 縮小版を1人も採用できませんでした。前回値を${countShrunk("thumbnail")}人に引き継ぎます`,
+    );
+  }
+  logger.info(
+    `顔写真: 縮小版の採用は thumbnail ${countShrunk("thumbnail")}人 / medium ${countShrunk("medium")}人`,
+  );
 
   // 公式プロフィールが通常の WordPress API に現れない途中加入選手を補完する。
   try {

@@ -404,8 +404,13 @@ export interface Partner {
   name: string;
   /** パートナーのリンク先URL。サイト側で未設定なら空文字 */
   url: string;
-  /** ロゴ画像URL（anclas.jp uploads、lazyload の data-src 由来） */
+  /** ロゴ画像URL（anclas.jp uploads 配下） */
   logoUrl: string;
+  /**
+   * SPONSOR セクションの見出し（「オフィシャルパートナー」「雇用サポート企業」）。
+   * サイト側がグループを増やしたらそのまま増える。
+   */
+  group: string;
 }
 
 /** partners.json のルート */

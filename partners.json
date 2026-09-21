@@ -1,445 +1,539 @@
 {
-  "generatedAt": "2026-09-21T06:25:45.975Z",
+  "generatedAt": "2026-09-21T09:53:05.726Z",
   "partners": [
     {
       "name": "株式会社トレス",
       "url": "https://tres.co.jp/football/?utm_source=anclas&utm_medium=referral",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/TRES.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/TRES.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社NR",
       "url": "https://kknr0201.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/NR.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/NR.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "スーパーレンタカー",
       "url": "https://superrentacar.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/superrentacar.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/superrentacar.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "千代田計装株式会社",
       "url": "https://www.ckcnw.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/千代田計装-655327ac56be3.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/千代田計装-655327ac56be3.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社ケイテック",
       "url": "https://www.keitekku.net/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/株式会社ケイテック.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/株式会社ケイテック.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社マインズ",
       "url": "https://myns-g.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/マインズ.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/マインズ.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "これくとでんき",
       "url": "https://c-denki.jp/lp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/これくとでんき.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/これくとでんき.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "新天町",
       "url": "https://shintencho.or.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/新天町.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/新天町.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "BONO",
       "url": "",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/BONO.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/BONO.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社三和工業",
       "url": "https://www.sanwa-cutter.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/三和工業.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/三和工業.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社アーチ電工",
       "url": "https://arch-kk.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/株式会社アーチ電工.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/株式会社アーチ電工.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "医療法人かもりクリニック",
       "url": "http://kamori-clinic.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/かもりクリニック.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/かもりクリニック.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社ディレクターズカンパニー",
       "url": "https://www.directors.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ディレクターズカンパニー.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ディレクターズカンパニー.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "久野印刷株式会社",
       "url": "https://www.media-line.or.jp/hisano/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/久野印刷.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/久野印刷.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社福岡日野組",
       "url": "http://f-hino.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/福岡日野組.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/福岡日野組.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社cielo azul",
       "url": "https://www.cieloazul.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/cielo-azul.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/cielo-azul.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "味蔵",
       "url": "https://www.ajikura-fukuoka.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/味蔵.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/味蔵.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "西福製茶",
       "url": "https://www.nishifukuseicha.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/西福製茶.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/西福製茶.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社トーブコーポレーション",
       "url": "https://www.tobu-corp.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/トーブコーポレーション.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/トーブコーポレーション.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "御笠川デンタルクリニック ヒカリ",
       "url": "https://mmmdc.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/アンクラス御笠川バナー.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/アンクラス御笠川バナー.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "JACKY",
       "url": "",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/JACKY.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/JACKY.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社リユース",
       "url": "https://j-reuse.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/【見本】ロゴデータ（株式会社リユース）-scaled-1.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/【見本】ロゴデータ（株式会社リユース）-scaled-1.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "一木皮フ科",
       "url": "https://ichiki.info/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/一木皮フ科.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/一木皮フ科.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "わかみや動物医療センター",
       "url": "https://wakamiya-amc.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/わかみや動物医療センター2.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/わかみや動物医療センター2.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "楢﨑産業開発株式会社",
       "url": "https://www.narazaki-skkk.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/楢崎産業.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/楢崎産業.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "かわのレディースクリニック",
       "url": "https://www.kawano-lc.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/かわのレディースクリニック.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/かわのレディースクリニック.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "アイルモータースクール博多の森",
       "url": "https://www.ill-ms.com/hakatanomori/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/アイルモータースクール.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/アイルモータースクール.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社希樹屋",
       "url": "https://www.kijuya.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/希樹屋.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/希樹屋.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "秋吉整形外科",
       "url": "https://akiyoshi-cl.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/秋吉整形外科.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/秋吉整形外科.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "福岡交通株式会社",
       "url": "https://www.fukuoka-kotsu.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/福岡交通.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/福岡交通.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "九州農水産物直販株式会社",
       "url": "https://www.kyushu-amp.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/九州農水産物直販株式会社.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/九州農水産物直販株式会社.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社九州建設マネジメントセンター",
       "url": "http://www.kkmc.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/九州建設マネジメントセンター.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/九州建設マネジメントセンター.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社スタートアシスト",
       "url": "https://start-ast.com/sp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/スタートアシスト.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/スタートアシスト.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社 リアリンク",
       "url": "https://realink-group.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Realink.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Realink.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社縁",
       "url": "https://www.enishi-cm.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/縁.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/縁.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "Granmash",
       "url": "https://cmamash.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Granmash.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Granmash.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社有明建設",
       "url": "https://ariake-k.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/有明建設.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/有明建設.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "西部安全施設工業株式会社",
       "url": "https://seibuanzen.sakura.ne.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/西部安全施設工業株式会社.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/西部安全施設工業株式会社.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社フィネス",
       "url": "https://finess.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/フィネス.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/フィネス.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "福岡コンドミニアム",
       "url": "https://fukuoka-hotel.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/アンクラス-スポンサーバナー（✈）.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/アンクラス-スポンサーバナー（✈）.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社柴田産業",
       "url": "https://shibata-industry.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/shibata.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/shibata.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "森硝子店",
       "url": "https://www.mori-glass.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/森.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/森.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "Long Vacation Resort",
       "url": "https://longvacationresort.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/LVR.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/LVR.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "ウエスト",
       "url": "https://www.shop-west.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ウエスト.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ウエスト.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "アネーラ税理士法人",
       "url": "https://anera.or.jp/office/fukuoka.html",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/アネーラ税理士法人.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/アネーラ税理士法人.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "福岡脳神経外科病院",
       "url": "https://www.fukuokanh.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/福岡脳神経外科病院.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/福岡脳神経外科病院.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社エス技建",
       "url": "https://www.esugiken.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/エス技研.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/エス技研.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社ジーエスイー",
       "url": "https://www.gse-web.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ジーエスイー-1.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ジーエスイー-1.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社アスニー",
       "url": "https://www.asnny.net/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ASNNY.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ASNNY.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社リ・アーキプロパティ",
       "url": "https://frh.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/リ・アーキプロパティ-1.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/リ・アーキプロパティ-1.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "ピーツー アンド アソシエイツ 株式会社",
       "url": "https://p2-pet.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Ｐ２.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Ｐ２.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社 ウィット",
       "url": "https://wit-eng.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/WIT-CO.LTD_.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/WIT-CO.LTD_.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "大井不動産",
       "url": "https://ohi-f.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/大井不動産.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/大井不動産.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "新日本グラウト工業株式会社",
       "url": "https://f-njg.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/新日本グラウト工業-1.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/新日本グラウト工業-1.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社西日本総合保険",
       "url": "https://ing-hoken.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/西日本総合保険.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/西日本総合保険.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社 日本システムサプライ",
       "url": "https://www.asahigroup.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/日本システムサプライ.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/日本システムサプライ.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "吉兼内科クリニック",
       "url": "https://yoshikane-cl.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/吉兼内科クリニック.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/吉兼内科クリニック.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社アズケン",
       "url": "https://www.azuken-kyushu.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/株式会社アズケン.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/株式会社アズケン.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "ゆめソーラー",
       "url": "https://www.yumesolar.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ゆめソーラー.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ゆめソーラー.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "セキソ株式会社",
       "url": "https://sekiso-s.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/セキソ株式会社.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/セキソ株式会社.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "西戸崎興産株式会社",
       "url": "https://www.saitozakikousan.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/西戸崎興産.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/西戸崎興産.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "丸忠工業株式会社",
       "url": "https://www.maruchu-c.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/丸忠工業株式会社-2.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/丸忠工業株式会社-2.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "手作り手帳研究所",
       "url": "https://penotty.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Penotty.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Penotty.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "グループホームさつき",
       "url": "https://grouphome-satsuki.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/グループホームさつき.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/グループホームさつき.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "もつ鍋与作",
       "url": "https://www.instagram.com/yo3ku.4sa9?igshid=MXNtdmZjeng0dDlxbQ%3D%3D",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/与作.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/与作.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "チケジャム",
       "url": "https://ticketjam.jp/lp/seller",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/チケジャム-1.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/チケジャム-1.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社サカイ",
       "url": "https://sakairib.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/SAKAIRIB.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/SAKAIRIB.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社Liam",
       "url": "https://liaminc.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Liam.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Liam.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "明石本町法律事務所",
       "url": "https://akashihonmachi-law.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/明石本町法律事務所.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/明石本町法律事務所.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社飛翔",
       "url": "",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/飛翔.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/飛翔.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社キービット",
       "url": "https://kiibit.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/kiibit-1.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/kiibit-1.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社クリエイトグループ",
       "url": "https://www.create-g.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/CREATE-GROUP.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/CREATE-GROUP.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社オフィスカメリア",
       "url": "https://www.officecamellia.com/index.html",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/オフィスカメリア-1.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/オフィスカメリア-1.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "アンカースタジオ福岡",
       "url": "https://studio-fukuoka.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/アンカースタジオ福岡.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/アンカースタジオ福岡.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社 松屋",
       "url": "https://www.e-matsuya.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/松屋.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/松屋.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "​株式会社筑紫庭園",
       "url": "https://www.chikushiteien.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/筑紫庭園.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/筑紫庭園.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "リンクラス株式会社",
       "url": "https://lincras.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/リンクラス.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/リンクラス.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "ラッコM＆A",
       "url": "https://rakkoma.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ラッコMA.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ラッコMA.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "ラッコキーワード",
       "url": "https://rakkokeyword.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ラッコキーワード.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/ラッコキーワード.png",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "ユニオン電機有限会社",
-      "url": "https://anclas.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/AE022FE4-A0BB-4D71-801F-7EA7CA4FA3A2.jpg"
+      "url": "",
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/AE022FE4-A0BB-4D71-801F-7EA7CA4FA3A2.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "合同会社 髙松企画設備設計",
       "url": "https://tkm-fd.co.jp/about.php",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/E720201B-177A-4270-A6B3-506F97EA0775.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/E720201B-177A-4270-A6B3-506F97EA0775.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "小規模保育事業A型 どれみ乳幼児園",
       "url": "https://www.facebook.com/p/%E3%81%A9%E3%82%8C%E3%81%BF%E4%B9%B3%E5%B9%BC%E5%85%90%E5%9C%92-100057586083637/?locale=ja_JP",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/459545054_1550683198860921_4498360186756482360_n-1.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/459545054_1550683198860921_4498360186756482360_n-1.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社ユービオス",
       "url": "https://u-bios.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__66371587-1.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__66371587-1.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社ＭＹＲ　Ｌａｂ",
       "url": "https://myrlab.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68370438.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68370438.jpg",
+      "group": "オフィシャルパートナー"
     },
     {
       "name": "株式会社F.F.m",
       "url": "https://ffm-umimachi.com/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/HPヘッダーロゴ2-ffm-fukuya.png"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/HPヘッダーロゴ2-ffm-fukuya.png",
+      "group": "オフィシャルパートナー"
+    },
+    {
+      "name": "スーパーレンタカー",
+      "url": "https://superrentacar.jp/",
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/08/superrentacar.png",
+      "group": "雇用サポート企業"
     },
     {
       "name": "株式会社アダル",
       "url": "https://www.adal.co.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/messageImage_1789447225970.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/messageImage_1789447225970.jpg",
+      "group": "雇用サポート企業"
     },
     {
       "name": "株式会社志水ミート",
       "url": "https://shimizu-meat.jp/",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68861954.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68861954.jpg",
+      "group": "雇用サポート企業"
     },
     {
       "name": "リハライズJAPAN 合同会社Universal  Design",
       "url": "https://www.reharisejapan.com",
-      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68870146.jpg"
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68870146.jpg",
+      "group": "雇用サポート企業"
     }
   ]
 }

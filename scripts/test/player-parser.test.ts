@@ -85,6 +85,8 @@ test("parsePlayerPage: FAQ表を表示順のままパーソナル情報にする
   });
 });
 
+// 公式サイトが #3 の顔写真に別選手のファイル（tanabe.jpg）を出している。
+// fixture はその状態をそのまま写したもので、解析の誤りではない。
 test("parsePlayerPage: 顔写真は公開ページの1枚を4サイズすべてに入れる", () => {
   const photo = parsePlayerPage(detailHtml, detailUrl).photo;
 

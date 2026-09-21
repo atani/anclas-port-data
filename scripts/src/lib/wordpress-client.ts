@@ -660,3 +660,17 @@ function decodeEntities(s: string): string {
     .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)))
     .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"');
 }
+
+/** 画像URLの実在確認。派生サイズの画像を採用してよいかの判定に使う。 */
+export async function imageExists(url: string): Promise<boolean> {
+  try {
+    const res = await fetch(url, {
+      method: "HEAD",
+      signal: AbortSignal.timeout(10_000),
+      headers: WP_HEADERS,
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}

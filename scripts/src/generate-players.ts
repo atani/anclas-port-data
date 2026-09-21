@@ -14,7 +14,9 @@ import {
   getPlayerArchiveHtml,
   getPlayerPageHtml,
   getStaffPageHtml,
+  imageExists,
 } from "./lib/wordpress-client.js";
+import { resolvePhotoSizes } from "./lib/photo-sizes.js";
 
 const DATA_DIR = new URL("../../", import.meta.url);
 
@@ -90,6 +92,21 @@ async function main(): Promise<void> {
   }
   let players = sortPlayers(fetched);
   logger.info(`選手: ${players.length}人 / season=${season}`);
+
+  // 同じ写真を使う選手がいるため、実在確認の結果はURL単位で使い回す。
+  const existsCache = new Map<string, Promise<boolean>>();
+  const existsOnce = (url: string): Promise<boolean> => {
+    const hit = existsCache.get(url);
+    if (hit) return hit;
+    const probe = imageExists(url);
+    existsCache.set(url, probe);
+    return probe;
+  };
+  for (const player of players) {
+    player.photo = await resolvePhotoSizes(player.photo, existsOnce);
+  }
+  const shrunk = players.filter((p) => p.photo.thumbnail !== p.photo.full).length;
+  logger.info(`顔写真: ${shrunk}/${players.length}人で縮小版を採用`);
 
   // 顔写真が公式ページから消えた場合だけ前回値で埋める。
   // 投稿IDは改装で変わったため、氏名で前回データと突き合わせる。

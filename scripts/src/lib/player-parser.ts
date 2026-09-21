@@ -120,9 +120,8 @@ function parsePersonalTable(html: string): { label: string; value: string }[] {
 }
 
 /**
- * 顔写真は公開ページに1枚しか出ないため、4サイズすべてに同じURLを入れる。
- * REST API の `media_details.sizes` に相当する情報が公開経路に無く、
- * `-150x150` のような派生URLを推測すると存在しない画像を配る恐れがある。
+ * 顔写真は公開ページに原寸が1枚しか出ないため、ここでは4サイズに同じURLを入れる。
+ * 縮小版の復元は `photo-sizes.ts` が実在確認つきで行う（理由もそちらに書く）。
  */
 function extractPhoto(html: string): PlayerPhoto {
   // 顔写真以外の画像（ロゴ・関連選手カード）を拾わないよう、対象の picture 内に限定する。

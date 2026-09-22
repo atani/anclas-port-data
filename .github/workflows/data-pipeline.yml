@@ -47,6 +47,12 @@ jobs:
           npm run typecheck
           npm test
 
+      - name: Validate FCM configuration (no delivery)
+        working-directory: scripts
+        env:
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+        run: npm run check:fcm
+
       - name: Generate frequently updated JSON
         working-directory: scripts
         run: |
@@ -73,7 +79,6 @@ jobs:
           git commit -m "data: update public feed ($(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST'))"
           git push
 
-      # FCM_SERVICE_ACCOUNT_JSON 未設定の場合は通知を送らず正常終了する。
       - name: Notify match results (FCM)
         working-directory: scripts
         env:

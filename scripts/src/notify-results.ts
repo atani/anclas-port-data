@@ -5,7 +5,7 @@ import { readNotifyQueue } from "./lib/notify-queue.js";
 /**
  * 生成ステップが書き出した通知キュー（notify-queue.json）を読み、
  * 通知ごとに指定された FCM トピックへ送信する。
- * FCM_SERVICE_ACCOUNT_JSON 未設定なら送信をスキップして正常終了する。
+ * 認証設定の欠落や送信失敗は異常終了として扱う。
  */
 async function main(): Promise<void> {
   const notifications = readNotifyQueue();
@@ -15,7 +15,9 @@ async function main(): Promise<void> {
   }
 
   const result = await sendNotifications(notifications);
-  if (result.skipped) return;
+  if (result.failed > 0) {
+    throw new Error(`通知の送信に失敗しました: ${result.failed}件`);
+  }
   logger.info(`リモート通知: 送信${result.sent}件 / 失敗${result.failed}件`);
 }
 

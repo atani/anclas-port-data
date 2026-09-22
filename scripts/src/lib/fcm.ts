@@ -17,13 +17,13 @@ interface ServiceAccount {
 }
 
 export interface SendResult {
-  /** 秘密未設定などで送信自体を行わなかった場合 true */
-  skipped: boolean;
   sent: number;
   failed: number;
 }
 
 export interface SendOptions {
+  /** FCM側で検証のみを行い、端末には配信しない */
+  validateOnly?: boolean;
   /** サービスアカウント JSON の中身。省略時は環境変数 FCM_SERVICE_ACCOUNT_JSON */
   serviceAccountJson?: string;
   /** テスト用に fetch を差し替える */
@@ -42,32 +42,29 @@ async function defaultGetAccessToken(
 /**
  * FCM HTTP v1 API で通知ごとに指定されたトピックへ送る。
  *
- * FCM_SERVICE_ACCOUNT_JSON（またはオプション）が未設定なら送信せず
- * 正常終了する（skipped: true）。CI で secret 未設定でも fail させないため。
+ * 通知対象があるのに認証設定が欠けている場合は、未送信を見逃さないよう失敗させる。
  */
 export async function sendNotifications(
   notifications: RemoteNotification[],
   options: SendOptions = {},
 ): Promise<SendResult> {
+  if (notifications.length === 0) {
+    return { sent: 0, failed: 0 };
+  }
   const raw = options.serviceAccountJson ?? process.env.FCM_SERVICE_ACCOUNT_JSON;
   if (!raw || raw.trim() === "") {
-    logger.info("FCM_SERVICE_ACCOUNT_JSON 未設定のため通知の送信をスキップします");
-    return { skipped: true, sent: 0, failed: 0 };
-  }
-  if (notifications.length === 0) {
-    return { skipped: false, sent: 0, failed: 0 };
+    throw new Error("FCM_SERVICE_ACCOUNT_JSON が未設定です");
   }
 
   let credentials: ServiceAccount;
   try {
     credentials = JSON.parse(raw) as ServiceAccount;
-  } catch (e) {
-    throw new Error(
-      `FCM_SERVICE_ACCOUNT_JSON の JSON 解析に失敗: ${e instanceof Error ? e.message : e}`,
-    );
+  } catch {
+    throw new Error("FCM_SERVICE_ACCOUNT_JSON の JSON 解析に失敗しました");
   }
-  if (!credentials.project_id) {
-    throw new Error("FCM_SERVICE_ACCOUNT_JSON に project_id がありません");
+  if (!credentials || [credentials.project_id, credentials.client_email, credentials.private_key]
+    .some((value) => typeof value !== "string" || value.trim() === "")) {
+    throw new Error("FCM_SERVICE_ACCOUNT_JSON の project_id / client_email / private_key が不正です");
   }
 
   const getAccessToken = options.getAccessToken ?? defaultGetAccessToken;
@@ -80,6 +77,7 @@ export async function sendNotifications(
   let failed = 0;
   for (const n of notifications) {
     const payload = {
+      ...(options.validateOnly ? { validate_only: true } : {}),
       message: {
         topic: n.topic,
         notification: { title: n.title, body: n.body },
@@ -96,12 +94,14 @@ export async function sendNotifications(
     });
     if (res.ok) {
       sent++;
-      logger.info(`通知を送信 topic=${n.topic}: ${n.body}`);
+      logger.info(options.validateOnly
+        ? `通知設定の検証に成功 topic=${n.topic}`
+        : `通知を送信 topic=${n.topic}: ${n.body}`);
     } else {
       failed++;
       const text = await res.text().catch(() => "");
       logger.warn(`通知の送信に失敗 (${res.status}): ${text.slice(0, 200)}`);
     }
   }
-  return { skipped: false, sent, failed };
+  return { sent, failed };
 }

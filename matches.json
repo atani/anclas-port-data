@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T06:18:47.413Z",
+  "generatedAt": "2026-09-22T08:40:04.398Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -28,10 +28,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 19.7,
+        "temperatureC": 19.8,
         "precipitationProbability": 22,
-        "weatherCode": 61,
-        "fetchedAt": "2026-09-22T06:18:44.348Z"
+        "weatherCode": 51,
+        "fetchedAt": "2026-09-22T08:39:58.207Z"
       }
     },
     "latestResult": {
@@ -347,7 +347,7 @@
     "latestPodcast": {
       "id": "04ECwS2zybRJatrg7SAuOQ",
       "title": "＃23【インタビュー：黒澤怜】アンクラスの新監督ってどんな人？選手目線を持つ指導者の素顔",
-      "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+      "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
       "showUrl": "https://open.spotify.com/episode/04ECwS2zybRJatrg7SAuOQ",
       "embedUrl": "https://open.spotify.com/embed/episode/04ECwS2zybRJatrg7SAuOQ",
       "publishedAt": "2026-09-17"
@@ -356,7 +356,7 @@
       {
         "id": "04ECwS2zybRJatrg7SAuOQ",
         "title": "＃23【インタビュー：黒澤怜】アンクラスの新監督ってどんな人？選手目線を持つ指導者の素顔",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/04ECwS2zybRJatrg7SAuOQ",
         "embedUrl": "https://open.spotify.com/embed/episode/04ECwS2zybRJatrg7SAuOQ",
         "publishedAt": "2026-09-17"
@@ -364,7 +364,7 @@
       {
         "id": "0EnfHrhxHixbG33XiUt7PC",
         "title": "#22【インタビュー：リゾスポ学生の小田さん、福田さん、野口さん】元Jリーガーvs100人の小学生の仕掛け人たち",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/0EnfHrhxHixbG33XiUt7PC",
         "embedUrl": "https://open.spotify.com/embed/episode/0EnfHrhxHixbG33XiUt7PC",
         "publishedAt": "2026-09-02"
@@ -372,7 +372,7 @@
       {
         "id": "5s76C6q7hi8K3aGmtBRQsd",
         "title": "＃21【番外編】セールストーーク！誰でも上手くいく営業のおはなし",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/5s76C6q7hi8K3aGmtBRQsd",
         "embedUrl": "https://open.spotify.com/embed/episode/5s76C6q7hi8K3aGmtBRQsd",
         "publishedAt": "2026-08-27"
@@ -380,7 +380,7 @@
       {
         "id": "50gyz3cbG9y8aP39H6HElX",
         "title": "＃20【ゲスト：ベランダから夕日（石垣島さん）】出会いはインスタ...海を越えて応援に駆けつけるウワサのあの人",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/50gyz3cbG9y8aP39H6HElX",
         "embedUrl": "https://open.spotify.com/embed/episode/50gyz3cbG9y8aP39H6HElX",
         "publishedAt": "2026-08-21"
@@ -388,7 +388,7 @@
       {
         "id": "55pB3l8IPMpCRWBpO9BDHM",
         "title": "＃19【インタビュー：宮脇ゆりあ】鳥かごで泣いたあの頃...デュアルキャリアで大忙しの弱冠18歳の日常と道のり",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/55pB3l8IPMpCRWBpO9BDHM",
         "embedUrl": "https://open.spotify.com/embed/episode/55pB3l8IPMpCRWBpO9BDHM",
         "publishedAt": "2026-08-12"
@@ -6276,10 +6276,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 19.7,
+        "temperatureC": 19.8,
         "precipitationProbability": 22,
-        "weatherCode": 61,
-        "fetchedAt": "2026-09-22T06:18:44.348Z"
+        "weatherCode": 51,
+        "fetchedAt": "2026-09-22T08:39:58.207Z"
       }
     },
     {

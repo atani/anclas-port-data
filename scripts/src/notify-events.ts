@@ -39,7 +39,6 @@ async function main(): Promise<void> {
   }
 
   const result = await sendNotifications(events.map(buildEventNotification));
-  if (result.skipped) return;
   if (result.failed > 0) {
     throw new Error(`イベント通知の送信に失敗しました: ${result.failed}件`);
   }

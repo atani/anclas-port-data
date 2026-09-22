@@ -14,6 +14,7 @@
     "generate:players": "tsx src/generate-players.ts",
     "generate:partners": "tsx src/generate-partners.ts",
     "generate": "npm run generate:matches && (npm run generate:players || echo 'players generation failed (non-fatal)') && (npm run generate:partners || echo 'partners generation failed (non-fatal)') && (npm run generate:news || echo 'news generation failed (non-fatal)') && (npm run generate:history || echo 'history generation failed (non-fatal)')",
+    "check:fcm": "tsx src/check-fcm.ts",
     "notify": "tsx src/notify-results.ts",
     "notify:events": "tsx src/notify-events.ts",
     "generate:news": "tsx src/generate-news.ts",

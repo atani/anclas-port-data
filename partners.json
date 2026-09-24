@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T04:59:09.206Z",
+  "generatedAt": "2026-09-24T06:13:46.547Z",
   "partners": [
     {
       "name": "株式会社トレス",
@@ -533,6 +533,12 @@
       "name": "リハライズJAPAN 合同会社Universal  Design",
       "url": "https://www.reharisejapan.com",
       "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68870146.jpg",
+      "group": "雇用サポート企業"
+    },
+    {
+      "name": "コナミスポーツ株式会社",
+      "url": "https://www.konami.com/sportsclub/",
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/09/image-8.webp",
       "group": "雇用サポート企業"
     }
   ]

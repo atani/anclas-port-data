@@ -11,14 +11,14 @@ export function isWordPressSampleNews(id: number, url: string): boolean {
   }
 }
 
-export function selectNewsPosts(
-  posts: WPPost[],
+export function selectNewsPosts<T extends Pick<WPPost, "id" | "date" | "link" | "categories">>(
+  posts: T[],
   noticeCategoryIds: number[],
   matchCategoryId: number | null,
   limit: number,
-): WPPost[] {
+): T[] {
   const noticeIds = new Set(noticeCategoryIds);
-  const unique = new Map<number, WPPost>();
+  const unique = new Map<number, T>();
   for (const post of posts) {
     if (!post.categories.some((id) => noticeIds.has(id))) continue;
     if (matchCategoryId != null && post.categories.includes(matchCategoryId)) continue;

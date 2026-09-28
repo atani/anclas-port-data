@@ -143,16 +143,23 @@ export async function getStaffPageHtml(): Promise<string> {
   return siteFetchText(`${SITE_URL}/staff`);
 }
 
-export async function getPosts(params: {
+/**
+ * 投稿一覧を取得する。
+ * `fields` を指定すると返る項目が絞られるため、呼び出し側で型引数 `T` に実際の形を渡す。
+ * `embed` は true で全関連、配列で指定した関連（例: "wp:featuredmedia"）だけを埋め込む。
+ */
+export async function getPosts<T = WPPost>(params: {
   categories?: number[];
   tags?: number[];
+  include?: number[];
   search?: string;
   perPage?: number;
   page?: number;
   orderby?: string;
   order?: "asc" | "desc";
-  embed?: boolean;
-} = {}): Promise<WPPost[]> {
+  embed?: boolean | string[];
+  fields?: string[];
+} = {}): Promise<T[]> {
   const query: Record<string, string> = {
     per_page: String(params.perPage ?? 10),
     page: String(params.page ?? 1),
@@ -161,9 +168,15 @@ export async function getPosts(params: {
   };
   if (params.categories?.length) query.categories = params.categories.join(",");
   if (params.tags?.length) query.tags = params.tags.join(",");
+  if (params.include?.length) query.include = params.include.join(",");
   if (params.search) query.search = params.search;
-  if (params.embed) query._embed = "1";
-  return wpFetch<WPPost[]>("/posts", query);
+  if (Array.isArray(params.embed)) {
+    if (params.embed.length) query._embed = params.embed.join(",");
+  } else if (params.embed) {
+    query._embed = "1";
+  }
+  if (params.fields?.length) query._fields = params.fields.join(",");
+  return wpFetch<T[]>("/posts", query);
 }
 
 export async function getCategories(): Promise<WPCategory[]> {

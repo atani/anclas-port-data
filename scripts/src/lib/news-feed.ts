@@ -1,6 +1,6 @@
 import { isWordPressSampleNews } from "./news-selection.js";
 
-const FEED_URL = "https://anclas.jp/feed/";
+export const NEWS_FEED_URL = "https://anclas.jp/feed/";
 const NEWS_CATEGORY_ARCHIVE_URLS = [
   "https://anclas.jp/news/category/notice/",
   "https://anclas.jp/news/category/news1/",
@@ -103,12 +103,34 @@ async function fetchFeedXml(url: string): Promise<string> {
   return response.text();
 }
 
-export async function fetchLatestNewsFeedItem(): Promise<NewsFeedItem> {
-  const item = parseLatestNewsFeedItem(await fetchFeedXml(FEED_URL));
-  if (!item) {
-    throw new Error("標準RSSに配信対象のお知らせ記事がありません");
+export interface FeedValidators {
+  etag?: string | null;
+  lastModified?: string | null;
+}
+
+export type ConditionalFeedResult =
+  | { status: 304 }
+  | { status: 200; xml: string; etag: string | null; lastModified: string | null };
+
+/** 前回の ETag / Last-Modified を付けて取得し、304 を失敗ではなく「変更なし」として返す。 */
+export async function fetchFeedConditional(
+  url: string,
+  validators: FeedValidators,
+): Promise<ConditionalFeedResult> {
+  const headers: Record<string, string> = { ...FEED_HEADERS };
+  if (validators.etag) headers["If-None-Match"] = validators.etag;
+  if (validators.lastModified) headers["If-Modified-Since"] = validators.lastModified;
+  const response = await fetch(url, { signal: AbortSignal.timeout(15_000), headers });
+  if (response.status === 304) return { status: 304 };
+  if (!response.ok) {
+    throw new Error(`RSSの取得に失敗しました: ${response.status} ${response.statusText} ${url}`);
   }
-  return item;
+  return {
+    status: 200,
+    xml: await response.text(),
+    etag: response.headers.get("etag"),
+    lastModified: response.headers.get("last-modified"),
+  };
 }
 
 /** REST APIが実行元を拒否した場合に、旧・新カテゴリRSSを統合して20件を復元する。 */

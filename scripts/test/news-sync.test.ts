@@ -32,11 +32,11 @@ function rss(ids: number[], titles: Record<number, string> = {}): string {
   return `<rss><channel>${ids.map((id) => rssItem(id, titles[id])).join("\n")}</channel></rss>`;
 }
 
-function listPost(id: number) {
+function listPost(id: number, title = `お知らせ ${id}`) {
   return {
     id,
     date: wpDate(id),
-    title: { rendered: `お知らせ ${id}` },
+    title: { rendered: title },
     link: `https://anclas.jp/news/post-${id}/`,
     categories: [NOTICE_CATEGORY_ID],
   };
@@ -74,6 +74,8 @@ interface FakeSiteOptions {
   feedTitles?: Record<number, string>;
   /** include 要求（詳細）だけの応答ステータス */
   detailStatus?: number;
+  /** REST 一覧だけタイトルを変える投稿（title.rendered の生の値） */
+  restTitles?: Record<number, string>;
 }
 
 interface Call {
@@ -142,7 +144,7 @@ function stubSite(t: TestContext, options: FakeSiteOptions = {}): Call[] {
           },
         })));
       }
-      return Response.json(LIST_IDS.map(listPost));
+      return Response.json(LIST_IDS.map((id) => listPost(id, options.restTitles?.[id])));
     }
     if (url.searchParams.get("feed") === "rss2") {
       return new Response(url.searchParams.get("paged") === "1" ? rss(LIST_IDS.slice(0, 20)) : rss([]), { status: 200 });
@@ -434,5 +436,22 @@ test("syncNews: 一覧は取れて詳細だけ失敗したらカテゴリRSSへ�
   assert.ok(calls.some((call) => call.url.searchParams.get("feed") === "rss2"), "カテゴリRSSを引く");
   const data = out.written[0]!;
   assert.equal(data.source?.route, "rss");
+  assert.equal(data.source?.feedEtag, "\"etag-1\"", "RSS経路でも整合していればETagを保存する");
   assert.equal(data.items[0]!.thumbnailUrl, "https://anclas.jp/rss-121.jpg");
+});
+
+test("syncNews: 標準RSSの&nbsp;がU+00A0で届いても、REST側の半角スペースと整合と判定する", async (t) => {
+  // WordPress は /feed/ で実体参照を数値参照にしてから CDATA に入れるため、U+00A0 のまま届く。
+  stubSite(t, {
+    feedIds: [121, 120],
+    feedTitles: { 120: "お知らせ 120" },
+    restTitles: { 120: "お知らせ&nbsp;120" },
+  });
+  const out = capture();
+
+  await syncNews({ previous: previousData(LIST_IDS.slice(1, 21)), write: out.write, now: NOW });
+
+  const data = out.written[0]!;
+  assert.equal(data.source?.feedEtag, "\"etag-1\"");
+  assert.equal(data.items.find((item) => item.id === 120)?.title, "お知らせ 120", "items のタイトルは変えない");
 });

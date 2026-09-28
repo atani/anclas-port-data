@@ -205,13 +205,18 @@ async function fetchFreshNewsItems(
   }
 }
 
+// 標準RSSは &nbsp; が U+00A0 で届き、REST 側は半角スペースに戻すため、比較時だけ空白をそろえる。
+function normalizeTitleForComparison(title: string): string {
+  return decodeEntities(title).replace(/ /g, " ").replace(/\s+/g, " ").trim();
+}
+
 /** 標準RSSの記事のうち、items に同じ id・タイトル・日時で載っていないものを返す。 */
 function findInconsistentFeedItems(feedItems: NewsFeedItem[], items: NewsItem[]): NewsFeedItem[] {
   const itemById = new Map(items.map((item) => [item.id, item]));
   return feedItems.filter((feedItem) => {
     const item = itemById.get(feedItem.id);
     return !item
-      || item.title !== decodeEntities(feedItem.title).trim()
+      || normalizeTitleForComparison(item.title) !== normalizeTitleForComparison(feedItem.title)
       || item.date !== feedDateToWordPressLocal(feedItem.publishedAt);
   });
 }

@@ -180,7 +180,7 @@ export async function getPosts<T = WPPost>(params: {
 }
 
 export async function getCategories(): Promise<WPCategory[]> {
-  return wpFetch<WPCategory[]>("/categories", { per_page: "100" });
+  return wpFetch<WPCategory[]>("/categories", { per_page: "100", _fields: "id,name,slug,count" });
 }
 
 /**

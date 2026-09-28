@@ -17,6 +17,13 @@ test("data pipeline commits generated news", () => {
   assert.ok(addLine?.includes("news.json"), "news.json must be staged for publishing");
 });
 
+test("data pipeline refreshes news without validators except on schedule", () => {
+  assert.match(
+    workflow,
+    /ANCLAS_NEWS_FORCE_REFRESH: \$\{\{ github\.event_name != 'schedule' && '1' \|\| '' \}\}/,
+  );
+});
+
 test("data pipeline stops before commit when news consistency check fails", () => {
   assert.match(workflow, /^\s+npm run generate:news\s*$/m);
   assert.doesNotMatch(workflow, /generate:news\s*\|\|/);

@@ -55,6 +55,9 @@ jobs:
 
       - name: Generate frequently updated JSON
         working-directory: scripts
+        env:
+          # push と手動実行では304で止めず、scripts の変更をすぐ news.json に反映する。
+          ANCLAS_NEWS_FORCE_REFRESH: ${{ github.event_name != 'schedule' && '1' || '' }}
         run: |
           npm run generate:matches
           npm run generate:partners || echo 'partners generation failed (non-fatal)'

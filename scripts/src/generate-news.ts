@@ -16,7 +16,11 @@ async function main(): Promise<void> {
     readFileSync(new URL("news.json", DATA_DIR), "utf-8"),
   ) as NewsData;
   // 差分同期の設計は lib/news-sync.ts の先頭コメント参照。
-  await syncNews({ previous, write: (data) => writeJson("news.json", data) });
+  await syncNews({
+    previous,
+    write: (data) => writeJson("news.json", data),
+    forceRefresh: process.env.ANCLAS_NEWS_FORCE_REFRESH === "1",
+  });
 }
 
 main().catch((e) => {

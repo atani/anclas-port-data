@@ -16,10 +16,10 @@ function wpDate(id: number): string {
   return `2026-08-${day}T10:00:00`;
 }
 
-function rssItem(id: number): string {
+function rssItem(id: number, title = `お知らせ ${id}`): string {
   const date = new Date(`${wpDate(id)}+09:00`).toUTCString();
   return `<item>
-    <title><![CDATA[お知らせ ${id}]]></title>
+    <title><![CDATA[${title}]]></title>
     <link>https://anclas.jp/news/post-${id}/</link>
     <pubDate>${date}</pubDate>
     <guid isPermaLink="false">https://anclas.jp/?p=${id}</guid>
@@ -28,8 +28,8 @@ function rssItem(id: number): string {
   </item>`;
 }
 
-function rss(ids: number[]): string {
-  return `<rss><channel>${ids.map(rssItem).join("\n")}</channel></rss>`;
+function rss(ids: number[], titles: Record<number, string> = {}): string {
+  return `<rss><channel>${ids.map((id) => rssItem(id, titles[id])).join("\n")}</channel></rss>`;
 }
 
 function listPost(id: number) {
@@ -68,6 +68,12 @@ interface FakeSiteOptions {
   feedIds?: number[];
   /** include 要求で返さない投稿ID（非公開化など） */
   hiddenIds?: number[];
+  /** 標準RSSの応答ステータス（304 判定より優先） */
+  feedStatus?: number;
+  /** 標準RSSだけタイトルを変える投稿（キャッシュずれの再現） */
+  feedTitles?: Record<number, string>;
+  /** include 要求（詳細）だけの応答ステータス */
+  detailStatus?: number;
 }
 
 interface Call {
@@ -82,10 +88,17 @@ function stubSite(t: TestContext, options: FakeSiteOptions = {}): Call[] {
   const feedIds = options.feedIds ?? LIST_IDS.slice(0, 10);
   const hidden = new Set(options.hiddenIds ?? []);
   const original = globalThis.fetch;
+  const originalDisabled = process.env.ANCLAS_WP_API_DISABLED;
   const calls: Call[] = [];
-  // 遮断フラグはモジュール単位で持つため、テストごとに戻す。
+  // 遮断フラグと強制無効化はモジュール・プロセス単位で持つため、テストごとに戻す。
+  delete process.env.ANCLAS_WP_API_DISABLED;
   resetWpApiBlockedState();
-  t.after(() => { globalThis.fetch = original; });
+  t.after(() => {
+    globalThis.fetch = original;
+    if (originalDisabled === undefined) delete process.env.ANCLAS_WP_API_DISABLED;
+    else process.env.ANCLAS_WP_API_DISABLED = originalDisabled;
+    resetWpApiBlockedState();
+  });
 
   globalThis.fetch = (async (input: string | URL | Request, init?: RequestInit) => {
     const url = new URL(String(input));
@@ -93,9 +106,12 @@ function stubSite(t: TestContext, options: FakeSiteOptions = {}): Call[] {
     calls.push({ url, headers });
 
     if (url.pathname === "/feed/") {
+      if (options.feedStatus !== undefined) {
+        return new Response("error", { status: options.feedStatus, statusText: "Error" });
+      }
       const matched = headers["If-None-Match"] === etag;
       if (matched && options.honorConditional !== false) return new Response(null, { status: 304 });
-      return new Response(rss(feedIds), {
+      return new Response(rss(feedIds, options.feedTitles), {
         status: 200,
         headers: { ETag: etag, "Last-Modified": lastModified },
       });
@@ -111,6 +127,9 @@ function stubSite(t: TestContext, options: FakeSiteOptions = {}): Call[] {
         ]);
       }
       const include = url.searchParams.get("include");
+      if (include && options.detailStatus !== undefined) {
+        return new Response("error", { status: options.detailStatus, statusText: "Error" });
+      }
       if (include) {
         return Response.json(include.split(",").map(Number).filter((id) => !hidden.has(id)).map((id) => ({
           id,
@@ -229,7 +248,10 @@ test("syncNews: 新規IDがなければ詳細要求を出さない", async (t) =
 
   await syncNews({ previous: previousData(LIST_IDS.slice(0, 20)), write: out.write, now: NOW });
 
-  assert.equal(calls.filter((call) => call.url.searchParams.has("include")).length, 0);
+  assert.equal(out.written[0]!.source?.route, "rest");
+  const postCalls = calls.filter((call) => call.url.pathname.endsWith("/posts"));
+  assert.equal(postCalls.length, 1, "REST一覧の要求だけを出す");
+  assert.equal(postCalls[0]!.url.searchParams.has("include"), false);
 });
 
 test("syncNews: includeで返らなかった新規IDは捨て、次の候補で埋めない", async (t) => {
@@ -300,4 +322,117 @@ test("syncNews: 前回のitemsが空なら条件ヘッダーを付けずに取�
 
   assert.equal(await syncNews({ previous, write: out.write, now: NOW }), "written");
   assert.equal(calls[0]!.headers["If-None-Match"], undefined);
+});
+
+test("syncNews: forceRefreshなら前回のETagがあっても条件ヘッダーを付けずに取得する", async (t) => {
+  const calls = stubSite(t);
+  const out = capture();
+  const previous = previousData(LIST_IDS.slice(0, 20), {
+    feedEtag: "\"etag-1\"",
+    feedLastModified: "Mon, 28 Sep 2026 05:05:26 GMT",
+    route: "rest",
+  });
+
+  const result = await syncNews({ previous, write: out.write, now: NOW, forceRefresh: true });
+
+  assert.equal(result, "unchanged", "304で止まらず取得し、差分が無ければ書かない");
+  const feedCall = calls.find((call) => call.url.pathname === "/feed/")!;
+  assert.equal(feedCall.headers["If-None-Match"], undefined);
+  assert.equal(feedCall.headers["If-Modified-Since"], undefined);
+  assert.ok(calls.some((call) => call.url.pathname.endsWith("/posts")), "REST一覧まで進む");
+});
+
+test("syncNews: 標準RSSの記事がすべてitemsと一致すればETagを保存する", async (t) => {
+  stubSite(t, { feedIds: LIST_IDS.slice(0, 10) });
+  const out = capture();
+
+  await syncNews({ previous: previousData(LIST_IDS.slice(1, 21)), write: out.write, now: NOW });
+
+  assert.equal(out.written[0]!.source?.feedEtag, "\"etag-1\"");
+  assert.equal(out.written[0]!.source?.feedLastModified, "Mon, 28 Sep 2026 05:05:26 GMT");
+});
+
+test("syncNews: 標準RSSとitemsのタイトルが食い違えばitemsは書き、ETagとLast-Modifiedは保存しない", async (t) => {
+  // /feed/ だけ修正後のタイトル、REST 側はキャッシュ上の古いタイトルという組を再現する。
+  stubSite(t, { feedIds: [121, 120], feedTitles: { 120: "お知らせ 120（修正）" } });
+  const out = capture();
+
+  assert.equal(
+    await syncNews({ previous: previousData(LIST_IDS.slice(1, 21)), write: out.write, now: NOW }),
+    "written",
+  );
+  const data = out.written[0]!;
+  assert.equal(data.items[0]!.id, 121, "items は書く");
+  assert.deepEqual(data.source, { feedEtag: null, feedLastModified: null, route: "rest" });
+});
+
+test("syncNews: 標準RSSの記事がitemsに無ければETagとLast-Modifiedを保存しない", async (t) => {
+  // 最新記事以外の非公開化などで、/feed/ にある 130 が一覧に無い状態。
+  stubSite(t, { feedIds: [121, 130] });
+  const out = capture();
+
+  await syncNews({ previous: previousData(LIST_IDS.slice(1, 21)), write: out.write, now: NOW });
+
+  assert.equal(out.written[0]!.source?.feedEtag, null);
+  assert.equal(out.written[0]!.source?.feedLastModified, null);
+});
+
+test("syncNews: RSS最新記事が生成対象に無ければ停止する", async (t) => {
+  stubSite(t, { feedIds: [130] });
+  const out = capture();
+
+  await assert.rejects(
+    syncNews({ previous: previousData(LIST_IDS.slice(1, 21)), write: out.write, now: NOW }),
+    /RSS最新記事が生成対象にありません/,
+  );
+  assert.equal(out.written.length, 0);
+});
+
+test("syncNews: お知らせ件数が半分未満に減ったら停止する", async (t) => {
+  // 前回と重ならない 20 件がすべて新規になり、そのうち 12 件の詳細が返らない。
+  stubSite(t, { feedIds: [121], hiddenIds: LIST_IDS.slice(1, 13) });
+  const out = capture();
+  const previous = previousData(Array.from({ length: 20 }, (_, i) => 90 - i));
+
+  await assert.rejects(
+    syncNews({ previous, write: out.write, now: NOW }),
+    /お知らせ件数が急減したため更新を停止します（20件→8件）/,
+  );
+  assert.equal(out.written.length, 0);
+});
+
+test("syncNews: 標準RSSが2xx以外なら停止する", async (t) => {
+  const calls = stubSite(t, { feedStatus: 500 });
+  const out = capture();
+
+  await assert.rejects(
+    syncNews({ previous: previousData(LIST_IDS.slice(0, 20)), write: out.write, now: NOW }),
+    /RSSの取得に失敗しました: 500/,
+  );
+  assert.equal(calls.length, 1, "標準RSS以外へ要求しない");
+  assert.equal(out.written.length, 0);
+});
+
+test("syncNews: 標準RSSに配信対象のお知らせが無ければ停止する", async (t) => {
+  stubSite(t, { feedIds: [] });
+  const out = capture();
+
+  await assert.rejects(
+    syncNews({ previous: previousData(LIST_IDS.slice(0, 20)), write: out.write, now: NOW }),
+    /標準RSSに配信対象のお知らせ記事がありません/,
+  );
+  assert.equal(out.written.length, 0);
+});
+
+test("syncNews: 一覧は取れて詳細だけ失敗したらカテゴリRSSへ切り替える", async (t) => {
+  const calls = stubSite(t, { feedIds: [121], detailStatus: 500 });
+  const out = capture();
+
+  await syncNews({ previous: previousData(LIST_IDS.slice(1, 21)), write: out.write, now: NOW });
+
+  assert.equal(calls.filter((call) => call.url.searchParams.has("include")).length, 1);
+  assert.ok(calls.some((call) => call.url.searchParams.get("feed") === "rss2"), "カテゴリRSSを引く");
+  const data = out.written[0]!;
+  assert.equal(data.source?.route, "rss");
+  assert.equal(data.items[0]!.thumbnailUrl, "https://anclas.jp/rss-121.jpg");
 });

@@ -13,6 +13,9 @@
  *   304 で止まるため、組み直しはサイトが更新された時間帯だけになる。
  * - items と source がどちらも前回と同じなら書かない。ETag だけ変わった場合も、
  *   次回の 304 判定に必要なので source を更新して書く。
+ * - 前段の nginx キャッシュは /feed/ とカテゴリRSSで別エントリのため、新しい ETag と古い items が組になりうる。
+ *   /feed/ の記事と items の id・タイトル・日時が 1 件でも合わなければ ETag / Last-Modified を保存せず、次回は全量取得で直す。
+ * - 304 判定はサイト側の変更しか見ないため、scripts の変更（push）や手動実行では forceRefresh で条件ヘッダーを付けずに取得する。
  */
 
 import { isDeepStrictEqual } from "node:util";
@@ -21,11 +24,16 @@ import {
   fetchFeedConditional,
   fetchNewsCategoryFeedItems,
   NEWS_FEED_URL,
-  parseLatestNewsFeedItem,
+  parseNewsFeedItems,
+  type FeedValidators,
   type NewsFeedItem,
 } from "./news-feed.js";
-import { preserveStableNewsMedia, selectNewsPosts } from "./news-selection.js";
-import { ANCLAS_MARK_URL, selectNewsThumbnail } from "./news-thumbnail.js";
+import {
+  hasPlaceholderNewsThumbnail,
+  preserveStableNewsMedia,
+  selectNewsPosts,
+} from "./news-selection.js";
+import { selectNewsThumbnail } from "./news-thumbnail.js";
 import type { NewsData, NewsItem, NewsSource } from "./types.js";
 import {
   getCategories,
@@ -38,7 +46,9 @@ const NEWS_LIMIT = 20;
 const LIST_PER_PAGE = 50;
 const LIST_FIELDS = ["id", "date", "title", "link", "categories"];
 const DETAIL_FIELDS = [
-  "id", "date", "title", "link", "categories", "content", "featured_media", "_links", "_embedded",
+  "id", "date", "title", "link", "categories", "content", "featured_media",
+  // WordPress は _fields と _embed を併用するとき、_links を含めないと _embedded を返さない。
+  "_links", "_embedded",
 ];
 
 type NewsPostSummary = Pick<WPPost, "id" | "date" | "title" | "link" | "categories">;
@@ -50,6 +60,8 @@ export interface NewsSyncDeps {
   /** 新しい news.json を書き出す */
   write: (data: NewsData) => void;
   now?: () => Date;
+  /** true なら前回の ETag / Last-Modified を使わずに取得する */
+  forceRefresh?: boolean;
 }
 
 /** not-modified: 304 で終了 / unchanged: 取得したが差分なし / written: 書き出した */
@@ -83,57 +95,88 @@ function feedItemToNewsItem(item: NewsFeedItem): NewsItem {
   };
 }
 
-async function fetchRestNewsItems(previousById: Map<number, NewsItem>): Promise<NewsItem[]> {
-  // リニューアル前後の同名「お知らせ」カテゴリを統合する。
+/** リニューアル前後の同名「お知らせ」カテゴリを統合し、除外する「試合」カテゴリと合わせて返す。 */
+async function resolveNewsCategoryIds(): Promise<{
+  newsCategoryIds: number[];
+  matchCategoryId: number | null;
+}> {
   const categories = await getCategories();
   const newsCategories = selectNewsCategories(categories);
   if (newsCategories.length === 0) throw new Error("お知らせカテゴリが見つかりませんでした");
   logger.info(
     `お知らせカテゴリ: ${newsCategories.map((c) => `id=${c.id} count=${c.count}`).join(", ")}`,
   );
-  const matchCategoryId = categories.find((c) => c.name === "試合")?.id;
-  const newsCategoryIds = newsCategories.map((category) => category.id);
+  return {
+    newsCategoryIds: newsCategories.map((category) => category.id),
+    matchCategoryId: categories.find((c) => c.name === "試合")?.id ?? null,
+  };
+}
+
+/** 軽い一覧を取り、配信対象の投稿を新しい順に NEWS_LIMIT 件選ぶ。 */
+async function fetchSelectedNewsPosts(): Promise<NewsPostSummary[]> {
+  const { newsCategoryIds, matchCategoryId } = await resolveNewsCategoryIds();
   const posts = await getPosts<NewsPostSummary>({
     categories: newsCategoryIds,
     perPage: LIST_PER_PAGE,
     fields: LIST_FIELDS,
   });
   if (posts.length === 0) throw new Error("お知らせ投稿が0件でした");
-  const selected = selectNewsPosts(posts, newsCategoryIds, matchCategoryId ?? null, NEWS_LIMIT);
+  return selectNewsPosts(posts, newsCategoryIds, matchCategoryId, NEWS_LIMIT);
+}
 
-  const newIds = selected.map((post) => post.id).filter((id) => !previousById.has(id));
-  const upgradeIds = selected.map((post) => post.id).filter((id) => {
-    const thumbnailUrl = previousById.get(id)?.thumbnailUrl;
-    return thumbnailUrl === null || thumbnailUrl === ANCLAS_MARK_URL;
-  });
-  const detailIds = [...newIds, ...upgradeIds];
+/** 指定した ID の本文とアイキャッチを 1 回の include 要求で取る。 */
+async function fetchNewsPostDetails(ids: number[]): Promise<Map<number, NewsPostDetail>> {
   const detailById = new Map<number, NewsPostDetail>();
-  if (detailIds.length > 0) {
-    const details = await getPosts<NewsPostDetail>({
-      include: detailIds,
-      perPage: detailIds.length,
-      embed: ["wp:featuredmedia"],
-      fields: DETAIL_FIELDS,
-    });
-    for (const detail of details) detailById.set(detail.id, detail);
+  if (ids.length === 0) return detailById;
+  const details = await getPosts<NewsPostDetail>({
+    include: ids,
+    perPage: ids.length,
+    embed: ["wp:featuredmedia"],
+    fields: DETAIL_FIELDS,
+  });
+  for (const detail of details) detailById.set(detail.id, detail);
+  return detailById;
+}
+
+/**
+ * 詳細があればそこから、無ければ前回の画像を使う。
+ * どちらも無い（詳細が返らなかった新規 ID）ときは null を返し、呼び出し側で除外する。
+ */
+function resolveNewsThumbnail(
+  detail: NewsPostDetail | undefined,
+  known: NewsItem | undefined,
+): { thumbnailUrl: string | null } | null {
+  if (detail) {
+    return {
+      thumbnailUrl: selectNewsThumbnail(
+        detail._embedded?.["wp:featuredmedia"]?.[0],
+        detail.content.rendered,
+      ),
+    };
   }
+  if (known) return { thumbnailUrl: known.thumbnailUrl };
+  return null;
+}
+
+async function fetchRestNewsItems(previousById: Map<number, NewsItem>): Promise<NewsItem[]> {
+  const selected = await fetchSelectedNewsPosts();
+
+  const selectedIds = selected.map((post) => post.id);
+  const newIds = selectedIds.filter((id) => !previousById.has(id));
+  const placeholderThumbnailIds = selectedIds.filter((id) => {
+    const known = previousById.get(id);
+    return known != null && hasPlaceholderNewsThumbnail(known);
+  });
+  const detailById = await fetchNewsPostDetails([...newIds, ...placeholderThumbnailIds]);
   logger.info(
-    `REST: 一覧${selected.length}件のうち新規${newIds.length}件・画像未設定${upgradeIds.length}件の詳細を取得`,
+    `REST: 一覧${selected.length}件のうち新規${newIds.length}件・`
+      + `画像がクラブマークか未設定${placeholderThumbnailIds.length}件の詳細を要求し${detailById.size}件取得`,
   );
 
   const items: NewsItem[] = [];
   for (const post of selected) {
-    const known = previousById.get(post.id);
-    const detail = detailById.get(post.id);
-    let thumbnailUrl: string | null;
-    if (detail) {
-      thumbnailUrl = selectNewsThumbnail(
-        detail._embedded?.["wp:featuredmedia"]?.[0],
-        detail.content.rendered,
-      );
-    } else if (known) {
-      thumbnailUrl = known.thumbnailUrl;
-    } else {
+    const thumbnail = resolveNewsThumbnail(detailById.get(post.id), previousById.get(post.id));
+    if (!thumbnail) {
       logger.warn(`REST: 詳細を取得できなかった投稿を除外します: id=${post.id}`);
       continue;
     }
@@ -142,7 +185,7 @@ async function fetchRestNewsItems(previousById: Map<number, NewsItem>): Promise<
       title: decodeEntities(post.title.rendered).trim(),
       date: post.date,
       url: post.link,
-      thumbnailUrl,
+      thumbnailUrl: thumbnail.thumbnailUrl,
     });
   }
   return items;
@@ -162,21 +205,46 @@ async function fetchFreshNewsItems(
   }
 }
 
+/** 標準RSSの記事のうち、items に同じ id・タイトル・日時で載っていないものを返す。 */
+function findInconsistentFeedItems(feedItems: NewsFeedItem[], items: NewsItem[]): NewsFeedItem[] {
+  const itemById = new Map(items.map((item) => [item.id, item]));
+  return feedItems.filter((feedItem) => {
+    const item = itemById.get(feedItem.id);
+    return !item
+      || item.title !== decodeEntities(feedItem.title).trim()
+      || item.date !== feedDateToWordPressLocal(feedItem.publishedAt);
+  });
+}
+
+function presence(value: string | null): string {
+  return value ? "あり" : "なし";
+}
+
 export async function syncNews(deps: NewsSyncDeps): Promise<NewsSyncResult> {
   const { previous } = deps;
   const previousById = new Map(previous.items.map((item) => [item.id, item]));
 
   // 前回の items が無いと 304 では何も作れないため、そのときは条件を付けずに取得する。
-  const validators = previous.items.length > 0
+  const validators: FeedValidators = previous.items.length > 0 && !deps.forceRefresh
     ? { etag: previous.source?.feedEtag, lastModified: previous.source?.feedLastModified }
     : {};
+  if (deps.forceRefresh) logger.info("強制再取得のため条件ヘッダーを付けずに標準RSSを取得します");
+  const sentConditional = Boolean(validators.etag || validators.lastModified);
   const feed = await fetchFeedConditional(NEWS_FEED_URL, validators);
   if (feed.status === 304) {
     logger.info("標準RSSは前回から変更なし（304）のため news.json を更新しません");
     return "not-modified";
   }
+  logger.info(
+    `標準RSSを取得（200）: 条件ヘッダー${sentConditional ? "送信" : "なし"}・`
+      + `ETag${presence(feed.etag)}・Last-Modified${presence(feed.lastModified)}`,
+  );
+  if (!feed.etag && !feed.lastModified) {
+    logger.warn("標準RSSが ETag も Last-Modified も返さないため、次回も全量取得になります");
+  }
 
-  const latestFeedItem = parseLatestNewsFeedItem(feed.xml);
+  const feedItems = parseNewsFeedItems(feed.xml);
+  const latestFeedItem = feedItems[0];
   if (!latestFeedItem) throw new Error("標準RSSに配信対象のお知らせ記事がありません");
 
   const fresh = await fetchFreshNewsItems(previousById);
@@ -189,6 +257,14 @@ export async function syncNews(deps: NewsSyncDeps): Promise<NewsSyncResult> {
   }
   logger.info(`RSS最新記事との整合を確認: id=${latestFeedItem.id} ${latestFeedItem.title}`);
 
+  const inconsistent = findInconsistentFeedItems(feedItems, fresh.items);
+  if (inconsistent.length > 0) {
+    logger.warn(
+      `標準RSSと生成対象で内容が合わない記事があるため、ETag / Last-Modified を保存せず次回は全量取得します: `
+        + inconsistent.map((item) => `id=${item.id}`).join(", "),
+    );
+  }
+
   const items = fresh.items.map((item) => preserveStableNewsMedia(item, previousById.get(item.id)));
 
   const minimumSafeCount = Math.ceil(previous.items.length * 0.5);
@@ -198,21 +274,28 @@ export async function syncNews(deps: NewsSyncDeps): Promise<NewsSyncResult> {
     );
   }
 
-  const source: NewsSource = {
-    feedEtag: feed.etag,
-    feedLastModified: feed.lastModified,
-    route: fresh.route,
-  };
-  if (isDeepStrictEqual(items, previous.items) && isDeepStrictEqual(source, previous.source)) {
+  const source: NewsSource = inconsistent.length > 0
+    ? { feedEtag: null, feedLastModified: null, route: fresh.route }
+    : { feedEtag: feed.etag, feedLastModified: feed.lastModified, route: fresh.route };
+  const itemsChanged = !isDeepStrictEqual(items, previous.items);
+  if (!itemsChanged && isDeepStrictEqual(source, previous.source)) {
     logger.info(`お知らせ・取得元とも前回と同じため news.json を更新しません（${items.length}件）`);
     return "unchanged";
   }
 
+  const previousRoute = previous.source?.route;
+  if (previousRoute && previousRoute !== source.route) {
+    logger.info(`取得経路が ${previousRoute}→${source.route} に変わりました`);
+  }
   deps.write({
     generatedAt: (deps.now?.() ?? new Date()).toISOString(),
     source,
     items,
   });
-  logger.info(`done: お知らせ ${items.length}件`);
+  logger.info(
+    itemsChanged
+      ? `記事に変更ありのため書き出しました: お知らせ ${items.length}件`
+      : `記事は前回と同じで、取得元（ETag / Last-Modified / 経路）だけ更新しました: お知らせ ${items.length}件`,
+  );
   return "written";
 }

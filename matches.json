@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T15:56:58.094Z",
+  "generatedAt": "2026-09-29T20:52:31.976Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -28,10 +28,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 22,
-        "precipitationProbability": 10,
-        "weatherCode": 2,
-        "fetchedAt": "2026-09-29T15:56:51.827Z"
+        "temperatureC": 21.8,
+        "precipitationProbability": 7,
+        "weatherCode": 1,
+        "fetchedAt": "2026-09-29T20:52:22.357Z"
       }
     },
     "latestResult": {
@@ -6638,10 +6638,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 22,
-        "precipitationProbability": 10,
-        "weatherCode": 2,
-        "fetchedAt": "2026-09-29T15:56:51.827Z"
+        "temperatureC": 21.8,
+        "precipitationProbability": 7,
+        "weatherCode": 1,
+        "fetchedAt": "2026-09-29T20:52:22.357Z"
       }
     },
     {

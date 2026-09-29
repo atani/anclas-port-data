@@ -11,14 +11,14 @@ export function isWordPressSampleNews(id: number, url: string): boolean {
   }
 }
 
-export function selectNewsPosts(
-  posts: WPPost[],
+export function selectNewsPosts<T extends Pick<WPPost, "id" | "date" | "link" | "categories">>(
+  posts: T[],
   noticeCategoryIds: number[],
   matchCategoryId: number | null,
   limit: number,
-): WPPost[] {
+): T[] {
   const noticeIds = new Set(noticeCategoryIds);
-  const unique = new Map<number, WPPost>();
+  const unique = new Map<number, T>();
   for (const post of posts) {
     if (!post.categories.some((id) => noticeIds.has(id))) continue;
     if (matchCategoryId != null && post.categories.includes(matchCategoryId)) continue;
@@ -30,6 +30,11 @@ export function selectNewsPosts(
     .slice(0, limit);
 }
 
+/** 画像が未設定かクラブマークで、実画像への差し替え候補になる記事か。 */
+export function hasPlaceholderNewsThumbnail(item: Pick<NewsItem, "thumbnailUrl">): boolean {
+  return item.thumbnailUrl == null || item.thumbnailUrl === ANCLAS_MARK_URL;
+}
+
 /**
  * サイト移行で既存URL・画像URLだけが一斉変更されても、配信データを不要に揺らさない。
  * ただし以前クラブマークしか無かった記事に実画像が付いた場合は更新する。
@@ -37,9 +42,7 @@ export function selectNewsPosts(
 export function preserveStableNewsMedia(fresh: NewsItem, previous: NewsItem | undefined): NewsItem {
   if (!previous) return fresh;
   const canImproveThumbnail =
-    (previous.thumbnailUrl == null || previous.thumbnailUrl === ANCLAS_MARK_URL)
-    && fresh.thumbnailUrl != null
-    && fresh.thumbnailUrl !== ANCLAS_MARK_URL;
+    hasPlaceholderNewsThumbnail(previous) && !hasPlaceholderNewsThumbnail(fresh);
   return {
     ...fresh,
     url: previous.url,

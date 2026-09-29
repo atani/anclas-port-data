@@ -381,8 +381,20 @@ export interface Staff {
 /** news.json のルート */
 export interface NewsData {
   generatedAt: string;
+  /** 次回の条件付き取得に使う値。導入前の news.json には無い */
+  source?: NewsSource;
   /** 新しい順 */
   items: NewsItem[];
+}
+
+/** news.json を作ったときの取得元の状態（使い方は lib/news-sync.ts 参照） */
+export interface NewsSource {
+  /** 標準RSSの ETag。返らなければ null */
+  feedEtag: string | null;
+  /** 標準RSSの Last-Modified。返らなければ null */
+  feedLastModified: string | null;
+  /** items を作った経路 */
+  route: "rest" | "rss";
 }
 
 /** クラブお知らせ1件（anclas.jp「お知らせ」カテゴリ由来） */

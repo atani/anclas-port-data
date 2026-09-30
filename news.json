@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-09-29T10:02:34.833Z",
+  "generatedAt": "2026-09-30T13:49:26.846Z",
   "source": {
-    "feedEtag": "\"b78281f1e6aeaefa58f0f51c90e33174\"",
-    "feedLastModified": "Tue, 29 Sep 2026 07:46:35 GMT",
+    "feedEtag": "\"8e1d1fe54e5f047c2a2284d3df87de85\"",
+    "feedLastModified": "Wed, 30 Sep 2026 08:51:08 GMT",
     "route": "rss"
   },
   "items": [
+    {
+      "id": 29728,
+      "title": "10/18 vs神村高校戦　エスコートキッズ募集のお知らせ",
+      "date": "2026-09-30T17:51:08",
+      "url": "https://anclas.jp/news/2026/09/30/9300/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__69623859_0-1024x683.jpg"
+    },
     {
       "id": 29714,
       "title": "ボランティアスタッフ募集のお知らせ",
@@ -138,13 +145,6 @@
       "date": "2026-08-14T17:00:08",
       "url": "https://anclas.jp/post-27930/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/い-240x300.jpg"
-    },
-    {
-      "id": 27894,
-      "title": "【ユニオン電機有限会社 様 】新規パートナー契約締結のお知らせ",
-      "date": "2026-08-13T09:00:07",
-      "url": "https://anclas.jp/post-27894/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/S__65011715-300x300.jpg"
     }
   ]
 }

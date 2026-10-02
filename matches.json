@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T05:46:53.711Z",
+  "generatedAt": "2026-10-02T07:03:45.651Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -28,10 +28,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 21.9,
+        "temperatureC": 22.1,
         "precipitationProbability": 10,
         "weatherCode": 0,
-        "fetchedAt": "2026-10-02T05:46:50.969Z"
+        "fetchedAt": "2026-10-02T07:03:40.305Z"
       }
     },
     "latestResult": {
@@ -620,13 +620,20 @@
       }
     ],
     "latestYouTubeShort": {
-      "videoId": "lbfzRHU1Djs",
-      "title": "想いをのせたラップを選手のアイデアで制作！！！",
-      "thumbnailUrl": "https://i1.ytimg.com/vi/lbfzRHU1Djs/hqdefault.jpg",
-      "url": "https://www.youtube.com/shorts/lbfzRHU1Djs",
-      "publishedAt": "2026-03-27T09:01:00+00:00"
+      "videoId": "0SUlqs7zIYU",
+      "title": "サッカーが上達する練習メニュー！＃1",
+      "thumbnailUrl": "https://i1.ytimg.com/vi/0SUlqs7zIYU/hqdefault.jpg",
+      "url": "https://www.youtube.com/shorts/0SUlqs7zIYU",
+      "publishedAt": "2026-10-02T05:05:59+00:00"
     },
     "youtubeShorts": [
+      {
+        "videoId": "0SUlqs7zIYU",
+        "title": "サッカーが上達する練習メニュー！＃1",
+        "thumbnailUrl": "https://i1.ytimg.com/vi/0SUlqs7zIYU/hqdefault.jpg",
+        "url": "https://www.youtube.com/shorts/0SUlqs7zIYU",
+        "publishedAt": "2026-10-02T05:05:59+00:00"
+      },
       {
         "videoId": "lbfzRHU1Djs",
         "title": "想いをのせたラップを選手のアイデアで制作！！！",
@@ -654,13 +661,6 @@
         "thumbnailUrl": "https://i1.ytimg.com/vi/t8AZeFy0CV4/hqdefault.jpg",
         "url": "https://www.youtube.com/shorts/t8AZeFy0CV4",
         "publishedAt": "2026-03-22T09:01:09+00:00"
-      },
-      {
-        "videoId": "ycQZElJ5lHQ",
-        "title": "女子アスリートの朝食は？　#アンクラス #アスリート #朝食",
-        "thumbnailUrl": "https://i2.ytimg.com/vi/ycQZElJ5lHQ/hqdefault.jpg",
-        "url": "https://www.youtube.com/shorts/ycQZElJ5lHQ",
-        "publishedAt": "2025-10-16T11:01:56+00:00"
       }
     ],
     "shopItems": [
@@ -6638,10 +6638,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 21.9,
+        "temperatureC": 22.1,
         "precipitationProbability": 10,
         "weatherCode": 0,
-        "fetchedAt": "2026-10-02T05:46:50.969Z"
+        "fetchedAt": "2026-10-02T07:03:40.305Z"
       }
     },
     {

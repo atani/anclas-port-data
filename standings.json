@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-10-02T23:50:31.547Z",
+  "generatedAt": "2026-10-03T05:24:44.421Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
     {
       "rank": 1,
       "team": "福岡J・アンクラス",
-      "played": 11,
-      "win": 9,
+      "played": 12,
+      "win": 10,
       "draw": 2,
       "loss": 0,
-      "gf": 22,
+      "gf": 24,
       "ga": 5,
-      "points": 29,
-      "gd": 17,
+      "points": 32,
+      "gd": 19,
       "isAnclas": true
     },
     {
@@ -45,14 +45,14 @@
     {
       "rank": 4,
       "team": "柳ヶ浦高等学校　女子サッカー部",
-      "played": 11,
+      "played": 12,
       "win": 5,
       "draw": 1,
-      "loss": 5,
+      "loss": 6,
       "gf": 15,
-      "ga": 14,
+      "ga": 16,
       "points": 16,
-      "gd": 1,
+      "gd": -1,
       "isAnclas": false
     },
     {
@@ -156,6 +156,13 @@
       "leagueRank": 25,
       "name": "野沢 真由",
       "number": 8,
+      "goals": 1
+    },
+    {
+      "rank": 6,
+      "leagueRank": 25,
+      "name": "田邉 いちご",
+      "number": 9,
       "goals": 1
     },
     {

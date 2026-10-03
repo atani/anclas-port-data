@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-02T23:50:31.547Z",
+  "generatedAt": "2026-10-03T05:24:44.421Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
-      "id": "su-post-9437",
+      "id": "su-post-9438",
       "competition": "Qリーグ",
-      "round": 15,
-      "date": "2026-10-03",
-      "kickoff": "10:00",
-      "datetime": "2026-10-03T10:00:00+09:00",
-      "homeTeam": "柳ヶ浦高等学校　女子サッカー部",
-      "awayTeam": "福岡J・アンクラス",
+      "round": 16,
+      "date": "2026-10-18",
+      "kickoff": "12:00",
+      "datetime": "2026-10-18T12:00:00+09:00",
+      "homeTeam": "福岡J・アンクラス",
+      "awayTeam": "神村学園高等部女子サッカー部",
       "status": "scheduled",
       "score": null,
       "isAnclas": true,
-      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-35/",
-      "venue": "大分県サッカー協会人工芝グランド",
+      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-51/",
+      "venue": "宇美町総合スポーツ公園",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -27,508 +27,285 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": {
-        "temperatureC": 22.1,
-        "precipitationProbability": 12,
-        "weatherCode": 1,
-        "fetchedAt": "2026-10-02T23:50:25.638Z"
-      }
+      "forecast": null
     },
     "latestResult": {
-      "id": "su-post-9451",
+      "id": "su-post-9437",
       "competition": "Qリーグ",
-      "round": 14,
-      "date": "2026-09-20",
-      "kickoff": "12:00",
-      "datetime": "2026-09-20T12:00:00+09:00",
-      "homeTeam": "福岡J・アンクラス",
-      "awayTeam": "東海大学付属福岡高等学校",
+      "round": 15,
+      "date": "2026-10-03",
+      "kickoff": "10:00",
+      "datetime": "2026-10-03T10:00:00+09:00",
+      "homeTeam": "柳ヶ浦高等学校　女子サッカー部",
+      "awayTeam": "福岡J・アンクラス",
       "status": "finished",
       "score": {
-        "home": 1,
-        "away": 1
+        "home": 0,
+        "away": 2
       },
       "isAnclas": true,
-      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-67/",
-      "venue": "宇美町総合スポーツ公園",
+      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-35/",
+      "venue": "大分県サッカー協会人工芝グランド",
       "goals": [
         {
-          "minute": "61分",
+          "minute": "43分",
           "team": "福岡J・アンクラス",
-          "playerNumber": 13,
-          "playerName": "原 日樺",
-          "assist": "8CK↑13H"
+          "playerNumber": null,
+          "playerName": "オウンゴール",
+          "assist": "中央1 22S ×オウンゴール"
         },
         {
-          "minute": "80+1分",
-          "team": "東海大学付属福岡高等学校",
-          "playerNumber": 11,
-          "playerName": "氷室 かんな",
-          "assist": "10→11S"
+          "minute": "69分",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 9,
+          "playerName": "田邉 いちご",
+          "assist": "左1 16→中央1 9S"
         }
       ],
       "starters": [
         {
-          "number": 21,
+          "number": 12,
           "position": "GK",
-          "name": "熊澤 果歩",
+          "name": "中川 響",
           "team": "home"
         },
         {
-          "number": 3,
+          "number": 5,
           "position": "DF",
-          "name": "澁澤 光",
-          "team": "home"
-        },
-        {
-          "number": 6,
-          "position": "DF",
-          "name": "森 和奏",
-          "team": "home"
-        },
-        {
-          "number": 10,
-          "position": "DF",
-          "name": "平坂 咲希",
+          "name": "大下 紗也奈",
           "team": "home"
         },
         {
           "number": 23,
           "position": "DF",
-          "name": "北条 あゆみ",
+          "name": "平尾 心瑚",
           "team": "home"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "神田 菜那",
+          "team": "home"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "漆谷 心温",
+          "team": "home"
+        },
+        {
+          "number": 22,
+          "position": "MF",
+          "name": "野田 朱花",
+          "team": "home"
+        },
+        {
+          "number": 27,
+          "position": "MF",
+          "name": "丸山 笑花",
+          "team": "home"
+        },
+        {
+          "number": 28,
+          "position": "MF",
+          "name": "内立輪 莉子",
+          "team": "home"
+        },
+        {
+          "number": 30,
+          "position": "MF",
+          "name": "安田 絵恋",
+          "team": "home"
+        },
+        {
+          "number": 10,
+          "position": "FW",
+          "name": "上本 恭子",
+          "team": "home"
+        },
+        {
+          "number": 26,
+          "position": "FW",
+          "name": "橋本 芽依",
+          "team": "home"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "熊澤 果歩",
+          "team": "away"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "澁澤 光",
+          "team": "away"
+        },
+        {
+          "number": 6,
+          "position": "DF",
+          "name": "森 和奏",
+          "team": "away"
+        },
+        {
+          "number": 10,
+          "position": "DF",
+          "name": "平坂 咲希",
+          "team": "away"
         },
         {
           "number": 15,
           "position": "MF",
           "name": "田中 花奈",
-          "team": "home"
+          "team": "away"
         },
         {
           "number": 16,
           "position": "MF",
           "name": "端山 新",
-          "team": "home"
+          "team": "away"
+        },
+        {
+          "number": 20,
+          "position": "MF",
+          "name": "田川 葵",
+          "team": "away"
         },
         {
           "number": 22,
           "position": "MF",
           "name": "野田 夏未",
-          "team": "home"
+          "team": "away"
         },
         {
           "number": 8,
           "position": "FW",
           "name": "野沢 真由",
-          "team": "home"
+          "team": "away"
         },
         {
           "number": 9,
           "position": "FW",
           "name": "田邉 いちご",
-          "team": "home"
+          "team": "away"
         },
         {
           "number": 13,
           "position": "FW",
           "name": "原 日樺",
-          "team": "home"
-        },
-        {
-          "number": 1,
-          "position": "GK",
-          "name": "松井 美空",
-          "team": "away"
-        },
-        {
-          "number": 2,
-          "position": "DF",
-          "name": "野田 夏帆",
-          "team": "away"
-        },
-        {
-          "number": 4,
-          "position": "DF",
-          "name": "山岡 可歩",
-          "team": "away"
-        },
-        {
-          "number": 7,
-          "position": "DF",
-          "name": "山部 愛凜",
-          "team": "away"
-        },
-        {
-          "number": 5,
-          "position": "MF",
-          "name": "岡崎 愛未",
-          "team": "away"
-        },
-        {
-          "number": 8,
-          "position": "MF",
-          "name": "内田 衣怜",
-          "team": "away"
-        },
-        {
-          "number": 9,
-          "position": "MF",
-          "name": "藤本 萌空",
-          "team": "away"
-        },
-        {
-          "number": 10,
-          "position": "MF",
-          "name": "宮口 莉乃",
-          "team": "away"
-        },
-        {
-          "number": 21,
-          "position": "MF",
-          "name": "尾辻 莉奈",
-          "team": "away"
-        },
-        {
-          "number": 30,
-          "position": "MF",
-          "name": "松瀬 きりく",
-          "team": "away"
-        },
-        {
-          "number": 27,
-          "position": "FW",
-          "name": "木村 葵",
           "team": "away"
         }
       ],
       "subs": [
         {
-          "number": 5,
-          "position": "DF",
-          "name": "大河内 友貴",
+          "number": 21,
+          "position": "GK",
+          "name": "後藤 彩希",
           "team": "home"
         },
         {
-          "number": 7,
+          "number": 6,
+          "position": "DF",
+          "name": "楠 彩由菜",
+          "team": "home"
+        },
+        {
+          "number": 8,
           "position": "MF",
-          "name": "杉浦 華穂",
+          "name": "横山 愛葵",
           "team": "home"
         },
         {
           "number": 11,
-          "position": "FW",
-          "name": "嘉数 クレア姫麗",
+          "position": "MF",
+          "name": "宮尾 梨愛",
           "team": "home"
         },
         {
-          "number": 18,
-          "position": "FW",
-          "name": "玉城 薪瀬",
+          "number": 17,
+          "position": "MF",
+          "name": "門馬 有琉",
+          "team": "home"
+        },
+        {
+          "number": 19,
+          "position": "MF",
+          "name": "中西 穂香",
           "team": "home"
         },
         {
           "number": 17,
           "position": "GK",
-          "name": "梶原 琉愛",
+          "name": "釜坂 慧",
           "team": "away"
         },
         {
-          "number": 26,
+          "number": 23,
           "position": "DF",
-          "name": "中村 美心",
+          "name": "北条 あゆみ",
           "team": "away"
         },
         {
-          "number": 6,
+          "number": 7,
           "position": "MF",
-          "name": "伊藤 翼",
+          "name": "杉浦 華穂",
           "team": "away"
         },
         {
-          "number": 13,
+          "number": 14,
           "position": "MF",
-          "name": "福本 來実花",
-          "team": "away"
-        },
-        {
-          "number": 22,
-          "position": "MF",
-          "name": "山口 愛空",
-          "team": "away"
-        },
-        {
-          "number": 29,
-          "position": "MF",
-          "name": "野見山 玲世",
+          "name": "宮脇 ゆりあ",
           "team": "away"
         },
         {
           "number": 11,
           "position": "FW",
-          "name": "氷室 かんな",
+          "name": "嘉数 クレア姫麗",
           "team": "away"
         },
         {
-          "number": 12,
+          "number": 18,
           "position": "FW",
-          "name": "森山 絆杏",
-          "team": "away"
-        },
-        {
-          "number": 16,
-          "position": "FW",
-          "name": "森川 楓花",
+          "name": "玉城 薪瀬",
           "team": "away"
         }
       ],
       "substitutions": [
         {
-          "minute": "ＨＴ",
-          "team": "home",
-          "outNumber": 23,
-          "outName": "北条 あゆみ",
-          "inNumber": 5,
-          "inName": "大河内 友貴"
-        },
-        {
-          "minute": "ＨＴ",
+          "minute": "75分(後半35分)",
           "team": "away",
-          "outNumber": 27,
-          "outName": "木村 葵",
+          "outNumber": 9,
+          "outName": "田邉 いちご",
           "inNumber": 11,
-          "inName": "氷室 かんな"
+          "inName": "嘉数 クレア姫麗"
         },
         {
-          "minute": "72分(後半32分)",
+          "minute": "80分(後半40分)",
           "team": "away",
-          "outNumber": 2,
-          "outName": "野田 夏帆",
-          "inNumber": 13,
-          "inName": "福本 來実花"
-        },
-        {
-          "minute": "76分(後半36分)",
-          "team": "away",
-          "outNumber": 7,
-          "outName": "山部 愛凜",
-          "inNumber": 29,
-          "inName": "野見山 玲世"
+          "outNumber": 20,
+          "outName": "田川 葵",
+          "inNumber": 14,
+          "inName": "宮脇 ゆりあ"
         }
       ],
       "stats": {
-        "attendance": "506人",
-        "weather": "晴れ",
-        "temperature": "28℃",
-        "pitch": "良芝"
+        "attendance": "30人",
+        "weather": "晴",
+        "temperature": "26℃",
+        "pitch": "人工芝、乾燥"
       },
-      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341603",
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341607",
       "posterUrl": null,
-      "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/09/9.20%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
+      "matchdayProgramUrl": null,
       "cards": [],
-      "matchReport": {
-        "summary": "試合は立ち上がりから一進一退の攻防となり、互いにゴールを目指す展開となった。\n\n前半は相手の攻撃を受ける時間帯もあったが、最後のところで粘り強く対応し、ゴールを許さず0-0で折り返した。\n\n後半に入り、徐々に攻撃の時間を増やしていく中で、コーナーキックから先制点を奪った。セットプレーから得点を奪い、チームとして良い流れを作ることができた。\n\nその後も追加点を狙いながら、リードを守るためにチーム全体で戦い続けた。しかし、後半終盤に相手の攻撃を受けて失点。1-1に追いつかれる展開となった。\n\n最後まで勝ち越しを目指して戦ったが、追加点を奪うことができず、そのまま試合終了。1-1の引き分けとなった。\n\n監督黒澤怜コメント\n\n本日も最後まで熱い応援をありがとうございました。\n\n先制することができた中で、後半終盤に失点し、勝ち切れなかった悔しさが残る試合となりました。\n\n終盤の試合運びや守備の部分は、もう一度チームとしてさらに改善していかなければいけないと思います。\n\n今日の悔しさを次の試合につなげ、勝利を掴めるようにチーム全員で準備していきます。\n\n本日も応援ありがとうございました。\n\n#3 澁澤光\n\n先制しましたが、終了間際に失点してしまい、もったいない試合だったと思います。\n試合全体を通して、流れや時間帯を考えたプレー選択がもっとできたかなと思います。\n連勝は止まってしまいましたが、まだ自力で優勝を決められる状況なので、残り3試合を必ず勝ち切れるように、また良い準備をしていきたいです。\n\n#15 田中花奈\n\n今日もたくさんの応援ありがとうございました！\n結果も内容も悔いが残る試合となってしまいました。\nリーグ戦は残り3試合となりましたが、必ず勝ってリーグ優勝できるよう頑張ります。\n引き続き応援よろしくお願いします。",
-        "coachComment": null,
-        "playerComments": [],
-        "sourceUrl": "https://anclas.jp/news/2026/09/21/920/"
-      },
-      "photoGallery": [
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69263386_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69263387_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69263388_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69263389_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69263390_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69263391_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69263392_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69263393_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69263394_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566470_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566471_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566472_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566473_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566474_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566475_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566476_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566477_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566478_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566479_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566481_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566482_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566483_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566484_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566485_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566486_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566487_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566488_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566489_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566490_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566492_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566493_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566494_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566495_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566496_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566497_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566498_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566499_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566500_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566501_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566503_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566504_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566505_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566506_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566507_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566508_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566509_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566510_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566511_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566512_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566514_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566515_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566516_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566517_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566518_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566519_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566520_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566521_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566522_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566523_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566525_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566526_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566527_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566528_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566529_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566530_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566531_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566532_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566533_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566534_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566536_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566537_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566538_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566539_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566540_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566541_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566542_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566543_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566544_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566545_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566547_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566548_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566549_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566550_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566551_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566552_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566553_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566554_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566555_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566556_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566558_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566559_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566560_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566561_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566562_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566563_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566564_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566565_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566566_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566567_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566569_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566570_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566571_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566572_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566573_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566574_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566575_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566576_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566577_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566578_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566580_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566581_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566582_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566583_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566584_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566585_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566586_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566587_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566588_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566589_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566591_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566592_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566593_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566594_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566595_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566596_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566597_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566598_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566599_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566600_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566602_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566603_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566604_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566605_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566606_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566607_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566608_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566609_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566610_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566611_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566613_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566614_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566615_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566616_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566617_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566618_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566619_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566620_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566621_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566622_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566624_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566625_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566626_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566627_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566628_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566629_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566630_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566631_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566632_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566633_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566635_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566636_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566637_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566638_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566639_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566640_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566641_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566642_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566643_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566644_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566657_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566658_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566659_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566660_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566661_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566662_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566663_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566664_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566665_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566666_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566667.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566646_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566647_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566648_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566649_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566650_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566651_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566652_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566653_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566654_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/09/S__69566655_0.jpg"
-      ],
+      "matchReport": null,
+      "photoGallery": [],
       "forecast": null
     },
     "latestPodcast": {
       "id": "45sjvJqlN7Oo45gOFRpHyK",
       "title": "＃24【インタビュー：熊澤果歩】浦和レッズレディースから福岡J・アンクラスへ。高校3年生GK熊澤果歩の挑戦",
-      "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+      "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
       "showUrl": "https://open.spotify.com/episode/45sjvJqlN7Oo45gOFRpHyK",
       "embedUrl": "https://open.spotify.com/embed/episode/45sjvJqlN7Oo45gOFRpHyK",
       "publishedAt": "2026-10-02"
@@ -537,7 +314,7 @@
       {
         "id": "45sjvJqlN7Oo45gOFRpHyK",
         "title": "＃24【インタビュー：熊澤果歩】浦和レッズレディースから福岡J・アンクラスへ。高校3年生GK熊澤果歩の挑戦",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/45sjvJqlN7Oo45gOFRpHyK",
         "embedUrl": "https://open.spotify.com/embed/episode/45sjvJqlN7Oo45gOFRpHyK",
         "publishedAt": "2026-10-02"
@@ -545,7 +322,7 @@
       {
         "id": "04ECwS2zybRJatrg7SAuOQ",
         "title": "＃23【インタビュー：黒澤怜】アンクラスの新監督ってどんな人？選手目線を持つ指導者の素顔",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/04ECwS2zybRJatrg7SAuOQ",
         "embedUrl": "https://open.spotify.com/embed/episode/04ECwS2zybRJatrg7SAuOQ",
         "publishedAt": "2026-09-17"
@@ -553,7 +330,7 @@
       {
         "id": "0EnfHrhxHixbG33XiUt7PC",
         "title": "#22【インタビュー：リゾスポ学生の小田さん、福田さん、野口さん】元Jリーガーvs100人の小学生の仕掛け人たち",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/0EnfHrhxHixbG33XiUt7PC",
         "embedUrl": "https://open.spotify.com/embed/episode/0EnfHrhxHixbG33XiUt7PC",
         "publishedAt": "2026-09-02"
@@ -561,7 +338,7 @@
       {
         "id": "5s76C6q7hi8K3aGmtBRQsd",
         "title": "＃21【番外編】セールストーーク！誰でも上手くいく営業のおはなし",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/5s76C6q7hi8K3aGmtBRQsd",
         "embedUrl": "https://open.spotify.com/embed/episode/5s76C6q7hi8K3aGmtBRQsd",
         "publishedAt": "2026-08-27"
@@ -569,7 +346,7 @@
       {
         "id": "50gyz3cbG9y8aP39H6HElX",
         "title": "＃20【ゲスト：ベランダから夕日（石垣島さん）】出会いはインスタ...海を越えて応援に駆けつけるウワサのあの人",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/50gyz3cbG9y8aP39H6HElX",
         "embedUrl": "https://open.spotify.com/embed/episode/50gyz3cbG9y8aP39H6HElX",
         "publishedAt": "2026-08-21"
@@ -6621,28 +6398,269 @@
       "datetime": "2026-10-03T10:00:00+09:00",
       "homeTeam": "柳ヶ浦高等学校　女子サッカー部",
       "awayTeam": "福岡J・アンクラス",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "home": 0,
+        "away": 2
+      },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-35/",
       "venue": "大分県サッカー協会人工芝グランド",
-      "goals": [],
-      "starters": [],
-      "subs": [],
-      "substitutions": [],
-      "stats": null,
-      "goalnoteUrl": null,
+      "goals": [
+        {
+          "minute": "43分",
+          "team": "福岡J・アンクラス",
+          "playerNumber": null,
+          "playerName": "オウンゴール",
+          "assist": "中央1 22S ×オウンゴール"
+        },
+        {
+          "minute": "69分",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 9,
+          "playerName": "田邉 いちご",
+          "assist": "左1 16→中央1 9S"
+        }
+      ],
+      "starters": [
+        {
+          "number": 12,
+          "position": "GK",
+          "name": "中川 響",
+          "team": "home"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "大下 紗也奈",
+          "team": "home"
+        },
+        {
+          "number": 23,
+          "position": "DF",
+          "name": "平尾 心瑚",
+          "team": "home"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "神田 菜那",
+          "team": "home"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "漆谷 心温",
+          "team": "home"
+        },
+        {
+          "number": 22,
+          "position": "MF",
+          "name": "野田 朱花",
+          "team": "home"
+        },
+        {
+          "number": 27,
+          "position": "MF",
+          "name": "丸山 笑花",
+          "team": "home"
+        },
+        {
+          "number": 28,
+          "position": "MF",
+          "name": "内立輪 莉子",
+          "team": "home"
+        },
+        {
+          "number": 30,
+          "position": "MF",
+          "name": "安田 絵恋",
+          "team": "home"
+        },
+        {
+          "number": 10,
+          "position": "FW",
+          "name": "上本 恭子",
+          "team": "home"
+        },
+        {
+          "number": 26,
+          "position": "FW",
+          "name": "橋本 芽依",
+          "team": "home"
+        },
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "熊澤 果歩",
+          "team": "away"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "澁澤 光",
+          "team": "away"
+        },
+        {
+          "number": 6,
+          "position": "DF",
+          "name": "森 和奏",
+          "team": "away"
+        },
+        {
+          "number": 10,
+          "position": "DF",
+          "name": "平坂 咲希",
+          "team": "away"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "田中 花奈",
+          "team": "away"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "端山 新",
+          "team": "away"
+        },
+        {
+          "number": 20,
+          "position": "MF",
+          "name": "田川 葵",
+          "team": "away"
+        },
+        {
+          "number": 22,
+          "position": "MF",
+          "name": "野田 夏未",
+          "team": "away"
+        },
+        {
+          "number": 8,
+          "position": "FW",
+          "name": "野沢 真由",
+          "team": "away"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "田邉 いちご",
+          "team": "away"
+        },
+        {
+          "number": 13,
+          "position": "FW",
+          "name": "原 日樺",
+          "team": "away"
+        }
+      ],
+      "subs": [
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "後藤 彩希",
+          "team": "home"
+        },
+        {
+          "number": 6,
+          "position": "DF",
+          "name": "楠 彩由菜",
+          "team": "home"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "横山 愛葵",
+          "team": "home"
+        },
+        {
+          "number": 11,
+          "position": "MF",
+          "name": "宮尾 梨愛",
+          "team": "home"
+        },
+        {
+          "number": 17,
+          "position": "MF",
+          "name": "門馬 有琉",
+          "team": "home"
+        },
+        {
+          "number": 19,
+          "position": "MF",
+          "name": "中西 穂香",
+          "team": "home"
+        },
+        {
+          "number": 17,
+          "position": "GK",
+          "name": "釜坂 慧",
+          "team": "away"
+        },
+        {
+          "number": 23,
+          "position": "DF",
+          "name": "北条 あゆみ",
+          "team": "away"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "杉浦 華穂",
+          "team": "away"
+        },
+        {
+          "number": 14,
+          "position": "MF",
+          "name": "宮脇 ゆりあ",
+          "team": "away"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "嘉数 クレア姫麗",
+          "team": "away"
+        },
+        {
+          "number": 18,
+          "position": "FW",
+          "name": "玉城 薪瀬",
+          "team": "away"
+        }
+      ],
+      "substitutions": [
+        {
+          "minute": "75分(後半35分)",
+          "team": "away",
+          "outNumber": 9,
+          "outName": "田邉 いちご",
+          "inNumber": 11,
+          "inName": "嘉数 クレア姫麗"
+        },
+        {
+          "minute": "80分(後半40分)",
+          "team": "away",
+          "outNumber": 20,
+          "outName": "田川 葵",
+          "inNumber": 14,
+          "inName": "宮脇 ゆりあ"
+        }
+      ],
+      "stats": {
+        "attendance": "30人",
+        "weather": "晴",
+        "temperature": "26℃",
+        "pitch": "人工芝、乾燥"
+      },
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341607",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": {
-        "temperatureC": 22.1,
-        "precipitationProbability": 12,
-        "weatherCode": 1,
-        "fetchedAt": "2026-10-02T23:50:25.638Z"
-      }
+      "forecast": null
     },
     {
       "id": "su-post-9415",

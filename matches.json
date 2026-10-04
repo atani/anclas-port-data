@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T17:39:29.297Z",
+  "generatedAt": "2026-10-04T21:33:29.973Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -28,10 +28,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 24.4,
+        "temperatureC": 21.2,
         "precipitationProbability": 22,
         "weatherCode": 3,
-        "fetchedAt": "2026-10-04T17:39:22.642Z"
+        "fetchedAt": "2026-10-04T21:33:23.590Z"
       }
     },
     "latestResult": {
@@ -6736,8 +6736,11 @@
       "datetime": "2026-10-04T14:00:00+09:00",
       "homeTeam": "水俣ユニオンフットボールクラブウィメン",
       "awayTeam": "東海大学付属福岡高等学校",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "home": 1,
+        "away": 0
+      },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-2-30/",
       "venue": "エコパーク水俣 陸上競技場",
@@ -6861,10 +6864,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 24.4,
+        "temperatureC": 21.2,
         "precipitationProbability": 22,
         "weatherCode": 3,
-        "fetchedAt": "2026-10-04T17:39:22.642Z"
+        "fetchedAt": "2026-10-04T21:33:23.590Z"
       }
     },
     {

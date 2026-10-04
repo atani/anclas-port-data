@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T17:39:29.297Z",
+  "generatedAt": "2026-10-04T21:33:29.973Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
@@ -58,27 +58,27 @@
     {
       "rank": 5,
       "team": "水俣ユニオンフットボールクラブウィメン",
-      "played": 11,
-      "win": 3,
+      "played": 12,
+      "win": 4,
       "draw": 2,
       "loss": 6,
-      "gf": 10,
+      "gf": 11,
       "ga": 17,
-      "points": 11,
-      "gd": -7,
+      "points": 14,
+      "gd": -6,
       "isAnclas": false
     },
     {
       "rank": 6,
       "team": "東海大学付属福岡高等学校",
-      "played": 10,
+      "played": 11,
       "win": 3,
       "draw": 1,
-      "loss": 6,
+      "loss": 7,
       "gf": 9,
-      "ga": 20,
+      "ga": 21,
       "points": 10,
-      "gd": -11,
+      "gd": -12,
       "isAnclas": false
     },
     {

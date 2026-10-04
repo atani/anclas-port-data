@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T07:00:09.961Z",
+  "generatedAt": "2026-10-04T13:15:08.316Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
@@ -32,14 +32,14 @@
     {
       "rank": 3,
       "team": "ヴィアマテラス宮崎Alegrita",
-      "played": 10,
-      "win": 5,
+      "played": 11,
+      "win": 6,
       "draw": 1,
       "loss": 4,
-      "gf": 22,
+      "gf": 29,
       "ga": 12,
-      "points": 16,
-      "gd": 10,
+      "points": 19,
+      "gd": 17,
       "isAnclas": false
     },
     {
@@ -97,14 +97,14 @@
     {
       "rank": 8,
       "team": "国見FCレディース",
-      "played": 9,
+      "played": 10,
       "win": 0,
       "draw": 1,
-      "loss": 8,
+      "loss": 9,
       "gf": 4,
-      "ga": 26,
+      "ga": 33,
       "points": 1,
-      "gd": -22,
+      "gd": -29,
       "isAnclas": false
     }
   ],
@@ -125,63 +125,63 @@
     },
     {
       "rank": 3,
-      "leagueRank": 14,
+      "leagueRank": 16,
       "name": "澁澤 光",
       "number": 3,
       "goals": 2
     },
     {
       "rank": 3,
-      "leagueRank": 14,
+      "leagueRank": 16,
       "name": "端山 新",
       "number": 16,
       "goals": 2
     },
     {
       "rank": 3,
-      "leagueRank": 14,
+      "leagueRank": 16,
       "name": "玉城 薪瀬",
       "number": 18,
       "goals": 2
     },
     {
       "rank": 6,
-      "leagueRank": 26,
+      "leagueRank": 29,
       "name": "大河内 友貴",
       "number": 5,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 26,
+      "leagueRank": 29,
       "name": "野沢 真由",
       "number": 8,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 26,
+      "leagueRank": 29,
       "name": "田邉 いちご",
       "number": 9,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 26,
+      "leagueRank": 29,
       "name": "平坂 咲希",
       "number": 10,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 26,
+      "leagueRank": 29,
       "name": "田中 花奈",
       "number": 15,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 26,
+      "leagueRank": 29,
       "name": "田川 葵",
       "number": 20,
       "goals": 1

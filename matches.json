@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T07:08:25.839Z",
+  "generatedAt": "2026-10-05T16:06:54.119Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -28,10 +28,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 21.2,
+        "temperatureC": 22.8,
         "precipitationProbability": 5,
-        "weatherCode": 3,
-        "fetchedAt": "2026-10-05T07:08:19.724Z"
+        "weatherCode": 0,
+        "fetchedAt": "2026-10-05T16:06:47.682Z"
       }
     },
     "latestResult": {
@@ -544,7 +544,7 @@
       {
         "id": "146226679",
         "name": "【40周年記念！】マフラータオル2026",
-        "price": "¥3,750($23.75)",
+        "price": "¥3,750($23.76)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/2edc17bff3df3722b83a66f36d2058cd.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/146226679"
       },
@@ -565,28 +565,28 @@
       {
         "id": "140216254",
         "name": "2026オーセンティックユニフォーム　【オレンジ】",
-        "price": "¥16,500($104.52)",
+        "price": "¥16,500($104.53)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/90dc1f90173d11022a9da327accaeb3a.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140216254"
       },
       {
         "id": "140217401",
         "name": "2026オーセンティックユニフォーム　【アクア】",
-        "price": "¥16,500($104.52)",
+        "price": "¥16,500($104.53)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/44c97fca39befd27fbbb5f8dfea6fad1.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140217401"
       },
       {
         "id": "140216939",
         "name": "2026オーセンティックユニフォーム　【ホワイト】",
-        "price": "¥16,500($104.52)",
+        "price": "¥16,500($104.53)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/abf342f7be661bb3eab0e542fa4fa05b.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140216939"
       },
       {
         "id": "140217933",
         "name": "2026オーセンティックユニフォーム【サクラ】",
-        "price": "¥16,500($104.52)",
+        "price": "¥16,500($104.53)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/76710215a7072bafd3ef77c0c12c9173.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140217933"
       },
@@ -7054,10 +7054,10 @@
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 21.2,
+        "temperatureC": 22.8,
         "precipitationProbability": 5,
-        "weatherCode": 3,
-        "fetchedAt": "2026-10-05T07:08:19.724Z"
+        "weatherCode": 0,
+        "fetchedAt": "2026-10-05T16:06:47.682Z"
       }
     },
     {

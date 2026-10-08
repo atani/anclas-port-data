@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T06:08:24.967Z",
+  "generatedAt": "2026-10-08T06:14:03.992Z",
   "season": "2026",
   "players": [
     {
@@ -1031,6 +1031,11 @@
       "sourceUrl": "https://anclas.jp/player/%e5%ae%ae%e8%84%87%e3%82%86%e3%82%8a%e3%81%82/",
       "blogPosts": [
         {
+          "title": "最近🌱 #14宮脇ゆりあ",
+          "url": "https://anclas.jp/player/blog/1714/",
+          "date": "2026-10-07"
+        },
+        {
           "title": "免許を取りました🔰🚗 #14 宮脇ゆりあ",
           "url": "https://anclas.jp/player/blog/post-27859/",
           "date": "2026-07-24"
@@ -1864,12 +1869,12 @@
   "staff": [
     {
       "name": "上田涼斗",
-      "role": "トップチーム監督",
+      "role": "トップチームGM",
       "photoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Image_20260826_081321_018.jpeg"
     },
     {
       "name": "黒澤怜",
-      "role": "ヘッドコーチ兼アカデミーダイレクター",
+      "role": "トップチーム監督兼アカデミーダイレクター",
       "photoUrl": "https://anclas.jp/wp-content/uploads/2026/08/Image_20260826_081342_107.jpeg"
     }
   ]

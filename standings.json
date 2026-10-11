@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T01:58:23.394Z",
+  "generatedAt": "2026-10-11T05:55:07.038Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
@@ -19,14 +19,14 @@
     {
       "rank": 2,
       "team": "FC琉球さくら",
-      "played": 10,
-      "win": 8,
+      "played": 11,
+      "win": 9,
       "draw": 1,
       "loss": 1,
-      "gf": 25,
+      "gf": 27,
       "ga": 3,
-      "points": 25,
-      "gd": 22,
+      "points": 28,
+      "gd": 24,
       "isAnclas": false
     },
     {
@@ -97,14 +97,14 @@
     {
       "rank": 8,
       "team": "国見FCレディース",
-      "played": 10,
+      "played": 11,
       "win": 0,
       "draw": 1,
-      "loss": 9,
+      "loss": 10,
       "gf": 4,
-      "ga": 33,
+      "ga": 35,
       "points": 1,
-      "gd": -29,
+      "gd": -31,
       "isAnclas": false
     }
   ],
@@ -146,42 +146,42 @@
     },
     {
       "rank": 6,
-      "leagueRank": 29,
+      "leagueRank": 31,
       "name": "大河内 友貴",
       "number": 5,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 29,
+      "leagueRank": 31,
       "name": "野沢 真由",
       "number": 8,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 29,
+      "leagueRank": 31,
       "name": "田邉 いちご",
       "number": 9,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 29,
+      "leagueRank": 31,
       "name": "平坂 咲希",
       "number": 10,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 29,
+      "leagueRank": 31,
       "name": "田中 花奈",
       "number": 15,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 29,
+      "leagueRank": 31,
       "name": "田川 葵",
       "number": 20,
       "goals": 1

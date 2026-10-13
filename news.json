@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-10-09T09:13:33.048Z",
+  "generatedAt": "2026-10-13T06:52:04.566Z",
   "source": {
-    "feedEtag": "\"3f8ca6413cf6ac104e510cd1db97ea8b\"",
-    "feedLastModified": "Fri, 09 Oct 2026 07:44:16 GMT",
+    "feedEtag": "\"2114e8c02cb0f1e848b4cea7823e9d42\"",
+    "feedLastModified": "Tue, 13 Oct 2026 05:22:02 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 29945,
+      "title": "【第20回福岡市医師会文化祭サッカー交流親睦会】参加レポート 2026.10.12",
+      "date": "2026-10-13T14:10:31",
+      "url": "https://anclas.jp/news/2026/10/13/201012/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/S__71057462_0-300x200.jpg"
+    },
     {
       "id": 29739,
       "title": "【ホームタウン活動】2026.10.01",
@@ -138,13 +145,6 @@
       "date": "2026-08-19T12:00:20",
       "url": "https://anclas.jp/news/2026/08/19/post-27955/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/S__66355209-1-300x300.jpg"
-    },
-    {
-      "id": 27863,
-      "title": "【株式会社ＭＹＲ　Ｌａｂ 様 】新規パートナー契約締結のお知らせ",
-      "date": "2026-08-17T13:30:02",
-      "url": "https://anclas.jp/news/2026/08/17/post-27863/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/07/%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AD%E3%82%B4_%E6%BF%83%E3%82%B0%E3%83%AC%E3%83%BC-%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEMYR-Lab.png"
     }
   ]
 }

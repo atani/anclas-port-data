@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-10-13T06:52:04.566Z",
+  "generatedAt": "2026-10-16T04:39:06.896Z",
   "source": {
-    "feedEtag": "\"2114e8c02cb0f1e848b4cea7823e9d42\"",
-    "feedLastModified": "Tue, 13 Oct 2026 05:22:02 GMT",
+    "feedEtag": "\"df1b6f60907bbb7b7760d1f4f6102153\"",
+    "feedLastModified": "Fri, 16 Oct 2026 02:49:27 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 29943,
+      "title": "【令和8年度 障がい者サッカー教室】 参加レポート 2026.10.11",
+      "date": "2026-10-16T11:49:26",
+      "url": "https://anclas.jp/news/2026/10/16/81011/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/S__71335993_0-300x226.jpg"
+    },
     {
       "id": 29945,
       "title": "【第20回福岡市医師会文化祭サッカー交流親睦会】参加レポート 2026.10.12",
@@ -138,13 +145,6 @@
       "date": "2026-08-20T12:00:40",
       "url": "https://anclas.jp/news/2026/08/20/post-27928/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/S__66371587.jpg"
-    },
-    {
-      "id": 27955,
-      "title": "ボランティアスタッフ募集のお知らせ",
-      "date": "2026-08-19T12:00:20",
-      "url": "https://anclas.jp/news/2026/08/19/post-27955/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/S__66355209-1-300x300.jpg"
     }
   ]
 }

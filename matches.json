@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T04:41:17.727Z",
+  "generatedAt": "2026-10-18T05:59:07.341Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -31,381 +31,318 @@
         "temperatureC": 27.7,
         "precipitationProbability": 15,
         "weatherCode": 3,
-        "fetchedAt": "2026-10-18T04:41:14.444Z"
+        "fetchedAt": "2026-10-18T05:59:04.084Z"
       }
     },
     "latestResult": {
-      "id": "su-post-9437",
+      "id": "su-post-9438",
       "competition": "Qリーグ",
-      "round": 15,
-      "date": "2026-10-03",
-      "kickoff": "10:00",
-      "datetime": "2026-10-03T10:00:00+09:00",
-      "homeTeam": "柳ヶ浦高等学校　女子サッカー部",
-      "awayTeam": "福岡J・アンクラス",
+      "round": 16,
+      "date": "2026-10-18",
+      "kickoff": "12:00",
+      "datetime": "2026-10-18T12:00:00+09:00",
+      "homeTeam": "福岡J・アンクラス",
+      "awayTeam": "神村学園高等部女子サッカー部",
       "status": "finished",
       "score": {
-        "home": 0,
-        "away": 2
+        "home": 1,
+        "away": 0
       },
       "isAnclas": true,
-      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-35/",
-      "venue": "大分県サッカー協会人工芝グランド",
+      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-51/",
+      "venue": "宇美町総合スポーツ公園",
       "goals": [
         {
-          "minute": "43分",
+          "minute": "75分",
           "team": "福岡J・アンクラス",
-          "playerNumber": null,
-          "playerName": "オウンゴール",
-          "assist": "中央1 22S ×オウンゴール"
-        },
-        {
-          "minute": "69分",
-          "team": "福岡J・アンクラス",
-          "playerNumber": 9,
-          "playerName": "田邉 いちご",
-          "assist": "左1 16→中央1 9S"
+          "playerNumber": 11,
+          "playerName": "嘉数 クレア姫麗",
+          "assist": "21↑11～11S"
         }
       ],
       "starters": [
         {
-          "number": 12,
-          "position": "GK",
-          "name": "中川 響",
-          "team": "home"
-        },
-        {
-          "number": 5,
-          "position": "DF",
-          "name": "大下 紗也奈",
-          "team": "home"
-        },
-        {
-          "number": 23,
-          "position": "DF",
-          "name": "平尾 心瑚",
-          "team": "home"
-        },
-        {
-          "number": 7,
-          "position": "MF",
-          "name": "神田 菜那",
-          "team": "home"
-        },
-        {
-          "number": 16,
-          "position": "MF",
-          "name": "漆谷 心温",
-          "team": "home"
-        },
-        {
-          "number": 22,
-          "position": "MF",
-          "name": "野田 朱花",
-          "team": "home"
-        },
-        {
-          "number": 27,
-          "position": "MF",
-          "name": "丸山 笑花",
-          "team": "home"
-        },
-        {
-          "number": 28,
-          "position": "MF",
-          "name": "内立輪 莉子",
-          "team": "home"
-        },
-        {
-          "number": 30,
-          "position": "MF",
-          "name": "安田 絵恋",
-          "team": "home"
-        },
-        {
-          "number": 10,
-          "position": "FW",
-          "name": "上本 恭子",
-          "team": "home"
-        },
-        {
-          "number": 26,
-          "position": "FW",
-          "name": "橋本 芽依",
-          "team": "home"
-        },
-        {
           "number": 21,
           "position": "GK",
           "name": "熊澤 果歩",
-          "team": "away"
+          "team": "home"
         },
         {
           "number": 3,
           "position": "DF",
           "name": "澁澤 光",
-          "team": "away"
+          "team": "home"
         },
         {
           "number": 6,
           "position": "DF",
           "name": "森 和奏",
-          "team": "away"
+          "team": "home"
         },
         {
           "number": 10,
           "position": "DF",
           "name": "平坂 咲希",
-          "team": "away"
+          "team": "home"
         },
         {
           "number": 15,
           "position": "MF",
           "name": "田中 花奈",
-          "team": "away"
+          "team": "home"
         },
         {
           "number": 16,
           "position": "MF",
           "name": "端山 新",
-          "team": "away"
+          "team": "home"
         },
         {
           "number": 20,
           "position": "MF",
           "name": "田川 葵",
-          "team": "away"
+          "team": "home"
         },
         {
           "number": 22,
           "position": "MF",
           "name": "野田 夏未",
-          "team": "away"
+          "team": "home"
         },
         {
           "number": 8,
           "position": "FW",
           "name": "野沢 真由",
-          "team": "away"
-        },
-        {
-          "number": 9,
-          "position": "FW",
-          "name": "田邉 いちご",
-          "team": "away"
-        },
-        {
-          "number": 13,
-          "position": "FW",
-          "name": "原 日樺",
-          "team": "away"
-        }
-      ],
-      "subs": [
-        {
-          "number": 21,
-          "position": "GK",
-          "name": "後藤 彩希",
           "team": "home"
-        },
-        {
-          "number": 6,
-          "position": "DF",
-          "name": "楠 彩由菜",
-          "team": "home"
-        },
-        {
-          "number": 8,
-          "position": "MF",
-          "name": "横山 愛葵",
-          "team": "home"
-        },
-        {
-          "number": 11,
-          "position": "MF",
-          "name": "宮尾 梨愛",
-          "team": "home"
-        },
-        {
-          "number": 17,
-          "position": "MF",
-          "name": "門馬 有琉",
-          "team": "home"
-        },
-        {
-          "number": 19,
-          "position": "MF",
-          "name": "中西 穂香",
-          "team": "home"
-        },
-        {
-          "number": 17,
-          "position": "GK",
-          "name": "釜坂 慧",
-          "team": "away"
-        },
-        {
-          "number": 23,
-          "position": "DF",
-          "name": "北条 あゆみ",
-          "team": "away"
-        },
-        {
-          "number": 7,
-          "position": "MF",
-          "name": "杉浦 華穂",
-          "team": "away"
-        },
-        {
-          "number": 14,
-          "position": "MF",
-          "name": "宮脇 ゆりあ",
-          "team": "away"
         },
         {
           "number": 11,
           "position": "FW",
           "name": "嘉数 クレア姫麗",
+          "team": "home"
+        },
+        {
+          "number": 13,
+          "position": "FW",
+          "name": "原 日樺",
+          "team": "home"
+        },
+        {
+          "number": 30,
+          "position": "GK",
+          "name": "濱田 桃奈",
           "team": "away"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "園田 結凜",
+          "team": "away"
+        },
+        {
+          "number": 33,
+          "position": "DF",
+          "name": "田中 愛子",
+          "team": "away"
+        },
+        {
+          "number": 39,
+          "position": "DF",
+          "name": "渡辺 稚菜",
+          "team": "away"
+        },
+        {
+          "number": 56,
+          "position": "DF",
+          "name": "西 睦月",
+          "team": "away"
+        },
+        {
+          "number": 59,
+          "position": "DF",
+          "name": "橋 あんず",
+          "team": "away"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "中嶋 彩夏",
+          "team": "away"
+        },
+        {
+          "number": 12,
+          "position": "MF",
+          "name": "木塚 美羽",
+          "team": "away"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "江口 咲楽",
+          "team": "away"
+        },
+        {
+          "number": 42,
+          "position": "MF",
+          "name": "桑代 心彩",
+          "team": "away"
+        },
+        {
+          "number": 17,
+          "position": "FW",
+          "name": "本田 優紅",
+          "team": "away"
+        }
+      ],
+      "subs": [
+        {
+          "number": 17,
+          "position": "GK",
+          "name": "釜坂 慧",
+          "team": "home"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "大河内 友貴",
+          "team": "home"
+        },
+        {
+          "number": 23,
+          "position": "DF",
+          "name": "北条 あゆみ",
+          "team": "home"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "杉浦 華穂",
+          "team": "home"
+        },
+        {
+          "number": 14,
+          "position": "MF",
+          "name": "宮脇 ゆりあ",
+          "team": "home"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "田邉 いちご",
+          "team": "home"
         },
         {
           "number": 18,
           "position": "FW",
           "name": "玉城 薪瀬",
+          "team": "home"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "牧迫 玖波",
+          "team": "away"
+        },
+        {
+          "number": 28,
+          "position": "DF",
+          "name": "松澤 唯空",
+          "team": "away"
+        },
+        {
+          "number": 41,
+          "position": "DF",
+          "name": "松山 みらい",
+          "team": "away"
+        },
+        {
+          "number": 24,
+          "position": "MF",
+          "name": "金田 耀花",
+          "team": "away"
+        },
+        {
+          "number": 27,
+          "position": "MF",
+          "name": "竹ノ内 紗依",
           "team": "away"
         }
       ],
       "substitutions": [
         {
-          "minute": "75分(後半35分)",
-          "team": "away",
-          "outNumber": 9,
-          "outName": "田邉 いちご",
-          "inNumber": 11,
-          "inName": "嘉数 クレア姫麗"
+          "minute": "61分(後半21分)",
+          "team": "home",
+          "outNumber": 15,
+          "outName": "田中 花奈",
+          "inNumber": 5,
+          "inName": "大河内 友貴"
+        },
+        {
+          "minute": "78分(後半38分)",
+          "team": "home",
+          "outNumber": 6,
+          "outName": "森 和奏",
+          "inNumber": 14,
+          "inName": "宮脇 ゆりあ"
         },
         {
           "minute": "80分(後半40分)",
+          "team": "home",
+          "outNumber": 16,
+          "outName": "端山 新",
+          "inNumber": 9,
+          "inName": "田邉 いちご"
+        },
+        {
+          "minute": "ＨＴ",
           "team": "away",
-          "outNumber": 20,
-          "outName": "田川 葵",
-          "inNumber": 14,
-          "inName": "宮脇 ゆりあ"
+          "outNumber": 56,
+          "outName": "西 睦月",
+          "inNumber": 27,
+          "inName": "竹ノ内 紗依"
+        },
+        {
+          "minute": "67分(後半27分)",
+          "team": "away",
+          "outNumber": 17,
+          "outName": "本田 優紅",
+          "inNumber": 4,
+          "inName": "牧迫 玖波"
+        },
+        {
+          "minute": "77分(後半37分)",
+          "team": "away",
+          "outNumber": 15,
+          "outName": "江口 咲楽",
+          "inNumber": 24,
+          "inName": "金田 耀花"
         }
       ],
       "stats": {
-        "attendance": "30人",
-        "weather": "晴",
-        "temperature": "26℃",
-        "pitch": "人工芝、乾燥"
+        "attendance": "588人",
+        "weather": "晴れ",
+        "temperature": "31℃",
+        "pitch": "不良"
       },
-      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341607",
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341611",
       "posterUrl": null,
-      "matchdayProgramUrl": null,
-      "cards": [],
-      "matchReport": {
-        "summary": "前半は一進一退の攻防が続き、互いに主導権を譲らない展開となった。相手のセットプレーの機会が多く、ゴール前で押し込まれる場面もあったが、守備陣を中心に集中して対応し、無失点で前半を終えた。 \n\n後半は立ち上がりから積極的に前へ出ると、開始早々に得点を奪い、先制に成功した。先制点によって試合の流れを引き寄せ、その後も攻撃の手を緩めず、追加点を奪ってリードを広げた。\n\n 終盤は相手の攻撃を受ける時間帯もあったが、最後まで集中力を切らすことなく守り切り、2-0で勝利。前半の難しい時間帯を無失点で耐え、後半に得点を重ねて勝利につなげることができた。 \n\n監督黒澤怜コメント\n\n本日も最後まで熱い応援をありがとうございました。 \n\n試合を通して粘り強く戦い、相手のセットプレーなど難しい場面にも全員で集中して対応することができました。後半開始早々に先制点を奪い、追加点につなげて2-0で勝利できたことは大きかったと思います。\n\n 今日の勝利に満足することなく、さらにチームとして強くなれるよう、次の試合に向けて全員で準備していきます。 \n\n本日も応援ありがとうございました。\n\n#9 田邉いちご\n\n本日もたくさんの応援ありがとうございました。\nスタートから出場し、チームの勝利に貢献することができました！！\n自分自身も得点を決めることができ、嬉しく思います！\nまだまだ課題はありますが、次の試合に向けてさらに成長できるよう頑張ります。\n\n#15 田中花奈\n\n今日もアウェー戦でしたが、沢山の応援ありがとうございました！\nまず、今日の試合は勝てて良かったです。\n個人としてはまだできることがあったと思うので、練習で意識しながら次の試合まで準備していきたいです。\n次節はホーム最終戦となります。\n引き続き応援よろしくお願いします。",
-        "coachComment": null,
-        "playerComments": [],
-        "sourceUrl": "https://anclas.jp/news/2026/10/05/1003/"
-      },
-      "photoGallery": [
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189138_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189139_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189140_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189141_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189142_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189143_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189144_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189145_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189146_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189147_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189149_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189150_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189151_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189152_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189153_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189154_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189155_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189156_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189157_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189158_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189160_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189161_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189162_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189163_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189164_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189165_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189166_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189167_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189168_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189169_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189171_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189172_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189173_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189174_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189175_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189176_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189177_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189178_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189179_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189180_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189182_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189183_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189184_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189185_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189186_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189187_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189188_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189189_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189190_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189191_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189193_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189194_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189195_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189196_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189197_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189198_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189199_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189200_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189201_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189202_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189204_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189205_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189206_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189207_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189208_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189209_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189210_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189211_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189212_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189213_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189215_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189216_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189217_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189218_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189219_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189220_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189221_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189222_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189223_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189224_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189226_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189227_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189228_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189229_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189230_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189231_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189232_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189233_0.jpg",
-        "https://anclas.jp/wp-content/uploads/2026/10/S__70189234_0.jpg"
+      "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/10/10.18%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
+      "cards": [
+        {
+          "number": 59,
+          "name": "橋 あんず",
+          "team": "away",
+          "type": "yellow"
+        }
       ],
+      "matchReport": null,
+      "photoGallery": [],
       "forecast": null
     },
     "latestPodcast": {
       "id": "0ivtai3aoUWzHYpomGWz7j",
       "title": "#26【インタビュー：野沢真由】杉浦選手のサプライズで涙が...リハビリからの復帰、後悔のないサッカー人生の選択",
-      "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+      "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
       "showUrl": "https://open.spotify.com/episode/0ivtai3aoUWzHYpomGWz7j",
       "embedUrl": "https://open.spotify.com/embed/episode/0ivtai3aoUWzHYpomGWz7j",
       "publishedAt": "2026-10-18"
@@ -414,7 +351,7 @@
       {
         "id": "0ivtai3aoUWzHYpomGWz7j",
         "title": "#26【インタビュー：野沢真由】杉浦選手のサプライズで涙が...リハビリからの復帰、後悔のないサッカー人生の選択",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/0ivtai3aoUWzHYpomGWz7j",
         "embedUrl": "https://open.spotify.com/embed/episode/0ivtai3aoUWzHYpomGWz7j",
         "publishedAt": "2026-10-18"
@@ -422,7 +359,7 @@
       {
         "id": "5p0z721qB2oaJh5OkxiBAs",
         "title": "#25【インタビュー：田川葵】23歳の新婚さん！？弟への羨ましさで始めたサッカー、怪我からの復帰で初ゴール！",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/5p0z721qB2oaJh5OkxiBAs",
         "embedUrl": "https://open.spotify.com/embed/episode/5p0z721qB2oaJh5OkxiBAs",
         "publishedAt": "2026-10-17"
@@ -430,7 +367,7 @@
       {
         "id": "45sjvJqlN7Oo45gOFRpHyK",
         "title": "＃24【インタビュー：熊澤果歩】浦和レッズレディースから福岡J・アンクラスへ。高校3年生GK熊澤果歩の挑戦",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/45sjvJqlN7Oo45gOFRpHyK",
         "embedUrl": "https://open.spotify.com/embed/episode/45sjvJqlN7Oo45gOFRpHyK",
         "publishedAt": "2026-10-02"
@@ -438,7 +375,7 @@
       {
         "id": "04ECwS2zybRJatrg7SAuOQ",
         "title": "＃23【インタビュー：黒澤怜】アンクラスの新監督ってどんな人？選手目線を持つ指導者の素顔",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/04ECwS2zybRJatrg7SAuOQ",
         "embedUrl": "https://open.spotify.com/embed/episode/04ECwS2zybRJatrg7SAuOQ",
         "publishedAt": "2026-09-17"
@@ -446,7 +383,7 @@
       {
         "id": "0EnfHrhxHixbG33XiUt7PC",
         "title": "#22【インタビュー：リゾスポ学生の小田さん、福田さん、野口さん】元Jリーガーvs100人の小学生の仕掛け人たち",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/0EnfHrhxHixbG33XiUt7PC",
         "embedUrl": "https://open.spotify.com/embed/episode/0EnfHrhxHixbG33XiUt7PC",
         "publishedAt": "2026-09-02"
@@ -6986,8 +6923,11 @@
       "datetime": "2026-10-18T11:00:00+09:00",
       "homeTeam": "FC琉球さくら",
       "awayTeam": "柳ヶ浦高等学校　女子サッカー部",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "home": 5,
+        "away": 0
+      },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-63/",
       "venue": "東風平運動公園サッカー場",
@@ -7040,20 +6980,298 @@
       "datetime": "2026-10-18T12:00:00+09:00",
       "homeTeam": "福岡J・アンクラス",
       "awayTeam": "神村学園高等部女子サッカー部",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "home": 1,
+        "away": 0
+      },
       "isAnclas": true,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-51/",
       "venue": "宇美町総合スポーツ公園",
-      "goals": [],
-      "starters": [],
-      "subs": [],
-      "substitutions": [],
-      "stats": null,
-      "goalnoteUrl": null,
+      "goals": [
+        {
+          "minute": "75分",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 11,
+          "playerName": "嘉数 クレア姫麗",
+          "assist": "21↑11～11S"
+        }
+      ],
+      "starters": [
+        {
+          "number": 21,
+          "position": "GK",
+          "name": "熊澤 果歩",
+          "team": "home"
+        },
+        {
+          "number": 3,
+          "position": "DF",
+          "name": "澁澤 光",
+          "team": "home"
+        },
+        {
+          "number": 6,
+          "position": "DF",
+          "name": "森 和奏",
+          "team": "home"
+        },
+        {
+          "number": 10,
+          "position": "DF",
+          "name": "平坂 咲希",
+          "team": "home"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "田中 花奈",
+          "team": "home"
+        },
+        {
+          "number": 16,
+          "position": "MF",
+          "name": "端山 新",
+          "team": "home"
+        },
+        {
+          "number": 20,
+          "position": "MF",
+          "name": "田川 葵",
+          "team": "home"
+        },
+        {
+          "number": 22,
+          "position": "MF",
+          "name": "野田 夏未",
+          "team": "home"
+        },
+        {
+          "number": 8,
+          "position": "FW",
+          "name": "野沢 真由",
+          "team": "home"
+        },
+        {
+          "number": 11,
+          "position": "FW",
+          "name": "嘉数 クレア姫麗",
+          "team": "home"
+        },
+        {
+          "number": 13,
+          "position": "FW",
+          "name": "原 日樺",
+          "team": "home"
+        },
+        {
+          "number": 30,
+          "position": "GK",
+          "name": "濱田 桃奈",
+          "team": "away"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "園田 結凜",
+          "team": "away"
+        },
+        {
+          "number": 33,
+          "position": "DF",
+          "name": "田中 愛子",
+          "team": "away"
+        },
+        {
+          "number": 39,
+          "position": "DF",
+          "name": "渡辺 稚菜",
+          "team": "away"
+        },
+        {
+          "number": 56,
+          "position": "DF",
+          "name": "西 睦月",
+          "team": "away"
+        },
+        {
+          "number": 59,
+          "position": "DF",
+          "name": "橋 あんず",
+          "team": "away"
+        },
+        {
+          "number": 8,
+          "position": "MF",
+          "name": "中嶋 彩夏",
+          "team": "away"
+        },
+        {
+          "number": 12,
+          "position": "MF",
+          "name": "木塚 美羽",
+          "team": "away"
+        },
+        {
+          "number": 15,
+          "position": "MF",
+          "name": "江口 咲楽",
+          "team": "away"
+        },
+        {
+          "number": 42,
+          "position": "MF",
+          "name": "桑代 心彩",
+          "team": "away"
+        },
+        {
+          "number": 17,
+          "position": "FW",
+          "name": "本田 優紅",
+          "team": "away"
+        }
+      ],
+      "subs": [
+        {
+          "number": 17,
+          "position": "GK",
+          "name": "釜坂 慧",
+          "team": "home"
+        },
+        {
+          "number": 5,
+          "position": "DF",
+          "name": "大河内 友貴",
+          "team": "home"
+        },
+        {
+          "number": 23,
+          "position": "DF",
+          "name": "北条 あゆみ",
+          "team": "home"
+        },
+        {
+          "number": 7,
+          "position": "MF",
+          "name": "杉浦 華穂",
+          "team": "home"
+        },
+        {
+          "number": 14,
+          "position": "MF",
+          "name": "宮脇 ゆりあ",
+          "team": "home"
+        },
+        {
+          "number": 9,
+          "position": "FW",
+          "name": "田邉 いちご",
+          "team": "home"
+        },
+        {
+          "number": 18,
+          "position": "FW",
+          "name": "玉城 薪瀬",
+          "team": "home"
+        },
+        {
+          "number": 4,
+          "position": "DF",
+          "name": "牧迫 玖波",
+          "team": "away"
+        },
+        {
+          "number": 28,
+          "position": "DF",
+          "name": "松澤 唯空",
+          "team": "away"
+        },
+        {
+          "number": 41,
+          "position": "DF",
+          "name": "松山 みらい",
+          "team": "away"
+        },
+        {
+          "number": 24,
+          "position": "MF",
+          "name": "金田 耀花",
+          "team": "away"
+        },
+        {
+          "number": 27,
+          "position": "MF",
+          "name": "竹ノ内 紗依",
+          "team": "away"
+        }
+      ],
+      "substitutions": [
+        {
+          "minute": "61分(後半21分)",
+          "team": "home",
+          "outNumber": 15,
+          "outName": "田中 花奈",
+          "inNumber": 5,
+          "inName": "大河内 友貴"
+        },
+        {
+          "minute": "78分(後半38分)",
+          "team": "home",
+          "outNumber": 6,
+          "outName": "森 和奏",
+          "inNumber": 14,
+          "inName": "宮脇 ゆりあ"
+        },
+        {
+          "minute": "80分(後半40分)",
+          "team": "home",
+          "outNumber": 16,
+          "outName": "端山 新",
+          "inNumber": 9,
+          "inName": "田邉 いちご"
+        },
+        {
+          "minute": "ＨＴ",
+          "team": "away",
+          "outNumber": 56,
+          "outName": "西 睦月",
+          "inNumber": 27,
+          "inName": "竹ノ内 紗依"
+        },
+        {
+          "minute": "67分(後半27分)",
+          "team": "away",
+          "outNumber": 17,
+          "outName": "本田 優紅",
+          "inNumber": 4,
+          "inName": "牧迫 玖波"
+        },
+        {
+          "minute": "77分(後半37分)",
+          "team": "away",
+          "outNumber": 15,
+          "outName": "江口 咲楽",
+          "inNumber": 24,
+          "inName": "金田 耀花"
+        }
+      ],
+      "stats": {
+        "attendance": "588人",
+        "weather": "晴れ",
+        "temperature": "31℃",
+        "pitch": "不良"
+      },
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341611",
       "posterUrl": null,
       "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/10/10.18%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
-      "cards": [],
+      "cards": [
+        {
+          "number": 59,
+          "name": "橋 あんず",
+          "team": "away",
+          "type": "yellow"
+        }
+      ],
       "matchReport": null,
       "photoGallery": [],
       "forecast": null
@@ -7141,7 +7359,7 @@
         "temperatureC": 27.7,
         "precipitationProbability": 15,
         "weatherCode": 3,
-        "fetchedAt": "2026-10-18T04:41:14.444Z"
+        "fetchedAt": "2026-10-18T05:59:04.084Z"
       }
     },
     {

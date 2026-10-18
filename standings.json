@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-10-18T04:41:17.727Z",
+  "generatedAt": "2026-10-18T05:59:07.341Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
     {
       "rank": 1,
       "team": "福岡J・アンクラス",
-      "played": 12,
-      "win": 10,
+      "played": 13,
+      "win": 11,
       "draw": 2,
       "loss": 0,
-      "gf": 24,
+      "gf": 25,
       "ga": 5,
-      "points": 32,
-      "gd": 19,
+      "points": 35,
+      "gd": 20,
       "isAnclas": true
     },
     {
       "rank": 2,
       "team": "FC琉球さくら",
-      "played": 11,
-      "win": 9,
+      "played": 12,
+      "win": 10,
       "draw": 1,
       "loss": 1,
-      "gf": 27,
+      "gf": 32,
       "ga": 3,
-      "points": 28,
-      "gd": 24,
+      "points": 31,
+      "gd": 29,
       "isAnclas": false
     },
     {
@@ -45,14 +45,14 @@
     {
       "rank": 4,
       "team": "柳ヶ浦高等学校　女子サッカー部",
-      "played": 12,
+      "played": 13,
       "win": 5,
       "draw": 1,
-      "loss": 6,
+      "loss": 7,
       "gf": 15,
-      "ga": 16,
+      "ga": 21,
       "points": 16,
-      "gd": -1,
+      "gd": -6,
       "isAnclas": false
     },
     {
@@ -84,14 +84,14 @@
     {
       "rank": 7,
       "team": "神村学園高等部女子サッカー部",
-      "played": 10,
+      "played": 11,
       "win": 2,
       "draw": 3,
-      "loss": 5,
+      "loss": 6,
       "gf": 10,
-      "ga": 20,
+      "ga": 21,
       "points": 9,
-      "gd": -10,
+      "gd": -11,
       "isAnclas": false
     },
     {
@@ -112,76 +112,76 @@
     {
       "rank": 1,
       "leagueRank": 2,
+      "name": "嘉数 クレア姫麗",
+      "number": 11,
+      "goals": 5
+    },
+    {
+      "rank": 1,
+      "leagueRank": 2,
       "name": "原 日樺",
       "number": 13,
       "goals": 5
     },
     {
-      "rank": 2,
-      "leagueRank": 4,
-      "name": "嘉数 クレア姫麗",
-      "number": 11,
-      "goals": 4
-    },
-    {
       "rank": 3,
-      "leagueRank": 16,
+      "leagueRank": 17,
       "name": "澁澤 光",
       "number": 3,
       "goals": 2
     },
     {
       "rank": 3,
-      "leagueRank": 16,
+      "leagueRank": 17,
       "name": "端山 新",
       "number": 16,
       "goals": 2
     },
     {
       "rank": 3,
-      "leagueRank": 16,
+      "leagueRank": 17,
       "name": "玉城 薪瀬",
       "number": 18,
       "goals": 2
     },
     {
       "rank": 6,
-      "leagueRank": 31,
+      "leagueRank": 32,
       "name": "大河内 友貴",
       "number": 5,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 31,
+      "leagueRank": 32,
       "name": "野沢 真由",
       "number": 8,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 31,
+      "leagueRank": 32,
       "name": "田邉 いちご",
       "number": 9,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 31,
+      "leagueRank": 32,
       "name": "平坂 咲希",
       "number": 10,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 31,
+      "leagueRank": 32,
       "name": "田中 花奈",
       "number": 15,
       "goals": 1
     },
     {
       "rank": 6,
-      "leagueRank": 31,
+      "leagueRank": 32,
       "name": "田川 葵",
       "number": 20,
       "goals": 1
@@ -222,6 +222,12 @@
       "rank": 4,
       "name": "野沢真由",
       "number": 8,
+      "assists": 1
+    },
+    {
+      "rank": 4,
+      "name": "熊澤果歩",
+      "number": 21,
       "assists": 1
     }
   ]

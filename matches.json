@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-18T00:05:46.076Z",
+  "generatedAt": "2026-10-18T04:41:17.727Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
-      "id": "su-post-9438",
+      "id": "su-post-9454",
       "competition": "Qリーグ",
-      "round": 16,
-      "date": "2026-10-18",
-      "kickoff": "12:00",
-      "datetime": "2026-10-18T12:00:00+09:00",
-      "homeTeam": "福岡J・アンクラス",
-      "awayTeam": "神村学園高等部女子サッカー部",
+      "round": 17,
+      "date": "2026-10-25",
+      "kickoff": "11:00",
+      "datetime": "2026-10-25T11:00:00+09:00",
+      "homeTeam": "FC琉球さくら",
+      "awayTeam": "福岡J・アンクラス",
       "status": "scheduled",
       "score": null,
       "isAnclas": true,
-      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-51/",
-      "venue": "宇美町総合スポーツ公園",
+      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-70/",
+      "venue": "東風平運動公園サッカー場",
       "goals": [],
       "starters": [],
       "subs": [],
@@ -23,15 +23,15 @@
       "stats": null,
       "goalnoteUrl": null,
       "posterUrl": null,
-      "matchdayProgramUrl": "https://anclas.jp/wp-content/uploads/2026/10/10.18%E3%83%9E%E3%83%83%E3%83%81%E3%83%87%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0.pdf",
+      "matchdayProgramUrl": null,
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
       "forecast": {
-        "temperatureC": 27.1,
-        "precipitationProbability": 0,
-        "weatherCode": 0,
-        "fetchedAt": "2026-10-18T00:05:38.217Z"
+        "temperatureC": 27.7,
+        "precipitationProbability": 15,
+        "weatherCode": 3,
+        "fetchedAt": "2026-10-18T04:41:14.444Z"
       }
     },
     "latestResult": {
@@ -403,14 +403,22 @@
       "forecast": null
     },
     "latestPodcast": {
-      "id": "5p0z721qB2oaJh5OkxiBAs",
-      "title": "#25【インタビュー：田川葵】23歳の新婚さん！？弟への羨ましさで始めたサッカー、怪我からの復帰で初ゴール！",
+      "id": "0ivtai3aoUWzHYpomGWz7j",
+      "title": "#26【インタビュー：野沢真由】杉浦選手のサプライズで涙が...リハビリからの復帰、後悔のないサッカー人生の選択",
       "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
-      "showUrl": "https://open.spotify.com/episode/5p0z721qB2oaJh5OkxiBAs",
-      "embedUrl": "https://open.spotify.com/embed/episode/5p0z721qB2oaJh5OkxiBAs",
-      "publishedAt": "2026-10-17"
+      "showUrl": "https://open.spotify.com/episode/0ivtai3aoUWzHYpomGWz7j",
+      "embedUrl": "https://open.spotify.com/embed/episode/0ivtai3aoUWzHYpomGWz7j",
+      "publishedAt": "2026-10-18"
     },
     "podcastEpisodes": [
+      {
+        "id": "0ivtai3aoUWzHYpomGWz7j",
+        "title": "#26【インタビュー：野沢真由】杉浦選手のサプライズで涙が...リハビリからの復帰、後悔のないサッカー人生の選択",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "showUrl": "https://open.spotify.com/episode/0ivtai3aoUWzHYpomGWz7j",
+        "embedUrl": "https://open.spotify.com/embed/episode/0ivtai3aoUWzHYpomGWz7j",
+        "publishedAt": "2026-10-18"
+      },
       {
         "id": "5p0z721qB2oaJh5OkxiBAs",
         "title": "#25【インタビュー：田川葵】23歳の新婚さん！？弟への羨ましさで始めたサッカー、怪我からの復帰で初ゴール！",
@@ -442,14 +450,6 @@
         "showUrl": "https://open.spotify.com/episode/0EnfHrhxHixbG33XiUt7PC",
         "embedUrl": "https://open.spotify.com/embed/episode/0EnfHrhxHixbG33XiUt7PC",
         "publishedAt": "2026-09-02"
-      },
-      {
-        "id": "5s76C6q7hi8K3aGmtBRQsd",
-        "title": "＃21【番外編】セールストーーク！誰でも上手くいく営業のおはなし",
-        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
-        "showUrl": "https://open.spotify.com/episode/5s76C6q7hi8K3aGmtBRQsd",
-        "embedUrl": "https://open.spotify.com/embed/episode/5s76C6q7hi8K3aGmtBRQsd",
-        "publishedAt": "2026-08-27"
       }
     ],
     "latestYouTube": {
@@ -6996,7 +6996,7 @@
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341612",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -7056,12 +7056,7 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": {
-        "temperatureC": 27.1,
-        "precipitationProbability": 0,
-        "weatherCode": 0,
-        "fetchedAt": "2026-10-18T00:05:38.217Z"
-      }
+      "forecast": null
     },
     {
       "id": "su-post-9462",
@@ -7146,7 +7141,7 @@
         "temperatureC": 27.7,
         "precipitationProbability": 15,
         "weatherCode": 3,
-        "fetchedAt": "2026-10-18T00:05:39.061Z"
+        "fetchedAt": "2026-10-18T04:41:14.444Z"
       }
     },
     {

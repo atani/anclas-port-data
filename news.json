@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-10-20T04:58:04.920Z",
+  "generatedAt": "2026-10-20T11:45:38.293Z",
   "source": {
-    "feedEtag": "\"f5c993c48862d8e3dbb01b4e12e99ab1\"",
-    "feedLastModified": "Tue, 20 Oct 2026 04:17:07 GMT",
+    "feedEtag": "\"004efd5a3b05b2b1e43ac541ad5ad60b\"",
+    "feedLastModified": "Tue, 20 Oct 2026 07:07:33 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30042,
+      "title": "【福岡Ｊ・アンクラスビジネス交流会】 開催レポート 2026.10.18",
+      "date": "2026-10-20T16:07:32",
+      "url": "https://anclas.jp/news/2026/10/20/26188/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/S__71639055_0-300x225.jpg"
+    },
     {
       "id": 29987,
       "title": "九州女子サッカーリーグ 1部 第17節 (アウェイ戦)10.25(日)試合情報のお知らせ",
@@ -138,13 +145,6 @@
       "date": "2026-09-01T14:58:57",
       "url": "https://anclas.jp/news/2026/09/01/%e3%80%90%e5%a4%a7%e4%bc%9a%e6%83%85%e5%a0%b1%e3%80%91kyfa%e7%ac%ac44%e5%9b%9e%e4%b9%9d%e5%b7%9e%e5%a5%b3%e5%ad%90%e3%82%b5%e3%83%83%e3%82%ab%e3%83%bc%e9%81%b8%e6%89%8b%e6%a8%a9%e5%a4%a7%e4%bc%9a/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/empresss_cup_2026_pc-1024x577.webp"
-    },
-    {
-      "id": 28663,
-      "title": "なでしこリーグ加盟審査を受けて",
-      "date": "2026-08-31T18:07:08",
-      "url": "https://anclas.jp/news/2026/08/31/%e3%81%aa%e3%81%a7%e3%81%97%e3%81%93%e3%83%aa%e3%83%bc%e3%82%b0%e5%8a%a0%e7%9b%9f%e5%af%a9%e6%9f%bb%e3%82%92%e5%8f%97%e3%81%91%e3%81%a6/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/名称未設定のデザイン-4-300x169.png"
     }
   ]
 }

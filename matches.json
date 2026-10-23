@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T20:36:45.715Z",
+  "generatedAt": "2026-10-23T00:01:09.592Z",
   "season": "2026",
   "anclas": {
     "nextMatch": {
@@ -29,9 +29,9 @@
       "photoGallery": [],
       "forecast": {
         "temperatureC": 29,
-        "precipitationProbability": 47,
+        "precipitationProbability": 35,
         "weatherCode": 3,
-        "fetchedAt": "2026-10-22T20:36:39.024Z"
+        "fetchedAt": "2026-10-23T00:01:02.617Z"
       }
     },
     "latestResult": {
@@ -528,7 +528,7 @@
     "latestPodcast": {
       "id": "0ivtai3aoUWzHYpomGWz7j",
       "title": "#26【インタビュー：野沢真由】杉浦選手のサプライズで涙が...リハビリからの復帰、後悔のないサッカー人生の選択",
-      "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+      "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
       "showUrl": "https://open.spotify.com/episode/0ivtai3aoUWzHYpomGWz7j",
       "embedUrl": "https://open.spotify.com/embed/episode/0ivtai3aoUWzHYpomGWz7j",
       "publishedAt": "2026-10-18"
@@ -537,7 +537,7 @@
       {
         "id": "0ivtai3aoUWzHYpomGWz7j",
         "title": "#26【インタビュー：野沢真由】杉浦選手のサプライズで涙が...リハビリからの復帰、後悔のないサッカー人生の選択",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/0ivtai3aoUWzHYpomGWz7j",
         "embedUrl": "https://open.spotify.com/embed/episode/0ivtai3aoUWzHYpomGWz7j",
         "publishedAt": "2026-10-18"
@@ -545,7 +545,7 @@
       {
         "id": "5p0z721qB2oaJh5OkxiBAs",
         "title": "#25【インタビュー：田川葵】23歳の新婚さん！？弟への羨ましさで始めたサッカー、怪我からの復帰で初ゴール！",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/5p0z721qB2oaJh5OkxiBAs",
         "embedUrl": "https://open.spotify.com/embed/episode/5p0z721qB2oaJh5OkxiBAs",
         "publishedAt": "2026-10-17"
@@ -553,7 +553,7 @@
       {
         "id": "45sjvJqlN7Oo45gOFRpHyK",
         "title": "＃24【インタビュー：熊澤果歩】浦和レッズレディースから福岡J・アンクラスへ。高校3年生GK熊澤果歩の挑戦",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/45sjvJqlN7Oo45gOFRpHyK",
         "embedUrl": "https://open.spotify.com/embed/episode/45sjvJqlN7Oo45gOFRpHyK",
         "publishedAt": "2026-10-02"
@@ -561,7 +561,7 @@
       {
         "id": "04ECwS2zybRJatrg7SAuOQ",
         "title": "＃23【インタビュー：黒澤怜】アンクラスの新監督ってどんな人？選手目線を持つ指導者の素顔",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/04ECwS2zybRJatrg7SAuOQ",
         "embedUrl": "https://open.spotify.com/embed/episode/04ECwS2zybRJatrg7SAuOQ",
         "publishedAt": "2026-09-17"
@@ -569,7 +569,7 @@
       {
         "id": "0EnfHrhxHixbG33XiUt7PC",
         "title": "#22【インタビュー：リゾスポ学生の小田さん、福田さん、野口さん】元Jリーガーvs100人の小学生の仕掛け人たち",
-        "thumbnailUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
+        "thumbnailUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f6f0f6ab1742b8da81b49e9d6",
         "showUrl": "https://open.spotify.com/episode/0EnfHrhxHixbG33XiUt7PC",
         "embedUrl": "https://open.spotify.com/embed/episode/0EnfHrhxHixbG33XiUt7PC",
         "publishedAt": "2026-09-02"
@@ -7725,9 +7725,9 @@
       "photoGallery": [],
       "forecast": {
         "temperatureC": 29,
-        "precipitationProbability": 47,
+        "precipitationProbability": 35,
         "weatherCode": 3,
-        "fetchedAt": "2026-10-22T20:36:39.024Z"
+        "fetchedAt": "2026-10-23T00:01:02.617Z"
       }
     },
     {

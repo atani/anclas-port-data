@@ -1,39 +1,8 @@
 {
-  "generatedAt": "2026-10-24T23:19:35.639Z",
+  "generatedAt": "2026-10-25T04:50:47.109Z",
   "season": "2026",
   "anclas": {
-    "nextMatch": {
-      "id": "su-post-9454",
-      "competition": "Qリーグ",
-      "round": 17,
-      "date": "2026-10-25",
-      "kickoff": "11:00",
-      "datetime": "2026-10-25T11:00:00+09:00",
-      "homeTeam": "FC琉球さくら",
-      "awayTeam": "福岡J・アンクラス",
-      "status": "scheduled",
-      "score": null,
-      "isAnclas": true,
-      "sourceUrl": "https://q-league.net/qleague/match_sitagaki-70/",
-      "venue": "東風平運動公園サッカー場",
-      "goals": [],
-      "starters": [],
-      "subs": [],
-      "substitutions": [],
-      "stats": null,
-      "goalnoteUrl": null,
-      "posterUrl": null,
-      "matchdayProgramUrl": null,
-      "cards": [],
-      "matchReport": null,
-      "photoGallery": [],
-      "forecast": {
-        "temperatureC": 28.7,
-        "precipitationProbability": 57,
-        "weatherCode": 1,
-        "fetchedAt": "2026-10-24T23:19:28.095Z"
-      }
-    },
+    "nextMatch": null,
     "latestResult": {
       "id": "su-post-9438",
       "competition": "Qリーグ",
@@ -7680,8 +7649,11 @@
       "datetime": "2026-10-25T11:00:00+09:00",
       "homeTeam": "柳ヶ浦高等学校　女子サッカー部",
       "awayTeam": "神村学園高等部女子サッカー部",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "home": 0,
+        "away": 0
+      },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-60/",
       "venue": "平成令和の森陸上競技場",
@@ -7690,7 +7662,7 @@
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341616",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],
@@ -7723,12 +7695,7 @@
       "cards": [],
       "matchReport": null,
       "photoGallery": [],
-      "forecast": {
-        "temperatureC": 28.7,
-        "precipitationProbability": 57,
-        "weatherCode": 1,
-        "fetchedAt": "2026-10-24T23:19:28.095Z"
-      }
+      "forecast": null
     },
     {
       "id": "su-post-9512",

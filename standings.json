@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-10-25T04:50:47.109Z",
+  "generatedAt": "2026-10-25T06:12:34.682Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
     {
       "rank": 1,
       "team": "福岡J・アンクラス",
-      "played": 13,
+      "played": 14,
       "win": 11,
       "draw": 2,
-      "loss": 0,
-      "gf": 25,
-      "ga": 5,
+      "loss": 1,
+      "gf": 26,
+      "ga": 7,
       "points": 35,
-      "gd": 20,
+      "gd": 19,
       "isAnclas": true
     },
     {
       "rank": 2,
       "team": "FC琉球さくら",
-      "played": 12,
-      "win": 10,
+      "played": 13,
+      "win": 11,
       "draw": 1,
       "loss": 1,
-      "gf": 32,
-      "ga": 3,
-      "points": 31,
-      "gd": 29,
+      "gf": 34,
+      "ga": 4,
+      "points": 34,
+      "gd": 30,
       "isAnclas": false
     },
     {
@@ -125,21 +125,21 @@
     },
     {
       "rank": 3,
-      "leagueRank": 17,
+      "leagueRank": 11,
       "name": "澁澤 光",
       "number": 3,
-      "goals": 2
+      "goals": 3
     },
     {
-      "rank": 3,
-      "leagueRank": 17,
+      "rank": 4,
+      "leagueRank": 18,
       "name": "端山 新",
       "number": 16,
       "goals": 2
     },
     {
-      "rank": 3,
-      "leagueRank": 17,
+      "rank": 4,
+      "leagueRank": 18,
       "name": "玉城 薪瀬",
       "number": 18,
       "goals": 2
@@ -207,27 +207,27 @@
       "assists": 2
     },
     {
-      "rank": 4,
+      "rank": 1,
+      "name": "熊澤果歩",
+      "number": 21,
+      "assists": 2
+    },
+    {
+      "rank": 5,
       "name": "大河内友貴",
       "number": 5,
       "assists": 1
     },
     {
-      "rank": 4,
+      "rank": 5,
       "name": "端山新",
       "number": 16,
       "assists": 1
     },
     {
-      "rank": 4,
+      "rank": 5,
       "name": "野沢真由",
       "number": 8,
-      "assists": 1
-    },
-    {
-      "rank": 4,
-      "name": "熊澤果歩",
-      "number": 21,
       "assists": 1
     }
   ]

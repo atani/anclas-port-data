@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-10-26T14:21:02.617Z",
+  "generatedAt": "2026-10-27T05:13:20.837Z",
   "source": {
-    "feedEtag": "\"530a4ae9f49632407299548c103cee57\"",
-    "feedLastModified": "Mon, 26 Oct 2026 08:18:35 GMT",
+    "feedEtag": "\"9a8e8460f8de762cd074b49fabf1e43d\"",
+    "feedLastModified": "Tue, 27 Oct 2026 02:00:00 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30614,
+      "title": "【スタージャンプ福岡2026 2nd】 参加レポート 2026.10.24",
+      "date": "2026-10-27T11:00:00",
+      "url": "https://anclas.jp/news/2026/10/27/10224/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/S__72056894_0-300x169.jpg"
+    },
     {
       "id": 30263,
       "title": "【共催のお知らせ】 劇団天地 「アディッショナルタイム」",
@@ -138,13 +145,6 @@
       "date": "2026-09-02T16:10:00",
       "url": "https://anclas.jp/news/2026/09/02/%e3%80%90%e9%96%8b%e5%82%ac%e6%83%85%e5%a0%b1%e3%80%912026%e5%b9%b4%e5%ba%a6kyfa%e7%ac%ac29%e5%9b%9e%e4%b9%9d%e5%b7%9e%e5%a5%b3%e5%ad%90%e3%82%b5%e3%83%83%e3%82%ab%e3%83%bc%e3%83%aa%e3%83%bc%e3%82%b0/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/0920_home_fukuoka_pc-1024x576.jpg"
-    },
-    {
-      "id": 28741,
-      "title": "【背番号決定のお知らせ】#21熊澤果歩 選手",
-      "date": "2026-09-02T14:40:19",
-      "url": "https://anclas.jp/news/2026/09/02/%e3%80%90%e8%83%8c%e7%95%aa%e5%8f%b7%e6%b1%ba%e5%ae%9a%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b%e3%80%9121%e7%86%8a%e6%be%a4%e6%9e%9c%e6%ad%a9-%e9%81%b8%e6%89%8b/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/DSC_0025-200x300.jpg"
     }
   ]
 }

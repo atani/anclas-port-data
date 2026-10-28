@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-10-27T13:17:14.360Z",
+  "generatedAt": "2026-10-28T09:46:25.507Z",
   "source": {
-    "feedEtag": "\"258fff705842f8dcd6e74565076cee93\"",
-    "feedLastModified": "Tue, 27 Oct 2026 08:30:34 GMT",
+    "feedEtag": "\"65dbee5a0ef02660acf5245c30db55e0\"",
+    "feedLastModified": "Wed, 28 Oct 2026 08:26:06 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30643,
+      "title": "2026シーズン終了のご報告と御礼",
+      "date": "2026-10-28T16:00:00",
+      "url": "https://anclas.jp/news/2026/10/28/2026/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/thank_you_2026_ig-240x300.png"
+    },
     {
       "id": 30614,
       "title": "【スタージャンプ福岡2026 2nd】 参加レポート 2026.10.24",
@@ -138,13 +145,6 @@
       "date": "2026-09-02T18:00:00",
       "url": "https://anclas.jp/news/2026/09/02/%e3%83%88%e3%83%83%e3%83%97%e3%83%81%e3%83%bc%e3%83%a0%e4%bd%93%e5%88%b6%e5%a4%89%e6%9b%b4%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/名称未設定のデザイン-4.png"
-    },
-    {
-      "id": 28681,
-      "title": "【開催情報】2026年度KYFA第29回九州女子サッカーリーグ 1部 vs.東海大福岡高校 2026.9.20",
-      "date": "2026-09-02T16:10:00",
-      "url": "https://anclas.jp/news/2026/09/02/%e3%80%90%e9%96%8b%e5%82%ac%e6%83%85%e5%a0%b1%e3%80%912026%e5%b9%b4%e5%ba%a6kyfa%e7%ac%ac29%e5%9b%9e%e4%b9%9d%e5%b7%9e%e5%a5%b3%e5%ad%90%e3%82%b5%e3%83%83%e3%82%ab%e3%83%bc%e3%83%aa%e3%83%bc%e3%82%b0/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/0920_home_fukuoka_pc-1024x576.jpg"
     }
   ]
 }

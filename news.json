@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-10-28T09:46:25.507Z",
+  "generatedAt": "2026-10-29T08:35:53.857Z",
   "source": {
-    "feedEtag": "\"65dbee5a0ef02660acf5245c30db55e0\"",
-    "feedLastModified": "Wed, 28 Oct 2026 08:26:06 GMT",
+    "feedEtag": "\"c998948b6d7de8ed31ec0f8b8281d381\"",
+    "feedLastModified": "Thu, 29 Oct 2026 06:29:39 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30664,
+      "title": "【イベントの参加のお知らせ】第68回香蘭祭",
+      "date": "2026-10-29T15:14:37",
+      "url": "https://anclas.jp/news/2026/10/29/31168/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/image-43-1024x683.png"
+    },
     {
       "id": 30643,
       "title": "2026シーズン終了のご報告と御礼",
@@ -138,13 +145,6 @@
       "date": "2026-09-08T15:19:06",
       "url": "https://anclas.jp/news/2026/09/08/%e3%80%90%e4%bb%a4%e5%92%8c8%e5%b9%b4%e5%ba%a6-%e9%9a%9c%e3%81%8c%e3%81%84%e8%80%85%e3%82%b5%e3%83%83%e3%82%ab%e3%83%bc%e6%95%99%e5%ae%a4%e3%80%91-%e5%8f%82%e5%8a%a0%e3%83%ac%e3%83%9d/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_260906%E9%9A%9C%E3%81%8C%E3%81%84%E8%80%85%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E6%95%99%E5%AE%A4_260908_5-1024x768.jpg"
-    },
-    {
-      "id": 28787,
-      "title": "トップチーム体制変更のお知らせ",
-      "date": "2026-09-02T18:00:00",
-      "url": "https://anclas.jp/news/2026/09/02/%e3%83%88%e3%83%83%e3%83%97%e3%83%81%e3%83%bc%e3%83%a0%e4%bd%93%e5%88%b6%e5%a4%89%e6%9b%b4%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/08/名称未設定のデザイン-4.png"
     }
   ]
 }

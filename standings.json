@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T07:04:21.485Z",
+  "generatedAt": "2026-10-31T13:41:29.861Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
@@ -138,63 +138,68 @@
       "goals": 2
     },
     {
-      "rank": 5,
+      "rank": 4,
+      "leagueRank": 18,
+      "name": "玉城 薪瀬",
+      "number": 18,
+      "goals": 2
+    },
+    {
+      "rank": 6,
       "leagueRank": 32,
       "name": "大河内 友貴",
       "number": 5,
       "goals": 1
     },
     {
-      "rank": 5,
+      "rank": 6,
       "leagueRank": 32,
       "name": "野沢 真由",
       "number": 8,
       "goals": 1
     },
     {
-      "rank": 5,
+      "rank": 6,
       "leagueRank": 32,
       "name": "田邉 いちご",
       "number": 9,
       "goals": 1
     },
     {
-      "rank": 5,
+      "rank": 6,
       "leagueRank": 32,
       "name": "平坂 咲希",
       "number": 10,
       "goals": 1
     },
     {
-      "rank": 5,
+      "rank": 6,
       "leagueRank": 32,
       "name": "田中 花奈",
       "number": 15,
       "goals": 1
     },
     {
-      "rank": 5,
-      "leagueRank": null,
-      "name": "玉城 薪瀬",
-      "number": 18,
-      "goals": 1
-    },
-    {
-      "rank": 5,
+      "rank": 6,
       "leagueRank": 32,
       "name": "田川 葵",
       "number": 20,
       "goals": 1
-    },
-    {
-      "rank": 5,
-      "leagueRank": null,
-      "name": "北条あゆみ",
-      "number": 23,
-      "goals": 1
     }
   ],
   "assists": [
+    {
+      "rank": 1,
+      "name": "原日樺",
+      "number": 13,
+      "assists": 2
+    },
+    {
+      "rank": 1,
+      "name": "田中花奈",
+      "number": 15,
+      "assists": 2
+    },
     {
       "rank": 1,
       "name": "野田夏未",
@@ -208,31 +213,19 @@
       "assists": 2
     },
     {
-      "rank": 3,
-      "name": "原日樺",
-      "number": 13,
-      "assists": 1
-    },
-    {
-      "rank": 3,
-      "name": "田中花奈",
-      "number": 15,
-      "assists": 1
-    },
-    {
-      "rank": 3,
+      "rank": 5,
       "name": "大河内友貴",
       "number": 5,
       "assists": 1
     },
     {
-      "rank": 3,
+      "rank": 5,
       "name": "端山新",
       "number": 16,
       "assists": 1
     },
     {
-      "rank": 3,
+      "rank": 5,
       "name": "野沢真由",
       "number": 8,
       "assists": 1

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T07:04:21.485Z",
+  "generatedAt": "2026-10-31T13:41:29.861Z",
   "season": "2026",
   "anclas": {
     "nextMatch": null,
@@ -671,63 +671,56 @@
       {
         "id": "164434040",
         "name": "缶バッジガチャ",
-        "price": "JPY 330(USD 2.10)",
+        "price": "JPY 330(USD 2.09)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/66e57b6438ed4b8a4aa95e72885b5cf1.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/164434040"
       },
       {
-        "id": "146226679",
-        "name": "【40周年記念！】マフラータオル2026",
-        "price": "JPY 3,750(USD 23.84)",
-        "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/2edc17bff3df3722b83a66f36d2058cd.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
-        "url": "https://anclas.base.shop/items/146226679"
-      },
-      {
         "id": "146226597",
         "name": "オレンジフェイスタオル",
-        "price": "JPY 4,500(USD 28.61)",
+        "price": "JPY 4,500(USD 28.56)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/f85a12bda2f78c81de78a076ffc68b1b.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/146226597"
       },
       {
         "id": "141942648",
         "name": "2026シーズン選手キーホルダー",
-        "price": "JPY 770(USD 4.90)",
+        "price": "JPY 770(USD 4.89)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/1c6b73b82f3570b59dcb4c8ffaa9e46a.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/141942648"
       },
       {
         "id": "140216254",
         "name": "2026オーセンティックユニフォーム　【オレンジ】",
-        "price": "JPY 16,500(USD 104.91)",
+        "price": "JPY 16,500(USD 104.72)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/90dc1f90173d11022a9da327accaeb3a.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140216254"
       },
       {
         "id": "140217401",
         "name": "2026オーセンティックユニフォーム　【アクア】",
-        "price": "JPY 16,500(USD 104.91)",
+        "price": "JPY 16,500(USD 104.72)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/44c97fca39befd27fbbb5f8dfea6fad1.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140217401"
       },
       {
         "id": "140216939",
         "name": "2026オーセンティックユニフォーム　【ホワイト】",
-        "price": "JPY 16,500(USD 104.91)",
+        "price": "JPY 16,500(USD 104.72)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/abf342f7be661bb3eab0e542fa4fa05b.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140216939"
       },
       {
         "id": "140217933",
         "name": "2026オーセンティックユニフォーム【サクラ】",
-        "price": "JPY 16,500(USD 104.91)",
+        "price": "JPY 16,500(USD 104.72)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/76710215a7072bafd3ef77c0c12c9173.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/140217933"
       },
       {
         "id": "85193356",
         "name": "エンブレムフェイスタオル",
-        "price": "JPY 2,310(USD 14.69)",
+        "price": "JPY 2,310(USD 14.66)",
         "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/b3000fa066c5c2692d4ef55bcd838ffe.png?imformat=generic&amp;q=90&amp;im=Resize,width=640,type=normal",
         "url": "https://anclas.base.shop/items/85193356"
       }
@@ -1370,24 +1363,24 @@
       "goals": [
         {
           "minute": "1分",
-          "playerNumber": 13,
-          "playerName": "原日樺",
           "team": "福岡J・アンクラス",
-          "assist": null
+          "playerNumber": 13,
+          "playerName": "原 日樺",
+          "assist": "15↑13S"
         },
         {
           "minute": "18分",
-          "playerNumber": 18,
-          "playerName": "玉城薪瀬",
           "team": "福岡J・アンクラス",
-          "assist": null
+          "playerNumber": 18,
+          "playerName": "玉城 薪瀬",
+          "assist": "13→18S"
         },
         {
           "minute": "80分",
-          "playerNumber": 16,
-          "playerName": "端山新",
           "team": "福岡J・アンクラス",
-          "assist": null
+          "playerNumber": 16,
+          "playerName": "端山 新",
+          "assist": "16PK"
         }
       ],
       "starters": [
@@ -1892,24 +1885,24 @@
       "venue": "東海大学付属福岡高校人工芝グランド",
       "goals": [
         {
-          "minute": "3分",
+          "minute": "3分(前半3分)",
+          "team": "福岡J・アンクラス",
           "playerNumber": 3,
-          "playerName": "澁澤光",
-          "team": "福岡J・アンクラス",
+          "playerName": "澁澤 光",
           "assist": null
         },
         {
-          "minute": "6分",
+          "minute": "6分(前半6分)",
+          "team": "福岡J・アンクラス",
           "playerNumber": 16,
-          "playerName": "端山新",
-          "team": "福岡J・アンクラス",
+          "playerName": "端山 新",
           "assist": null
         },
         {
-          "minute": "63分",
+          "minute": "63分(後半23分)",
+          "team": "福岡J・アンクラス",
           "playerNumber": null,
           "playerName": "オウンゴール",
-          "team": "福岡J・アンクラス",
           "assist": null
         }
       ],
@@ -2807,17 +2800,24 @@
       "venue": "桷志田サッカー場人工芝A",
       "goals": [
         {
-          "minute": "59分",
-          "playerNumber": 3,
-          "playerName": "澁澤光",
-          "team": "福岡J・アンクラス",
+          "minute": "32分(前半32分)",
+          "team": "神村学園高等部女子サッカー部",
+          "playerNumber": 38,
+          "playerName": "山野 蒼空",
           "assist": null
         },
         {
-          "minute": "69分",
-          "playerNumber": 23,
-          "playerName": "北条あゆみ",
+          "minute": "59分(後半19分)",
           "team": "福岡J・アンクラス",
+          "playerNumber": 3,
+          "playerName": "澁澤 光",
+          "assist": null
+        },
+        {
+          "minute": "69分(後半29分)",
+          "team": "福岡J・アンクラス",
+          "playerNumber": 18,
+          "playerName": "玉城 薪瀬",
           "assist": null
         }
       ],

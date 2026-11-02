@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-10-30T07:13:42.641Z",
+  "generatedAt": "2026-11-02T06:18:26.534Z",
   "source": {
-    "feedEtag": "\"942426ae52ae77816fe62ed4d684e9e8\"",
-    "feedLastModified": "Fri, 30 Oct 2026 05:57:24 GMT",
+    "feedEtag": "\"dae05f2798701ce369853678b86a14c1\"",
+    "feedLastModified": "Mon, 02 Nov 2026 06:05:02 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30652,
+      "title": "【イベント参加のお知らせ】第5回宇美町スポーツフェスタ",
+      "date": "2026-11-02T13:16:46",
+      "url": "https://anclas.jp/news/2026/11/02/529/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/image-36-212x300.png"
+    },
     {
       "id": 30664,
       "title": "【イベントの参加のお知らせ】第68回香蘭祭",
@@ -138,13 +145,6 @@
       "date": "2026-09-10T15:39:23",
       "url": "https://anclas.jp/news/2026/09/10/%e3%80%90%e3%83%9b%e3%83%bc%e3%83%a0%e3%82%bf%e3%82%a6%e3%83%b3%e6%b4%bb%e5%8b%95%e3%80%912026-09-10/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68427785_0-1024x768.jpg"
-    },
-    {
-      "id": 28960,
-      "title": "【令和8年度 障がい者サッカー教室】 参加レポート 2026.09.06",
-      "date": "2026-09-08T15:19:06",
-      "url": "https://anclas.jp/news/2026/09/08/%e3%80%90%e4%bb%a4%e5%92%8c8%e5%b9%b4%e5%ba%a6-%e9%9a%9c%e3%81%8c%e3%81%84%e8%80%85%e3%82%b5%e3%83%83%e3%82%ab%e3%83%bc%e6%95%99%e5%ae%a4%e3%80%91-%e5%8f%82%e5%8a%a0%e3%83%ac%e3%83%9d/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_260906%E9%9A%9C%E3%81%8C%E3%81%84%E8%80%85%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E6%95%99%E5%AE%A4_260908_5-1024x768.jpg"
     }
   ]
 }

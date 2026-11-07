@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T06:07:25.734Z",
+  "generatedAt": "2026-11-07T10:20:32.788Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
@@ -32,27 +32,27 @@
     {
       "rank": 3,
       "team": "ヴィアマテラス宮崎Alegrita",
-      "played": 11,
-      "win": 6,
+      "played": 12,
+      "win": 7,
       "draw": 1,
       "loss": 4,
-      "gf": 29,
-      "ga": 12,
-      "points": 19,
-      "gd": 17,
+      "gf": 32,
+      "ga": 13,
+      "points": 22,
+      "gd": 19,
       "isAnclas": false
     },
     {
       "rank": 4,
       "team": "水俣ユニオンフットボールクラブウィメン",
-      "played": 13,
+      "played": 14,
       "win": 5,
       "draw": 2,
-      "loss": 6,
-      "gf": 14,
-      "ga": 18,
+      "loss": 7,
+      "gf": 15,
+      "ga": 21,
       "points": 17,
-      "gd": -4,
+      "gd": -6,
       "isAnclas": false
     },
     {
@@ -125,21 +125,21 @@
     },
     {
       "rank": 3,
-      "leagueRank": 11,
+      "leagueRank": 13,
       "name": "澁澤 光",
       "number": 3,
       "goals": 3
     },
     {
       "rank": 4,
-      "leagueRank": 18,
+      "leagueRank": 19,
       "name": "端山 新",
       "number": 16,
       "goals": 2
     },
     {
       "rank": 4,
-      "leagueRank": 18,
+      "leagueRank": 19,
       "name": "玉城 薪瀬",
       "number": 18,
       "goals": 2

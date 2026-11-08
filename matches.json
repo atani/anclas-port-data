@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T07:27:27.007Z",
+  "generatedAt": "2026-11-08T15:18:49.159Z",
   "season": "2026",
   "anclas": {
     "nextMatch": null,
@@ -8216,8 +8216,11 @@
       "datetime": "2026-11-08T18:00:00+09:00",
       "homeTeam": "神村学園高等部女子サッカー部",
       "awayTeam": "東海大学付属福岡高等学校",
-      "status": "scheduled",
-      "score": null,
+      "status": "finished",
+      "score": {
+        "home": 2,
+        "away": 0
+      },
       "isAnclas": false,
       "sourceUrl": "https://q-league.net/qleague/match_sitagaki-41/",
       "venue": "桷志田サッカー場人工芝A",
@@ -8226,7 +8229,7 @@
       "subs": [],
       "substitutions": [],
       "stats": null,
-      "goalnoteUrl": null,
+      "goalnoteUrl": "https://www.goalnote.net/detail-schedule-game.php?tid=18626&sid=341596",
       "posterUrl": null,
       "matchdayProgramUrl": null,
       "cards": [],

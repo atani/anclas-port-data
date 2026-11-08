@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T07:27:27.007Z",
+  "generatedAt": "2026-11-08T15:18:49.159Z",
   "season": "2026",
   "competition": "Qリーグ",
   "table": [
@@ -71,27 +71,27 @@
     {
       "rank": 6,
       "team": "神村学園高等部女子サッカー部",
-      "played": 12,
-      "win": 2,
+      "played": 13,
+      "win": 3,
       "draw": 4,
       "loss": 6,
-      "gf": 10,
+      "gf": 12,
       "ga": 21,
-      "points": 10,
-      "gd": -11,
+      "points": 13,
+      "gd": -9,
       "isAnclas": false
     },
     {
       "rank": 7,
       "team": "東海大学付属福岡高等学校",
-      "played": 11,
+      "played": 12,
       "win": 3,
       "draw": 1,
-      "loss": 7,
+      "loss": 8,
       "gf": 9,
-      "ga": 21,
+      "ga": 23,
       "points": 10,
-      "gd": -12,
+      "gd": -14,
       "isAnclas": false
     },
     {
@@ -132,14 +132,14 @@
     },
     {
       "rank": 4,
-      "leagueRank": 19,
+      "leagueRank": 20,
       "name": "端山 新",
       "number": 16,
       "goals": 2
     },
     {
       "rank": 4,
-      "leagueRank": 19,
+      "leagueRank": 20,
       "name": "玉城 薪瀬",
       "number": 18,
       "goals": 2

@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-11-06T06:56:11.278Z",
+  "generatedAt": "2026-11-09T06:45:25.913Z",
   "source": {
-    "feedEtag": "\"6b08e8b256b7a064e192ac632ac5cc87\"",
-    "feedLastModified": "Fri, 06 Nov 2026 03:49:21 GMT",
+    "feedEtag": "\"6f56fe2b0778290e15d687b91d47f657\"",
+    "feedLastModified": "Mon, 09 Nov 2026 05:45:50 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30697,
+      "title": "【SPEED STAR福岡大会】 参加レポート 2026.11.08",
+      "date": "2026-11-09T13:46:31",
+      "url": "https://anclas.jp/news/2026/11/09/26118/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/11/S__72826908_0-e1794199471971-300x225.jpg"
+    },
     {
       "id": 30652,
       "title": "【イベント参加のお知らせ】第5回宇美町スポーツフェスタ",
@@ -138,13 +145,6 @@
       "date": "2026-09-15T13:26:10",
       "url": "https://anclas.jp/news/2026/09/15/915/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/HP%E3%83%98%E3%83%83%E3%83%80%E3%83%BC%E3%83%AD%E3%82%B42-ffm-fukuya-1024x246.png"
-    },
-    {
-      "id": 29017,
-      "title": "【ホームタウン活動】2026.09.10",
-      "date": "2026-09-10T15:39:23",
-      "url": "https://anclas.jp/news/2026/09/10/%e3%80%90%e3%83%9b%e3%83%bc%e3%83%a0%e3%82%bf%e3%82%a6%e3%83%b3%e6%b4%bb%e5%8b%95%e3%80%912026-09-10/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__68427785_0-1024x768.jpg"
     }
   ]
 }

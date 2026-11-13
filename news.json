@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-11-13T09:38:02.907Z",
+  "generatedAt": "2026-11-13T17:48:19.624Z",
   "source": {
-    "feedEtag": "\"0757835936ebacca1c18bf1eacb901f6\"",
-    "feedLastModified": "Fri, 13 Nov 2026 07:01:24 GMT",
+    "feedEtag": "\"61a02ba90cdefdc4efb6c87320326fdf\"",
+    "feedLastModified": "Fri, 13 Nov 2026 10:43:40 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30738,
+      "title": "「アンクラス応援部」開設のお知らせ",
+      "date": "2026-11-13T19:14:14",
+      "url": "https://anclas.jp/news/2026/11/13/111326/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/11/応援部ページデザイン案-4-300x169.jpg"
+    },
     {
       "id": 30727,
       "title": "【ベースフード株式会社 様 】新規パートナー契約締結のお知らせ",
@@ -138,13 +145,6 @@
       "date": "2026-09-22T07:00:00",
       "url": "https://anclas.jp/news/2026/09/22/9211/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_%E3%83%96%E3%83%A9%E3%82%A4%E3%83%B3%E3%83%89%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC_260921_1.jpg"
-    },
-    {
-      "id": 29321,
-      "title": "マッチレポート【2026第22回福岡県U-15女子サッカー選手権大会vs.マーベラス福岡フットボールクラブ】",
-      "date": "2026-09-21T20:16:46",
-      "url": "https://anclas.jp/news/2026/09/21/921/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/image-5-740x1024.png"
     }
   ]
 }

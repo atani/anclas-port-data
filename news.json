@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-11-13T17:48:19.624Z",
+  "generatedAt": "2026-11-16T06:40:42.233Z",
   "source": {
-    "feedEtag": "\"61a02ba90cdefdc4efb6c87320326fdf\"",
-    "feedLastModified": "Fri, 13 Nov 2026 10:43:40 GMT",
+    "feedEtag": "\"e277d0f2ee4ac9c26e40a0e7b81d1e7a\"",
+    "feedLastModified": "Mon, 16 Nov 2026 04:56:04 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30766,
+      "title": "マッチレポート【KYFA 第30回九州U-18女子サッカー選手権大会 vs.熊本ハートユナイテッドSCフローラ】",
+      "date": "2026-11-16T13:56:04",
+      "url": "https://anclas.jp/news/2026/11/16/11140/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/11/S__73121818_0-300x225.jpg"
+    },
     {
       "id": 30738,
       "title": "「アンクラス応援部」開設のお知らせ",
@@ -138,13 +145,6 @@
       "date": "2026-09-24T13:44:57",
       "url": "https://anclas.jp/news/2026/09/24/923/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/image-5-740x1024.png"
-    },
-    {
-      "id": 29373,
-      "title": "【ブラインドサッカー体験会】 参加レポート 2026.09.21",
-      "date": "2026-09-22T07:00:00",
-      "url": "https://anclas.jp/news/2026/09/22/9211/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/LINE_ALBUM_%E3%83%96%E3%83%A9%E3%82%A4%E3%83%B3%E3%83%89%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC_260921_1.jpg"
     }
   ]
 }

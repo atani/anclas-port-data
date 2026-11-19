@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-11-18T07:38:02.846Z",
+  "generatedAt": "2026-11-19T07:33:57.101Z",
   "source": {
-    "feedEtag": "\"24e459fd023fe802b178fc5828792cbb\"",
-    "feedLastModified": "Wed, 18 Nov 2026 04:31:47 GMT",
+    "feedEtag": "\"27a1a95d0cb92ac80b77e78b9f2dc7ae\"",
+    "feedLastModified": "Thu, 19 Nov 2026 07:00:00 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30848,
+      "title": "2026シーズン報告会の開催のお知らせ",
+      "date": "2026-11-19T16:00:00",
+      "url": "https://anclas.jp/news/2026/11/19/20261219/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/11/image-11-212x300.png"
+    },
     {
       "id": 30841,
       "title": "【トップチーム】練習参加　随時受付のお知らせ",
@@ -138,13 +145,6 @@
       "date": "2026-09-28T14:03:45",
       "url": "https://anclas.jp/news/2026/09/28/9288/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__69828656_0-1024x683.jpg"
-    },
-    {
-      "id": 29485,
-      "title": "九州女子サッカーリーグ 1部 第15節 (アウェイ戦)10.3(土)試合情報のお知らせ",
-      "date": "2026-09-25T15:34:00",
-      "url": "https://anclas.jp/news/2026/09/25/103/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/1003_away_yanagigaura_pc_ver02-1-1024x577.webp"
     }
   ]
 }

@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-11-19T07:33:57.101Z",
+  "generatedAt": "2026-11-20T07:25:21.276Z",
   "source": {
-    "feedEtag": "\"27a1a95d0cb92ac80b77e78b9f2dc7ae\"",
-    "feedLastModified": "Thu, 19 Nov 2026 07:00:00 GMT",
+    "feedEtag": "\"aa01aefa83fa18294035947da4ce7c09\"",
+    "feedLastModified": "Fri, 20 Nov 2026 06:25:48 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30681,
+      "title": "【サッカー教室参加募集のお知らせ】 @ボートレース福岡　2026.12.20(日)",
+      "date": "2026-11-20T13:00:00",
+      "url": "https://anclas.jp/news/2026/11/20/261220/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/themes/anclas/assets/images/logo.png"
+    },
     {
       "id": 30848,
       "title": "2026シーズン報告会の開催のお知らせ",
@@ -138,13 +145,6 @@
       "date": "2026-09-30T17:51:08",
       "url": "https://anclas.jp/news/2026/09/30/9300/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__69623859_0-1024x683.jpg"
-    },
-    {
-      "id": 29714,
-      "title": "ボランティアスタッフ募集のお知らせ",
-      "date": "2026-09-28T14:03:45",
-      "url": "https://anclas.jp/news/2026/09/28/9288/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__69828656_0-1024x683.jpg"
     }
   ]
 }

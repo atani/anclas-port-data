@@ -1,11 +1,32 @@
 {
-  "generatedAt": "2026-11-20T11:48:06.250Z",
+  "generatedAt": "2026-11-24T10:00:58.288Z",
   "source": {
-    "feedEtag": "\"389e35574b6de6cce6ce6cd84f865a86\"",
-    "feedLastModified": "Fri, 20 Nov 2026 09:35:12 GMT",
+    "feedEtag": "\"df926a40e58a2afcb824e8548c0e6d50\"",
+    "feedLastModified": "Tue, 24 Nov 2026 09:48:25 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30912,
+      "title": "【犬にまみれてinumamire】 参加レポート 2026.11.22",
+      "date": "2026-11-24T15:16:47",
+      "url": "https://anclas.jp/news/2026/11/24/22177/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/11/S__73596988_0-300x225.jpg"
+    },
+    {
+      "id": 30896,
+      "title": "【令和8年度 障がい者サッカー教室】 参加レポート 2026.11.22",
+      "date": "2026-11-24T14:48:20",
+      "url": "https://anclas.jp/news/2026/11/24/112208/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/11/S__73596963_0-300x225.jpg"
+    },
+    {
+      "id": 30875,
+      "title": "【劇団天地 第28回公演「アディッショナルタイム」】 参加レポート 2026.11.21",
+      "date": "2026-11-24T14:14:54",
+      "url": "https://anclas.jp/news/2026/11/24/30875/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/11/IMG_4573-300x225.jpg"
+    },
     {
       "id": 30681,
       "title": "【サッカー教室参加募集のお知らせ】 @ボートレース福岡　2026.12.20(日)",
@@ -124,27 +145,6 @@
       "date": "2026-10-16T11:49:26",
       "url": "https://anclas.jp/news/2026/10/16/81011/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/S__71335993_0-300x226.jpg"
-    },
-    {
-      "id": 29945,
-      "title": "【第20回福岡市医師会文化祭サッカー交流親睦会】参加レポート 2026.10.12",
-      "date": "2026-10-13T14:10:31",
-      "url": "https://anclas.jp/news/2026/10/13/201012/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/S__71057462_0-300x200.jpg"
-    },
-    {
-      "id": 29739,
-      "title": "【ホームタウン活動】2026.10.01",
-      "date": "2026-10-01T15:35:58",
-      "url": "https://anclas.jp/news/2026/10/01/101/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/S__69722126_0-1024x768.jpg"
-    },
-    {
-      "id": 29728,
-      "title": "10/18 vs神村高校戦　エスコートキッズ募集のお知らせ",
-      "date": "2026-09-30T17:51:08",
-      "url": "https://anclas.jp/news/2026/09/30/9300/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/09/S__69623859_0-1024x683.jpg"
     }
   ]
 }

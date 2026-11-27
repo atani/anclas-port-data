@@ -1,11 +1,18 @@
 {
-  "generatedAt": "2026-11-25T08:44:45.057Z",
+  "generatedAt": "2026-11-27T08:44:18.431Z",
   "source": {
-    "feedEtag": "\"1c827991274dc5a028838d8b44451213\"",
-    "feedLastModified": "Wed, 25 Nov 2026 05:46:18 GMT",
+    "feedEtag": "\"b7ab18cc883487c33aeb052cc722b409\"",
+    "feedLastModified": "Fri, 27 Nov 2026 05:47:31 GMT",
     "route": "rest"
   },
   "items": [
+    {
+      "id": 30961,
+      "title": "【株式会社イチデン 様 】新規パートナー契約締結のお知らせ",
+      "date": "2026-11-27T14:47:30",
+      "url": "https://anclas.jp/news/2026/11/27/11277/",
+      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/11/image-26-300x300.png"
+    },
     {
       "id": 30912,
       "title": "【サンクスペッツデイ】 参加レポート 2026.11.22",
@@ -138,13 +145,6 @@
       "date": "2026-10-17T16:43:28",
       "url": "https://anclas.jp/news/2026/10/17/26101516/",
       "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/S__71450694_0-225x300.jpg"
-    },
-    {
-      "id": 29943,
-      "title": "【令和8年度 障がい者サッカー教室】 参加レポート 2026.10.11",
-      "date": "2026-10-16T11:49:26",
-      "url": "https://anclas.jp/news/2026/10/16/81011/",
-      "thumbnailUrl": "https://anclas.jp/wp-content/uploads/2026/10/S__71335993_0-300x226.jpg"
     }
   ]
 }

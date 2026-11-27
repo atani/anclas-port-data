@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T02:56:01.913Z",
+  "generatedAt": "2026-11-27T08:44:15.552Z",
   "partners": [
     {
       "name": "株式会社トレス",
@@ -521,6 +521,12 @@
       "name": "ベースフード株式会社",
       "url": "https://shop.basefood.co.jp/",
       "logoUrl": "https://anclas.jp/wp-content/uploads/2026/11/basefood_logo_2line_ver1.0-1-宮崎哲-scaled.png",
+      "group": "オフィシャルパートナー"
+    },
+    {
+      "name": "株式会社イチデン",
+      "url": "https://www.ichi-den.co.jp/",
+      "logoUrl": "https://anclas.jp/wp-content/uploads/2026/11/image-25.png",
       "group": "オフィシャルパートナー"
     },
     {
